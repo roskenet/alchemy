@@ -1,0 +1,58 @@
+version: "2017-09-20"
+
+_: &APPLICATION "chemistry"
+_: &COMPONENT "uranium"
+_: &VERSION "#{CDP_BUILD_VERSION}"
+_: &CLUSTER "playground"
+_: &NAMESPACE "froske"
+
+shared_vars: &SHARED_ENV
+  APPLICATION: *APPLICATION
+  COMPONENT: *COMPONENT
+  TEAM: "cpp"
+  IMAGE: "pierone.stups.zalan.do/cpp/uranium:#{CDP_BUILD_VERSION}"
+  VERSION: *VERSION
+  CLUSTER: *CLUSTER
+  ENVIRONMENT: "staging"
+  REPLICAS: "1"
+  STACKSET_TTL: "1d"
+
+pipeline:
+  - id: build
+    type: script
+    vm_config:
+      type: linux
+      size: small
+      image: cdp-runtime/jdk23
+    cache:
+      paths:
+        - ~/.m2
+    env:
+      <<: *SHARED_ENV
+    commands:
+      - desc: "Build and push Docker image"
+        cmd: |
+          ./mvnw package docker:build docker:push -Ddocker.image=$IMAGE
+
+  - id: deploy
+    type: deploy
+    when:
+      branch: main
+      event: push
+    target: *CLUSTER
+    sources:
+      - dir: "deploy"
+        default_namespace: *NAMESPACE
+        template_vars:
+          <<: *SHARED_ENV
+
+  - id: switch
+    type: traffic
+    when:
+      branch: main
+      event: push
+    target: *CLUSTER
+    namespace: *NAMESPACE
+    stackset: *COMPONENT
+    stack_version: *VERSION
+    target_percentage: 100

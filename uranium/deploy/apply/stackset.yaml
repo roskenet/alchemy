@@ -1,0 +1,46 @@
+
+apiVersion: zalando.org/v1
+kind: StackSet
+metadata:
+  name: "{{{COMPONENT}}}"
+  labels:
+    team: "{{{TEAM}}}"
+    application: "{{{APPLICATION}}}"
+    component: "{{{COMPONENT}}}"
+  annotations:
+    janitor/ttl: {{{STACKSET_TTL}}}
+spec:
+  ingress:
+    hosts:
+      - "{{{COMPONENT}}}.{{{CLUSTER}}}.zalan.do"
+    backendPort: 8080
+  stackLifecycle:
+    scaledownTTLSeconds: 3600
+    limit: 1
+  stackTemplate:
+    spec:
+      version: "{{{VERSION}}}"
+      replicas: {{{REPLICAS}}}
+      podTemplate:
+        metadata:
+          labels:
+            team: "{{{TEAM}}}"
+            application: "{{{APPLICATION}}}"
+            component: "{{{COMPONENT}}}"
+            version: "{{{VERSION}}}"
+        spec:
+          containers:
+            - name: "{{{COMPONENT}}}"
+              image: "{{{IMAGE}}}"
+              env:
+                - name: ENV
+                  value: {{ENVIRONMENT}}
+              resources:
+                requests:
+                  cpu: 200m
+                  memory: 256Mi
+                limits:
+                  cpu: 200m
+                  memory: 256Mi
+              ports:
+                - containerPort: 8080

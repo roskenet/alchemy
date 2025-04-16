@@ -1,7 +1,10 @@
 package demo.uranium;
 
+import java.time.LocalDate;
+
 public record HelloWorldResponse (
-        String name
+        String name,
+        LocalDate birthday
 ) {}
 
 

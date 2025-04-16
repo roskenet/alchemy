@@ -9,7 +9,7 @@ import org.springframework.shell.standard.ShellOption;
 @ShellComponent
 public class MyCommands {
 
-	@ShellMethod
+	@ShellMethod(value = "Prints a greeting to the user")
 	public String helloWorld(
 			@ShellOption(help = "The name you want to greet!", defaultValue = "spring") String name,
 			@ShellOption(help = "The age of this person", defaultValue = "42") int age
@@ -17,18 +17,15 @@ public class MyCommands {
 		return "Hello " + name + "!\nYou are " + age + " years old.";
 	}
 
-	@ShellMethod
+	@ShellMethod(value = "Prints a cat fact")
 	public String callCatFacts(
-			@ShellOption(help = "The number of cat facts you want to get", defaultValue = "1") int count
+			@ShellOption(help = "The max length of the fact you accept", defaultValue = "255") int maxlength
 	) {
 		var builder = new RestTemplateBuilder().rootUri("https://catfact.ninja")
 				.messageConverters(new MappingJackson2HttpMessageConverter());
 
-		var catFactPage = builder.build().getForObject("/facts?limit=" + count, CatFactPage.class);
+		var catFactPage = builder.build().getForObject("/fact?max_length=" + maxlength, CatFact.class);
 
-		return catFactPage.data().stream()
-				.map(CatFact::fact)
-				.reduce((a, b) -> a + "\n" + b)
-				.orElse("");
+		return catFactPage.fact();
 	}
 }

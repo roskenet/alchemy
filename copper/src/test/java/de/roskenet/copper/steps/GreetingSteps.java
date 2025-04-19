@@ -21,6 +21,6 @@ public class GreetingSteps extends CucumberBase {
 
     @Then("^the response should contain (.+)$")
     public void the_response_should_contain(String expectedContent) throws UnsupportedEncodingException {
-        assertThat(latestResult.getResponse().getContentAsString().contains(expectedContent));
+        assertThat(latestResult.getResponse().getContentAsString()).contains(expectedContent);
     }
 }

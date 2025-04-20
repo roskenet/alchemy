@@ -1,0 +1,92 @@
+
+\documentclass[a4paper,10pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{tcolorbox}
+\usepackage{fontawesome5}
+\usepackage{lmodern}
+\usepackage[hidelinks]{hyperref}
+
+\definecolor{headerblue}{RGB}{30, 60, 120}
+\definecolor{accentblue}{RGB}{40, 120, 200}
+\definecolor{lightgray}{gray}{0.95}
+
+\titleformat{\section}
+  {\color{headerblue}\normalfont\Large\bfseries}
+  {}{0pt}{}
+  
+\titleformat{\subsection}
+  {\color{accentblue}\normalfont\large\bfseries}
+  {}{0pt}{}
+
+\setlist[itemize]{left=1em, label=\faAngleRight}
+
+\pagestyle{empty}
+
+\begin{document}
+
+\begin{center}
+    {\Huge \textbf{Secure Software Engineering}}\\[0.5em]
+    \Large Cheat Sheet for Junior Developers\\[1em]
+    \includegraphics[width=0.5\textwidth]{security_banner.png}
+\end{center}
+
+\vspace{1em}
+
+\section*{\faUserShield\ \ Principle 1: Least Privilege}
+\begin{tcolorbox}[colback=lightgray, colframe=accentblue, title=Key Ideas]
+\begin{itemize}
+    \item Always give the minimum required access.
+    \item Never assume “read-only” is harmless.
+    \item Define clear roles and scopes.
+\end{itemize}
+\end{tcolorbox}
+
+\section*{\faLock\ \ Principle 2: Data is Always Sensitive}
+\begin{tcolorbox}[colback=lightgray, colframe=accentblue, title=Key Ideas]
+\begin{itemize}
+    \item Non-critical data can still be aggregated or misused.
+    \item Context may change: what’s harmless now may be sensitive tomorrow.
+\end{itemize}
+\end{tcolorbox}
+
+\section*{\faClipboardList\ \ Principle 3: Auditability}
+\begin{tcolorbox}[colback=lightgray, colframe=accentblue, title=Key Ideas]
+\begin{itemize}
+    \item Keep logs of who did what, when, and why.
+    \item Use audit trails to ensure accountability.
+\end{itemize}
+\end{tcolorbox}
+
+\section*{\faDatabase\ \ Principle 4: Don’t Ship Raw Data}
+\begin{tcolorbox}[colback=lightgray, colframe=accentblue, title=Key Ideas]
+\begin{itemize}
+    \item Use structured APIs or dashboards.
+    \item Separate internal models from external exposure.
+\end{itemize}
+\end{tcolorbox}
+
+\section*{\faShieldAlt\ \ Principle 5: Defense in Depth}
+\begin{tcolorbox}[colback=lightgray, colframe=accentblue, title=Key Ideas]
+\begin{itemize}
+    \item Combine access control, validation, monitoring, and limits.
+    \item Design for failure and containment.
+\end{itemize}
+\end{tcolorbox}
+
+\vspace{1em}
+\section*{\faLightbulb\ \ As a Junior Developer, Always:}
+\begin{itemize}
+    \item Ask: “Is this access really necessary?”
+    \item Challenge: “It’s internal, so it’s fine.”
+    \item Learn about secure defaults and data classification.
+    \item Speak up if something feels wrong.
+\end{itemize}
+
+\vfill
+\noindent\textit{You don’t need to be a security expert to think securely. You just need to care — and ask the right questions.}
+
+\end{document}

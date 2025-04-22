@@ -1,15 +1,11 @@
 package demo.uranium;
 
-import static demo.uranium.AppProfile.STAGING;
-import static org.springframework.security.oauth2.core.authorization.OAuth2AuthorizationManagers.hasScope;
-
 import com.zalando.spring.security.oauth2.server.resource.introspection.ZalandoOpaqueTokenIntrospector;
 import com.zalando.spring.security.oauth2.server.resource.introspection.roles.HttpUserRoleProvider;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
-import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.oauth2.server.resource.introspection.OpaqueTokenIntrospector;
@@ -17,8 +13,9 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.web.client.RestOperations;
 import org.springframework.web.client.RestTemplate;
 
+import static demo.uranium.AppProfile.STAGING;
+
 @Configuration
-//@EnableGlobalMethodSecurity(prePostEnabled = true)
 @EnableMethodSecurity
 @Profile(STAGING)
 public class SecurityConfig {

@@ -1,0 +1,2 @@
+[console_scripts]
+latex-fontinst = latex_fontinst.cli:main

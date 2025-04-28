@@ -1,0 +1,12 @@
+README.md
+setup.py
+src/latex_fontinst/__init__.py
+src/latex_fontinst/cli.py
+src/latex_fontinst/font_processor.py
+src/latex_fontinst.egg-info/PKG-INFO
+src/latex_fontinst.egg-info/SOURCES.txt
+src/latex_fontinst.egg-info/dependency_links.txt
+src/latex_fontinst.egg-info/entry_points.txt
+src/latex_fontinst.egg-info/requires.txt
+src/latex_fontinst.egg-info/top_level.txt
+tests/test_font_processor.py

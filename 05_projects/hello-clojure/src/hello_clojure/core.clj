@@ -20,6 +20,9 @@
       wrap-json-response))
 
 (defn -main [& args]
-  (println "Starting server on port 3000...")
-  (run-jetty app {:port 3000 :join? false})
-  (println "Server started on port 3000"))
+  (let [port (if (and (seq args) (re-matches #"\d+" (first args)))
+               (Integer/parseInt (first args))
+               3000)]
+    (println (str "Starting server on port " port "..."))
+    (run-jetty app {:port port :join? false})
+    (println (str "Server started on port " port))))

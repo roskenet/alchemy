@@ -4,7 +4,27 @@ A Clojure library designed to ... well, that part is up to you.
 
 ## Usage
 
-FIXME
+### Running the application
+
+You can run the application using Leiningen:
+
+```
+lein run
+```
+
+This will start the server on the default port 3000.
+
+To specify a custom port, provide it as a command-line argument:
+
+```
+lein run 8080
+```
+
+This will start the server on port 8080.
+
+### API Endpoints
+
+- `GET /hello/:name` - Returns a greeting for the given name. If the name is "Elvis", it returns additional information.
 
 ## License
 

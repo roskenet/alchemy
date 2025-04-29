@@ -1,18 +1,12 @@
 package de.roskenet;
 
-import org.assertj.core.util.Streams;
 import org.junit.jupiter.api.Test;
-
-import java.nio.charset.StandardCharsets;
-import java.util.HashMap;
-import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class isogram {
+public class Isogram {
 
     public static boolean isIsogram(String str) {
-
 
         return str.length() == str.toLowerCase().chars().distinct().count();
 
@@ -32,13 +26,13 @@ public class isogram {
 
     @Test
     public void FixedTests() {
-        assertEquals(true, isogram.isIsogram("Dermatoglyphics"));
-        assertEquals(true, isogram.isIsogram("isogram"));
-        assertEquals(false, isogram.isIsogram("moose"));
-        assertEquals(false, isogram.isIsogram("isIsogram"));
-        assertEquals(false, isogram.isIsogram("aba"));
-        assertEquals(false, isogram.isIsogram("moOse"));
-        assertEquals(true, isogram.isIsogram("thumbscrewjapingly"));
-        assertEquals(true, isogram.isIsogram(""));
+        assertEquals(true, Isogram.isIsogram("Dermatoglyphics"));
+        assertEquals(true, Isogram.isIsogram("isogram"));
+        assertEquals(false, Isogram.isIsogram("moose"));
+        assertEquals(false, Isogram.isIsogram("isIsogram"));
+        assertEquals(false, Isogram.isIsogram("aba"));
+        assertEquals(false, Isogram.isIsogram("moOse"));
+        assertEquals(true, Isogram.isIsogram("thumbscrewjapingly"));
+        assertEquals(true, Isogram.isIsogram(""));
     }
 }

@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: baywatch
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: baywatch
+  template:
+    metadata:
+      labels:
+        app: baywatch
+    spec:
+      containers:
+      - name: baywatch
+        image: baywatch:froske-1
+        env: 
+        - name: DBURL
+          value: jdbc:postgresql://postgres/baywatch
+        - name: DBUSER
+          value: postgres
+        - name: DBPASSWORD
+          value: postgres
+        - name: CREDENTIALS_DIR
+          value: /meta/credentials
+        - name: ENV
+          value: release
+        ports:
+        - name: api
+          containerPort: 8080

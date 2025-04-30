@@ -1,0 +1,22 @@
+#!/usr/bin/env zsh
+
+    KEEP_CREDS_DIR=$CREDENTIALS_DIR
+    source ~/.zshrc
+    conda activate zalando
+    CREDENTIALS_DIR=$KEEP_CREDS_DIR
+
+	echo "Getting tokens for application: sample-orders"
+	zkubectl login content-creation-test
+	secretsJson=$(zkubectl get secret -n sample-management-testing sample-orders-credentials -o json | jq -r '.data') 
+	secretsMap=$(echo $secretsJson | jq -r 'to_entries') 
+	for entry in $(echo $secretsMap | jq -r '.[]  | "[" + .key + "]=\"" +.value + "\""')
+	do
+		[[ $entry =~ '\[([^]]+)\]' ]]
+		tokenName=$(echo $match | sed 's/[][]//g') 
+		[[ $entry =~ '=([^;]+)' ]]
+		tokenValue=$(echo $match[1] | sed -e 's/^"//' -e 's/"$//') 
+		echo $tokenValue | base64 --decode > $CREDENTIALS_DIR/$tokenName
+		echo "Exported token: $tokenName"
+	done
+	echo "Getting tokens for application \"$1\" finished successfully!"
+

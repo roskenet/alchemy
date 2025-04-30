@@ -1,0 +1,56 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: outbound-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: outbound-api
+  template:
+    metadata:
+      labels:
+        app: outbound-api
+    spec:
+      containers:
+      - name: outbound-api
+        image: outbound-api:latest
+        imagePullPolicy: Never 
+        env:
+#        - name: JAVA_OPTS
+#          value: -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005
+        - name: CREDENTIALS_DIR 
+          value: /meta/credentials
+        - name: DBURL 
+          value: jdbc:postgresql://postgres/outbound
+        - name: DBUSER 
+          value: postgres
+        - name: DBPASSWORD 
+          value: postgres
+        - name: TOKENINFO_URL 
+          value: https://no.auth.here
+        - name: AUTH_ROLES_PROVIDER 
+          value: https://no.auth.here
+        - name: NAKADI_ENDPOINT 
+          value: http://nakadi
+        - name: NAKADI_TOKEN_URI 
+          value: https://token.services.auth.zalando.com/oauth2/access_token?realm=/services
+        - name: BAYWATCH_URI
+          value: http://baywatch/
+        - name: TRACKING_API_URI
+          value: http://tracking-api/
+        - name: CLARIFICATION_CASES_API_URI
+          value: https://clarifications-api.content-creation-test.zalan.do/
+#        - name: JAVA_OPTS
+#          value: -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005
+        volumeMounts: 
+        - name: credentials
+          mountPath: /meta/credentials
+        ports:
+        - name: api
+          containerPort: 8080
+      volumes:
+      - name: credentials
+        hostPath: 
+          path: /mnt/minikube/credentials/outbound-api
+          type: Directory

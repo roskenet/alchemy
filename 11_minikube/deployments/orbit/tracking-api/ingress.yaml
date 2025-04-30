@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: tracking-api
+spec:
+  rules:
+    - host: "tracking-api.minikube"
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: tracking-api
+                port:
+                  name: api
+

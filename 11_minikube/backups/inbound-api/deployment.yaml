@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: inbound-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: inbound-api
+  template:
+    metadata:
+      labels:
+        app: inbound-api
+    spec:
+      containers:
+      - name: tracking-api
+        image: pierone.stups.zalan.do/cat/inbound-api:pr-276-55
+        env: 
+        - name: DBURL
+          value: jdbc:postgresql://postgres/inbound
+        - name: DBUSER
+          value: postgres
+        - name: DBPASSWORD
+          value: postgres
+        - name: CREDENTIALS_DIR
+          value: /meta/credentials
+        - name: ENV
+          value: staging
+        - name: NAKADI_URL
+          value: http://nakadi
+        - name: ACCESSTOKEN_URL
+          value: https://sandbox.identity.zalando.com/oauth2/token
+        - name: TRACKING_API_URL
+          value: http://tracking-api
+        volumeMounts: 
+        - name: credentials
+          mountPath: /meta/credentials
+        ports:
+        - name: api
+          containerPort: 8080
+      volumes:
+      - name: credentials
+        hostPath: 
+          path: /mnt/minikube/credentials/inbound-api
+          type: Directory

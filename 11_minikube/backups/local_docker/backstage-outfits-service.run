@@ -1,0 +1,14 @@
+docker run -v /home/froske/Workspaces/cat/credentials:/meta/credentials \
+  -e TOKENINFO_URL=https://sandbox-tokeninfo-bridge.stups.zalan.do/oauth2/tokeninfo \
+  -e ACCESSTOKEN_URL=https://sandbox.identity.zalando.com/oauth2/token \
+  -e CREDENTIALS_DIR=/meta/credentials \
+  -e ENV=staging \
+  -e DBURL=jdbc:postgresql://postgres/backstage_outfits_service?stringtype=unspecified \
+  -e DBUSER=postgres \
+  -e DBPASSWORD=postgres \
+  -p 8080:8080 \
+  --rm \
+  --network cat-network \
+  --name bos \
+  pierone.stups.zalan.do/cat/backstage-outfits-service-froske:2.0.0
+

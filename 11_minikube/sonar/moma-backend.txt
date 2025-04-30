@@ -1,0 +1,16 @@
+export PATH=/home/froske/bin/sonar-scanner-5.0.1.3006-linux/bin:$PATH
+
+mvn sonar:sonar \                                                    
+  -Dsonar.projectKey=moma-backend \
+  -Dsonar.projectName='moma-backend' \
+  -Dsonar.host.url=http://sonar.192-168-49-2.nip.io \
+  -Dsonar.token=sqp_7f2f1b01493a1f778eec1dc466b59b43e8f9f728
+
+supplier-data-api
+sqp_bdcca6dfbd1f320223ffcf2097e52ae83c58920a
+
+mvn clean verify sonar:sonar \
+  -Dsonar.projectKey=supplier-data-api \
+  -Dsonar.projectName='supplier-data-api' \
+  -Dsonar.host.url=http://sonar.192-168-49-2.nip.io \
+  -Dsonar.token=sqp_bdcca6dfbd1f320223ffcf2097e52ae83c58920a

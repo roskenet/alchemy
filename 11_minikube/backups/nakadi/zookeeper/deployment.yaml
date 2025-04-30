@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: zookeeper
+  labels:
+    app: zookeeper
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: zookeeper
+  template:
+    metadata:
+      labels:
+        app: zookeeper
+    spec:
+      volumes:
+      - name: zookeeper-data
+        hostPath:
+          path: /data/zookeeper-data
+          type: Directory 
+      - name: zookeeper-datalog
+        hostPath:
+          path: /data/zookeeper-datalog
+          type: Directory
+      containers:
+      - name: zookeeper
+        image: zookeeper:3.6
+        env:
+        - name: ZOO_ADMINSERVER_ENABLED
+          value: "false"
+        volumeMounts:
+        - mountPath: /data
+          name: zookeeper-data
+        - mountPath: /datalog
+          name: zookeeper-datalog
+#        livenessProbe:
+#          httpGet:
+#            path: /health
+#            port: 8080
+#          initialDelaySeconds: 30
+#          periodSeconds: 30

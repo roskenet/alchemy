@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: campaign-banners
+spec:
+  rules:
+    - host: campaign-banners-api.minikube
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: campaign-banners
+                port:
+                  name: api
+

@@ -1,0 +1,62 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kafka
+  labels:
+    app: kafka
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kafka
+  template:
+    metadata:
+      labels:
+        app: kafka
+    spec:
+      volumes:
+      - name: kafka-data
+        hostPath:
+          path: /data/kafka-data-alone
+          type: Directory
+      - name: kafka-secrets
+        hostPath:
+          path: /data/kafka-secrets-alone
+          type: Directory
+      containers:
+      - name: kafka
+        image: bitnami/kafka:3.6
+        env:
+        - name: BITNAMI_DEBUG
+          value: "no"
+        - name: ALLOW_PLAINTEXT_LISTENER
+          value: "yes"
+        - name: KAFKA_ENABLE_KRAFT
+          value: "no"
+        - name: KAFKA_BROKER_ID
+          value: "0"
+        - name: KAFKA_CFG_ADVERTISED_LISTENERS
+          value: "INTERNAL://localhost:9092,EXTERNAL://localhost:29092,CLIENT://localhost:9093"
+        - name: KAFKA_CFG_LISTENERS
+          value: "INTERNAL://localhost:9092,EXTERNAL://0.0.0.0:29092,CLIENT://:9093"
+        - name: KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP
+          value: "INTERNAL:PLAINTEXT,EXTERNAL:PLAINTEXT,CLIENT:SASL_PLAINTEXT"
+        - name: KAFKA_CFG_AUTO_CREATE_TOPICS_ENABLE
+          value: "false"
+        - name: KAFKA_CFG_ZOOKEEPER_CONNECT
+          value: "zookeeper:2181"
+        - name: KAFKA_INTER_BROKER_LISTENER_NAME
+          value: "INTERNAL"
+        - name: KAFKA_CLIENT_USERS
+          value: "nakadi, producer"
+        - name: KAFKA_CLIENT_PASSWORDS
+          value: "nakadi_password, producer_password"
+        - name: KAFKA_CFG_SASL_ENABLED_MECHANISMS
+          value: "PLAIN"
+        - name: KAFKA_CFG_INTER_BROKER_LISTENER_NAME
+          value: "INTERNAL"
+        volumeMounts:
+        - mountPath: /var/lib/kafka/data
+          name: kafka-data
+        - mountPath: /etc/kafka/secrets
+          name: kafka-secrets

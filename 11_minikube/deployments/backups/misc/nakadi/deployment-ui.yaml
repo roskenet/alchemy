@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nakadi-ui
+  labels:
+    app: nakadi-ui
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nakadi-ui
+  template:
+    metadata:
+      labels:
+        app: nakadi-ui
+    spec:
+      containers:
+      - name: nakadi-ui
+        image: nakadi-ui:4.0.0
+        imagePullPolicy: Never 
+        env: 
+        - name: NAKADI_API_URL
+          value: http://nakadi
+        - name: BASE_URL
+          value: http://nakadi-ui.192-168-49-2.nip.io
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 3000
+          initialDelaySeconds: 30
+          periodSeconds: 30

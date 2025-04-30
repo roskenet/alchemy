@@ -1,0 +1,74 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: inbound-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: inbound-api
+  template:
+    metadata:
+      labels:
+        app: inbound-api
+    spec:
+      containers:
+      - name: inbound-api
+        image: inbound-api:latest
+        imagePullPolicy: Never 
+        env:
+        - name: CREDENTIALS_DIR
+          value: /meta/credentials
+        - name: DBURL
+          value: jdbc:postgresql://postgres/inbound
+        - name: DBUSER
+          value: postgres
+        - name: DBPASSWORD
+          value: postgres
+        - name: TOKENINFO_URL
+          value: https://sandbox-tokeninfo-bridge.stups.zalan.do/oauth2/tokeninfo
+        - name: ACCESSTOKEN_URL
+          value: https://sandbox.identity.zalando.com/oauth2/token
+        - name: AUTHPROVIDER_URL
+          value: https://zack-api-proxy-staging.retail-operations.zalan.do/api/employees/{uid}/groups
+        - name: NAKADI_BASE_URL
+          value: http://nakadi
+        - name: NAKADI_TOKEN_URL
+          value: https://token.services.auth.zalando.com/oauth2/access_token?realm=/services
+        - name: PROD_IDENTITY_URL
+          value: https://spp-identity-data-test.zalandoapis.com/api/
+        - name: PROD_STORE_URL
+          value: https://spp-products-test.zalandoapis.com/api/
+        - name: MASTER_ATTR_URL
+          value: https://cat-master-attributes-api.content-creation-test.zalan.do
+        - name: BAYWATCH_URL
+          value: http://baywatch
+        - name: TRACKING_API_URL
+          value: http://tracking-api
+        - name: COMMGROUPS_URL
+          value: https://spp-commodity-group-data-test.zalandoapis.com
+        volumeMounts: 
+        - name: credentials
+          mountPath: /meta/credentials
+        ports:
+        - name: api
+          containerPort: 8080
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 8080
+          initialDelaySeconds: 15 
+          periodSeconds: 5
+          failureThreshold: 3
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8080
+          initialDelaySeconds: 15
+          periodSeconds: 5
+          failureThreshold: 3
+      volumes:
+      - name: credentials
+        hostPath: 
+          path: /mnt/minikube/credentials/inbound-api
+          type: Directory

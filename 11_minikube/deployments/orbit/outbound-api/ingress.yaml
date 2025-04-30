@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: outbound-api
+spec:
+  rules:
+    - host: "outbound-api.minikube"
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: outbound-api
+                port:
+                  name: api
+

@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: inbound-api
+spec:
+  rules:
+    - host: "inbound-api.192-168-49-2.nip.io"
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: inbound-api
+                port:
+                  number: 80
+

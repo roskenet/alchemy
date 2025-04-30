@@ -1,0 +1,42 @@
+#!/usr/bin/env zsh
+source ~/.zshrc
+
+conda activate zalando
+
+zkubectl login content-creation-test
+
+MINIKUBE_CREDS_DIR=$HOME/Workspaces/minikube/mounts/credentials
+USERS_CREDS_DIR=$CREDENTIALS_DIR
+
+for APPNAME in orbit-ui garfield cat-digital-rack-api backstage-content-service backstage-media-service polly tracking-api outbound-api inbound-api partner-integration-service orbit-dashboard-api
+do
+    CREDENTIALS_DIR=$MINIKUBE_CREDS_DIR/$APPNAME
+    mkdir -p $CREDENTIALS_DIR
+#    get-staging-tokens $APPNAME
+    ./get-tokens $APPNAME
+    echo "Wrote to: $CREDENTIALS_DIR"
+    cp $CREDENTIALS_DIR/*-secret $CREDENTIALS_DIR/*-type $USERS_CREDS_DIR/
+    echo "Copied to: $USERS_CREDS_DIR"
+    echo "---"
+done
+
+# Special command for sample-orders:
+CREDENTIALS_DIR=$MINIKUBE_CREDS_DIR/sample-orders
+mkdir -p $CREDENTIALS_DIR
+./get-sample-orders-staging-tokens
+cp $CREDENTIALS_DIR/* $USERS_CREDS_DIR/
+echo "Copied to: $CREDENTIALS_DIR"
+
+# Special command for campaign-banners:
+CREDENTIALS_DIR=$MINIKUBE_CREDS_DIR/campaign-banners
+mkdir -p $CREDENTIALS_DIR
+./get-campaign-banners-staging-tokens
+cp $CREDENTIALS_DIR/* $USERS_CREDS_DIR/
+echo "Copied to: $CREDENTIALS_DIR"
+
+# Special command for media-matcher
+CREDENTIALS_DIR=$MINIKUBE_CREDS_DIR/media-matcher
+mkdir -p $CREDENTIALS_DIR
+./get-media-matcher-staging-tokens
+cp $CREDENTIALS_DIR/* $USERS_CREDS_DIR/
+echo "Copied to: $CREDENTIALS_DIR"

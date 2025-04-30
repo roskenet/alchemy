@@ -1,0 +1,1 @@
+migrate -source file:./res/migrations -database "postgres://sample_orders_owner:postgres@postgres.minikube/sample_orders?sslmode=disable" up

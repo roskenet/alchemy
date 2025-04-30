@@ -1,0 +1,1 @@
+ztoken token -p 810d1d00-4312-43e5-bd31-d8373fdd24c7 -t https://sandbox.identity.zalando.com/oauth2/token -a https://sandbox.identity.zalando.com/oauth2/authorize

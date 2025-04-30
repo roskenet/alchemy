@@ -1,0 +1,10 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: config-granger
+  labels:
+    app: actinium
+data:
+  student.name: "Hermione Granger"
+  student.number: "42"
+  student.value: "Student"

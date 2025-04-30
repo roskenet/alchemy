@@ -1,0 +1,25 @@
+#!/usr/bin/env zsh
+source ~/.zshrc
+
+MINIKUBE_CREDS_DIR=$HOME/Workspaces/minikube/credentials
+USERS_CREDS_DIR=$CREDENTIALS_DIR
+
+for APPNAME in garfield backstage-media-service polly tracking-api outbound-api inbound-api partner-integration-service
+do
+    CREDENTIALS_DIR=$MINIKUBE_CREDS_DIR/$APPNAME
+    mkdir -p $CREDENTIALS_DIR
+    get-staging-tokens $APPNAME
+    echo "Wrote to: $CREDENTIALS_DIR"
+    cp $CREDENTIALS_DIR/*-secret $CREDENTIALS_DIR/*-type $USERS_CREDS_DIR/
+    echo "Copied to: $USERS_CREDS_DIR"
+    echo "---"
+done
+
+# Special command for sample-orders:
+CREDENTIALS_DIR=$MINIKUBE_CREDS_DIR/sample-orders
+mkdir -p $CREDENTIALS_DIR
+get-sample-orders-staging-tokens
+echo "Wrote into: $CREDENTIALS_DIR"
+cp $CREDENTIALS_DIR/*-secret $CREDENTIALS_DIR/*-type $USERS_CREDS_DIR/
+echo "Copied to: $USERS_CREDS_DIR"
+

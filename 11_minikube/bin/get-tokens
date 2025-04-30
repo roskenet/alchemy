@@ -1,0 +1,2 @@
+python3 $TEAM_CAT_WORKSPACE/cat-scripts/python_scripts/get-tokens.py $*
+

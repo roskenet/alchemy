@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: baywatch
+  labels:
+    component: orbit
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: baywatch
+  template:
+    metadata:
+      labels:
+        app: baywatch
+    spec:
+      containers:
+      - name: baywatch
+#        image: pierone.stups.zalan.do/cat/baywatch:master-103
+        image: baywatch:latest
+        imagePullPolicy: Never 
+        env: 
+        - name: DBURL
+          value: jdbc:postgresql://postgres/baywatch
+        - name: DBUSER
+          value: postgres
+        - name: DBPASSWORD
+          value: postgres
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 8080
+          initialDelaySeconds: 15 
+          periodSeconds: 5
+          failureThreshold: 3
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8080
+          initialDelaySeconds: 15
+          periodSeconds: 5
+          failureThreshold: 3
+        ports:
+        - name: api
+          containerPort: 8080

@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hydrogen
+  labels:
+    app: hydrogen
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hydrogen
+  template:
+    metadata:
+      labels:
+        app: hydrogen
+    spec:
+      containers:
+        - name: hydrogen
+          image: hydrogen:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8080
+              name: http 
+          readinessProbe:
+            httpGet:
+              path: /actuator/health
+              port: 8080
+            initialDelaySeconds: 5 
+            periodSeconds: 3
+            failureThreshold: 60
+          livenessProbe:
+            httpGet:
+              path: /actuator/health
+              port: 8080
+            initialDelaySeconds: 10
+            periodSeconds: 10 
+            failureThreshold: 6
+          resources:
+            requests:
+              cpu: 200m
+              memory: 256Mi
+            limits:
+              cpu: 1
+              memory: 1Gi

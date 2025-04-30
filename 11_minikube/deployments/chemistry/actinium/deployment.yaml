@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: actinium
+  labels:
+    app: actinium
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: actinium
+  template:
+    metadata:
+      labels:
+        app: actinium
+    spec:
+      volumes:
+        - name: credentials
+          hostPath:
+            path: /mnt/minikube/credentials/actinium
+            type: Directory
+      containers:
+        - name: actinium
+          image: pierone.stups.zalan.do/cpp/actinium:latest
+          imagePullPolicy: Never
+          volumeMounts:
+            - mountPath: /meta/credentials
+              name: credentials
+          ports:
+            - containerPort: 8080
+          env:
+            - name: STUDENT_NAME
+              valueFrom:
+                configMapKeyRef:
+                  name: config-granger
+                  key: student.name
+            - name: STUDENT_NUMBER
+              valueFrom:
+                configMapKeyRef:
+                  name: config-granger
+                  key: student.number
+            - name: STUDENT_VALUE
+              valueFrom:
+                configMapKeyRef:
+                  name: config-granger
+                  key: student.value
+          resources:
+            requests:
+              cpu: 200m
+              memory: 500Mi
+            limits:
+              cpu: 200m
+              memory: 500Mi

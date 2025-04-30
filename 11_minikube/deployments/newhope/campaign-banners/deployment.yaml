@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: campaign-banners
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: campaign-banners
+  template:
+    metadata:
+      labels:
+        app: campaign-banners
+    spec:
+      containers:
+      - name: campaign-banners
+        image: pierone.stups.zalan.do/cpp/campaign-banners:main-94
+        command: ["/api"]
+        imagePullPolicy: Never 
+        env: 
+        - name: CREDENTIALS_DIR
+          value: /meta/credentials
+        - name: BANNERS_DATABASE_PASSWORD
+          value: postgres
+        - name: BANNERS_DATABASE_HOST
+          value: postgres
+        - name: BANNERS_DATABASE_SSL_MODE
+          value: disable
+        volumeMounts: 
+        - name: credentials
+          mountPath: /meta/credentials
+        ports:
+        - name: api
+          containerPort: 8080
+      volumes:
+      - name: credentials
+        hostPath: 
+          path: /mnt/minikube/credentials/campaign-banners
+          type: Directory

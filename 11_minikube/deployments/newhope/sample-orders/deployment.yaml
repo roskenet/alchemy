@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sample-orders
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sample-orders
+  template:
+    metadata:
+      labels:
+        app: sample-orders
+    spec:
+      containers:
+      - name: sample-orders
+        image: pierone.stups.zalan.do/cpp/sample-orders:main-445
+        command: ["./api"]
+        imagePullPolicy: Never 
+        env: 
+        - name: CREDENTIALS_DIR
+          value: /meta/credentials
+        - name: SAMPLE_ORDERS_DATABASE_PASSWORD
+          value: postgres
+        - name: SAMPLE_ORDERS_DATABASE_USER
+          value: postgres
+        - name: SAMPLE_ORDERS_DATABASE_HOST
+          value: postgres
+        - name: SAMPLE_ORDERS_DATABASE_SSL_MODE
+          value: disable
+        volumeMounts: 
+        - name: credentials
+          mountPath: /meta/credentials
+        ports:
+        - name: api
+          containerPort: 8300
+      volumes:
+      - name: credentials
+        hostPath: 
+          path: /mnt/minikube/credentials/sample-orders
+          type: Directory

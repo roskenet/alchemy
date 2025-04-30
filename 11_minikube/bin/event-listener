@@ -1,0 +1,1 @@
+curl -v http://nakadi.minikube/event-types/$1/events

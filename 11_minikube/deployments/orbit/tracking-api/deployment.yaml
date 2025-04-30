@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tracking-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tracking-api
+  template:
+    metadata:
+      labels:
+        app: tracking-api
+    spec:
+      containers:
+      - name: tracking-api
+        image: tracking-api:latest
+        imagePullPolicy: Never 
+        env: 
+        - name: CREDENTIALS_DIR
+          value: /meta/credentials
+        - name: DBURL
+          value: jdbc:postgresql://postgres/tracking
+        - name: DBUSER
+          value: postgres
+        - name: DBPASSWORD
+          value: postgres
+        - name: EVENTLOG_DBURL
+          value: jdbc:postgresql://postgres/eventlog
+        - name: EVENTLOG_DBUSER
+          value: postgres
+        - name: EVENTLOG_DBPASSWORD
+          value: postgres
+        - name: NAKADI_URL
+          value: http://nakadi
+        - name: ACCESSTOKEN_URL
+          value: https://sandbox.identity.zalando.com/oauth2/token
+        - name: TOKENINFO_URL
+          value: https://sandbox-tokeninfo-bridge.stups.zalan.do/oauth2/tokeninfo
+        volumeMounts: 
+        - name: credentials
+          mountPath: /meta/credentials
+        ports:
+        - name: api
+          containerPort: 8080
+      volumes:
+      - name: credentials
+        hostPath: 
+          path: /mnt/minikube/credentials/tracking-api
+          type: Directory

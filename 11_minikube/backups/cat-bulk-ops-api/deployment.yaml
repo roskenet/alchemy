@@ -1,0 +1,78 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cat-bulk-ops-api-froske
+spec:
+  selector:
+    matchLabels:
+      app: cat-bulk-ops-api-froske
+  template:
+    metadata:
+      labels:
+        app: cat-bulk-ops-api-froske
+      annotations:
+        iam.amazonaws.com/role: "cat-bulk-ops-api-staging-iam-role"
+    spec:
+      volumes:
+      - name: cat-bulk-ops-api-credentials
+        secret:
+          secretName: cat-bulk-ops-api-creds
+      containers:
+      - name: cat-bulk-ops-api-froske
+        image: pierone.stups.zalan.do/cat/cat-bulk-ops-api-froske:4.0.0
+        env:
+        - name: SPRING_PROFILES_ACTIVE
+          value: staging
+        - name: TOKENINFO_URL
+          value: https://sandbox-tokeninfo-bridge.stups.zalan.do/oauth2/tokeninfo
+        - name: DBURL
+          value: jdbc:postgresql://cat-catabase-staging-db-cluster/cat_bulk_ops_test?ssl=true&sslmode=require&stringtype=unspecified&currentSchema=froske
+        - name: DBUSER
+          valueFrom:
+            secretKeyRef:
+              name:  cat-bulk-ops-test-user.cat-catabase-staging-db-cluster.credentials
+              key: username
+        - name: DBPASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: cat-bulk-ops-test-user.cat-catabase-staging-db-cluster.credentials
+              key: password
+        - name: GARFIELD_ENDPOINT
+          value: "http://garfield"
+        - name: S3_BUCKET_NAME
+          value: "zalando-content-creation-cat-bulk-ops-api-froske"
+        - name: GARFIELD_S3_BUCKET_NAME
+          value: "zalando-content-creation-garfield-s3-staging"
+        - name: OPENTRACING_LIGHTSTEP_COLLECTOR_HOST
+          value: "tracing.stups.zalan.do"
+        - name: OPENTRACING_LIGHTSTEP_COLLECTOR_PORT
+          value: "8444"
+        - name: OPENTRACING_LIGHTSTEP_ACCESS_TOKEN
+          valueFrom:
+            secretKeyRef:
+              name: cat-common-secrets
+              key: lightstep-access-token
+        - name: NAKADI_URL
+          value: "https://nakadi-staging.aruha-test.zalan.do/"
+        - name: BACKSTAGE_MEDIA_SERVICE_ENDPOINT
+          value: "http://backstage-media-service"
+        - name: USERS_API_ENDPOINT
+          value: "https://zack-api-proxy-staging.retail-operations.zalan.do"
+        volumeMounts:
+        - name: cat-bulk-ops-api-credentials
+          mountPath: /meta/credentials
+          readOnly: true
+        ports:
+        - name: api
+          containerPort: 8080
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 8080
+        resources:
+          requests:
+            cpu: 2m
+            memory: 600Mi
+          limits:
+            memory: 600Mi
+  

@@ -4,9 +4,9 @@ package de.roskenet
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 fun main() {
 
-    var myNumer = 42
+    var myNumber = 42
 
-    myNumer.flxFormatString()
+    myNumber.flxFormatString()
 
 }
 

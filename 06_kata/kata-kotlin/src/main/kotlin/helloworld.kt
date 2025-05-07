@@ -1,7 +1,14 @@
 package helloworld;
 
+import org.assertj.core.api.Assertions.assertThat
+import kotlin.test.Test
+
 fun helloWorld() = "Hello World!"
 
-fun main(args: Array<String>) {
-    println(helloWorld())
+class HelloWorldTest {
+    @Test
+    fun testHelloWorld() {
+        helloWorld()
+        assertThat(helloWorld()).isEqualTo("Hello World!")
+    }
 }

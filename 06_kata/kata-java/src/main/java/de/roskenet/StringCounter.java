@@ -19,7 +19,7 @@ public class StringCounter {
                continue;
             }
             if(Character.isDigit(s.charAt(i))) {
-                if(hasUppercase) {
+                if(hasUppercase && currentCounter > longestSubstring) {
                     longestSubstring = currentCounter;
                 }
                 currentCounter = 0;

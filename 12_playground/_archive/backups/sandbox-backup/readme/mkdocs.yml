@@ -1,0 +1,25 @@
+site_name: Sandbox
+site_url: https://www.felixroske.de/
+
+theme:
+  name: material
+  palette:
+    primary: teal
+    accent: grey
+    
+markdown_extensions:
+  - admonition
+  - codehilite:
+      linenums: true
+  - footnotes
+  - meta
+
+extra:
+  social:
+    - type: "github"
+      link: "https://github.com/roskenet"
+    - type: "twitter"
+      link: "https://twitter.com/felixroske"
+    - type: "facebook"
+      link: "https://www.facebook.com/felix.roske"
+

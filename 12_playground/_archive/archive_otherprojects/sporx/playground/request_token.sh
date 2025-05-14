@@ -1,0 +1,1 @@
+echo $(curl -k -d "client_id=test-service" -d "client_secret=7b35675a-f0fe-45fc-b1de-66c3362110e8" -d "username=f.roske@roskenet.de" -d "password=abakus" -d "grant_type=password" "https://keycloak.192-168-49-2.nip.io/auth/realms/sporx/protocol/openid-connect/token" | jq .access_token | sed -e 's/^"//' -e 's/"$//')

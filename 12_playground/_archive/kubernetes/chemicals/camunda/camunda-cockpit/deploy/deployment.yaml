@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: camunda-cockpit
+spec:
+  selector:
+    matchLabels:
+      app: camunda-cockpit
+  template:
+    metadata:
+      labels:
+        app: camunda-cockpit
+    spec:
+      containers:
+      - name: camunda-cockpit
+        image: roskenet/camunda-cockpit:0.0.1
+        ports:
+        - name: api
+          containerPort: 8080

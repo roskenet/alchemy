@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: oxygen
+  labels:
+    app: oxygen
+  annotations:
+    maintainer: "felix@roskenet.de"
+spec:
+  selector:
+    app: oxygen
+  type: ClusterIP
+  ports:
+    - port: 80
+      targetPort: http

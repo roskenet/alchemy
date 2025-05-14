@@ -1,0 +1,4 @@
+docker-compose up -d coordinator
+
+docker-compose scale member=4
+

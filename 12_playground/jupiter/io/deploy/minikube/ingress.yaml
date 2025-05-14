@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: io
+  labels:
+    app: io
+  annotations:
+    maintainer: "felix@felix-roske.de"
+    nginx.ingress.kubernetes.io/rewrite-target: /
+  labels:
+    app: io
+spec:
+  rules:
+    - host: io.minikube
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: io
+                port:
+                  name: http

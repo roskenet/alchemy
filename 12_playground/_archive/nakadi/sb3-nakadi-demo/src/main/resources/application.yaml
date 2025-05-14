@@ -1,0 +1,13 @@
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost/nakadi_demo
+    username: postgres
+    password: postgres
+nakadi-producer:
+  nakadi-base-uri: http://nakadi.192-168-49-2.nip.io
+#  access-token-uri: ${NAKADI_TOKEN_URL:}
+#  access-token-scopes: nakadi.event_stream.write
+
+#NAKADI_BASE_URL: https://nakadi-staging.aruha-test.zalan.do/
+#NAKADI_TOKEN_URL: https://token.services.auth.zalando.com/oauth2/access_token?realm=/services

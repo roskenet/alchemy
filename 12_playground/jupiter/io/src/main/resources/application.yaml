@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: io
+  security:
+    oauth2:
+      client:
+        registration:
+          io:
+            client-id: io
+            client-secret: 2sotjABGA3DauF1A7PZeVegsnDlRYDzR
+#            scope: profile, email
+#            scope: email
+            authorization-grant-type: client_credentials
+            client-authentication-method: client_secret_post
+            provider: keycloak
+#            redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
+        provider:
+          keycloak:
+            issuer-uri: http://keycloak.minikube/realms/jupiter
+#            authorization-uri: https://YOUR_AUTHORIZATION_URI
+#            token-uri: https://YOUR_TOKEN_URI
+#            user-info-uri: https://YOUR_USER_INFO_URI

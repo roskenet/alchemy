@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: io
+  labels:
+    app: io
+  annotations:
+    maintainer: "felix@felix-roske.de"
+spec:
+  selector:
+    app: io
+  type: ClusterIP
+  ports:
+    - port: 80
+      targetPort: http

@@ -1,0 +1,1 @@
+/usr/bin/cc -O3 -DNDEBUG CMakeFiles/learning_c.dir/main.c.o -o learning_c 

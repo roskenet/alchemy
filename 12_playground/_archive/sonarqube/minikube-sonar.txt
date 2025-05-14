@@ -1,0 +1,7 @@
+moma-backend: sqp_09d0ce5e2a955897202d1c196112d71a1ad639ff
+
+mvn clean verify sonar:sonar \
+  -Dsonar.projectKey=moma-backend \
+  -Dsonar.projectName='moma-backend' \
+  -Dsonar.host.url=http://sonar.192-168-49-2.nip.io \
+  -Dsonar.token=sqp_7f2f1b01493a1f778eec1dc466b59b43e8f9f728

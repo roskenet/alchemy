@@ -1,0 +1,1 @@
+/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/avr-g++ -O3 -DNDEBUG -flto -fno-fat-lto-objects -mmcu=attiny461 -fuse-linker-plugin -Wl,--gc-sections CMakeFiles/blink.dir/blink.cpp.obj -o blink.elf  libArduinoCore.a 

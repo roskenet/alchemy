@@ -1,0 +1,5 @@
+/home/felix/Packages/JetBrains/clion/bin/cmake/linux/x64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "Unix Makefiles" -S /home/felix/Workspaces/playground/cmake/first_build -B /home/felix/Workspaces/playground/cmake/first_build/build-debug
+This is a message! Hello World!
+-- Configuring done (0.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/felix/Workspaces/playground/cmake/first_build/build-debug

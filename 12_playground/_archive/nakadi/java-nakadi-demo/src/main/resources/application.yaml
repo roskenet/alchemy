@@ -1,0 +1,33 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost/nakadi_demo
+    username: postgres
+    password: postgres
+
+fahrschein:
+  defaults:
+    nakadi-url: http://nakadi.192-168-49-2.nip.io
+    application-name: nakadi-demo
+#    consumer-group: example-consumergroup
+#    stream-parameters:
+#      batch-limit: 1000
+#      max-uncommitted-events: 5000
+#      batch-flush-timeout: 5
+    oauth:
+      enabled: false
+      credentials-directory: /meta/credentials
+#    record-metrics: true
+    http:
+      content-encoding: gzip
+#    backoff:
+#      enabled: true
+  consumers:
+    helloworld:
+      topics:
+        - demo.hello-world
+#      - order.ORDER_RECEIVED
+#      stream-parameters:
+#        batch-limit: 5
+#        max-uncommitted-events: 20
+#      backoff:
+#        enabled: false

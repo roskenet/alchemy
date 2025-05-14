@@ -1,0 +1,16 @@
+moma-backend: sqp_6089e6222b1e8ecb13dbf8832e7a212240162d75
+
+mvn clean verify sonar:sonar \
+  -Dsonar.projectKey=moma-backend \
+  -Dsonar.projectName='moma-backend' \
+  -Dsonar.host.url=http://localhost:9000 \
+  -Dsonar.token=sqp_6089e6222b1e8ecb13dbf8832e7a212240162d75
+
+
+  Analyze "production-comet": sqp_609cabc52c5cdd4005830fd4c95c80a2cc488319
+
+mvn clean verify sonar:sonar \
+  -Dsonar.projectKey=production-comet \
+  -Dsonar.projectName='production-comet' \
+  -Dsonar.host.url=http://localhost:9000 \
+  -Dsonar.token=sqp_609cabc52c5cdd4005830fd4c95c80a2cc488319

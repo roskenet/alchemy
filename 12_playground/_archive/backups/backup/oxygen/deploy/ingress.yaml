@@ -1,0 +1,13 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: oxygen
+  namespace: oxygen
+spec:
+  rules:
+  - host: oxygen.minikube
+    http:
+      paths:
+        - backend:
+            serviceName: oxygen
+            servicePort: 80

@@ -1,0 +1,61 @@
+\documentclass[DIV=12,11pt,a4paper]{scrbook}
+\usepackage[french]{babel}
+\usepackage[LY1]{fontenc}
+\usepackage[fullfamily,opticals,mathlf,minionint]{MinionPro}
+\usepackage{textcomp}
+%\usepackage{microtype}
+
+\usepackage[    % Much better micro typography
+protrusion=true, % adjust to your eye needs 
+expansion=true,
+tracking=true,
+kerning=true,
+spacing=true,
+letterspace=50, % well spaced smallcaps
+shrink=40,      % may be 20 or less is good   
+factor=1000]    % may be less that 1000 
+{microtype} 
+
+\renewcommand{\sfdefault}{MyriadPro-onum-pnum}
+%\usepackage{amsmath}
+%\usepackage{amsfonts}
+%\usepackage{amssymb}
+\usepackage[ a4paper, marginparsep=10mm, marginparwidth=60mm, left=20mm, right=80mm ]{geometry}
+%\newcommand{\sfmarginpar}[1]{{\marginpar{\usefont{LY1}{MyriadPro-onum-pnum}{c}{n}\selectfont}#1}} 
+\newcommand{\mysffont}{\usefont{LY1}{MyriadPro-onum-pnum}{c}{n}\selectfont}
+
+\newcommand{\vocab}[2]{\marginpar{\small \mysffont \textbf{#1} #2}}
+\newcommand{\flxmarginpar}[1]{\marginpar{\small \mysffont {#1}}}
+
+\usepackage[sf,sl,outermarks,noindentafter,nobottomtitles]{titlesec}
+\titleformat{\chapter}[display]
+% {\filleft\huge\sffamily} 
+{\filleft\huge\usefont{LY1}{MyriadPro-onum-pnum}{c}{n}\selectfont} 
+{\fontsize{100pt}{90pt}\selectfont\thechapter}
+{-2ex} %is vertical space in [display] mode
+{\vspace{1ex}} 
+[\vspace{1ex}]
+
+
+
+
+\begin{document}
+\title{Les histoires du Petit Nicolas}
+\author{René Goscinny}
+\date{}
+
+\maketitle
+
+\chapter{Les Invincibles}
+
+Nous, on va former une bande... C'est Geoffroy qui a eu l'idée. Il nous a dit, à la récré, qu'il venait de lire un livre dans lequel des copains formaient une bande et, après, ils faisaient des choses terribles, ils défendaient les gens contre les méchants, ils aidaient les pauvres, attrapaient les bandits, ils rigolaient drôlement.
+
+-- La bande s'appellera les Invincibles, comme dans le livre. Nous nous réunirons après la classe, dans le terrain vague, nous a dit Geoffroy; le mot de passe, ce sera \og Courage indomptable!\fg{}
+
+Quand je suis arrivé dans le terrain vague, Geoffroy, Rufus, Eudes, Alceste et Joachim y étaient déjà. J'avais été un peu retenu en class par la maîtresse, qui me disait que je m'étais trompé dans un devoir d'arithmétique; il faudra que je dise à papa de faire attention.
+
+-- Le mot de passe? m'a demandé Alceste en m'envoyant des petits bouts de croissant à la figure (il mange tout le temps, Alceste).
+
+\og Courage indomptable\fg{}, j'ai dit. \og Tu peux entrer \fg{}, il m'a dit.
+
+\end{document}

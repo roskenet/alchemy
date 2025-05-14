@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+minikube start --profile=battlefield --vm-driver=kvm2 --memory=16384 --cpus=4 --kubernetes-version=v1.14.2
+

@@ -1,0 +1,34 @@
+camunda.bpm:
+  admin-user:
+    id: demo
+    password: demo
+    firstName: Anna
+    lastName: Konda
+  filter:
+    create: All tasks
+
+
+embedded:
+  postgresql:
+    enabled: true
+    dockerImage: postgres:12-alpine
+    user: postgres
+    password: root
+
+spring:
+  datasource:
+    url: jdbc:postgresql://${embedded.postgresql.host}:${embedded.postgresql.port}/${embedded.postgresql.schema}
+    username: postgres
+    password: root
+
+#  spring.datasource.url=jdbc:postgresql://${embedded.postgresql.host}:${embedded.postgresql.port}/${embedded.postgresql.schema}
+#  spring.datasource.username=${embedded.postgresql.user}
+#  spring.datasource.password=${embedded.postgresql.password}
+
+
+#spring:
+#  datasource:
+#    driver-class-name: org.postgresql.Driver
+#  jpa:
+#    hibernate:
+#      ddl-auto: create-drop

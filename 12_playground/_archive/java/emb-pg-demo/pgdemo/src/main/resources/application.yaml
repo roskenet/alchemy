@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    hikari:
+      minimum-idle: 1
+      maximum-pool-size: 3
+      pool-name: inbound-api
+    url: ${DBURL:}
+    username: ${DBUSER:}
+    password: ${DBPASSWORD:}
+  profiles:
+    active: ${ENV:integration}

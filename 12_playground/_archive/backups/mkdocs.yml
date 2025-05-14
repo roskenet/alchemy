@@ -1,0 +1,34 @@
+site_name: "Felix' Elements of Software Engineering"
+site_description: "This is how I do things"
+site_author: "Felix Roske"
+site_url: "https://github.com/roskenet/playground"
+
+theme:
+  name: "material"
+  palette:
+    primary: "teal"
+    accent: "teal"
+  feature:
+    tabs: true
+
+markdown_extensions:
+  - admonition
+  - codehilite:
+      linenums: true
+  - footnotes
+  - meta
+  - attr_list
+
+nav:
+  - 'index.md'
+  - 'about.md'
+
+extra:
+  social:
+    - type: "github"
+      link: "https://github.com/roskenet"
+    - type: "twitter"
+      link: "https://twitter.com/felixroske"
+    - type: "facebook"
+      link: "https://www.facebook.com/felix.roske"
+

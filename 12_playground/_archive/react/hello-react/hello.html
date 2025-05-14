@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Hello React</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <div id="app">
+      <!-- my app renders here -->
+    </div>
+    <script src="react/react18.js"></script>
+    <script src="react/react-dom18.js"></script>
+    <script src="react/babel.js"></script>
+    <script type="text/babel">
+
+      const myFunc = function (x) {
+        return x-2
+      }
+
+      var myValue = myFunc(44)
+
+      class MyComponent extends React.Component {
+        render() {
+          return (
+            <div>
+              <h2>MyComponent {this.props.value}</h2>
+            </div>
+          )
+        }
+      }
+
+      MyComponent.defaultProps = {
+        value: '1024'
+      }
+
+const root = ReactDOM.createRoot(document.getElementById("app"));
+root.render(
+        <div>
+          <h1>Hello World!</h1>
+          <h2>Test</h2>
+          <MyComponent value={myValue}/>
+          <MyComponent />
+        </div>
+);
+    </script>
+  </body>
+</html>
+

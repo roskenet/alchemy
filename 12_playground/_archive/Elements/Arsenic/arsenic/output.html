@@ -1,0 +1,1970 @@
+<!--[if IE]><![endif]-->
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js ie8 oldie" lang="en" prefix="og: http://ogp.me/ns/# og:book: http://ogp.me/ns/book# og:video: http://ogp.me/ns/video#"
+
+    
+        itemscope itemtype="http://schema.org/Book http://schema.org/ItemPage" data-login-url="/accounts/login/"
+data-offline-url="/"
+data-url="/library/view/kanban-in-action/9781617291050/kindle_split_017.html"
+data-csrf-cookie="csrfsafari"
+data-highlight-privacy=""
+
+
+  data-user-id="3606431"
+  data-user-uuid="51d3fffe-9614-4f40-ad8f-921a92b4d7df"
+  data-username="felix5"
+  data-account-type="B2B"
+  
+  data-activated-trial-date="04/26/2017"
+
+
+  data-archive="9781617291050"
+  data-publishers="Manning Publications"
+
+
+
+  data-htmlfile-name="kindle_split_017.html"
+  data-epub-title="Kanban in Action" data-debug=0 data-testing=0><![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" data-account-type="B2B" data-activated-trial-date="04/26/2017" data-archive="9781617291050" data-csrf-cookie="csrfsafari" data-debug="0" data-epub-title="Kanban in Action" data-highlight-privacy="" data-htmlfile-name="kindle_split_017.html" data-login-url="/accounts/login/" data-offline-url="/" data-publishers="Manning Publications" data-testing="0" data-url="/library/view/kanban-in-action/9781617291050/kindle_split_017.html" data-user-id="3606431" data-user-uuid="51d3fffe-9614-4f40-ad8f-921a92b4d7df" data-username="felix5" itemscope="" itemtype="http://schema.org/Book http://schema.org/ItemPage" lang="en" prefix="og: http://ogp.me/ns/# og:book: http://ogp.me/ns/book# og:video: http://ogp.me/ns/video#">
+ <!--<![endif]-->
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/>
+  <meta content="Safari Books Online" name="author"/>
+  <meta content="telephone=no" name="format-detection"/>
+  <meta content="on" http-equiv="cleartype">
+   <meta content="True" name="HandheldFriendly"/>
+   <meta content="320" name="MobileOptimized"/>
+   <meta content="app-id=881697395, app-argument=safaridetail://9781617291050" name="apple-itunes-app"/>
+   <meta content="width=device-width, minimum-scale=1.0, initial-scale=1.0, maximum-scale=1.0" name="viewport"/>
+   <meta content="4503599627559754" property="twitter:account_id"/>
+   <link href="/static/images/apple-touch-icon.0c29511d2d72.png" rel="apple-touch-icon"/>
+   <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+   <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic" rel="stylesheet" type="text/css"/>
+   <title>
+    Chapter 6. Limiting work in process - Kanban in Action
+   </title>
+   <link href="/static/CACHE/css/output.68851547a55f.css" rel="stylesheet" type="text/css">
+    <link href="/static/css/annotator.e3b0c44298fc.css" rel="stylesheet" type="text/css">
+     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet"/>
+     <style title="ibis-book" type="text/css">
+      #sbo-rt-content .calibre{display:block;font-size:1em;margin-bottom:0;margin-left:5pt;margin-right:5pt;margin-top:0;padding-left:0;padding-right:0}#sbo-rt-content .calibre1{display:block;font-size:2em;font-weight:bold;line-height:1.2;margin-bottom:.67em;margin-left:0;margin-right:0;margin-top:.67em;text-align:center}#sbo-rt-content .calibre10{display:table-row-group;vertical-align:middle}#sbo-rt-content .calibre11{display:table-row;vertical-align:inherit}#sbo-rt-content .calibre12{display:block;font-family:"Liberation Mono",monospace;font-size:.77778em;margin-bottom:1em;margin-left:5px;margin-right:0;margin-top:1em;white-space:pre-wrap}#sbo-rt-content .calibre13{display:block}#sbo-rt-content .calibre14{display:block;margin-bottom:1em;margin-left:1em;margin-right:1em;margin-top:1em}#sbo-rt-content .calibre15{display:block;font-size:1.125em;font-weight:bold;line-height:1.2;margin-bottom:0;margin-left:0;margin-right:0;margin-top:40px}#sbo-rt-content .calibre16{display:block;margin-bottom:1em;margin-left:0;margin-right:0;margin-top:1em}#sbo-rt-content .calibre17{display:block;list-style-type:disc;margin-bottom:1em;margin-right:0;margin-top:1em}#sbo-rt-content .calibre18{display:list-item}#sbo-rt-content .calibre19{font-size:.75em;line-height:normal;vertical-align:super}#sbo-rt-content .calibre2{height:auto;width:auto}#sbo-rt-content .calibre20{font-size:.75em}#sbo-rt-content .calibre21{display:block}#sbo-rt-content .calibre22{font-weight:bold}#sbo-rt-content .calibre23{font-size:smaller;line-height:normal;vertical-align:super}#sbo-rt-content .calibre24{display:table-column-group}#sbo-rt-content .calibre25{display:table-cell;padding-bottom:1px;padding-left:1px;padding-right:1px;padding-top:1px;text-align:inherit;vertical-align:inherit}#sbo-rt-content .calibre26{display:block;list-style-type:decimal;margin-bottom:1em;margin-right:0;margin-top:1em}#sbo-rt-content .calibre27{display:block;margin-bottom:1em;margin-left:0;margin-right:0;margin-top:1em;text-align:right}#sbo-rt-content .calibre28{display:block;font-weight:bold;margin-bottom:0;margin-left:0;margin-right:0;margin-top:30px}#sbo-rt-content .calibre29{font-size:.77778em;line-height:normal;vertical-align:super}#sbo-rt-content .calibre3{font-family:"Times";line-height:1.2}#sbo-rt-content .calibre30{display:block;list-style-type:circle;margin-bottom:0;margin-right:0;margin-top:0}#sbo-rt-content .calibre31{border-collapse:collapse;border-spacing:2px;display:table;margin-bottom:0;margin-top:0;text-indent:0}#sbo-rt-content .calibre32{display:table-header-group;vertical-align:middle}#sbo-rt-content .calibre33{font-family:"Liberation Mono",monospace}#sbo-rt-content .calibre34{font-size:.71429em}#sbo-rt-content .calibre4{font-family:"Times"}#sbo-rt-content .calibre5{display:block;font-family:"Liberation Mono",monospace;font-size:.75em;margin-bottom:1em;margin-left:5px;margin-right:0;margin-top:1em;white-space:pre-wrap}#sbo-rt-content .calibre6{font-style:italic}#sbo-rt-content .calibre7{border-collapse:separate;border-spacing:2px;display:table;margin-bottom:0;margin-top:0;text-indent:0}#sbo-rt-content .calibre8{display:table-column-group;text-align:left}#sbo-rt-content .calibre9{display:table-column}#sbo-rt-content .center{display:block;font-weight:bold;margin-bottom:0;margin-left:0;margin-right:0;margin-top:30px;text-align:center}#sbo-rt-content .center1{display:block;margin-bottom:1em;margin-left:0;margin-right:0;margin-top:1em;text-align:center}#sbo-rt-content .docTableCell{display:table-cell;font-size:.75em;padding-bottom:1px;padding-left:1px;padding-right:1px;padding-top:1px;text-align:left;vertical-align:inherit}#sbo-rt-content .docTableCell1{display:table-cell;font-size:.75em;font-weight:bold;padding-bottom:1px;padding-left:1px;padding-right:1px;padding-top:1px;text-align:left;vertical-align:inherit}#sbo-rt-content .ind{display:block;margin-bottom:8px;margin-left:35px;margin-right:0;margin-top:0;text-align:left;text-indent:0}#sbo-rt-content .noind{display:block;margin-bottom:1em;margin-left:0;margin-right:0;margin-top:25px;text-indent:0}#sbo-rt-content .noindclose{display:block;margin-bottom:1em;margin-left:0;margin-right:0;margin-top:1em;text-indent:0}#sbo-rt-content .notetitle{display:block;font-size:.75em;font-weight:bold;margin-bottom:0;margin-left:0;margin-right:0;margin-top:2px}#sbo-rt-content .part{display:block;font-size:1.41667em;font-weight:bold;line-height:1.2;margin-bottom:0;margin-left:0;margin-right:0;margin-top:.83em}#sbo-rt-content .smaller{display:block;font-size:.75em;margin-bottom:1em;margin-left:1em;margin-right:1em;margin-top:1em}#sbo-rt-content .toc{display:block;margin-bottom:1em;margin-left:15px;margin-right:1em;margin-top:15px;text-indent:0}
+     </style>
+     <style title="ibis-book" type="text/css">
+      @page{margin-bottom:5pt;margin-top:5pt}
+     </style>
+     <link href="https://learning.oreilly.com/library/view/kanban-in-action/9781617291050/kindle_split_017.html" rel="canonical">
+      <meta content="Chapter 6. Limiting work in process This chapter covers Principles for finding suitable WIP limits Common ways that teams limit WIP Common ways to visualize WIP limits Answers to some ... " name="description"/>
+      <meta content="Chapter 6. Limiting work in process" property="og:title">
+       <meta content="/library/view/kanban-in-action/9781617291050/" itemprop="isPartOf"/>
+       <meta content="Chapter 6. Limiting work in process" itemprop="name"/>
+       <meta content="https://learning.oreilly.com/library/view/kanban-in-action/9781617291050/kindle_split_017.html" itemprop="url" property="og:url"/>
+       <meta content="Safari" property="og:site_name"/>
+       <meta content="https://learning.oreilly.com/library/cover/9781617291050/" itemprop="thumbnailUrl" property="og:image"/>
+       <meta content="Chapter 6. Limiting work in process This chapter covers Principles for finding suitable WIP limits Common ways that teams limit WIP Common ways to visualize WIP limits Answers to some ... " itemprop="description" property="og:description"/>
+       <meta content="en" itemprop="inLanguage">
+        <meta content="Manning Publications" itemprop="publisher"/>
+        <meta content="book" property="og:type"/>
+        <meta content="9781617291050" itemprop="isbn" property="og:book:isbn"/>
+        <meta content="Marcus Hammarberg and Joakim Sundén" itemprop="author" property="og:book:author"/>
+        <meta content="Agile" itemprop="about" property="og:book:tag"/>
+        <meta content="Business Communication" itemprop="about" property="og:book:tag"/>
+        <meta content="Core Programming" itemprop="about" property="og:book:tag"/>
+        <meta content="Information Technology/Operations" itemprop="about" property="og:book:tag"/>
+        <meta content="Lean" itemprop="about" property="og:book:tag"/>
+        <meta content="Project Management" itemprop="about" property="og:book:tag"/>
+        <meta content="summary" name="twitter:card"/>
+        <meta content="@safari" name="twitter:site"/>
+        <style data-template="#sbo-rt-content, #sbo-rt-content p, #sbo-rt-content div { font-size: &lt;%= font_size %&gt; !important; }" id="font-styles" type="text/css">
+         #sbo-rt-content, #sbo-rt-content p, #sbo-rt-content div { font-size: 1em !important; }
+        </style>
+        <style data-template="#sbo-rt-content, #sbo-rt-content p, #sbo-rt-content div { font-family: &lt;%= font_family %&gt; !important; }" id="font-family" type="text/css">
+        </style>
+        <style data-template="#sbo-rt-content { max-width: &lt;%= column_width %&gt;% !important; margin: 0 auto !important; }" id="column-width" type="text/css">
+         #sbo-rt-content { max-width: 65% !important; margin: 0 auto !important; }
+        </style>
+        <noscript>
+         <meta content="0; url=/library/no-js/" http-equiv="refresh"/>
+        </noscript>
+       </meta>
+      </meta>
+     </link>
+    </link>
+   </link>
+  </meta>
+ </head>
+ <body class="reading sidenav nav-collapsed scalefonts day-mode">
+  <noscript>
+   <iframe height="0" src="//www.googletagmanager.com/ns.html?id=GTM-5P4V6Z" style="display:none;visibility:hidden" width="0">
+   </iframe>
+  </noscript>
+  <div class="hide working" role="status">
+   <div class="working-image">
+   </div>
+  </div>
+  <div class="sbo-site-nav">
+   <a class="skip" href="#container">
+    Skip to content
+   </a>
+   <header class="topbar t-topbar">
+    <nav class="js-site-nav" role="navigation">
+     <ul class="topnav">
+      <li>
+       <a class="l0 nav-icn" href="/home/">
+        <svg height="16" viewbox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+         <path d="M11.738 14H9.254v-3.676a.617.617 0 0 0-.621-.613H7.39a.617.617 0 0 0-.62.613V14H4.284a.617.617 0 0 1-.622-.613V10.22c0-.327.132-.64.367-.87l3.547-3.493a.627.627 0 0 1 .875 0l3.54 3.499c.234.229.366.54.367.864v3.167a.617.617 0 0 1-.62.613zM7.57 2.181a.625.625 0 0 1 .882 0l5.77 5.692-.93.92-5.28-5.209-5.28 5.208-.932-.919 5.77-5.692z">
+         </path>
+        </svg>
+        <span>
+         Home
+        </span>
+       </a>
+      </li>
+      <li class="search">
+       <a class="t-search-nav trigger nav-icn l0" data-dropdown-selector=".searchbox" href="#">
+        <svg fill="#4A3C31" height="20" version="1.1" viewbox="0 0 50 50" width="20" xmlns="http://www.w3.org/2000/svg">
+         <desc>
+          search icon
+         </desc>
+         <g fill-rule="evenodd" stroke="none" stroke-width="1">
+          <path d="M31.3 0C20.9 0 12.5 8.4 12.5 18.8 12.5 22.5 13.6 25.9 15.4 28.8L1.2 42.9C-0.4 44.5-0.4 47.2 1.2 48.8 2 49.6 3.1 50 4.2 50 5.2 50 6.3 49.6 7.1 48.8L21.2 34.6C24.1 36.5 27.5 37.5 31.3 37.5 41.6 37.5 50 29.1 50 18.8 50 8.4 41.6 0 31.3 0ZM31.3 31.3C24.4 31.3 18.8 25.6 18.8 18.8 18.8 11.9 24.4 6.3 31.3 6.3 38.1 6.3 43.8 11.9 43.8 18.8 43.8 25.6 38.1 31.3 31.3 31.3Z">
+          </path>
+         </g>
+        </svg>
+        <span>
+         Search
+        </span>
+       </a>
+      </li>
+      <li class="usermenu dropdown">
+       <a class="trigger l0 nav-icn nav-dropdown" href="#">
+        <svg fill="#4A3C31" height="20" version="1.1" viewbox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+         <desc>
+          navigation arrow
+         </desc>
+         <g fill-rule="evenodd" stroke="none" stroke-width="1">
+          <path d="M0.1 12.5L9.7 3.1C9.8 3 9.9 3 10 3 10.1 3 10.2 3 10.3 3.1L19.9 12.5C20 12.5 20 12.6 20 12.8 20 12.9 20 13 19.9 13L17 15.9C16.9 16 16.8 16 16.7 16 16.5 16 16.4 16 16.4 15.9L10 9.7 3.6 15.9C3.6 16 3.5 16 3.3 16 3.2 16 3.1 16 3 15.9L0.1 13C0 12.9 0 12.8 0 12.7 0 12.7 0 12.6 0.1 12.5Z">
+          </path>
+         </g>
+        </svg>
+        <span>
+         Expand Nav
+        </span>
+       </a>
+       <div class="drop-content">
+        <ul>
+         <li class="flyout-parent">
+          <a class="l1 nav-icn" href="#">
+           <?xml version="1.0" encoding="UTF-8"?>
+           <svg height="16px" version="1.1" viewbox="0 0 16 16" width="16px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <path d="M8,8 C6.34321755,8 5.00013,6.65691245 5.00013,5.00013 C5.00013,3.34334755 6.34321755,2.00026001 8,2.00026001 C9.65678245,2.00026001 10.99987,3.34334755 10.99987,5.00013 C10.99987,6.65691245 9.65678245,8 8,8 Z M2.33024571,11.3523547 L2.33774538,11.3523547 C3.7622187,9.70968996 5.82947484,8.76608166 8.00374984,8.76608166 C10.1780248,8.76608166 12.245281,9.70968996 13.6697543,11.3523547 C13.8892083,11.6177474 14.0062813,11.9530021 13.99974,12.2973138 L13.99974,13.99974 L2.00026001,13.99974 L2.00026001,12.2973138 C1.99371867,11.9530021 2.11079172,11.6177474 2.33024571,11.3523547 Z" id="path-1">
+            </path>
+           </svg>
+           <span>
+            Your O'Reilly
+           </span>
+          </a>
+          <ul class="flyout">
+           <li>
+            <a class="l2 nav-icn" href="/profile/">
+             <span>
+              Profile
+             </span>
+            </a>
+           </li>
+           <li>
+            <a class="l2 nav-icn" href="/history/">
+             <span>
+              History
+             </span>
+            </a>
+           </li>
+           <li>
+            <a class="l2 nav-icn" href="/playlists/">
+             <span>
+              Playlists
+             </span>
+            </a>
+           </li>
+           <li>
+            <a class="l2 nav-icn" href="/u/51d3fffe-9614-4f40-ad8f-921a92b4d7df/">
+             <span>
+              Highlights
+             </span>
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li class="flyout-parent">
+          <a class="l1 nav-icn" href="#">
+           <svg height="16" viewbox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <path d="M11.564 2.263l2.172 2.174c.17.168.264.397.264.636V11a.6.6 0 0 1-.6.6h-.6V6.2h-6V2.6a.6.6 0 0 1 .6-.6h3.527c.239 0 .468.095.637.263zM2.6 14a.6.6 0 0 1-.6-.6V6.8a.6.6 0 0 1 .6-.6h1.903a1.2 1.2 0 0 1 .849.352L6.2 7.4H11a.6.6 0 0 1 .6.6v5.4a.6.6 0 0 1-.6.6H2.6zM11 5h1.8L11 3.2V5z">
+            </path>
+           </svg>
+           <span>
+            Featured
+           </span>
+          </a>
+          <ul class="flyout">
+           <li>
+            <a class="l2 nav-icn" href="/resource-centers/">
+             <span>
+              Resource Centers
+             </span>
+            </a>
+           </li>
+           <li>
+            <a class="l2 nav-icn" href="/search/?query=*&amp;include_collections=true&amp;formats=collection&amp;sort=date_added&amp;order=desc&amp;limit=12&amp;include_facets=false&amp;collection_type=expert&amp;extended_publisher_data=true&amp;highlight=true">
+             <span>
+              Expert Playlists
+             </span>
+            </a>
+           </li>
+           <li>
+            <a class="l2 nav-icn" href="/search/?query=&amp;extended_publisher_data=true&amp;highlight=true&amp;include_assessments=false&amp;include_case_studies=true&amp;include_courses=true&amp;include_orioles=true&amp;include_playlists=true&amp;include_collections=true&amp;include_notebooks=true&amp;is_academic_institution_account=false&amp;source=user&amp;formats=notebook&amp;sort=relevance&amp;facet_json=true&amp;page=0">
+             <span>
+              Jupyter Notebooks
+             </span>
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li class="flyout-parent">
+          <a class="l1 nav-icn" href="#">
+           <svg fill="#4A3C31" height="20" version="1.1" viewbox="0 0 50 50" width="20" xmlns="http://www.w3.org/2000/svg">
+            <desc>
+             queue icon
+            </desc>
+            <g fill-rule="evenodd" stroke="none" stroke-width="1">
+             <path d="M25 29.2C25.4 29.2 25.8 29.1 26.1 28.9L48.7 16.8C49.5 16.4 50 15.5 50 14.6 50 13.7 49.5 12.8 48.7 12.4L26.1 0.3C25.4-0.1 24.6-0.1 23.9 0.3L1.3 12.4C0.5 12.8 0 13.7 0 14.6 0 15.5 0.5 16.4 1.3 16.8L23.9 28.9C24.2 29.1 24.6 29.2 25 29.2ZM7.3 14.6L25 5.2 42.7 14.6 25 24 7.3 14.6ZM48.7 22.4L47.7 21.9 25 34.2 2.3 21.9 1.3 22.4C0.5 22.9 0 23.7 0 24.7 0 25.6 0.5 26.5 1.3 26.9L23.9 39.3C24.2 39.5 24.6 39.6 25 39.6 25.4 39.6 25.8 39.5 26.1 39.3L48.7 26.9C49.5 26.5 50 25.6 50 24.7 50 23.7 49.5 22.9 48.7 22.4ZM48.7 32.8L47.7 32.3 25 44.6 2.3 32.3 1.3 32.8C0.5 33.3 0 34.1 0 35.1 0 36 0.5 36.9 1.3 37.3L23.9 49.7C24.2 49.9 24.6 50 25 50 25.4 50 25.8 49.9 26.1 49.7L48.7 37.3C49.5 36.9 50 36 50 35.1 50 34.1 49.5 33.3 48.7 32.8Z">
+             </path>
+            </g>
+           </svg>
+           <span>
+            Explore
+           </span>
+          </a>
+          <ul class="flyout">
+           <li>
+            <a class="l2 nav-icn" href="/topics/">
+             <span>
+              All Topics
+             </span>
+            </a>
+           </li>
+           <li>
+            <a class="l2 nav-icn" href="/search/?formats=book&amp;formats=case%20study&amp;formats=learning%20path&amp;formats=live%20online%20training&amp;formats=notebook&amp;formats=oriole&amp;formats=video&amp;collection_type=expert&amp;sort=popularity">
+             <span>
+              Most Popular Titles
+             </span>
+            </a>
+           </li>
+           <li>
+            <a class="l2 nav-icn" href="/r/">
+             <span>
+              Recommendations
+             </span>
+            </a>
+           </li>
+           <li>
+            <a class="l2 nav-icn" href="/search/?query=&amp;extended_publisher_data=true&amp;highlight=true&amp;include_assessments=false&amp;include_case_studies=true&amp;include_courses=true&amp;include_orioles=true&amp;include_playlists=true&amp;include_collections=true&amp;include_notebooks=true&amp;is_academic_institution_account=false&amp;source=user&amp;formats=book&amp;sort=publication_date&amp;facet_json=true&amp;page=0">
+             <span>
+              Early Release
+             </span>
+            </a>
+           </li>
+           <li>
+            <a class="l2 nav-icn" href="/playlists/discover/">
+             <span>
+              Playlists
+             </span>
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li class="flyout-parent">
+          <a class="l1 nav-icn" href="#">
+           <svg height="16" viewbox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <path d="M13.4 9.8a.6.6 0 0 1 .6.6v1.2h-1.2l-.6 2.4H3.8l-.6-2.4H2v-1.2a.6.6 0 0 1 .6-.6h10.8zM8 5.6a1.8 1.8 0 1 1-.001-3.599A1.8 1.8 0 0 1 8 5.6zm3.6 2.35v.95H4.4v-.95c0-.167.066-.33.19-.443A5.08 5.08 0 0 1 8 6.2a5.08 5.08 0 0 1 3.41 1.307c.124.113.19.276.19.444z">
+            </path>
+           </svg>
+           <span>
+            Attend
+           </span>
+          </a>
+          <ul class="flyout">
+           <li>
+            <a class="l2 nav-icn" href="/live-training/">
+             <span>
+              Live Training
+             </span>
+            </a>
+           </li>
+           <li>
+            <a class="l2 nav-icn" href="https://www.oreilly.com/conferences/?discount=learn" target='"_blank"'>
+             <span>
+              Conferences
+             </span>
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li>
+          <a class="l1 nav-icn" href="https://get.oreilly.com/email-signup.html" target='"_blank"'>
+           <svg height="16" viewbox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <path d="M11.564 2.263l2.172 2.174c.17.168.264.397.264.636V11a.6.6 0 0 1-.6.6h-.6V6.2h-6V2.6a.6.6 0 0 1 .6-.6h3.527c.239 0 .468.095.637.263zM2.6 14a.6.6 0 0 1-.6-.6V6.8a.6.6 0 0 1 .6-.6h1.903a1.2 1.2 0 0 1 .849.352L6.2 7.4H11a.6.6 0 0 1 .6.6v5.4a.6.6 0 0 1-.6.6H2.6zM11 5h1.8L11 3.2V5z">
+            </path>
+           </svg>
+           <span>
+            Newsletters
+           </span>
+          </a>
+         </li>
+         <li>
+          <a class="l1 nav-icn" href="/u/preferences/">
+           <svg fill="#4A3C31" height="20" version="1.1" viewbox="0 0 50 53" width="20" xmlns="http://www.w3.org/2000/svg">
+            <desc>
+             settings icon
+            </desc>
+            <g fill-rule="evenodd" stroke="none" stroke-width="1">
+             <path d="M44.6 29.6C44.7 28.6 44.8 27.5 44.8 26.5 44.8 25.5 44.7 24.4 44.6 23.4L49.6 19C50 18.8 50.1 18.3 49.9 17.9 48.9 14.7 47.1 11.7 44.9 9.1 44.6 8.8 44.2 8.7 43.8 8.8L37.4 11.1C35.8 9.8 34 8.7 32.1 8L30.9 1.4C30.8 0.9 30.4 0.6 30 0.5 26.7-0.2 23.3-0.2 20 0.5 19.6 0.6 19.2 0.9 19.1 1.4L17.9 8C16 8.7 14.1 9.8 12.6 11.1L6.2 8.8C5.8 8.7 5.4 8.8 5.1 9.1 2.9 11.7 1.1 14.7 0.1 17.9 -0.1 18.3 0 18.8 0.4 19L5.4 23.4C5.3 24.4 5.2 25.5 5.2 26.5 5.2 27.5 5.3 28.6 5.4 29.6L0.4 34C0 34.2-0.1 34.7 0.1 35.1 1.1 38.3 2.9 41.4 5.1 43.9 5.4 44.2 5.8 44.4 6.2 44.2L12.6 42C14.1 43.2 16 44.3 17.9 45L19.1 51.7C19.2 52.1 19.6 52.5 20 52.5 21.6 52.8 23.3 53 25 53 26.7 53 28.4 52.8 30 52.5 30.4 52.5 30.8 52.1 30.9 51.7L32.1 45C34 44.3 35.8 43.2 37.4 42L43.8 44.2C44.2 44.4 44.6 44.2 44.9 43.9 47.1 41.4 48.9 38.3 49.9 35.1 50.1 34.7 50 34.2 49.6 34L44.6 29.6ZM25 36.4C19.6 36.4 15.2 32 15.2 26.5 15.2 21 19.6 16.6 25 16.6 30.4 16.6 34.8 21 34.8 26.5 34.8 32 30.4 36.4 25 36.4Z">
+             </path>
+            </g>
+           </svg>
+           <span>
+            Settings
+           </span>
+          </a>
+         </li>
+         <li>
+          <a class="l1 nav-icn" href="/public/support/">
+           <svg height="16" viewbox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <path d="M7.363 6.656a2.692 2.692 0 0 1-2.681-2.703c0-1.493 1.2-2.703 2.681-2.703a2.692 2.692 0 0 1 2.682 2.703c0 1.493-1.2 2.703-2.682 2.703zm4.023 2.027c-1.852 0-3.352 1.513-3.352 3.379H2v-1.534c-.006-.31.099-.612.295-.852a6.666 6.666 0 0 1 9.09-.993zm-.543.676h1.12v.304c.003.284.16.543.408.676a.766.766 0 0 0 .77 0l.303-.176.556.966-.302.176a.772.772 0 0 0-.362.676v.08a.772.772 0 0 0 .362.677l.302.21-.556.965-.302-.175a.766.766 0 0 0-.771 0 .778.778 0 0 0-.409.675v.352h-1.106v-.372a.778.778 0 0 0-.409-.676.766.766 0 0 0-.77 0l-.303.176-.556-.912.302-.176a.772.772 0 0 0 .362-.676v-.04-.04a.772.772 0 0 0-.362-.676l-.302-.176.556-.966.289.155a.766.766 0 0 0 .77 0 .778.778 0 0 0 .41-.676V9.36zm1.562 2.703c0-.271-.108-.531-.3-.722a1.001 1.001 0 0 0-.72-.292 1.01 1.01 0 0 0-.992 1.023 1.01 1.01 0 0 0 1.01 1.004 1.01 1.01 0 0 0 1.002-1.013z">
+            </path>
+           </svg>
+           <span>
+            Support
+           </span>
+          </a>
+         </li>
+         <li>
+          <a class="l1 nav-icn" href="/accounts/logout/">
+           <svg height="16" viewbox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <path d="M2.613 12.63A.607.607 0 0 1 2 12.03V3.602C2 3.269 2.274 3 2.613 3h5.515v1.204H3.226v7.223h4.902v1.203H2.613zM5.677 9.02V6.611h4.903V4.926a.301.301 0 0 1 .19-.274.31.31 0 0 1 .33.063l2.722 2.673a.594.594 0 0 1 0 .849L11.1 10.909a.31.31 0 0 1-.331.063.301.301 0 0 1-.19-.274V9.02H5.677z">
+            </path>
+           </svg>
+           <span>
+            Sign Out
+           </span>
+          </a>
+         </li>
+        </ul>
+       </div>
+      </li>
+     </ul>
+    </nav>
+   </header>
+  </div>
+  <div class="application" id="container">
+   <div class="nav-container clearfix">
+   </div>
+   <div class="js-toc">
+    <div class="sbo-reading-menu sbo-menu-top">
+     <section class="sbo-toc-container toc-menu">
+      <a class="sbo-toc-thumb" href="#">
+       <span class="sbo-title ss-list">
+        <h1>
+         <div class="visuallyhidden">
+          Table of Contents for
+         </div>
+         Kanban in Action
+        </h1>
+       </span>
+      </a>
+      <div class="toc-contents">
+      </div>
+     </section>
+    </div>
+    <div class="interface-controls interface-controls-top">
+     <ul class="interface-control-btns js-bitlist js-reader">
+      <li class="js-search-in-archive search-in-archive t-search-in-archive">
+       <a class="js-search-controls search-controls" href="#" title="Search in archive">
+        <span class="icon">
+         Search in book...
+        </span>
+       </a>
+       <form class="search-archive-bar js-search-form">
+        <input autocomplete="off" name="query" placeholder="Search inside this book..." type="search"/>
+       </form>
+       <div class="search-archive-results">
+        <div class="js-sitb-results-region">
+        </div>
+       </div>
+      </li>
+      <li class="queue-control">
+       <div class="js-content-uri" data-content-uri="/api/v1/book/9781617291050/chapter/kindle_split_017.html">
+        <div class="js-collections-dropdown collections-dropdown menu-bit-cards">
+        </div>
+       </div>
+      </li>
+      <li class="js-font-control-panel font-control-activator">
+       <a aria-label="Change font size" data-push-state="false" href="#" id="font-controls" title="Change font size">
+        <span class="icon">
+         Toggle Font Controls
+        </span>
+       </a>
+      </li>
+      <li class="dropdown sharing-controls">
+       <a aria-label="Share" class="trigger" data-push-state="false" href="#" title="Share">
+        <i class="fa fa-share">
+        </i>
+       </a>
+       <ul class="social-sharing dropdown-menu">
+        <li>
+         <a aria-label="Share this section on Twitter" class="twitter share-button t-twitter" href="https://twitter.com/share?url=https://learning.oreilly.com/library/view/kanban-in-action/9781617291050/kindle_split_017.html&amp;text=Kanban%20in%20Action&amp;via=safari" target="_blank" title="Share this section on Twitter">
+          <span>
+           Twitter
+          </span>
+         </a>
+        </li>
+        <li>
+         <a aria-label="Share this section on Facebook" class="facebook share-button t-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://learning.oreilly.com/library/view/kanban-in-action/9781617291050/kindle_split_017.html" target="_blank" title="Share this section on Facebook">
+          <span>
+           Facebook
+          </span>
+         </a>
+        </li>
+        <li>
+         <a aria-label="Share this secton on Google Plus" class="googleplus share-button t-googleplus" href="https://plus.google.com/share?url=https://learning.oreilly.com/library/view/kanban-in-action/9781617291050/kindle_split_017.html" target="_blank" title="Share this secton on Google Plus">
+          <span>
+           Google Plus
+          </span>
+         </a>
+        </li>
+        <li>
+         <a aria-label="Share this section via email" class="email share-button t-email" href="mailto:?subject=Safari: Chapter%206.%20Limiting%20work%20in%20process&amp;body=https://learning.oreilly.com/library/view/kanban-in-action/9781617291050/kindle_split_017.html%0D%0Afrom Kanban%20in%20Action%0D%0A" title="Share this section via email">
+          <span>
+           Email
+          </span>
+         </a>
+        </li>
+       </ul>
+      </li>
+     </ul>
+    </div>
+    <section role="document">
+     <div class="t-sbo-prev sbo-prev sbo-nav-top">
+      <a class="prev nav-link" href="./kindle_split_016.html">
+       <span aria-hidden="true" class="pagination-label t-prev-label">
+        Prev
+       </span>
+       <span class="visuallyhidden">
+        Previous Chapter
+       </span>
+       <div class="pagination-title t-prev-title">
+        Chapter 5. Work in process
+       </div>
+      </a>
+     </div>
+     <div class="t-sbo-next sbo-next sbo-nav-top">
+      <a class="next nav-link" href="./kindle_split_018.html">
+       <span aria-hidden="true" class="pagination-label t-next-label">
+        Next
+       </span>
+       <span class="visuallyhidden">
+        Next Chapter
+       </span>
+       <div class="pagination-title t-next-title">
+        Chapter 7. Managing flow
+       </div>
+      </a>
+     </div>
+     <div class="calibre" id="sbo-rt-content">
+      <h2 class="part" id="ch06">
+       Chapter 6.
+       <a class="calibre3" id="ch06__title">
+       </a>
+       Limiting work in process
+      </h2>
+      <p class="noind">
+       <i class="calibre6">
+        This chapter covers
+       </i>
+      </p>
+      <p class="calibre16">
+      </p>
+      <ul class="calibre17">
+       <li class="calibre18">
+        Principles for finding suitable WIP limits
+       </li>
+       <li class="calibre18">
+        Common ways that teams limit WIP
+       </li>
+       <li class="calibre18">
+        Common ways to visualize WIP limits
+       </li>
+       <li class="calibre18">
+        Answers to some frequently asked questions regarding WIP limits
+       </li>
+      </ul>
+      <p class="noind">
+       From the previous chapter, we hope we have now convinced you that a lot of good things come from limiting your work in process
+         (WIP). By now you’re probably full of questions: What is the right limit for you? How do you go about finding the WIP limit?
+         Are there some good starting points that can guide you?
+      </p>
+      <p class="center1">
+       <img alt="" class="calibre2" height="452" src="./109fig01.jpg" width="405"/>
+      </p>
+      <p class="noind">
+       <a class="calibre4" id="iddle1310">
+       </a>
+       <a class="calibre4" id="iddle1311">
+       </a>
+       <a class="calibre4" id="iddle1575">
+       </a>
+       <a class="calibre4" id="iddle2115">
+       </a>
+       As you soon will find, there are no hard rules here. Finding a suitable WIP limit is not only contextual and dependent on
+         what you want to achieve, but also like hitting a moving target. The WIP limits can and should change. At the outset of this
+         chapter, we can already reveal a secret:
+       <i class="calibre6">
+        the goal is not to limit WIP
+       </i>
+       . WIP limits are only a means to drive you to improve. Improve to achieve a better flow, which is the theme of the next chapter.
+      </p>
+      <p class="noind">
+       That’s why you’ll see a lot of “It depends” and “You can do this, that, or the other” in this chapter. It’s not a sign of
+         us not knowing; it’s that you need to find what works best for you and your team.
+      </p>
+      <p class="noind">
+       No need to worry, though; we have packed this chapter full of guidance and principles for finding a suitable WIP limit, as
+         well as practical ways many teams go about visualizing and setting their WIP limits. Let’s dive in and see how you can reason
+         your way to finding a WIP limit for your team.
+      </p>
+      <h3 class="calibre15" id="ch06lev1sec1">
+       <a class="calibre3" id="ch06lev1sec1__title">
+       </a>
+       6.1. The search for WIP limits
+      </h3>
+      <p class="noind">
+       Searching for a suitable WIP limit for your team can be tricky business. What is right for you and your team right now? The
+         answer is the old-favorite answer of consultants worldwide: “It depends.”
+      </p>
+      <p class="noind">
+       And it does. It depends on
+      </p>
+      <p class="calibre16">
+      </p>
+      <ul class="calibre17">
+       <li class="calibre18">
+        How much pressure there is to continuously improve the organization
+       </li>
+       <li class="calibre18">
+        The number of people on the team and their availability
+       </li>
+       <li class="calibre18">
+        The shape and size of the work items you’re working with
+       </li>
+      </ul>
+      <p class="noind">
+       And the list goes on.
+      </p>
+      <p class="noind">
+       To find a WIP limit for your team, here are few basic rules of thumb, but be prepared to change the WIP limits as you learn
+         more:
+      </p>
+      <p class="calibre16">
+      </p>
+      <ul class="calibre17">
+       <li class="calibre18">
+        Lower is better than higher.
+       </li>
+       <li class="calibre18">
+        People idle or work idle.
+       </li>
+       <li class="calibre18">
+        No limits is not the answer.
+       </li>
+      </ul>
+      <p class="noind">
+       Let’s examine these approaches in detail.
+      </p>
+      <h4 class="calibre28" id="ch06lev2sec1">
+       6.1.1.
+       <a class="calibre4" id="ch06lev2sec1__title">
+       </a>
+       Lower is better than higher
+      </h4>
+      <p class="noind">
+       A lower WIP limit is generally better than a higher one because you want to limit the number of items you work on as much
+         as possible. This will give you better lead times and faster feedback and force you to remove impediments. These are all things
+         that help you improve the flow of work items in your process.
+      </p>
+      <p class="noind">
+       Setting the WIP limit
+       <i class="calibre6">
+        too
+       </i>
+       low, however, could make your process come to a grinding halt, because it will quickly bring out any problems in the process.
+         Imagine that your entire team is working on a single work item, and all of a sudden you need an answer from a customer in
+         order to continue. Because that work item is the only thing you were doing, you have come to a complete stop.
+      </p>
+      <p class="noind">
+       Problems are symptoms of things that will have to be changed in your process to improve your flow. Finding many problems can
+         quickly become a painful experience
+       <a class="calibre4" id="iddle1433">
+       </a>
+       <a class="calibre4" id="iddle1576">
+       </a>
+       <a class="calibre4" id="iddle1710">
+       </a>
+       <a class="calibre4" id="iddle2116">
+       </a>
+       <a class="calibre4" id="iddle2117">
+       </a>
+       <a class="calibre4" id="iddle2137">
+       </a>
+       for teams that aren’t equipped to handle a lot of issues like these at once. Instead of feeling encouraged to improve and
+         solve their problems, a common reaction is to give up and stop caring that they’re breaking the WIP limit on a regular basis.
+      </p>
+      <p class="noind">
+       You want to search for a low WIP limit, but not too low. There are signals to guide you, as you’ll see in the next section.
+      </p>
+      <h4 class="calibre28" id="ch06lev2sec2">
+       6.1.2.
+       <a class="calibre4" id="ch06lev2sec2__title">
+       </a>
+       People idle or work idle
+      </h4>
+      <p class="noind">
+       Tuning the WIP limit can easily become something that is talked about forever: striving to find the one true limit can result
+         in a lot of discussions in which no one is able to decide what is best. This isn’t time well spent; it’s better to try something
+         and then adjust.
+      </p>
+      <p class="noind">
+       A simple method to help you adjust the WIP limit up or down is the following:
+      </p>
+      <p class="center1">
+       <img alt="" class="calibre2" height="150" src="./111fig01.jpg" width="500"/>
+      </p>
+      <p class="noind">
+       If your
+       <i class="calibre6">
+        WIP limit is too high, work will become idle
+       </i>
+       . There will be work items that no one is responsible for. This might be a good time to lower the WIP limit.
+      </p>
+      <p class="noind">
+       With a
+       <i class="calibre6">
+        WIP limit that is too low, people will become idle
+       </i>
+       . All items are being worked on, and there are people without work. You can now collaborate to get items done or raise the
+         WIP limit.
+      </p>
+      <h4 class="calibre28" id="ch06lev2sec3">
+       6.1.3.
+       <a class="calibre4" id="ch06lev2sec3__title">
+       </a>
+       No limits is not the answer
+      </h4>
+      <p class="noind">
+       Be sure not to fall into the trap of not setting a WIP limit at all! This is one of the most common mistakes we see in teams
+         starting with kanban. Kanban involves three simple principles; don’t remove one of them too soon.
+      </p>
+      <p class="noind">
+       The risk is that you’ll end up with a board flooded with work, as you see in the figure to the right, showing your inefficiencies
+         and your failure to move work through your process. Eventually, the board will end up not being used, because you can’t see
+         the work items for all the work on the board.
+      </p>
+      <p class="center1">
+       <img alt="" class="calibre2" height="286" src="./111fig02.jpg" width="421"/>
+      </p>
+      <p class="noind">
+       Office spaces around the world have unused boards covered with
+       <a class="calibre4" id="iddle1519">
+       </a>
+       <a class="calibre4" id="iddle1585">
+       </a>
+       <a class="calibre4" id="iddle1930">
+       </a>
+       <a class="calibre4" id="iddle2124">
+       </a>
+       stickies. Don’t add your board to that sad bunch; instead, make the board a tool that helps you improve.
+      </p>
+      <p class="noind">
+       Also, as we’ll discuss further in
+       <a class="calibre4" href="kindle_split_018.html#ch07">
+        chapter 7
+       </a>
+       , removing the WIP limit will remove your incentive to improve. With no WIP limit, nothing pushes people to do better. If
+         you allow an unlimited number of items on your board, nothing will force you to complete the ones on there before starting
+         new work.
+      </p>
+      <p class="noind">
+       This is because (if you remember from
+       <a class="calibre4" href="kindle_split_016.html#ch05">
+        chapter 5
+       </a>
+       about work in process) the more stuff you have going on at the same time, the longer the lead time will be for all the work
+         in your process. You want a constraint that pushes you toward finishing work and toward improvements in your process. We’ll
+         dive much deeper into this in
+       <a class="calibre4" href="kindle_split_018.html#ch07">
+        chapter 7
+       </a>
+       .
+      </p>
+      <p class="noind">
+       Let’s turn our attention to some principles of how to decide on a suitable WIP limit.
+      </p>
+      <h3 class="calibre15" id="ch06lev1sec2">
+       <a class="calibre3" id="ch06lev1sec2__title">
+       </a>
+       6.2. Principles for setting limits
+      </h3>
+      <p class="noind">
+       Finding your WIP limit depends on your context and particular situation. In this section, we’ll take a look at some common
+         ways that teams we’ve coached and heard about have agreed on their limits.
+      </p>
+      <p class="noind">
+       Remember that it’s not so much about finding
+       <i class="calibre6">
+        the
+       </i>
+       WIP limit, but rather, visualizing your current WIP limit; it’s the best so far. You
+       <i class="calibre6">
+        should
+       </i>
+       change it as often as needed. Embrace change; it’s good for you.
+      </p>
+      <p class="noind">
+       As always, use the examples here as inspiration, and expand on them to suit your needs. Let’s start with a simple principle,
+         one that might already be stuck in your head from previous chapters: stop starting, start finishing.
+      </p>
+      <h4 class="calibre28" id="ch06lev2sec4">
+       6.2.1.
+       <a class="calibre4" id="ch06lev2sec4__title">
+       </a>
+       Stop starting, start finishing
+      </h4>
+      <p class="noind">
+       A simple yet powerful starting point to limit your work in process is agreeing to
+       <i class="calibre6">
+        strive to complete current work before starting anything new
+       </i>
+       . This will keep your WIP low, because you only start new work when something else is finished.
+      </p>
+      <p class="noind">
+       An easy way to begin doing this is to adopt this slogan for your team:
+      </p>
+      <p class="center1">
+       <img alt="" class="calibre2" height="163" src="./112fig01.jpg" width="246"/>
+      </p>
+      <p class="noind">
+       Yes, you have to think hard when saying it the first few times, but then it sticks. A good idea might be to put this statement
+         above your board, where you’ll meet each morning; or why not use it as the opening or closing phrase of your daily standups?
+      </p>
+      <p class="noind">
+      </p>
+      <table border="1" cellspacing="5" class="calibre7" width="100%">
+       <colgroup class="calibre24">
+        <col class="calibre9" width="550"/>
+       </colgroup>
+       <tbody class="calibre10">
+        <tr class="calibre11">
+         <td class="calibre25">
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <div class="calibre13">
+       <b class="calibre22" id="ch06sb01">
+        <i class="calibre6">
+         Hill Street Blues
+        </i>
+        —roll call
+       </b>
+       <p class="noind">
+        <a class="calibre4" id="iddle1583">
+        </a>
+        <a class="calibre4" id="iddle1584">
+        </a>
+        To beat that sound bite into your head, you could use the
+        <i class="calibre6">
+         Hill Street Blues
+        </i>
+        roll-call ending. As people leave the standup, say:
+       </p>
+       <p class="noind">
+        “Oh, one more thing. Stop starting, start finishing, everyone.”
+       </p>
+       <p class="noind">
+        Wait a second. And then add the famous ending:
+       </p>
+       <p class="noind">
+        “And let’s be careful out there.”
+       </p>
+       <p class="noind">
+        By using a reference to
+        <i class="calibre6">
+         Hill Street Blues
+        </i>
+        , we have probably dated ourselves pretty well. It was a police series in the 1980s that was a big hit in Sweden. Every person
+            who has seen it remembers the ending of the morning roll calls at the police station; everyone rose, and the sergeant called
+            out, “One more thing ... let’s be careful out there.”
+       </p>
+      </div>
+      <table border="1" cellspacing="5" class="calibre7" width="100%">
+       <colgroup class="calibre24">
+        <col class="calibre9" width="550"/>
+       </colgroup>
+       <tbody class="calibre10">
+        <tr class="calibre11">
+         <td class="calibre25">
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <p class="noind">
+       There is great power in this simple slogan, because it pushes you to a lower WIP. It also sums up a basic pattern of kanban:
+         to prefer to finish work before starting something new. Doing so will help you not only to limit the number of work items
+         you work on at the same time, but also to shorten lead times, take work through the whole value chain, get feedback, and improve
+         your process.
+      </p>
+      <p class="noind">
+       Let’s finish this section with an inspirational quote to help you remember what’s important:
+      </p>
+      <blockquote class="calibre14">
+       <p class="noind">
+        <i class="calibre6">
+         It’s not “the more you start, the more you finish,” it’s “the more you finish, the more you finish.”
+        </i>
+       </p>
+       <p class="calibre27">
+        <i class="calibre6">
+         David P. Joyce
+        </i>
+       </p>
+      </blockquote>
+      <p class="noind">
+       Soon you may need a bit more control over your WIP limit, and at that point this principle might be too coarse grained. But
+         it’s a great start to emphasize a principle.
+      </p>
+      <h4 class="calibre28" id="ch06lev2sec5">
+       6.2.2.
+       <a class="calibre4" id="ch06lev2sec5__title">
+       </a>
+       One is not the answer
+      </h4>
+      <p class="noind">
+       Striving for a low WIP limit is desirable because it gives you better flow (see
+       <a class="calibre4" href="kindle_split_018.html#ch07">
+        chapter 7
+       </a>
+       ), but setting it too low will probably be too disruptive for your flow. For example, if you have a WIP limit of one, any
+         disturbance in the flow—such as handoffs, people out of the office, and so on—will cause all work to stop. Most organizations
+         aren’t ready to handle all those improvement opportunities (you remember that’s what we call problems, right?) at once, so
+         you probably should go with a WIP limit higher than one item.
+      </p>
+      <p class="noind">
+      </p>
+      <table border="1" cellspacing="5" class="calibre7" width="100%">
+       <colgroup class="calibre24">
+        <col class="calibre9" width="550"/>
+       </colgroup>
+       <tbody class="calibre10">
+        <tr class="calibre11">
+         <td class="calibre25">
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <div class="calibre13">
+       <b class="calibre22" id="ch06sb02">
+        Mob programming
+       </b>
+       <p class="noind">
+        <a class="calibre4" id="iddle1674">
+        </a>
+        <a class="calibre4" id="iddle2185">
+        </a>
+        Mob programming is an interesting and novel approach to system development pioneered by a team coached by Woody Zuill. The
+            basic concept of mob programming is simple: the entire team works as a team together on one task at a time. That means: one
+            team, one (active) keyboard, one screen (projector of course). It’s just like doing full-team pair programming.
+       </p>
+       <p class="noind">
+        A team doing mob programming has a WIP limit of one. That’s very effective when it comes to completing the work being worked
+            on as fast as possible. Any question, any problem, will be tackled immediately; and all the people needed to solve the problem
+            are present in the room and have time to solve any issues right away.
+       </p>
+       <p class="noind">
+        But this approach is very inefficient when it comes to utilizing the people on the team to the fullest. Not every person on
+            the team is actively typing code.
+       </p>
+       <p class="noind">
+        The question is, are you selling keystrokes or completed features?
+       </p>
+       <p class="noind">
+        For many organizations, mob programming is too extreme; a WIP limit of one is probably not suitable for everyone. But for
+            the organizations that can handle it, work flows very fast indeed.
+       </p>
+      </div>
+      <table border="1" cellspacing="5" class="calibre7" width="100%">
+       <colgroup class="calibre24">
+        <col class="calibre9" width="550"/>
+       </colgroup>
+       <tbody class="calibre10">
+        <tr class="calibre11">
+         <td class="calibre25">
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <p class="center1">
+       <img alt="" class="calibre2" height="309" src="./114fig01.jpg" width="462"/>
+      </p>
+      <p class="noind">
+       Summing up this section on guidance for setting your WIP limits, we can say that in most cases, setting the WIP limit to one
+         isn’t a good idea. You should strive for a low number, but not necessarily one.
+      </p>
+      <p class="noind">
+       By now you’re probably longing for some practical advice on how to set WIP limits using common practices, visualizations,
+         and methods that other teams have found helpful. Well, let’s get to it. You’ll start by setting a single WIP limit for the
+         entire team.
+      </p>
+      <h3 class="calibre15" id="ch06lev1sec3">
+       <a class="calibre3" id="ch06lev1sec3__title">
+       </a>
+       6.3. Whole board, whole team approach
+      </h3>
+      <p class="noind">
+       <a class="calibre4" id="iddle1036">
+       </a>
+       <a class="calibre4" id="iddle1055">
+       </a>
+       <a class="calibre4" id="iddle1572">
+       </a>
+       <a class="calibre4" id="iddle1967">
+       </a>
+       <a class="calibre4" id="iddle2113">
+       </a>
+       In this section, we’ll take a look at a couple of ways to limit the total number of work items on the board for the whole
+         team. This can be a simple way to get started and may be all that’s needed for your team.
+      </p>
+      <p class="noind">
+       Remember that there is no true WIP limit to be found. WIP limits are tools that you use to improve. You might ask questions
+         like “Will this WIP limit help our work to flow better or make our flow worse? Will this WIP limit render a lot of people
+         idle? Will a lot of work be idle? Is that a problem, and what can we do to resolve it?”
+      </p>
+      <h4 class="calibre28" id="ch06lev2sec6">
+       6.3.1.
+       <a class="calibre4" id="ch06lev2sec6__title">
+       </a>
+       Take one! Take two!
+      </h4>
+      <p class="noind">
+       Many teams that we have coached have gone through a similar journey to reach a suitable WIP limit. Their experience illustrates
+         the kind of reasoning that we think is necessary concerning WIP limits, and we want to relate that reasoning here. Learn from
+         this, and then pick a limit that suits you.
+      </p>
+      <p class="noind">
+       Let’s assume you have a five-person team. You could, for example, start out boldly and decide on a WIP limit of one per person,
+         making the total WIP limit equal to the number of people on the team.
+      </p>
+      <p class="center1">
+       <img alt="" class="calibre2" height="118" src="./115fig01.jpg" width="500"/>
+      </p>
+      <p class="noind">
+       Pretty soon, you’ll find out that this approach creates some problems; if you become blocked, you can’t pick up new work without
+         breaking the WIP limit, for example. You may decide it seems more reasonable to allow for a maximum of
+       <i class="calibre6">
+        two
+       </i>
+       items each, so people have something to do if one item is blocked. That makes the total WIP limit equal to the team size
+         times two.
+      </p>
+      <p class="center1">
+       <img alt="" class="calibre2" height="120" src="./115fig02.jpg" width="500"/>
+      </p>
+      <p class="noind">
+       But that setup might not be reasonable either, because it allows for situations in which every person on the team can be blocked
+         on one item and still keep working on another without breaking the WIP limit. That’s a perfectly valid situation with a WIP
+         limit setup like that, but in many instances this isn’t pushing the team enough. You
+       <a class="calibre4" id="iddle1052">
+       </a>
+       <a class="calibre4" id="iddle1053">
+       </a>
+       <a class="calibre4" id="iddle1147">
+       </a>
+       <a class="calibre4" id="iddle1431">
+       </a>
+       <a class="calibre4" id="iddle1432">
+       </a>
+       <a class="calibre4" id="iddle1569">
+       </a>
+       <a class="calibre4" id="iddle1570">
+       </a>
+       <a class="calibre4" id="iddle1695">
+       </a>
+       want the WIP limits to push you into resolving problems, not allow you to work without noticing them.
+      </p>
+      <p class="noind">
+       To push the team, you can back off from a WIP limit of 10 items and decide on maybe 8. If all team members are now blocked
+         on one item, you’ll start to break the WIP limit if everyone picks up another one to work with. You get a gentle nudge to
+         do something about the blockage, because you exceed the WIP limit earlier with 8 items than you would with 10 items. If you
+         want to get this warning even earlier, lower the WIP limit a bit more.
+      </p>
+      <p class="center1">
+       <img alt="" class="calibre2" height="119" src="./116fig01.jpg" width="500"/>
+      </p>
+      <p class="noind">
+       Note that the numbers in our examples aren’t that important, but the
+       <i class="calibre6">
+        reasoning
+       </i>
+       (what happens if you’re all blocked, will this improve flow, and so on) to find your WIP limits is. Remember—there is no
+         right WIP limit that can be calculated. You must find the one that suits your team and your situation the best. The most rational
+         thing is to try a WIP limit and then change it as needed.
+      </p>
+      <p class="noind">
+       Also, think about what kind of behavior you want the WIP limit to drive. It’s the mechanism that drives improvements.
+      </p>
+      <h4 class="calibre28" id="ch06lev2sec7">
+       6.3.2.
+       <a class="calibre4" id="ch06lev2sec7__title">
+       </a>
+       Come together
+      </h4>
+      <p class="noind">
+       The previous section allowed every person to have at least one item going on at the same time. If your team is using collaboration
+         practices like pair programming, you should probably lower the WIP limit even more. In such cases, you could set the WIP limit
+         to a number lower than the number of people in the team. You could take the number of people on the team
+       <i class="calibre6">
+        divided
+       </i>
+       by 1.5 (or some other number you see fit) to yield a low WIP limit.
+      </p>
+      <p class="noind">
+       For our example five-person team, this will add up to roughly three items total to work on.
+      </p>
+      <p class="center1">
+       <img alt="" class="calibre2" height="110" src="./116fig02.jpg" width="500"/>
+      </p>
+      <p class="noind">
+       With a WIP limit of three for a five-person team, people will quickly end up with nothing to do, if everyone works alone.
+         To be able to handle a WIP limit of three and still engage people in the process, the team members will have to cooperate
+         on items to
+       <a class="calibre4" id="iddle1054">
+       </a>
+       <a class="calibre4" id="iddle1571">
+       </a>
+       <a class="calibre4" id="iddle1811">
+       </a>
+       finish them by using pair programming, writing the specifications together, or testing in pairs: exactly the kind of collaboration
+         that agile teams seek. As a nice side effect, the work items will move fast across the board.
+      </p>
+      <p class="noind">
+       This might be a big change for some teams that aren’t used to collaborating closely. As always, don’t set the WIP limit too
+         low to start, but rather lower it little by little and improve your process at the same time.
+      </p>
+      <h4 class="calibre28" id="ch06lev2sec8">
+       6.3.3.
+       <a class="calibre4" id="ch06lev2sec8__title">
+       </a>
+       Drop down and give me 20
+      </h4>
+      <p class="noind">
+       One technique to set a suitable WIP limit was introduced by Don Reinertsen.
+       <sup class="calibre19">
+        [
+        <a class="calibre4" href="#ch06fn01">
+         1
+        </a>
+        ]
+       </sup>
+       He proposed that you first observe what a normal level is in an unconstrained system. That means: what is the normal load
+         of work items in your system? Start where you are: visualize the work items, and count them to learn what your current WIP
+         is.
+      </p>
+      <blockquote class="smaller">
+       <p class="calibre16">
+        <sup class="calibre23">
+         <a class="calibre4" id="ch06fn01">
+          1
+         </a>
+        </sup>
+        Presented at a keynote at the Lean Kanban Central Europe conference 2012. See
+        <a class="calibre4" href="http://www.lean-kanban.eu/sessions/reinertsen/">
+         www.lean-kanban.eu/sessions/reinertsen/
+        </a>
+        for more information.
+       </p>
+      </blockquote>
+      <p class="noind">
+       Then double that amount of WIP and use that number as the limit, allowing for twice as much WIP as you have normally. You
+         double the WIP limit because it can be statistically deduced that with normal variation, almost no teams will reach the limit.
+         It’s safe to say that this limit will have no effect at all to start with—everyone should be able to pull it off. From this
+         new limit, you can then incrementally go down by 20–30% decrements—say, every month or every two weeks—until you start to
+         experience problems, queues build up, or you see people idle between tasks.
+      </p>
+      <p class="center1">
+       <img alt="" class="calibre2" height="325" src="./117fig01.jpg" width="423"/>
+      </p>
+      <p class="noind">
+       Let’s see this in practice. Say that a team usually has roughly four to five items going on at once. Following Mr. Reinertsen’s
+         reasoning, you should start by allowing for 10 items on the board. You then back off that number by 20% at regular intervals.
+         The first iteration you’re down to 8 items, and then 6, and then 5, and so on.
+      </p>
+      <p class="noind">
+       As you do this, you’re not only lowering the WIP limit, which will flow items through your system faster. You’re also starting
+         a trend of continuous striving to improve: a mindset that characterizes Lean thinking.
+      </p>
+      <p class="noind">
+       This approach puts the focus on an important aspect of WIP limits; they’re cheap to implement. You pick the number and don’t
+         take on more work than that. If that doesn’t work out for you, if too many work items are idle, you can go back up to the
+         level you had before. This makes WIP limits excellent for use in experiments.
+      </p>
+      <p class="noind">
+       What happens if you lower the limit by 20%? Try it and see; if it doesn’t work out, go back and think about what happened.
+         What would you have to do differently to be able to lower the WIP and still keep items flowing through your system?
+      </p>
+      <p class="noind">
+       This approach teaches the team to continuously evaluate the limit to improve the flow. Because the initial WIP limit is high,
+         decreasing it the first couple of times won’t cause any big problems. This helps the team get into the habit of evaluating
+         and changing their limits regularly.
+      </p>
+      <p class="noind">
+       Although we used a whole-team WIP limit approach in this example, it makes perfect sense to apply the same thinking with a
+         column-based WIP limit approach (as discussed in
+       <a class="calibre4" href="#ch06lev1sec4">
+        section 6.4
+       </a>
+       ). You could stop decreasing the limits for the columns where you feel pain and keep decreasing them for other columns.
+      </p>
+      <h4 class="calibre28" id="ch06lev2sec9">
+       6.3.4.
+       <a class="calibre4" id="ch06lev2sec9__title">
+       </a>
+       Pick a number, and dance
+      </h4>
+      <p class="noind">
+       If you don’t know what a suitable WIP limit could be, pick a number out of the blue. Yes—you read it correctly. Pick any old
+         number!
+      </p>
+      <p class="noind">
+       Or rather, make an educated guess of what could be smart, but don’t think too much. This number, as we’ve said many times,
+         could and should be changed as you progress and as you see fit.
+      </p>
+      <p class="center1">
+       <img alt="" class="calibre2" height="189" src="./118fig01.jpg" width="500"/>
+      </p>
+      <p class="noind">
+       Use the principles for finding a good limit, as described in
+       <a class="calibre4" href="#ch06lev1sec1">
+        section 6.1
+       </a>
+       , to guide you toward setting your WIP limit.
+      </p>
+      <p class="center1">
+       <img alt="" class="calibre2" height="338" src="./118fig02.jpg" width="465"/>
+      </p>
+      <p class="noind">
+       <a class="calibre4" id="iddle1072">
+       </a>
+       <a class="calibre4" id="iddle1157">
+       </a>
+       <a class="calibre4" id="iddle1167">
+       </a>
+       <a class="calibre4" id="iddle1568">
+       </a>
+       <a class="calibre4" id="iddle1586">
+       </a>
+       <a class="calibre4" id="iddle2111">
+       </a>
+       <a class="calibre4" id="iddle2112">
+       </a>
+       <a class="calibre4" id="iddle2125">
+       </a>
+       <a class="calibre4" id="iddle2126">
+       </a>
+       Until now we have considered WIP limits for the whole board and whole team. Doing this, you don’t concern yourself with how
+         the work is distributed among the steps in your workflow (the columns on your board). Setting one single WIP limit, like the
+         examples we’ve considered up to now, is sometimes referred to as a system with a constant WIP (also known as CONWIP).
+      </p>
+      <p class="noind">
+       Let’s now take a look at some other approaches for how to limit WIP. Could you limit WIP for only parts of your workflow?
+         Why would you do that? And how could that be visualized?
+      </p>
+      <h3 class="calibre15" id="ch06lev1sec4">
+       <a class="calibre3" id="ch06lev1sec4__title">
+       </a>
+       6.4. Limiting WIP based on columns
+      </h3>
+      <p class="noind">
+       Most teams that we have worked with set WIP limits per column instead of for the entire team. This gives them a bit more fine-grained
+         control over how their work flows and an opportunity to handle bottlenecks and uneven flow. That said, setting a WIP for the
+         entire board could still be useful and, if you don’t know where to start, provides a good starting point.
+      </p>
+      <p class="noind">
+       In this section, we’ll dive deeper into common ways of limiting WIP per column, some things to consider when doing so, and
+         what you can gain from a WIP-per-column approach.
+      </p>
+      <h4 class="calibre28" id="ch06lev2sec10">
+       6.4.1.
+       <a class="calibre4" id="ch06lev2sec10__title">
+       </a>
+       Start from the bottleneck
+      </h4>
+      <p class="noind">
+       All workflows always have a bottleneck somewhere, which sets the pace for the entire workflow. Increasing throughput upstream
+         from the bottleneck will just pile up work in a queue in front of it, and trying to increase throughput downstream from the
+         bottleneck is futile because there won’t be enough input to work on. If you can identify the bottleneck in your workflow,
+         it makes sense to use WIP limits to help resolve it. For more on bottlenecks and how to discover and manage them, see
+       <a class="calibre4" href="kindle_split_018.html#ch07lev1sec5">
+        section 7.5
+       </a>
+       .
+      </p>
+      <p class="noind">
+       Let’s look at an example, in the board to the right. Here we have a workflow where work items are piling up in a queue in
+         front of a bottleneck: the Test column. If you do nothing, work will keep piling up, and WIP and lead times will increase.
+         If you instead put a WIP limit of, say, 3 on the whole Development column, the developers will have to stop doing Development
+         work when the queue starts to build. What should they do instead? They could help the testers finish their work. Whatever
+         they do, they shouldn’t pull in new work, because that will only build more WIP.
+      </p>
+      <p class="center1">
+       <img alt="" class="calibre2" height="289" src="./119fig01.jpg" width="291"/>
+      </p>
+      <p class="noind">
+       As you can see, putting a WIP limit on the step feeding the bottleneck will stop the bottleneck from being flooded and drive
+         behavior to resolve the bottleneck, thus improving the entire flow.
+      </p>
+      <p class="center1">
+       <img alt="" class="calibre2" height="269" src="./120fig01.jpg" width="462"/>
+      </p>
+      <h4 class="calibre28" id="ch06lev2sec11">
+       6.4.2.
+       <a class="calibre4" id="ch06lev2sec11__title">
+       </a>
+       Pick a column that will help you improve
+      </h4>
+      <p class="noind">
+       <a class="calibre4" id="iddle1578">
+       </a>
+       <a class="calibre4" id="iddle1587">
+       </a>
+       <a class="calibre4" id="iddle1938">
+       </a>
+       <a class="calibre4" id="iddle2119">
+       </a>
+       <a class="calibre4" id="iddle2127">
+       </a>
+       Why did you buy this book? What is the reason you think kanban will help you improve? Most teams already have a pretty good
+         idea about where (some of) their problems lie. A common scenario is to use kanban in order to collaborate together on fewer
+         work items in order to complete them faster. In a team of mostly developers, it might make sense to put a challenging WIP
+         limit on the Development column, where most of the active work is being done, in order to drive collaboration.
+      </p>
+      <p class="noind">
+       Many teams start with one of the “whole team, whole board” approaches described in
+       <a class="calibre4" href="#ch06lev1sec3">
+        section 6.3
+       </a>
+       and distribute numbers over different columns. You can also apply the total to just one column: for example, putting 1.5
+         times the number of developers as a WIP limit on the Development column.
+      </p>
+      <h4 class="calibre28" id="ch06lev2sec12">
+       6.4.3.
+       <a class="calibre4" id="ch06lev2sec12__title">
+       </a>
+       A limited story, please
+      </h4>
+      <p class="noind">
+       There are as many ways to limit WIP as there are teams in the world, but we’ll mention one that sometimes comes up as a question:
+         can you limit your work in process based on estimated size of the work item—for example, by using
+       <i class="calibre6">
+        story points
+       </i>
+       ?
+       <sup class="calibre19">
+        [
+        <a class="calibre4" href="#ch06fn02">
+         2
+        </a>
+        ]
+       </sup>
+       (You can read more about story points in
+       <a class="calibre4" href="kindle_split_021.html#ch09">
+        chapter 9
+       </a>
+       .)
+      </p>
+      <blockquote class="smaller">
+       <p class="calibre16">
+        <sup class="calibre23">
+         <a class="calibre4" id="ch06fn02">
+          2
+         </a>
+        </sup>
+        Story points are a way to estimate effort for a team, using relative measures; they’re used in many agile methods such as
+            Scrum and Extreme Programming (XP).
+       </p>
+      </blockquote>
+      <p class="noind">
+       As we’ve said, you’ll probably have to experiment to find a WIP limit that is suitable for your team. Start with your gut
+         feeling and adjust the limit up or down, as described in
+       <a class="calibre4" href="#ch06lev1sec1">
+        section 6.1
+       </a>
+       . This goes for estimated effort size of your work item (for example, in story points) as well as for work items. Many teams
+         using Scrum do this already, because when they’re planning their next iteration, they look at how many story points they typically
+         finish and pull that amount of new work into the iteration.
+      </p>
+      <p class="noind">
+       Limiting WIP by estimated size means you only pull new work as long as it keeps you under an agreed-on limit: for example,
+         under 10 story points. The next figure shows an example of a simple board where the developers have a WIP limit of 10 story
+         points.
+      </p>
+      <p class="center1">
+       <img alt="" class="calibre2" height="387" src="./121fig01_alt.jpg" width="590"/>
+      </p>
+      <p class="noind">
+       This WIP-limiting approach is often more suitable to decide per column, rather than for an entire team, because the size of
+         a work item may change the more you work with it. For example, when you start analyzing an item, you might find that it will
+         take less effort to implement than you first anticipated.
+      </p>
+      <p class="center1">
+       <img alt="" class="calibre2" height="269" src="./121fig02.jpg" width="462"/>
+      </p>
+      <h4 class="calibre28" id="ch06lev2sec13">
+       6.4.4.
+       <a class="calibre4" id="ch06lev2sec13__title">
+       </a>
+       How to visualize WIP limits
+      </h4>
+      <p class="noind">
+       <a class="calibre4" id="iddle1499">
+       </a>
+       <a class="calibre4" id="iddle1512">
+       </a>
+       <a class="calibre4" id="iddle2169">
+       </a>
+       Column-based WIP limits are often visualized by drawing them above each column of the board. But variants of this are plentiful.
+      </p>
+      <p class="center1">
+       <img alt="" class="calibre2" height="84" src="./122fig01.jpg" width="265"/>
+      </p>
+      <p class="noind">
+       Some things we’ve seen while working with teams are as follows:
+      </p>
+      <p class="calibre16">
+      </p>
+      <ul class="calibre17">
+       <li class="calibre18">
+        <b class="calibre22">
+         <i class="calibre6">
+          Boxes for each work item
+         </i>
+         —
+        </b>
+        This will make it apparent when you break the limit, because you have to put your work item outside of a box or on top of
+            another work item.
+       </li>
+       <li class="calibre18">
+        <b class="calibre22">
+         <i class="calibre6">
+          Plastic folders or other physical placeholders for each allowed work-item card
+         </i>
+         —
+        </b>
+        This is similar to the drawn boxes and is also a good visual indicator that helps you to keep track of how you’re doing against
+            the established WIP limit.
+       </li>
+      </ul>
+      <p class="center1">
+       <img alt="" class="calibre2" height="254" src="./122fig02.jpg" width="438"/>
+      </p>
+      <p class="noind">
+       What you use is up to your imagination and what suits your team. Don’t be afraid to experiment. Try something new, and fail,
+         instead of being content with a suboptimal setup.
+      </p>
+      <p class="noind">
+       As you can see, there are lots of ways to use WIP limits on the columns on your board to help you find problems, bottlenecks,
+         and other things that slow down flow in your process. What will work best for you is left as an empirical exercise: experiment.
+         Try something, and change to improve.
+      </p>
+      <p class="center1">
+       <img alt="" class="calibre2" height="270" src="./122fig03.jpg" width="464"/>
+      </p>
+      <p class="noind">
+       Let’s now turn our attention to another way of limiting WIP: by person.
+      </p>
+      <h3 class="calibre15" id="ch06lev1sec5">
+       <a class="calibre3" id="ch06lev1sec5__title">
+       </a>
+       6.5. Limiting WIP based on people
+      </h3>
+      <p class="noind">
+       <a class="calibre4" id="iddle1577">
+       </a>
+       <a class="calibre4" id="iddle1711">
+       </a>
+       <a class="calibre4" id="iddle2118">
+       </a>
+       Some teams might have a situation where people take work from start to finish, and it’s not common or feasible to hand over
+         the work to someone else. The workflow can still be a sequence of steps that the work goes through. In fact, this can be valuable
+         to show what state the work is in right now, even though the same person is doing the work throughout the process.
+      </p>
+      <p class="noind">
+       A typical example of a team like this is in first-line support, in which you get a case from a customer in dire straits and
+         you stay on it until it’s solved. Such a case might go through the following phases: finding a workaround for the customer,
+         filing a bug, testing a new release of the system with the bug fix, and finally closing the case. All these stages are probably
+         handled by a single person on a support team.
+      </p>
+      <p class="noind">
+       This calls for another strategy: some teams choose to limit the number of work items for each person. You focus not so much
+         on optimizing for flow through the workflow, but rather on ensuring that no one takes on too much work and that everyone has
+         things to do.
+      </p>
+      <p class="noind">
+       Another situation where limiting WIP per person is suitable is for fighting multitasking on all levels in the team. In this
+         case, a WIP limit per person can help visualize that some people are involved in many work items,
+       <sup class="calibre19">
+        [
+        <a class="calibre4" href="#ch06fn03">
+         3
+        </a>
+        ]
+       </sup>
+       which might be a driver behind the whole team having too much WIP. You can have conversations about how to prevent that,
+         with a limit per person made explicit.
+      </p>
+      <blockquote class="smaller">
+       <p class="calibre16">
+        <sup class="calibre23">
+         <a class="calibre4" id="ch06fn03">
+          3
+         </a>
+        </sup>
+        Such people are known as
+        <i class="calibre6">
+         hoarders
+        </i>
+        (see the next sidebar for a real-life example).
+       </p>
+      </blockquote>
+      <h4 class="calibre28" id="ch06lev2sec14">
+       6.5.1.
+       <a class="calibre4" id="ch06lev2sec14__title">
+       </a>
+       Common ways to limit WIP per person
+      </h4>
+      <p class="noind">
+       We’ll now take a closer look at some common ways to visualize people-based WIP limits.
+      </p>
+      <h5 class="notetitle" id="ch06lev3sec1">
+       <a class="calibre4" id="ch06lev3sec1__title">
+       </a>
+       This board isn’t big enough for all these avatars
+      </h5>
+      <p class="center1">
+       <img alt="" class="calibre2" height="350" src="./123fig01_alt.jpg" width="590"/>
+      </p>
+      <p class="noind">
+       <a class="calibre4" id="iddle1023">
+       </a>
+       <a class="calibre4" id="iddle1497">
+       </a>
+       <a class="calibre4" id="iddle1498">
+       </a>
+       <a class="calibre4" id="iddle1518">
+       </a>
+       <a class="calibre4" id="iddle1942">
+       </a>
+       If you’re using avatars to indicate who is working on what, a simple measure is to limit the number of avatars each person
+         can have “in play” at the same time. You could, for example, print three avatars for each person, effectively setting the
+         WIP limit per person to three. Now it’s easy to see who’s doing what and how many items each person is working with right
+         now.
+      </p>
+      <table border="1" cellspacing="5" class="calibre7" width="100%">
+       <colgroup class="calibre24">
+        <col class="calibre9" width="550"/>
+       </colgroup>
+       <tbody class="calibre10">
+        <tr class="calibre11">
+         <td class="calibre25">
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <div class="calibre13">
+       <b class="calibre22" id="ch06sb03">
+        Poor Sean, he had too few avatars
+       </b>
+       <p class="noind">
+        On one team that Marcus coached, there was this guy: let’s call him Sean. Sean had been involved with this application since
+            before you were born. He practically built it himself. Every decision was in one way or another routed through him. You have
+            probably met Sean a couple of times, or at least his type of person.
+       </p>
+       <p class="noind">
+        This slowed the team down considerably, because the team was quite big (eight people) and every work item had to be routed
+            through Sean in order to be completed. When we created the kanban system, we printed only three avatars per team member to
+            put a finger on this pain point.
+       </p>
+       <p class="noind">
+        And indeed, the first morning meeting took about 35 minutes, most of them spent waiting for Sean to place the three (“Only
+            three? Can I have five more? Please?”) stickies with what he should work on during the day.
+       </p>
+       <p class="noind">
+        After letting him sweat for a while, we had a discussion about the problems this situation caused for the team and the flow
+            of items. To Sean’s big surprise, it turned out that when he was on vacation or was sick, the team still got stuff out the
+            door.
+       </p>
+       <p class="noind">
+        Maybe there were work items in which Sean didn’t have to be involved? Maybe not having Sean involved in everything could increase
+            the feeling of autonomy and mastery for other people on the team? Maybe that could free up Sean’s time to do the complex stuff
+            that he, in fact, was the only one on the team who knew?
+       </p>
+       <p class="noind">
+        It all ended well, but it was a bit shocking to poor Sean at first.
+       </p>
+      </div>
+      <table border="1" cellspacing="5" class="calibre7" width="100%">
+       <colgroup class="calibre24">
+        <col class="calibre9" width="550"/>
+       </colgroup>
+       <tbody class="calibre10">
+        <tr class="calibre11">
+         <td class="calibre25">
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <h5 class="notetitle" id="ch06lev3sec2">
+       <a class="calibre4" id="ch06lev3sec2__title">
+       </a>
+       Swim in your own lane, please!
+      </h5>
+      <p class="noind">
+       Another common way to limit WIP per person is to give each person a swim lane through the process. Then you can decide on
+         a WIP limit for each swim lane, effectively allowing a certain number of items in any column of the board for that swim lane.
+      </p>
+      <p class="noind">
+       This approach can also be used to limit work per team on a multiteam board or for
+       <i class="calibre6">
+        teamlets
+       </i>
+       (parts of a team).
+      </p>
+      <p class="center1">
+       <img alt="" class="calibre2" height="257" src="./125fig01_alt.jpg" width="590"/>
+      </p>
+      <table border="1" cellspacing="5" class="calibre7" width="100%">
+       <colgroup class="calibre24">
+        <col class="calibre9" width="550"/>
+       </colgroup>
+       <tbody class="calibre10">
+        <tr class="calibre11">
+         <td class="calibre25">
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <h5 class="notetitle" id="ch06note01">
+       Warning
+      </h5>
+      <p class="center1">
+       <img alt="" class="calibre2" height="133" src="./common08.jpg" width="109"/>
+      </p>
+      <p class="noindclose">
+       Remember that these strategies focus on making sure every person has enough to do; they don’t help you much to get the work
+         flowing to a finished state. You could start like this, but it’s worth questioning the effectiveness of this approach to limiting
+         WIP. After all, your customers seldom care if you’re kept busy; they only want you to deliver stuff.
+      </p>
+      <table border="1" cellspacing="5" class="calibre7" width="100%">
+       <colgroup class="calibre24">
+        <col class="calibre9" width="550"/>
+       </colgroup>
+       <tbody class="calibre10">
+        <tr class="calibre11">
+         <td class="calibre25">
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <p class="center1">
+       <img alt="" class="calibre2" height="270" src="./125fig02.jpg" width="465"/>
+      </p>
+      <p class="noind">
+       We have now given you a lot of principles, ideas, and practical tips for how to go about setting your WIP limit. The main
+         point is that this is contextual and depends on your needs and situation. There are often a lot of questions around setting
+         WIP limits, and we’ll address some of the more common ones next.
+      </p>
+      <h3 class="calibre15" id="ch06lev1sec6">
+       <a class="calibre3" id="ch06lev1sec6__title">
+       </a>
+       6.6. Frequently asked questions
+      </h3>
+      <p class="noind">
+       <a class="calibre4" id="iddle1590">
+       </a>
+       <a class="calibre4" id="iddle1950">
+       </a>
+       <a class="calibre4" id="iddle2130">
+       </a>
+       <a class="calibre4" id="iddle2167">
+       </a>
+       It’s not strange that WIP limits trigger some questions, because the limit you select is something that depends on what
+       <i class="calibre6">
+        you
+       </i>
+       need and your situation. Sometimes, when WIP limits are described, they come across as something definitive; this adds to
+         the confusion, because WIP limits should be moving targets.
+      </p>
+      <h4 class="calibre28" id="ch06lev2sec15">
+       6.6.1.
+       <a class="calibre4" id="ch06lev2sec15__title">
+       </a>
+       Work items or tasks—what are you limiting?
+      </h4>
+      <p class="noind">
+       Quite often, teams split up work items into tasks for certain steps in their workflow. For Development, it could be tasks
+         like “implement data access,” “write HTML page,” and “complete business logic.” In a Testing column, they could be tasks like
+         “prepare test data,” “write report,” and “perform manual tests.” Tasks are part of a work item and can be thought of as all
+         the things you need to do to complete the work item in a given column.
+      </p>
+      <p class="noind">
+       Not until every task is completed in Development are the work items moved to the next step of the workflow. Some teams even
+         divide the columns into subcolumns, forming a mini-board for the tasks.
+      </p>
+      <p class="noind">
+       Here you can see two work items going on (one in each row), and each work item has been split up into several tasks. The team
+         counts the WIP limit against the work item, not the tasks that compose the work item.
+      </p>
+      <p class="center1">
+       <img alt="" class="calibre2" height="406" src="./126fig01_alt.jpg" width="590"/>
+      </p>
+      <p class="noind">
+       Most teams seem to work this way, counting their WIP limits against the work items. The tasks are only for tracking what you
+         need to do in order to complete the work item and often aren’t delivering customer value. It doesn’t really matter how fast
+         they flow across the board, if the customers still have to wait for anything useful to be delivered.
+      </p>
+      <p class="noind">
+       <a class="calibre4" id="iddle1582">
+       </a>
+       <a class="calibre4" id="iddle1804">
+       </a>
+       <a class="calibre4" id="iddle2123">
+       </a>
+       There could be times when, in certain columns, you might want to limit the number of tasks. For example, you may want to limit
+         the level of multitasking or make sure you’re always cooperating on certain tasks.
+      </p>
+      <h4 class="calibre28" id="ch06lev2sec16">
+       6.6.2.
+       <a class="calibre4" id="ch06lev2sec16__title">
+       </a>
+       Should you count queues against the WIP limit?
+      </h4>
+      <p class="noind">
+       Queues are often visualized as a column within another column. Ready for Test in the Test column is an example that we have
+         used before.
+      </p>
+      <p class="noind">
+       In the figure at right, you can see a WIP limit of 4 for the Development column. The column is then split into two sections:
+         Doing and Done. The developers are working on one item and have three items completed, which keeps them at their WIP limit.
+      </p>
+      <p class="noind">
+       Another way of visualizing this queue could be to have a Ready to Test queue column in the Test column instead. That would
+         then count against the WIP limit of the testing step.
+      </p>
+      <p class="center1">
+       <img alt="" class="calibre2" height="317" src="./127fig01.jpg" width="307"/>
+      </p>
+      <p class="noind">
+       How you visualize this on your team depends on what you want to achieve: that is, on who should “own” the tickets that wait
+         to be tested. Does it help the team if the developers get the signal in their area, or is it more useful for the testers to
+         count the items in the queue against their WIP limit? The choice is something that needs to be discussed with the team, but
+         the practical function of the queue column is the same in either case: items stuck there will stall and hinder the flow, and
+         people can’t pull new work into columns before the queue. With this setup, you can easily see which items are done and which
+         items the developers are still working on.
+      </p>
+      <p class="noind">
+       Finally, if you remember, back in
+       <a class="calibre4" href="#ch06lev2sec10">
+        section 6.4.1
+       </a>
+       we showed another way of doing this, where the queue column is a column by itself with its own WIP limit, as shown at right.
+         In this case, the column has a WIP limit of its own, and it’s not counted against anyone’s limit. Maybe this is another technique
+         that can help your team. The limit doesn’t “steal” capacity from “your” column, but, again, the function of the queue is the
+         same.
+      </p>
+      <p class="center1">
+       <img alt="" class="calibre2" height="276" src="./127fig02.jpg" width="415"/>
+      </p>
+      <p class="noind">
+       That way of visualizing the queue prevents the bottleneck that the single tester has become. A buffer is built before him
+         to make sure he doesn’t get flooded and yet always has work to do, which he can pick from the buffer (the testing queue) in
+         front of him.
+      </p>
+      <p class="noind">
+       There are times when a queue should be counted against the WIP limit or even
+       <i class="calibre6">
+        is
+       </i>
+       the WIP limit itself (as in
+       <a class="calibre4" href="#ch06lev2sec10">
+        section 6.4.1
+       </a>
+       with the standalone queue column, for example). At other times, the distinction made between a queue and an
+       <i class="calibre6">
+        execution column
+       </i>
+       is a way to visualize detailed steps.
+      </p>
+      <p class="noind">
+       The answer to this section’s question, “Should we count queues against the WIP limit?” is also, “It depends.” For example,
+         let’s say you have noticed that testing is a bottleneck.
+       <sup class="calibre19">
+        [
+        <a class="calibre4" href="#ch06fn04">
+         4
+        </a>
+        ]
+       </sup>
+       A queue might be a great way to ensure that the tester always has work that is ready to test. A WIP limit on the queue helps
+         you make sure the queue doesn’t get too long. With a WIP limit in place, you won’t be able to flood the queue with work without
+         breaking the WIP limit. When you see a queue filled to its WIP limit, it’s time to discuss how to clear the blockage that
+         is building up.
+      </p>
+      <blockquote class="smaller">
+       <p class="calibre16">
+        <sup class="calibre23">
+         <a class="calibre4" id="ch06fn04">
+          4
+         </a>
+        </sup>
+        Discovering and managing bottlenecks deserves a complete book on its own. But briefly, you might have a bottleneck if you
+            see work accumulated before the bottleneck and if steps after the bottleneck are starved for work.
+       </p>
+      </blockquote>
+      <h3 class="calibre15" id="ch06lev1sec7">
+       <a class="calibre3" id="ch06lev1sec7__title">
+       </a>
+       6.7. Exercise: WIP it, WIP it real good
+      </h3>
+      <p class="noind">
+       The time has come for you to start discussing WIP limits. Again, this should be a team effort. Remember that there’s no optimal
+         WIP limit for your team; it’s a tool that you can use to help you improve your work.
+      </p>
+      <p class="noind">
+       If you don’t have an obvious WIP limit that you can come up with, first discuss the points in
+       <a class="calibre4" href="#ch06lev1sec3">
+        sections 6.3
+       </a>
+       ,
+       <a class="calibre4" href="#ch06lev1sec4">
+        6.4
+       </a>
+       , and
+       <a class="calibre4" href="#ch06lev1sec5">
+        6.5
+       </a>
+       . Here are some questions you can focus on:
+      </p>
+      <p class="calibre16">
+      </p>
+      <ul class="calibre17">
+       <li class="calibre18">
+        Should you have a single WIP limit for the complete board? Why would that be good for you?
+       </li>
+       <li class="calibre18">
+        Can you start by limiting work in some columns? Which ones? Why?
+       </li>
+       <li class="calibre18">
+        If you limit work per person, what kind of behavior would that drive or give you?
+       </li>
+       <li class="calibre18">
+        Would swim lanes with WIP limits per lane help you in your situation?
+       </li>
+      </ul>
+      <p class="noind">
+       If you don’t know how to answer these questions, you should try something that seems appropriate, pay attention to what happens,
+         and learn from that. When you come up with a good strategy and a number, start to discuss how this policy should be treated
+         in your daily work:
+      </p>
+      <p class="calibre16">
+      </p>
+      <ul class="calibre17">
+       <li class="calibre18">
+        What kind of behavior are you encouraging by the way you’ve set up your limit?
+       </li>
+       <li class="calibre18">
+        What should you do when you end up in a situation in which you’re breaking the WIP limit?
+       </li>
+       <li class="calibre18">
+        Should you count blocked/queued items against the limit?
+       </li>
+      </ul>
+      <p class="noind">
+       As always, strive to start simple and make your approach more advanced as you see the need.
+      </p>
+      <h3 class="calibre15" id="ch06lev1sec8">
+       <a class="calibre3" id="ch06lev1sec8__title">
+       </a>
+       6.8. Summary
+      </h3>
+      <p class="noind">
+       In this chapter we talked about finding and visualizing good WIP limits:
+      </p>
+      <p class="calibre16">
+      </p>
+      <ul class="calibre17">
+       <li class="calibre18">
+        There’s no one right WIP limit for you and your team.
+       </li>
+       <li class="calibre18">
+        Limiting WIP isn’t the goal; improving flow is. WIP limits are merely a tool that helps find problems that hinder a better
+            flow.
+       </li>
+       <li class="calibre18">
+        A lower WIP limit will move your work faster and also bring problems to your attention more quickly. You want a low WIP limit,
+            but not too low.
+       </li>
+       <li class="calibre18">
+        When setting out to find a WIP limit, start simple—maybe as simple as the slogan “
+        <a class="calibre4" href="#ch06lev2sec4">
+         Stop starting, start finishing
+        </a>
+        .”
+       </li>
+       <li class="calibre18">
+        You can limit the WIP for the whole team/workflow:
+        <p class="calibre16">
+        </p>
+        <ul class="calibre30">
+         <li class="calibre18">
+          This approach can help you improve collaboration.
+         </li>
+         <li class="calibre18">
+          It helps you keep focus on finishing work items before taking on new ones.
+         </li>
+        </ul>
+       </li>
+       <li class="calibre18">
+        You can limit WIP based on column:
+        <p class="calibre16">
+        </p>
+        <ul class="calibre30">
+         <li class="calibre18">
+          This puts focus on flowing items through the workflow.
+         </li>
+         <li class="calibre18">
+          It can help to manage bottlenecks.
+         </li>
+         <li class="calibre18">
+          Maybe you already have a hunch about what you need to improve and can start limiting WIP for that column.
+         </li>
+         <li class="calibre18">
+          Work can also be limited by estimated size (story points, for example).
+         </li>
+        </ul>
+       </li>
+       <li class="calibre18">
+        You can limit WIP based on people:
+        <p class="calibre16">
+        </p>
+        <ul class="calibre30">
+         <li class="calibre18">
+          Limiting the number of avatars that can be in play is one way to easily accomplish this.
+         </li>
+         <li class="calibre18">
+          Using swim lanes is another.
+         </li>
+         <li class="calibre18">
+          This can help you prevent too much multitasking and people being involved in every item on the board.
+         </li>
+        </ul>
+       </li>
+       <li class="calibre18">
+        Most teams have a WIP limit on the work-item level, not the task level.
+       </li>
+      </ul>
+      <p class="noind">
+       WIP limits are ways to improve the flow of your workflow, but what is that? It’s one of the main concepts of Lean that we
+         haven’t yet talked about. And it’s the topic of the next chapter.
+      </p>
+      <div class="calibre21" id="calibre_pb_27">
+      </div>
+     </div>
+     <div class="t-sbo-prev sbo-prev sbo-nav-bottom">
+      <a class="prev nav-link" href="./kindle_split_016.html">
+       <span aria-hidden="true" class="pagination-label t-prev-label">
+        Prev
+       </span>
+       <span class="visuallyhidden">
+        Previous Chapter
+       </span>
+       <div class="pagination-title t-prev-title">
+        Chapter 5. Work in process
+       </div>
+      </a>
+     </div>
+     <div class="t-sbo-next sbo-next sbo-nav-bottom">
+      <a class="next nav-link" href="./kindle_split_018.html">
+       <span aria-hidden="true" class="pagination-label t-next-label">
+        Next
+       </span>
+       <span class="visuallyhidden">
+        Next Chapter
+       </span>
+       <div class="pagination-title t-next-title">
+        Chapter 7. Managing flow
+       </div>
+      </a>
+     </div>
+    </section>
+   </div>
+   <section class="sbo-saved-archives">
+   </section>
+  </div>
+  <footer class="pagefoot t-pagefoot">
+   <a class="icon-up" href="#">
+    <div class="visuallyhidden">
+     Back to top
+    </div>
+   </a>
+   <ul class="js-footer-nav">
+    <li>
+     <a href="/u/preferences/">
+      Settings
+     </a>
+    </li>
+    <li>
+     <a href="/public/support/">
+      Support
+     </a>
+    </li>
+    <li>
+     <a href="/accounts/logout/">
+      Sign Out
+     </a>
+    </li>
+   </ul>
+   <span class="copyright">
+    © 2019
+    <a href="/" target="_blank">
+     O'Reilly Media, Inc
+    </a>
+    .
+   </span>
+   <a href="https://www.oreilly.com/terms/">
+    Terms of Service
+   </a>
+   /
+   <a href="/privacy">
+    Privacy Policy
+   </a>
+  </footer>
+ </body>
+</html>
+

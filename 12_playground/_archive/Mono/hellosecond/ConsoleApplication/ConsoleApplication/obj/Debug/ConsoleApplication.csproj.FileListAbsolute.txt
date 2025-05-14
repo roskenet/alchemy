@@ -1,0 +1,6 @@
+/home/felix/Workspaces/Mono/hellosecond/ConsoleApplication/ConsoleApplication/bin/Debug/ConsoleApplication.exe
+/home/felix/Workspaces/Mono/hellosecond/ConsoleApplication/ConsoleApplication/bin/Debug/ConsoleApplication.pdb
+/home/felix/Workspaces/Mono/hellosecond/ConsoleApplication/ConsoleApplication/obj/Debug/ConsoleApplication.csprojAssemblyReference.cache
+/home/felix/Workspaces/Mono/hellosecond/ConsoleApplication/ConsoleApplication/obj/Debug/ConsoleApplication.csproj.CoreCompileInputs.cache
+/home/felix/Workspaces/Mono/hellosecond/ConsoleApplication/ConsoleApplication/obj/Debug/ConsoleApplication.exe
+/home/felix/Workspaces/Mono/hellosecond/ConsoleApplication/ConsoleApplication/obj/Debug/ConsoleApplication.pdb

@@ -1,0 +1,42 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/ArduinoCore.dir/home/felix/Packages/ATTinyCore/avr/cores/tiny/HardwareSerial.cpp.obj"
+  "CMakeFiles/ArduinoCore.dir/home/felix/Packages/ATTinyCore/avr/cores/tiny/HardwareSerial.cpp.obj.d"
+  "CMakeFiles/ArduinoCore.dir/home/felix/Packages/ATTinyCore/avr/cores/tiny/Print.cpp.obj"
+  "CMakeFiles/ArduinoCore.dir/home/felix/Packages/ATTinyCore/avr/cores/tiny/Print.cpp.obj.d"
+  "CMakeFiles/ArduinoCore.dir/home/felix/Packages/ATTinyCore/avr/cores/tiny/Stream.cpp.obj"
+  "CMakeFiles/ArduinoCore.dir/home/felix/Packages/ATTinyCore/avr/cores/tiny/Stream.cpp.obj.d"
+  "CMakeFiles/ArduinoCore.dir/home/felix/Packages/ATTinyCore/avr/cores/tiny/TinySoftwareSerial.cpp.obj"
+  "CMakeFiles/ArduinoCore.dir/home/felix/Packages/ATTinyCore/avr/cores/tiny/TinySoftwareSerial.cpp.obj.d"
+  "CMakeFiles/ArduinoCore.dir/home/felix/Packages/ATTinyCore/avr/cores/tiny/Tone.cpp.obj"
+  "CMakeFiles/ArduinoCore.dir/home/felix/Packages/ATTinyCore/avr/cores/tiny/Tone.cpp.obj.d"
+  "CMakeFiles/ArduinoCore.dir/home/felix/Packages/ATTinyCore/avr/cores/tiny/WInterrupts.c.obj"
+  "CMakeFiles/ArduinoCore.dir/home/felix/Packages/ATTinyCore/avr/cores/tiny/WInterrupts.c.obj.d"
+  "CMakeFiles/ArduinoCore.dir/home/felix/Packages/ATTinyCore/avr/cores/tiny/WMath.cpp.obj"
+  "CMakeFiles/ArduinoCore.dir/home/felix/Packages/ATTinyCore/avr/cores/tiny/WMath.cpp.obj.d"
+  "CMakeFiles/ArduinoCore.dir/home/felix/Packages/ATTinyCore/avr/cores/tiny/WString.cpp.obj"
+  "CMakeFiles/ArduinoCore.dir/home/felix/Packages/ATTinyCore/avr/cores/tiny/WString.cpp.obj.d"
+  "CMakeFiles/ArduinoCore.dir/home/felix/Packages/ATTinyCore/avr/cores/tiny/abi.cpp.obj"
+  "CMakeFiles/ArduinoCore.dir/home/felix/Packages/ATTinyCore/avr/cores/tiny/abi.cpp.obj.d"
+  "CMakeFiles/ArduinoCore.dir/home/felix/Packages/ATTinyCore/avr/cores/tiny/main.cpp.obj"
+  "CMakeFiles/ArduinoCore.dir/home/felix/Packages/ATTinyCore/avr/cores/tiny/main.cpp.obj.d"
+  "CMakeFiles/ArduinoCore.dir/home/felix/Packages/ATTinyCore/avr/cores/tiny/new.cpp.obj"
+  "CMakeFiles/ArduinoCore.dir/home/felix/Packages/ATTinyCore/avr/cores/tiny/new.cpp.obj.d"
+  "CMakeFiles/ArduinoCore.dir/home/felix/Packages/ATTinyCore/avr/cores/tiny/wiring.c.obj"
+  "CMakeFiles/ArduinoCore.dir/home/felix/Packages/ATTinyCore/avr/cores/tiny/wiring.c.obj.d"
+  "CMakeFiles/ArduinoCore.dir/home/felix/Packages/ATTinyCore/avr/cores/tiny/wiring_analog.c.obj"
+  "CMakeFiles/ArduinoCore.dir/home/felix/Packages/ATTinyCore/avr/cores/tiny/wiring_analog.c.obj.d"
+  "CMakeFiles/ArduinoCore.dir/home/felix/Packages/ATTinyCore/avr/cores/tiny/wiring_digital.c.obj"
+  "CMakeFiles/ArduinoCore.dir/home/felix/Packages/ATTinyCore/avr/cores/tiny/wiring_digital.c.obj.d"
+  "CMakeFiles/ArduinoCore.dir/home/felix/Packages/ATTinyCore/avr/cores/tiny/wiring_pulse.S.obj"
+  "CMakeFiles/ArduinoCore.dir/home/felix/Packages/ATTinyCore/avr/cores/tiny/wiring_pulse.c.obj"
+  "CMakeFiles/ArduinoCore.dir/home/felix/Packages/ATTinyCore/avr/cores/tiny/wiring_pulse.c.obj.d"
+  "CMakeFiles/ArduinoCore.dir/home/felix/Packages/ATTinyCore/avr/cores/tiny/wiring_shift.c.obj"
+  "CMakeFiles/ArduinoCore.dir/home/felix/Packages/ATTinyCore/avr/cores/tiny/wiring_shift.c.obj.d"
+  "libArduinoCore.a"
+  "libArduinoCore.pdb"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang ASM C CXX)
+  include(CMakeFiles/ArduinoCore.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

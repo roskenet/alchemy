@@ -1,0 +1,14 @@
+camunda.bpm:
+  admin-user:
+    id: demo
+    password: demo
+    firstName: Anna
+    lastName: Konda
+  filter:
+    create: All tasks
+
+spring:
+  datasource:
+    url: jdbc:postgresql://postgres:5432/camunda
+    username: camunda
+    password: camunda

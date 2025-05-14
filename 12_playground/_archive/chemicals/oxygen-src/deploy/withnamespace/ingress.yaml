@@ -1,0 +1,55 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: oxygen
+  namespace: oxygen
+spec:
+  rules:
+    - host: "oxygen.192-168-49-2.nip.io"
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: oxygen
+                port:
+                  number: 80
+
+#apiVersion: extensions/v1beta1
+#kind: Ingress
+#metadata:
+#  name: oxygen
+#  namespace: oxygen
+#spec:
+#  rules:
+#  - host: oxygen.192-168-49-2.nip.io
+#    http:
+#      paths:
+#        - backend:
+#            serviceName: oxygen
+#            servicePort: 8080
+
+#apiVersion: networking.k8s.io/v1
+#kind: Ingress
+#metadata:
+#  name: minimal-ingress
+#  annotations:
+#    nginx.ingress.kubernetes.io/rewrite-target: /
+#spec:
+#  rules:
+#    - http:
+#        paths:
+#          - path: /testpath
+#            pathType: Prefix
+#            backend:
+#              service:
+#                name: test
+#                port:
+#                  number: 80
+#  - host: oxygen.minikube
+#    http:
+#      paths:
+#        - backend:
+#            serviceName: oxygen
+#            servicePort: 80

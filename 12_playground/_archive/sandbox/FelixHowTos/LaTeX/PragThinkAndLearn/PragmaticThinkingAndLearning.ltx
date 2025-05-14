@@ -1,0 +1,107 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[LY1]{fontenc}
+\usepackage[fullfamily,opticals,mathlf,minionint]{MinionPro}
+\usepackage{textcomp}
+\renewcommand{\sfdefault}{MyriadPro-onum-pnum}
+\usepackage[german]{babel}
+\usepackage{color}
+\usepackage{xcolor}
+% Start lingst stuff
+
+
+\usepackage{listings}
+  \usepackage{courier}
+ \lstset{
+         basicstyle=\footnotesize\ttfamily, % Standardschrift
+         %numbers=left,               % Ort der Zeilennummern
+         numberstyle=\tiny,          % Stil der Zeilennummern
+         %stepnumber=2,               % Abstand zwischen den Zeilennummern
+         numbersep=5pt,              % Abstand der Nummern zum Text
+         tabsize=2,                  % Groesse von Tabs
+         extendedchars=true,         %
+         breaklines=true,            % Zeilen werden Umgebrochen
+         keywordstyle=\color{red},
+            frame=b,         
+ %        keywordstyle=[1]\textbf,    % Stil der Keywords
+ %        keywordstyle=[2]\textbf,    %
+ %        keywordstyle=[3]\textbf,    %
+ %        keywordstyle=[4]\textbf,   \sqrt{\sqrt{}} %
+         stringstyle=\color{white}\ttfamily, % Farbe der String
+         showspaces=false,           % Leerzeichen anzeigen ?
+         showtabs=false,             % Tabs anzeigen ?
+         xleftmargin=17pt,
+         framexleftmargin=17pt,
+         framexrightmargin=5pt,
+         framexbottommargin=4pt,
+         %backgroundcolor=\color{lightgray},
+         showstringspaces=false      % Leerzeichen in Strings anzeigen ?        
+ }
+ \lstloadlanguages{% Check Dokumentation for further languages ...
+         %[Visual]Basic
+         %Pascal
+         %C
+         %C++
+         %XML
+         %HTML
+         Java
+ }
+    %\DeclareCaptionFont{blue}{\color{blue}} 
+
+  %\captionsetup[lstlisting]{singlelinecheck=false, labelfont={blue}, textfont={blue}}
+  \usepackage{caption}
+\DeclareCaptionFont{white}{\color{white}}
+\DeclareCaptionFormat{listing}{\colorbox[cmyk]{0.43, 0.35, 0.35,0.01}{\parbox{\textwidth}{\hspace{15pt}#1#2#3}}}
+\captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white, singlelinecheck=false, margin=0pt, font={bf,footnotesize}}
+
+% end listing stuff
+\marginparwidth5cm
+
+\begin{document}
+\chapter{Introduction}
+ Welcome!
+
+Thanks for picking up this book. Together, we’re going to journey through bits of cognitive science, neuroscience, and learning and behavioral theory. You’ll see surprising aspects of how our brains work and see how you can beat the system to improve your own learning and thinking skills.
+
+We’re going to begin to refactor your wetware—redesign and rewire your brain—to make you more effective at your job. Whether you’re a programmer, manager, “knowledge worker,” technogeek, or deep thinker, or if you just happen to have a human brain you’d like to crank up, this book will help.
+
+I’m a programmer, so my examples and rants will be directed at the world of software development. If you’re not a programmer, don’t worry; programming really has little to do with writing software in arcane, cryptic languages (although we have a curious attachment to that habit).
+
+Programming is all about problem solving. It requires creativity, ingenuity, and invention. Regardless of your profession, you probably also have to solve problems creatively. However, for programmers, combining rich, flexible human thought with the rigid constraints of a digital computer exposes the power and the deepest flaws of both.
+
+Whether you’re a programmer or frustrated user, you may have already suspected that software development must be the most difficult endeavor ever envisioned and practiced by humans. Its complexity strains our best abilities daily, and failures can often be spectacular—and newsworthy. We’ve smashed spaceships into distant planets, blown up expensive rockets filled with irreplaceable experiments, plagued consumers with automated collection letters for $0.00, and stranded airline travelers on a semiregular basis.
+
+But now the good news (sort of): it’s all our fault. We tend to make programming much harder on ourselves than we need. Because of the way the industry has evolved over time, it seems we’ve lost track of some of the most fundamental, most important skills needed by a software developer.
+
+The good news is that we can fix that right here and right now. This book will help show you how.
+
+The number of bugs programmers introduce into programs has remained constant for the past forty years. Despite advances in programming languages, techniques, project methodologies, and so on, the defect density has remained fairly constant. [1]
+
+Maybe that’s because we’ve been focusing on the wrong things. Despite all these obvious changes in technology, one thing has remained constant: us. Developers. People.
+
+Software isn’t designed in an IDE or other tool. It’s imagined and created in our heads.
+
+Ideas and concepts are shared and communicated among a team, including the folks who are paying our organization to develop this software. We’ve spent the time investing in basic technology—in languages, tools, methodologies. That was time well spent, but now it’s time to move on.
+
+    Software is created in your head.
+
+Now we need to look at the really hard problems of social interaction in and between teams and even at the harder issues of just plain old thinking. No project is an island; software can’t be built or perform in isolation.
+
+Frederick Brooks, in his landmark paper No Silver Bullet—Essence and Accident in Software Engineering [Bro86] , claimed that “the software product is embedded in a cultural matrix of applications, users, laws, and machine vehicles. [2] These all change continually, and their changes inexorably force change upon the software product.”
+
+Brooks’ observation puts us squarely at the center of the maelstrom of society itself. Because of this complex interaction of many interested parties and forces and the constant evolution of change, it seems to me that the two most important modern skills are these:
+
+    Communication skills
+
+    Learning and thinking skills
+
+Some improvement to communication skills is being addressed by our industry. Agile methods (see the sidebar ​ What Are Agile Methods? ​ ), in particular, emphasize improved communications between team members and between the ultimate customer and the development team. Mass-media books such as Presentation Zen: Simple Ideas on Presentation Design and Delivery [Rey08] are suddenly best-sellers as more and more people realize the importance of simple, effective communication. It’s a good start.
+
+But then there’s learning and thinking, which is a much harder nut to crack.
+
+Programmers have to learn constantly—not just the stereotypical new technologies but also the problem domain of the application, the whims of the user community, the quirks of their teammates, the shifting sands of the industry, and the evolving characteristics of the project itself as it is built. We have to learn—and relearn—constantly. Then we have to apply this learning to the daily barrage of both old and new problems.
+
+It sounds easy enough in principle perhaps, but learning, critical thinking, creativity, and invention—all those mind-expanding skills—are all up to you. You don’t get taught; you have to learn. We tend to look at the teacher/learner relationship the wrong way around: it’s not that the teacher teaches ; it’s that the student learns . The learning is always up to you.
+
+It’s my hope that Pragmatic Thinking and Learning can help guide you through accelerated and enhanced learning and more pragmatic thinking.
+\end{document}

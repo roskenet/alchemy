@@ -1,0 +1,29 @@
+server:
+  port: 8080
+
+nakadi:
+  oauth2:
+    mode: OFF
+    tokenInfoUrl: http://notoken.info.url
+    localTokenInfoUrl: "http://notoken.info.url"
+    clientId: nakadi
+  stream:
+    timeoutMs: 315360000000
+  plugins:
+    authz:
+      factory: org.zalando.nakadi.plugin.auth.DefaultAuthorizationServiceFactory
+
+db:
+  host: localhost
+  port: 5432
+  name: nakadi
+  user: nakadi
+  password: nakadi
+
+zookeeper:
+  connection-string: localhost:2181
+
+kafka:
+  brokers: localhost:9092
+
+

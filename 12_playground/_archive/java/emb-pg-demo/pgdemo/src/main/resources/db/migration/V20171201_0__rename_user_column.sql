@@ -1,0 +1,1 @@
+ALTER TABLE inbounded_article RENAME COLUMN user_id TO "user";

@@ -1,0 +1,1 @@
+# java -cp ./h2-1.4.200.jar org.h2.tools.Server -tcp -tcpAllowOthers -tcpPort 5234 -baseDir ./ -ifNotExists

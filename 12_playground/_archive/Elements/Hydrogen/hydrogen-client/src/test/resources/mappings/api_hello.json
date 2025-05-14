@@ -1,0 +1,17 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "/api/Felix"
+  },
+  "response": {
+    "status": 200,
+    "jsonBody": {
+      "elementName": "Hydrogen",
+      "elementValue": "Felix",
+      "elementDateTime": "2019-10-16T15:10:41.700032+02:00"
+    },   
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: k8s-basic
+  namespace: k8s
+  labels:
+    app: k8s-basic
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: k8s-basic
+  template:
+    metadata:
+      labels:
+        app: k8s-basic
+    spec:
+      containers:
+        - name: k8s-basic
+          image: k8s-basic:0.0.1
+          livenessProbe:
+            httpGet:
+              path: /actuator/health
+              port: 8080
+            initialDelaySeconds: 30

@@ -1,0 +1,1 @@
+# Favor aggregation over inheritance

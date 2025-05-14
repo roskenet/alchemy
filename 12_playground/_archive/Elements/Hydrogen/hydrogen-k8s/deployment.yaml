@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hydrogen-depl
+  namespace: hydrogen
+spec:
+  selector:
+    matchLabels:
+      app: hydrogen-server
+  replicas: 3 
+  template:
+    metadata:
+      labels:
+        app: hydrogen-server
+    spec:
+      containers:
+      - name: hydrogen-server
+        image: hydrogen-server:0.0.1
+        ports:
+        - containerPort: 8080

@@ -1,0 +1,45 @@
+\documentclass[DIV=12,11pt,a4paper]{scrartcl}
+\usepackage[french]{babel}
+\usepackage[LY1]{fontenc}
+\usepackage[fullfamily,opticals,mathlf,minionint]{MinionPro}
+\usepackage{textcomp}
+%\usepackage{microtype}
+
+\usepackage[    % Much better micro typography
+protrusion=true, % adjust to your eye needs 
+expansion=true,
+tracking=true,
+kerning=true,
+spacing=true,
+letterspace=50, % well spaced smallcaps
+shrink=40,      % may be 20 or less is good   
+factor=1000]    % may be less that 1000 
+{microtype} 
+
+\renewcommand{\sfdefault}{MyriadPro-onum-pnum}
+%\usepackage{amsmath}
+%\usepackage{amsfonts}
+%\usepackage{amssymb}
+\usepackage[ a4paper, marginparsep=10mm, marginparwidth=60mm, left=20mm, right=80mm ]{geometry}
+%\newcommand{\sfmarginpar}[1]{{\marginpar{\usefont{LY1}{MyriadPro-onum-pnum}{c}{n}\selectfont}#1}} 
+\newcommand{\mysffont}{\usefont{LY1}{MyriadPro-onum-pnum}{c}{n}\selectfont}
+
+\newcommand{\vocab}[2]{\marginpar{\small \mysffont \textbf{#1} #2}}
+
+\begin{document}
+\title{Le Petit Nicolas: Le Football}
+\author{René Goscinny}
+\date{}
+
+\maketitle
+
+Alceste nous a donné rendez-vous,\marginpar{\small \mysffont \textbf{donner} \textcircled{\scriptsize 3} \textbf{rendez-vous à qn:} sich mit jdm treffen wollen, jdn bestellen.} à un tas de copains de la classe, pour cet après-midi dans le terrain vague,\marginpar{\small \mysffont \textbf{le terrain vague:} freier Platz, freies Gelände.} pas loin de la maison. Alceste, c'est mon ami, il est gros, il aime bien manger, et s'il nous a donné rendez-vous, c'est parce que son papa lui a offert un ballon de football tout neuf et nous allons faire une partie terrible. Il est chouette, Alceste.
+
+Nous nous 
+%\marginpar{\small \mysffont  Hier ist eine Erklärung $\lozenge\blacklozenge$ des Textes. Er sollte sauber in der Randspalte stehen.} 
+sommes retrouvés sur le terrain à trois heures de l'après-midi, nous étions dix-huit. Il a fallu décider comment former les équipes, pour qu'il y ait le même nombre de joueurs de chaque côté.
+
+Pour l'arbitre,\marginpar{\small\mysffont \textbf{l'arbitre} (m/f): Schiedsrichter.} ça a été facile. Nous avons choisi Agnan. Agnan c'est le premier de la classe, on ne l'aime pas trop, mais comme il porte des lunettes on ne peut pas lui taper dessus, ce qui, pour un arbitre, est une bonne combine. Et puis, aucune équipe ne voulait d'Agnan, parce qu'il est pas très fort pour le sport et il pleure trop facilement.
+Là où on a discuté, c'est quand Agnan a demandé qu'on lui donne un sifflet\vocab{le sifflet:}{Pfeife.}. Le seul qui en avait un, c'était Rufus, dont le papa est agent de police.
+
+\end{document}

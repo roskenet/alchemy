@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: oxygen
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: oxygen
+  template:
+    metadata:
+      labels:
+        app: oxygen
+    spec:
+      containers:
+      - name: oxygen
+        image: roskenet/hello-service:0.0.3
+        ports:
+        - name: api
+          containerPort: 8080

@@ -1,0 +1,5 @@
+Part I. Storage Engines
+
+The primary job of any database management system is reliably storing data and making it available for users. We use databases as a primary source of data, helping us to share it between the different parts of our applications. Instead of finding a way to store and retrieve information and inventing a new way to organize data every time we create a new app, we use databases. This way we can concentrate on application logic instead of infrastructure.
+
+Since the term _database management system_ (DBMS) is quite bulky, throughout this book we use more compact terms, _database system_ and _database_, to refer to the same concept.

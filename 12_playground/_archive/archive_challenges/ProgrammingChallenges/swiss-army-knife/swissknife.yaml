@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: swissknife
+  labels:
+    app: swissknife
+spec:
+  containers:
+  - image: roskenet/swissknife:1.0.0
+    command:
+      - "sleep"
+      - "604800"
+    imagePullPolicy: IfNotPresent
+    name: swissknife
+  restartPolicy: Always
+

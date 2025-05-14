@@ -1,0 +1,14 @@
+site_name: "Elemental Coding Problems"
+site_author: "Felix Roske"
+site_url: "https://www.felixroske.de/"
+
+theme:
+    name: "material"
+
+markdown_extensions:
+  - admonition
+  - codehilite:
+      linenums: true
+  - footnotes
+  - meta
+  - attr_list

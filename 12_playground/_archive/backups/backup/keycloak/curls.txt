@@ -1,0 +1,17 @@
+# Get well known endpoints:
+
+curl http://192.168.99.100:30111/auth/realms/Demo/.well-known/openid-configuration | jq .
+
+# Get a token for simple-service
+
+curl -i -d 'grant_type=client_credentials' -u simple-service:82561a8b-e4f7-4658-bcc5-ad6edc5ba5dc -X POST http://192.168.99.100:30111/auth/realms/Demo/protocol/openid-connect/token
+
+# Admin token for the management API
+
+curl -d "client_id=admin-cli" -d "username=admin" -d "password=admin" -d "grant_type=password" "http://192.168.99.100:30111/auth/realms/master/protocol/openid-connect/token" | jq .access_token | sed -e 's/^"//' -e 's/"$//'
+
+curl -H "Content-Type: application/json" -H "Au http://192.168.99.100:30111/auth/admin/realms/vanadium
+
+curl -H "Content-Type: application/json" -H "Authorization: Bearer $(ktoken)" http://192.168.99.100:30111/auth/admin/realms/vanadium/clients
+
+curl -i -X POST -H "Content-Type: application/json" -H "Authorization: Bearer $(ktoken)" -d @Demo-Realm.json http://192.168.99.100:30111/auth/admin/realms

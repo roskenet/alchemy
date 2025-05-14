@@ -1,0 +1,8 @@
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://keycloak.192-168-49-2.nip.io/auth/realms/sporx
+  jackson:
+    property-naming-strategy: SNAKE_CASE

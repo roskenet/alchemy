@@ -1,0 +1,15 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "/api/name/OK"
+  },
+  "response": {
+    "status": 200,
+    "jsonBody": {
+      "value": "Hello World"
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

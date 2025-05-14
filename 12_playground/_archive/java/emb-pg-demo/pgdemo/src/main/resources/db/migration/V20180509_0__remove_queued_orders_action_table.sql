@@ -1,0 +1,1 @@
+DROP TABLE queued_orders_action;

@@ -1,0 +1,10 @@
+site_name: Things about Java
+theme:
+  name: material
+markdown_extensions:
+  - admonition
+  - codehilite:
+      linenums: true
+  - pymdownx.arithmatex
+extra_javascript:
+  - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML

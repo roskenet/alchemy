@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nakadi
+  labels:
+    app: nakadi
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nakadi
+  template:
+    metadata:
+      labels:
+        app: nakadi
+    spec:
+      containers:
+      - name: nakadi
+        image: roskenet/nakadi:1.0.0
+        env:
+        - name: NAKADI_OAUTH2_MODE
+          value: "OFF"
+        - name: NAKADI_ZOOKEEPER_CONNECTION_STRING
+          value: "zookeeper://zookeeper:2181"
+        - name: SPRING_DATASOURCE_URL
+          value: jdbc:postgresql://postgres/nakadi
+        - name: SPRING_DATASOURCE_USERNAME
+          value: nakadi
+        - name: SPRING_DATASOURCE_PASSWORD
+          value: nakadi
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8080
+          initialDelaySeconds: 30
+          periodSeconds: 30

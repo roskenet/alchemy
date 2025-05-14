@@ -1,0 +1,5 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost/sbs_test
+    username: postgres
+    password: postgres

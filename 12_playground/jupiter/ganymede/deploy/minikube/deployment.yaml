@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ganymede
+  labels:
+    app: ganymede
+  annotations:
+    maintainer: "felix@felix-roske.de"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ganymede
+  template:
+    metadata:
+      labels:
+        app: ganymede
+    spec:
+      containers:
+        - name: ganymede
+          image: ganymede:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080
+              name: http 
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 1
+              memory: 1Gi

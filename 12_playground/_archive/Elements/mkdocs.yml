@@ -1,0 +1,49 @@
+site_name: "Felix' Elements of Software Engineering"
+site_description: "This is how I do things"
+site_author: "Felix Roske"
+site_url: "http://www.felixroske.de/"
+
+theme:
+  name: "material"
+  palette:
+    primary: "teal"
+    accent: "teal"
+  feature:
+    tabs: true
+  favicon: 'assets/images/icons8-battelefied-16.png'
+
+markdown_extensions:
+  - admonition
+  - codehilite:
+      linenums: true
+  - footnotes
+  - meta
+  - attr_list
+
+nav:
+  - 'index.md'
+  - 'about.md'
+  - Sessions:
+    - 1. Stunde: 'sessions/session_1.md'
+    - 2. Stunde: 'sessions/session_2.md'
+    - 3. Stunde: 'sessions/session_3.md'
+    - 4. Stunde: 'sessions/session_4.md'
+  - Elements:
+    - 'elements/Hydrogen.md'
+    - 'elements/Oxygen.md'
+    - 'elements/Tantalum.md'
+  - Tools:
+    - 'tools/bash.md'
+    - 'tools/python.md'
+    - 'tools/minikube.md'
+    - 'tools/maven.md'
+
+extra:
+  social:
+    - type: "github"
+      link: "https://github.com/roskenet"
+    - type: "twitter"
+      link: "https://twitter.com/felixroske"
+    - type: "facebook"
+      link: "https://www.facebook.com/felix.roske"
+

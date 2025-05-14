@@ -1,0 +1,122 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nakadi
+  labels:
+    app: nakadi
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nakadi
+  template:
+    metadata:
+      labels:
+        app: nakadi
+    spec:
+      volumes:
+      - name: zookeeper-data
+        hostPath:
+          path: /data/nakadi/zookeeper-data
+          type: Directory 
+      - name: zookeeper-datalog
+        hostPath:
+          path: /data/nakadi/zookeeper-datalog
+          type: Directory
+      - name: kafka-data
+        hostPath:
+          path: /data/nakadi/kafka-data
+          type: Directory
+      - name: kafka-secrets
+        hostPath:
+          path: /data/nakadi/kafka-secrets
+          type: Directory
+      - name: postgres-data
+        hostPath:
+          path: /data/nakadi/postgres-data
+          type: Directory
+      containers:
+#      - name: nakadi-ui
+#        image: roskenet/nakadi-ui:2.0.0
+#        env: 
+#        - name: NAKADI_API_URL
+#          value: http://localhost:8080
+      - name: nakadi-postgres
+        image: postgres:16
+        env:
+        - name: POSTGRES_USER
+          value: nakadi
+        - name: POSTGRES_DB
+          value: local_nakadi_db
+        - name: POSTGRES_PASSWORD
+          value: nakadi
+        - name: PGDATA
+          value: /var/lib/postgresql/data/pgdata
+        volumeMounts:
+        - mountPath: /var/lib/postgresql/data
+          name: postgres-data
+      - name: nakadi-zookeeper
+        image: zookeeper:3.6
+        env:
+        - name: ZOO_ADMINSERVER_ENABLED
+          value: "false"
+        volumeMounts:
+        - mountPath: /data
+          name: zookeeper-data
+        - mountPath: /datalog
+          name: zookeeper-datalog
+      - name: nakadi-kafka
+        image: bitnami/kafka:3.6
+        env:
+        - name: BITNAMI_DEBUG
+          value: "no"
+        - name: ALLOW_PLAINTEXT_LISTENER
+          value: "yes"
+        - name: KAFKA_ENABLE_KRAFT
+          value: "no"
+        - name: KAFKA_BROKER_ID
+          value: "0"
+        - name: KAFKA_CFG_ADVERTISED_LISTENERS
+          value: "INTERNAL://localhost:9092,EXTERNAL://localhost:29092,CLIENT://localhost:9093"
+        - name: KAFKA_CFG_LISTENERS
+          value: "INTERNAL://localhost:9092,EXTERNAL://0.0.0.0:29092,CLIENT://:9093"
+        - name: KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP
+          value: "INTERNAL:PLAINTEXT,EXTERNAL:PLAINTEXT,CLIENT:SASL_PLAINTEXT"
+        - name: KAFKA_CFG_AUTO_CREATE_TOPICS_ENABLE
+          value: "false"
+        - name: KAFKA_CFG_ZOOKEEPER_CONNECT
+          value: "localhost:2181"
+        - name: KAFKA_INTER_BROKER_LISTENER_NAME
+          value: "INTERNAL"
+        - name: KAFKA_CLIENT_USERS
+          value: "nakadi, producer"
+        - name: KAFKA_CLIENT_PASSWORDS
+          value: "nakadi_password, producer_password"
+        - name: KAFKA_CFG_SASL_ENABLED_MECHANISMS
+          value: "PLAIN"
+        - name: KAFKA_CFG_INTER_BROKER_LISTENER_NAME
+          value: "INTERNAL"
+        volumeMounts:
+        - mountPath: /var/lib/kafka/data
+          name: kafka-data
+        - mountPath: /etc/kafka/secrets
+          name: kafka-secrets
+      - name: nakadi
+        image: roskenet/nakadi:2.0.0
+        env:
+        - name: NAKADI_OAUTH2_MODE
+          value: "OFF"
+        - name: NAKADI_ZOOKEEPER_CONNECTIONSTRING
+          value: "zookeeper://localhost:2181"
+        - name: SPRING_DATASOURCE_URL
+          value: jdbc:postgresql://localhost/local_nakadi_db
+        - name: SPRING_DATASOURCE_USERNAME
+          value: nakadi
+        - name: SPRING_DATASOURCE_PASSWORD
+          value: nakadi
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8080
+          initialDelaySeconds: 30
+          periodSeconds: 30

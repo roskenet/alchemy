@@ -1,0 +1,25 @@
+riptide.clients:
+  example:
+    base-url: "https://catfact.ninja/"
+    connections:
+      connect-timeout: 400 milliseconds
+      socket-timeout: 200 milliseconds
+      time-to-live: 30 seconds
+      max-per-route: 16
+#    retry:
+#      enabled: true
+#      fixed-delay: 50 milliseconds
+#      max-retries: 5
+#    circuit-breaker:
+#      enabled: true
+#      failure-threshold: 3 out of 5
+#      delay: 30 seconds
+#      success-threshold: 5 out of 5
+#    caching:
+#      enabled: true
+#      shared: false
+#      max-cache-entries: 1000
+#    tracing:
+#      enabled: true
+#      tags:
+#        peer.service: example

@@ -46,14 +46,14 @@ def get_standard_stylesheet():
     """
     return """
     body {
-        font-family: 'Georgia', serif;
+        font-family: serif;
         line-height: 1.5;
         margin: 0 5%;
         text-align: justify;
         font-size: 1em;
     }
     h1, h2, h3, h4, h5, h6 {
-        font-family: 'Times New Roman', serif;
+        font-family: serif;
         line-height: 1.2;
         margin: 1em 0 0.5em 0;
         text-align: center;
@@ -65,7 +65,7 @@ def get_standard_stylesheet():
         font-size: 1.3em;
     }
     p {
-        margin: 0.5em 0;
+        margin: 0 0;
         text-indent: 1.5em;
     }
     p.first, h1 + p, h2 + p, h3 + p, h4 + p, h5 + p, h6 + p {

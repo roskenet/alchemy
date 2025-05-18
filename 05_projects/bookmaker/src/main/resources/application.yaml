@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: bookmaker
+  shell:
+    interactive:
+      enabled: true

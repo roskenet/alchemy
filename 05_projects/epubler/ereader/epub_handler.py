@@ -95,6 +95,7 @@ def get_standard_stylesheet():
 def process_xhtml_content(content):
     """
     Processes XHTML content to replace style information with a standard stylesheet and add random IDs.
+    Preserves bold and italic formatting, including tags and class attributes that might be used for styling.
 
     Args:
         content (bytes): The XHTML content as bytes
@@ -108,12 +109,25 @@ def process_xhtml_content(content):
     # Parse the XHTML
     soup = BeautifulSoup(content_str, 'html.parser')
 
-    # Remove style attributes and style tags
+    # Remove style attributes and style tags, but preserve bold and italic formatting
     for tag in soup.find_all(True):
-        if tag.has_attr('style'):
-            del tag['style']
-        if tag.has_attr('class'):
-            del tag['class']
+        # Skip bold and italic tags when removing style attributes
+        if tag.name not in ['b', 'strong', 'i', 'em']:
+            if tag.has_attr('style'):
+                del tag['style']
+            if tag.has_attr('class'):
+                # Check if any class name contains keywords related to bold or italic
+                class_value = tag['class'] if isinstance(tag['class'], str) else ' '.join(tag['class'])
+                if any(keyword in class_value.lower() for keyword in ['bold', 'italic', 'strong', 'em']):
+                    # Keep classes that might be used for bold or italic styling
+                    pass
+                else:
+                    del tag['class']
+        else:
+            # For bold and italic tags, keep them but still remove any non-essential styling
+            if tag.has_attr('style'):
+                del tag['style']
+            # Keep class attributes for bold and italic tags as they might be used for styling
 
     # Remove style tags
     for style_tag in soup.find_all('style'):

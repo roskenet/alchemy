@@ -17,9 +17,12 @@ public class EpubLoader {
         try (ZipInputStream zis = new ZipInputStream(Files.newInputStream(epubPath))) {
             ZipEntry entry;
             while ((entry = zis.getNextEntry()) != null) {
-                ByteArrayOutputStream out = new ByteArrayOutputStream();
-                zis.transferTo(out);
-                extractedFiles.put(entry.getName(), out.toByteArray());
+                // Skip directory entries
+                if (!entry.isDirectory()) {
+                    ByteArrayOutputStream out = new ByteArrayOutputStream();
+                    zis.transferTo(out);
+                    extractedFiles.put(entry.getName(), out.toByteArray());
+                }
             }
         }
 

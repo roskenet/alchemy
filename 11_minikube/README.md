@@ -1,5 +1,7 @@
 # Minikube setup
 
+Very cool to have nakadi running locally with all dependent services.
+
 ## Prerequesites
 
 Check if we have docker installed:

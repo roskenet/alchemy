@@ -29,7 +29,7 @@ public class ArmstrongNumber {
 
     }
 
-        @Test
+    @Test
     void exampleTests() {
         assertTrue(ArmstrongNumber.isNarcissistic(153), "153 is narcissistic");
         assertTrue(ArmstrongNumber.isNarcissistic(1634), "1634 is narcissistic");

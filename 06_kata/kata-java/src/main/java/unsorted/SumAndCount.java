@@ -1,4 +1,4 @@
-package de.roskenet;
+package unsorted;
 
 //Find the number as well
 // as the sum of natural numbers,

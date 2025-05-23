@@ -22,7 +22,17 @@ public class Ex02NumberAsText {
         return result.trim();
     }
 
-    // TODO: Do this recursively
+    // recursively:
+
+    private String numberAsTextRecursive(int number) {
+        ArrayList<String> words = new ArrayList<>(Arrays.asList("ZERO", "ONE", "TWO", "THREE", "FOUR", "FIVE", "SIX", "SEVEN", "EIGHT", "NINE"));
+
+        if (number < 10) {
+            return  words.get(number % 10);
+        }
+
+        return numberAsTextRecursive(number / 10) + " " + words.get(number % 10);
+    }
 
     @ParameterizedTest
     @CsvSource({
@@ -32,7 +42,7 @@ public class Ex02NumberAsText {
             "13579, ONE THREE FIVE SEVEN NINE"
     })
     void testNumberAsText(int number, String result) {
-        assertThat(numberAsText(number)).isEqualTo(result);
+        assertThat(numberAsTextRecursive(number)).isEqualTo(result);
     }
 
 }

@@ -1,4 +1,4 @@
-package ch02_Math;
+package challenges.ch02_Math;
 
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;

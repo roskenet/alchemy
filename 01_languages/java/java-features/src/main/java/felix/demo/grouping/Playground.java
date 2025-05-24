@@ -3,8 +3,6 @@ package felix.demo.grouping;
 import felix.demo.Artist;
 import felix.demo.CommonData;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.stream.Collectors;
 
 public class Playground {

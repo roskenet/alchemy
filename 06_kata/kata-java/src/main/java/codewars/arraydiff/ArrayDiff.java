@@ -1,4 +1,4 @@
-package codewars;
+package codewars.arraydiff;
 
 import org.junit.jupiter.api.Test;
 

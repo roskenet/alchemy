@@ -2,8 +2,6 @@ package felix.demo.grouping;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
 
 public class Main {
@@ -16,7 +14,8 @@ public class Main {
 
         ArrayList<Artist> artists = new ArrayList<>(Arrays.asList(michaelJackson, theBeatles, fleetwoodMac));
 
-        Map<Boolean, List<Artist>> artistByIsSolo = artists.stream().collect(Collectors.groupingBy(Artist::isSolo));
+        var artistByIsSolo = artists.stream()
+                .collect(Collectors.groupingBy(Artist::isSolo));
 
         artistByIsSolo.forEach((solo, artistList) -> {
             System.out.println("Solo: " + solo);

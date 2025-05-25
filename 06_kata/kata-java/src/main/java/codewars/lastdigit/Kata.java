@@ -10,16 +10,8 @@ public class Kata {
 
     // This is more a math problem than a programming task
     private static int lastDigit(BigInteger n1, BigInteger n2) {
-
-        int initDigit = n1.mod(new BigInteger("10")).intValue();
-        int expDigit = n2.mod(new BigInteger("10")).intValue();
-        int result = 0;
-
-        for (int i = initDigit; i <= expDigit; i++) {
-           // TODO...
-        }
-
-        return result;
+    // No idea why this kata was ranked with 5 kyu
+        return n1.modPow(n2, BigInteger.TEN).intValue();
     }
 
     @Test

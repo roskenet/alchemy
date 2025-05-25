@@ -9,6 +9,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 //
 public class Max {
     private static int sequence(int[] ints) {
+        // store a max variable
+        int max = 0;
+
         return 0;
     }
 

@@ -8,11 +8,25 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 // https://www.codewars.com/kata/54521e9ec8e60bc4de000d6c/train/java
 //
 public class Max {
-    private static int sequence(int[] ints) {
-        // store a max variable
+    private static int sequence(int[] arr) {
         int max = 0;
 
-        return 0;
+        for (int i = 0; i < arr.length; i++) {
+           for (int j = i; j < arr.length; j++) {
+              int currentRange = 0;
+              boolean hasPositive = false;
+              for (int k = i ; k <= j ; k++) {
+                  if (arr[k] > 0) {
+                      hasPositive = true;
+                  }
+                  currentRange += arr[k];
+              }
+              if (hasPositive && currentRange > max) {
+                  max = currentRange;
+              }
+           }
+        }
+        return max;
     }
 
     @Test

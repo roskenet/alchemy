@@ -3,12 +3,11 @@ package felix.demo.funcifaces;
 import felix.demo.Artist;
 import felix.demo.CommonData;
 
-import java.util.Collections;
 import java.util.List;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
-public class Playground {
+public class PredicateDemo {
 
     public static void main(String[] args) {
 

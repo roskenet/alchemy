@@ -5,7 +5,7 @@ import felix.demo.CommonData;
 
 import java.util.stream.Collectors;
 
-public class Playground {
+public class GroupingByDemo {
     public static void main(String[] args) {
         System.out.println("Show grouping from a stream");
 

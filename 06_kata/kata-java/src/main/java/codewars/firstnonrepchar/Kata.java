@@ -5,12 +5,15 @@ import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.function.Function;
 
+import static java.util.stream.Collectors.counting;
+import static java.util.stream.Collectors.groupingBy;
+import static java.util.stream.Collectors.toMap;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class Kata {
     public static String firstNonRepeatingLetter(String s) {
-
         Map<Character, Integer> map = new HashMap<>();
         for (int i = 0; i < s.length(); i++) {
           Character c = Character.toLowerCase(s.charAt(i));
@@ -21,13 +24,15 @@ public class Kata {
           }
         }
 
-      for (int i = 0; i < s.length(); i++) {
+        // Always Problems when using String / Characters / Integers primitives etc. pp.
+//        Map<Character, Long> map = s.chars().mapToObj(c -> (char) c).collect(groupingBy(Function.identity(), counting()));
+
+        for (int i = 0; i < s.length(); i++) {
         Character c = Character.toLowerCase(s.charAt(i));
         if (map.get(c) < 2) {
            return s.substring(i, i + 1);
         }
       }
-
         return "";
     }
 

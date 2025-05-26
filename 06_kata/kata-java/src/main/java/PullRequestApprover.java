@@ -44,7 +44,7 @@ public class PullRequestApprover {
         // check last two comments for the word "approved"
         // they need to be after lastCommitTime
 
-        // use streams to order pullRequestComments
+        // use fancy streams API
         // filter for every pullRequComm younger thatn lastCommitTime
         // get the last two
         // check for String equals "approved"

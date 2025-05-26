@@ -10,7 +10,16 @@ import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 public class Snail {
 
     public static int[] snail(int[][] array) {
-        // enjoy
+        int currDirection = 0; // right down left up
+        int[] result = new int[array.length*array.length];
+        int currX = 0;
+        int currY = 0;
+
+        for (int field = 0; field < array.length * array.length; field++ ) {
+           result[field] = array[currY][currX];
+
+        }
+
         return new int[0];
     }
 

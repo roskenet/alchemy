@@ -6,6 +6,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class PullRequestApprover {
@@ -51,10 +52,11 @@ public class PullRequestApprover {
         // get the last two
         // check for String equals "approved"
 
+        Predicate<PullRequestComment> timePredicate = (prc) -> prc.getDate().isAfter(lastCommitTime);
+        Predicate<PullRequestComment> approvedPredicate = (prc) -> prc.getCommentText().equals("approved");
+
         List<PullRequestComment> approved = comments.stream()
-                .filter(
-                        prc -> prc.getDate().isAfter(lastCommitTime) &&
-                                           prc.getCommentText().equals("approved"))
+                .filter(timePredicate.and(approvedPredicate))
                 .collect(Collectors.toList());
 
         if (approved.size() >= 2) {

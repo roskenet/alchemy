@@ -55,8 +55,11 @@ public class PullRequestApprover {
         Predicate<PullRequestComment> timePredicate = (prc) -> prc.getDate().isAfter(lastCommitTime);
         Predicate<PullRequestComment> approvedPredicate = (prc) -> prc.getCommentText().equals("approved");
 
+        Predicate<PullRequestComment> predicates = timePredicate.and(approvedPredicate);
+
+
         List<PullRequestComment> approved = comments.stream()
-                .filter(timePredicate.and(approvedPredicate))
+                .filter(predicates)
                 .collect(Collectors.toList());
 
         if (approved.size() >= 2) {

@@ -2,6 +2,7 @@ package unsorted;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static java.util.Comparator.comparingInt;
 
@@ -99,11 +100,11 @@ public class TradersTransactions {
 
         // 4. Return a string of all traders’ names sorted alphabetically.
         System.out.println("Aufgabe 4:");
-        transactions.stream()
+        System.out.println(transactions.stream()
                 .map(t -> t.getTrader().getName())
                 .distinct()
                 .sorted()
-                .forEach(System.out::println);
+                .collect(Collectors.joining(", ")));
 
         // 5. Are any traders based in Milan?
         System.out.println("Aufgabe 5:");

@@ -13,7 +13,7 @@ val operatonVersion = "1.0.0-beta-4"
 
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(17)
+        languageVersion = JavaLanguageVersion.of(21)
     }
 }
 
@@ -23,7 +23,7 @@ repositories {
 
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
-    implementation("org.operaton.bpm.springboot:operaton-bpm-spring-boot-starter:$operatonVersion")
+//    implementation("org.operaton.bpm.springboot:operaton-bpm-spring-boot-starter:$operatonVersion")
     implementation("org.operaton.bpm.springboot:operaton-bpm-spring-boot-starter-rest:$operatonVersion")
     implementation("org.operaton.bpm.springboot:operaton-bpm-spring-boot-starter-webapp:$operatonVersion")
     implementation("org.jetbrains.kotlin:kotlin-reflect")

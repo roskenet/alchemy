@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: camunda-api
+  datasource:
+    url: jdbc:postgresql://postgres.minikube/camunda
+    username: camunda
+    password: camunda
+  jersey:
+    application-path: api
+
+camunda:
+  bpm:
+    webapp:
+      application-path: web
+    rest:
+      enabled: true

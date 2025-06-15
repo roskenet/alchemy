@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: operaton-server
+  datasource:
+    url: jdbc:postgresql://postgres.minikube/operaton
+    username: operaton
+    password: operaton
+  jersey:
+    application-path: api
+
+operaton:
+  bpm:
+    webapp:
+      application-path: web
+    rest:
+      enabled: true

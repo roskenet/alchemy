@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  kdebox:
+    build: 
+      context: .
+      args:
+        HOST_UID: ${UID}
+        HOST_GID: ${GID}
+    ports:
+      - "5901:5901"
+    volumes:
+      - /home/froske/Workspaces/kdebox:/home/developer
+    container_name: kdebox
+

@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: nakadi
-        image: roskenet/nakadi:10.1.0
+        image: roskenet/nakadi:10.5.0
         imagePullPolicy: "IfNotPresent"
         env:
         - name: NAKADI_OAUTH2_MODE

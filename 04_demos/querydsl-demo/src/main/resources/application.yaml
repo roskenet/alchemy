@@ -1,5 +1,5 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost/querydsl_demo
+    url: jdbc:postgresql://postgres.minikube/database_demo
     username: postgres
     password: postgres

@@ -40,6 +40,17 @@
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
+                <configuration>
+                    <jvmArguments>-Dspring.application.admin.enabled=true</jvmArguments>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>start</goal>
+                            <goal>stop</goal>
+                        </goals>
+                    </execution>
+                </executions>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
             <plugin>
@@ -48,6 +59,7 @@
                 <version>1.5</version> <!-- Use the latest version -->
                 <executions>
                     <execution>
+                        <id>integration-test</id>
                         <goals>
                             <goal>generate</goal>
                         </goals>
@@ -56,7 +68,7 @@
                 <configuration>
                     <outputFileName>openapi.yaml</outputFileName>
                     <outputDir>${project.build.directory}</outputDir>
-                    <format>yaml</format>
+                    <apiDocsUrl>http://localhost:8080/v3/api-docs.yaml</apiDocsUrl>
                 </configuration>
             </plugin>
         </plugins>

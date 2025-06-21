@@ -1,5 +1,5 @@
 spring:
   datasource:
-    url: jdbc:postgresql://postgres.minikube/database_demo
-    username: postgres
-    password: postgres
+    url: jdbc:postgresql://localhost/demo_database
+    username: demo
+    password: password

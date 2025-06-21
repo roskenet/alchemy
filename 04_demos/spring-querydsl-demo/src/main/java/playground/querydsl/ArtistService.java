@@ -26,10 +26,15 @@ public class ArtistService {
             predicate.and(qArtist.name.eq(params.name));
         }
 
-        return StreamSupport
-                .stream(artistRepository
-                        .findAll(predicate.getValue())
-                        .spliterator(), false)
-                .collect(Collectors.toList());
+        // Recommended and commonly accepted way:
+        return (List<Artist>) artistRepository.findAll(predicate);
+
+        // If you feel uncomfortable in the strongly typed world:
+
+//        return StreamSupport
+//                .stream(artistRepository
+//                        .findAll(predicate)
+//                        .spliterator(), false)
+//                .collect(Collectors.toList());
     }
 }

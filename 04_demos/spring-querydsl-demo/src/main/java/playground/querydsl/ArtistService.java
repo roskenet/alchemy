@@ -1,9 +1,11 @@
 package playground.querydsl;
 
 import com.querydsl.core.BooleanBuilder;
+import com.querydsl.core.types.dsl.BooleanExpression;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
@@ -21,10 +23,14 @@ public class ArtistService {
     public List<Artist> getFiltered(SearchParams params) {
         QArtist qArtist = QArtist.artist;
 
-        BooleanBuilder predicate = new BooleanBuilder();
-        if (params.name != null) {
-            predicate.and(qArtist.name.eq(params.name));
-        }
+//        BooleanBuilder predicate = new BooleanBuilder();
+//        if (params.name != null) {
+//            predicate.and(qArtist.name.eq(params.name));
+//        }
+
+        BooleanExpression predicate = Optional.ofNullable(params.name)
+            .map(qArtist.name::eq)
+            .orElse(null);
 
         // Recommended and commonly accepted way:
         return (List<Artist>) artistRepository.findAll(predicate);

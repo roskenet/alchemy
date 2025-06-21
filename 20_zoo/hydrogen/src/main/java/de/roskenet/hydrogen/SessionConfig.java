@@ -14,16 +14,4 @@ import org.springframework.data.redis.connection.lettuce.LettuceConnectionFactor
 @Configuration
 @EnableRedisHttpSession
 public class SessionConfig {
-
-    /**
-     * Creates a Redis connection factory using Lettuce.
-     * <p>
-     * Connection details are automatically configured from application.properties.
-     *
-     * @return the Redis connection factory
-     */
-    @Bean
-    public LettuceConnectionFactory connectionFactory() {
-        return new LettuceConnectionFactory();
-    }
 }

@@ -16,7 +16,7 @@ import java.io.IOException;
  * It is only active when the "default" profile is active (typically in development).
  */
 @Configuration
-@Profile("development") // Only activate in development environment
+//@Profile("development") // Only activate in development environment
 public class EmbeddedRedisConfig {
 
     @Value("${spring.data.redis.port}")

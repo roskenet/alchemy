@@ -22,3 +22,11 @@
     Petunia × atkinsiana
 
 A complete microservices example on k8s.
+
+## hydrogen
+
+First tests
+
+## alpicola
+
+The first "real world example". Spring Boot application that implements the BfF pattern and delivers a react SPA.

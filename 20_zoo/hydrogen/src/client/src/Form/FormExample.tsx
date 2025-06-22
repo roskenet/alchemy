@@ -1,6 +1,7 @@
 import {Button, Checkbox, Form, Input} from "antd";
 import {useState} from "react";
 import NavigationLinks from "../Elements/NavigationLinks";
+import {API_URL} from "../config";
 
 const FormExample = () => {
   const [something, setSomething] = useState({"name": "Unknown", "number": 42});
@@ -10,7 +11,7 @@ const FormExample = () => {
     console.log("Ein Click!");
 
     // fetch('http://hydrogen.192-168-49-2.nip.io/api/something', {
-    fetch('http://hydrogen/api/something', {
+    fetch(`${API_URL}/api/something`, {
       method: 'POST',
       body: JSON.stringify(something),
       headers: {'Content-Type': 'application/json'},

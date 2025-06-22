@@ -1,6 +1,7 @@
 import {Button} from "antd";
 import {useState} from "react";
 import NavigationLinks from "../Elements/NavigationLinks";
+import {API_URL} from "../config";
 
 const Fetch = () => {
   const [theState, setTheState] = useState({"name": "Unknown", "email": "Unknown"});
@@ -20,7 +21,7 @@ const Fetch = () => {
     const callAPIMe= () => {
         console.log("Call auf /api/me");
 
-        fetch('http://hydrogen/api/me')
+        fetch(`${API_URL}/api/me`)
             .then(response => response.json())
             // .then(result => setTheState({"name": result.name}))
             .then(result => setTheState(result))

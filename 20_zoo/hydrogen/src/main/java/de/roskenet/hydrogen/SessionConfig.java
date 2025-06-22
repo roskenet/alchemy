@@ -9,7 +9,7 @@ import org.springframework.data.redis.connection.lettuce.LettuceConnectionFactor
  * Configuration for Spring Session with Redis.
  * <p>
  * This class configures Spring Session to use Redis as the session store.
- * The actual connection properties are defined in application.properties.
+ * The actual connection properties are defined in application.yaml.
  */
 @Configuration
 @EnableRedisHttpSession

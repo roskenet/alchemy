@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: hydrogen
-        image: roskenet/hydrogen:0.0.6
+        image: roskenet/hydrogen:0.0.7
         ports:
         - name: www
           containerPort: 8080

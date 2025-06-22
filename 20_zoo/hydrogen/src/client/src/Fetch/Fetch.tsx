@@ -20,7 +20,7 @@ const Fetch = () => {
     const callAPIMe= () => {
         console.log("Call auf /api/me");
 
-        fetch('http://localhost:8080/api/me')
+        fetch('http://hydrogen/api/me')
             .then(response => response.json())
             // .then(result => setTheState({"name": result.name}))
             .then(result => setTheState(result))

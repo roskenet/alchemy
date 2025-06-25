@@ -9,7 +9,8 @@ type Petunia = {
 };
 
 export default function PetuniasPage() {
-    const { data: petunias, error, loading } = useAuthenticatedFetch<Petunia[]>('/api/petunias');
+    const { data: petunias, error, loading } =
+        useAuthenticatedFetch<Petunia[]>('/api/petunias');
 
     if (loading) {
         return <p>Lade Petunien …</p>;

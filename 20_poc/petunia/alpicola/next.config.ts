@@ -5,6 +5,11 @@ const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
 const nextConfig: NextConfig = {
   async rewrites() {
     return [
+      // UserInfo Requests
+      {
+        source: "/me",
+        destination: `${API_BASE_URL}/me`,
+      },
       // API Requests
       {
         source: "/api/:path*",

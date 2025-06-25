@@ -35,22 +35,22 @@ spec:
 
 ---
 
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: villadiana
-  annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
-spec:
-  rules:
-    - host: "villadiana"
-      http:
-        paths:
-          - pathType: Prefix
-            path: "/"
-            backend:
-              service:
-                name: villadiana
-                port:
-                  name: www
+# apiVersion: networking.k8s.io/v1
+# kind: Ingress
+# metadata:
+#   name: villadiana
+#   annotations:
+#     nginx.ingress.kubernetes.io/rewrite-target: /
+# spec:
+#   rules:
+#     - host: "villadiana"
+#       http:
+#         paths:
+#           - pathType: Prefix
+#             path: "/"
+#             backend:
+#               service:
+#                 name: villadiana
+#                 port:
+#                   name: www
 

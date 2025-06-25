@@ -9,4 +9,8 @@ There are other repositories that deploy to Zalando's playground cluster having 
 
 felix@zalando.de
 
+## Subtree petunia
 
+The http://github.com/roskenet/petunia.git project is here as a subtree in 20_poc/petunia.
+
+git subtree pull --prefix=20_poc/petunia petunia --squash

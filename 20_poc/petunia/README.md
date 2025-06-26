@@ -1,6 +1,6 @@
 # Project Petunia
 
-A fictional microservice garden.
+A fictional microservice garden OpenID Connect secured with keycloak.
 
 felix@roskenet.de
 
@@ -19,3 +19,4 @@ The frontend a next.js based application.
 ## Petunia villadiana
 
 A backend and front controller that does session management for the alpicola frontend.
+

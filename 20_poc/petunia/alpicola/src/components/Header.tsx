@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { UserCircle, LogIn } from 'lucide-react';
+import { LogIn } from 'lucide-react';
 import LogoutButton from "@/components/LogoutButton";
 
 type UserInfo = {

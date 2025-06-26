@@ -23,8 +23,7 @@ public class PetuniaController {
                         "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Petunia_in_Orangenburg.jpg/1200px-Petunia_in_Orangenburg.jpg"),
                 new PetuniaSpecies(
                         "Petunia Villadiana",
-                        ""
-                )
+                        "")
         );
     }
 

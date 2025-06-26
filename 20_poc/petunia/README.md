@@ -3,7 +3,7 @@
 A fictional microservice garden OpenID Connect secured with keycloak.
 This project uses typical elements and patterns that you find in an enterprise application.
 
-Frontends, Backends, Microservices, REST APIs, OpenID Connect, Event Driven Architecture.
+Frontends, Backends, Microservices, REST APIs, OpenID Connect, Event Driven Architecture, Kubernetes deployments.
 
 
 felix@roskenet.de

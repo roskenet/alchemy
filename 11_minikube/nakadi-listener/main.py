@@ -16,7 +16,7 @@ import sys
 from typing import Dict, Any, List
 
 try:
-    from nakadi_client import NakadiClient
+    from nakadi import NakadiClient
 except ImportError:
     print("Error: nakadi-python package is not installed.")
     print("Please install it using: pip install nakadi-python")
@@ -46,20 +46,21 @@ def parse_arguments() -> argparse.Namespace:
         '--subscription-id',
         help='Existing subscription ID (if not provided, a new subscription will be created)'
     )
-    parser.add_argument(
-        '--token',
-        help='OAuth token for authentication'
-    )
     return parser.parse_args()
 
-def process_events(events: List[Dict[str, Any]]) -> None:
+def process_events(batch: Dict[str, Any] | bytes) -> None:
     """Process received events.
 
     Args:
-        events: List of event dictionaries
+        batch: Batch dictionary or bytes containing events
     """
+    # If batch is bytes, decode it to a dictionary
+    if isinstance(batch, bytes):
+        batch = json.loads(batch.decode('utf-8'))
+
+    events = batch.get('events', [])
     for event in events:
-        logger.info(f"Received event: {json.dumps(event, indent=2)}")
+        print(f"Received event: {json.dumps(event, indent=2)}")
 
 def create_subscription(client: NakadiClient, event_name: str) -> str:
     """Create a new subscription for the specified event type.
@@ -71,11 +72,12 @@ def create_subscription(client: NakadiClient, event_name: str) -> str:
     Returns:
         Subscription ID
     """
-    subscription = client.create_subscription(
-        owning_application="nakadi-listener",
-        event_types=[event_name],
-        consumer_group="nakadi-listener-group"
-    )
+    subscription_data = {
+        "owning_application": "nakadi-listener",
+        "event_types": [event_name],
+        "consumer_group": "nakadi-listener-group"
+    }
+    subscription = client.create_subscription(subscription_data)
     subscription_id = subscription['id']
     logger.info(f"Created subscription with ID: {subscription_id}")
     return subscription_id
@@ -91,18 +93,28 @@ def listen_events(client: NakadiClient, subscription_id: str) -> None:
 
     try:
         # Start consuming events
-        for events in client.get_subscription_events_stream(
+        stream = client.get_subscription_events_stream(
             subscription_id=subscription_id,
             max_uncommitted_events=100,
             batch_limit=50,
             stream_timeout=60
-        ):
+        )
+        stream_id = stream.get_stream_id()
+        logger.info(f"Connected to stream with ID: {stream_id}")
+
+        for events in stream:
             if events:
                 process_events(events)
                 # Commit the cursor to acknowledge processing
+                # If events is bytes, decode it to a dictionary
+                cursor_events = events
+                if isinstance(events, bytes):
+                    cursor_events = json.loads(events.decode('utf-8'))
+
                 client.commit_subscription_cursors(
                     subscription_id=subscription_id,
-                    cursors=events.get('cursor', {})
+                    stream_id=stream_id,
+                    cursors=[cursor_events.get('cursor', {})]
                 )
     except KeyboardInterrupt:
         logger.info("Received keyboard interrupt. Shutting down...")
@@ -117,10 +129,8 @@ def main() -> None:
     # Initialize Nakadi client
     client_kwargs = {
         'nakadi_url': args.nakadi_url,
+        'token': 'dummy-token'
     }
-
-    if args.token:
-        client_kwargs['access_token'] = args.token
 
     try:
         client = NakadiClient(**client_kwargs)

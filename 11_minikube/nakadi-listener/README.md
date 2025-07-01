@@ -28,7 +28,6 @@ python main.py --event-name your-event-name
 - `--event-name` (required): Name of the event type to subscribe to
 - `--nakadi-url` (optional): URL of the Nakadi server (default: https://nakadi.example.com)
 - `--subscription-id` (optional): Existing subscription ID (if not provided, a new subscription will be created)
-- `--token` (optional): OAuth token for authentication
 
 ### Examples
 
@@ -47,10 +46,6 @@ python main.py --event-name your-event-name
    python main.py --event-name order.created --subscription-id your-subscription-id
    ```
 
-4. Provide an OAuth token for authentication:
-   ```
-   python main.py --event-name order.created --token your-oauth-token
-   ```
 
 ## How It Works
 
@@ -67,7 +62,6 @@ If you encounter the error "nakadi-python package is not installed", make sure y
 pip install -r requirements.txt
 ```
 
-If you're having issues with authentication, make sure you're providing a valid OAuth token with the `--token` parameter.
 
 ## License
 

@@ -1,0 +1,7 @@
+keyring-provider = "subprocess"
+native-tls = false
+
+[[index]]
+name = "zalando"
+url = "https://froske@pypi.zalando.net/repository/pypi/simple"
+default = true

@@ -1,0 +1,1 @@
+nakadi-python>=0.7.0

@@ -3,6 +3,6 @@ cd nakadi
 git pull origin master
 
 cd -
-docker build -t roskenet/nakadi:10.7.0 .
+docker build -t roskenet/nakadi:10.9.0 .
 kubectl apply -f ../deployment.yaml
 

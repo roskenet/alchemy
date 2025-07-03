@@ -59,3 +59,42 @@ spec:
 #            port: actuator
 #          periodSeconds: 5
 #          failureThreshold: 1
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: keycloak
+  labels:
+    run: keycloak
+    context: keycloak
+spec:
+  selector:
+    app: keycloak
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: service 
+
+---
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: keycloak
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: "keycloak.minikube"
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service: 
+            name: keycloak
+            port: 
+              name: service
+

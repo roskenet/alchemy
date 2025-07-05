@@ -24,7 +24,7 @@ class PetuniaControllerTest {
         // Expected Petunia object from the controller
         val expectedPetunia = Petunia("Rosa", 4)
 
-        mockMvc.perform(get("/petunias"))
+        mockMvc.perform(get("/api/petunias"))
             .andExpect(status().isOk)
             .andExpect(content().contentType(MediaType.APPLICATION_JSON))
             .andExpect(jsonPath("$.species").value(expectedPetunia.species))
@@ -37,7 +37,7 @@ class PetuniaControllerTest {
         val testPetunia = Petunia("Violacea", 6)
         val petuniaJson = objectMapper.writeValueAsString(testPetunia)
 
-        mockMvc.perform(post("/petunias")
+        mockMvc.perform(post("/api/petunias")
             .contentType(MediaType.APPLICATION_JSON)
             .content(petuniaJson))
             .andExpect(status().isOk)

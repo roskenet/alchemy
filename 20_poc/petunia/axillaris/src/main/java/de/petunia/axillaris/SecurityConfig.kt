@@ -15,7 +15,7 @@ open class SecurityConfig {
     open fun securityFilterChain(http: HttpSecurity): SecurityFilterChain {
         http.authorizeHttpRequests {
             it.requestMatchers("/actuator/**").permitAll()
-            it.anyRequest().hasAuthority("SCOPE_email")
+            it.anyRequest().hasAuthority("SCOPE_petunias.read")
         }
         http.oauth2ResourceServer {
             it.jwt {}

@@ -16,8 +16,11 @@ RUN apt-get install -y \
 RUN apt-get install -y \
     gnustep gnustep-devel \
     wmaker \
-    fonts-powerline \
-    terminator
+    terminator fzf starship
+
+# Packages I removed:
+# RUN apt-get install -y \
+#     fonts-powerline 
 
 # Clean up
 RUN apt-get clean
@@ -64,7 +67,7 @@ USER developer
 ENV USER=developer 
 WORKDIR /home/developer
 
-# Expose VNC port
+# VNC port
 EXPOSE 5901
 
 # Start VNC server

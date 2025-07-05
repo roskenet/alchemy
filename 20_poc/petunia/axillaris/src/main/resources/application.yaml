@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: axillaris
+  jackson:
+    property-naming-strategy: SNAKE_CASE

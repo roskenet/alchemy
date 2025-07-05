@@ -10,6 +10,6 @@ services:
     ports:
       - "5901:5901"
     volumes:
-      - /home/froske/Workspaces/gnubox:/home/developer
+      - /home/froske/Mounts/gnubox:/home/developer
     container_name: gnubox
 

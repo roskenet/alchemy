@@ -26,7 +26,7 @@ public class PetuniaController {
 
         List<PetuniaSpecies> resultList = axillarisClient
                 .get()
-                .uri("http://localhost:9090/api/petunias")
+                .uri("/api/petunias")
                 .retrieve()
                 .bodyToFlux(PetuniaSpecies.class)
                 .collectList().block();

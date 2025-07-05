@@ -2,14 +2,14 @@ spring:
   application:
     name: axillaris
   profiles:
-    default: dev
+    default: prod
   jackson:
     property-naming-strategy: SNAKE_CASE
-  security:
-    oauth2:
-      resourceserver:
-        jwt:
-          issuer-uri: http://keycloak/realms/petunia
+#  security:
+#    oauth2:
+#      resourceserver:
+#        jwt:
+#          issuer-uri: http://keycloak/realms/petunia
 
 # Keycloak client: axillaris
 #    cKsnVPkC2z4CClyevx5ttoZW9Bu9MGsb

@@ -31,6 +31,8 @@ spring:
       password: password
 
 app:
+  client:
+    axillaris-url: http://axillaris
   security:
     allowed-origin-patterns:
       - http://alpicola

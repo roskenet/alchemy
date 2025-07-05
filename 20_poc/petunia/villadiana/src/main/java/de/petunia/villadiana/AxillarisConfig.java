@@ -10,6 +10,9 @@ import org.springframework.web.reactive.function.client.WebClient;
 @Configuration
 public class AxillarisConfig {
 
+   @Value("${axillaris.url}")
+   private String axillarisUrl;
+
    @Bean
    public WebClient axillarisClient(ClientRegistrationRepository clientRegistrationRepository,
                                     OAuth2AuthorizedClientRepository authorizedClientRepository) {
@@ -21,7 +24,8 @@ public class AxillarisConfig {
       oauth2Filter.setDefaultClientRegistrationId("axillaris-client");
 
       return WebClient.builder()
-            .apply(oauth2Filter.oauth2Configuration())
+              .baseUrl()
+              .apply(oauth2Filter.oauth2Configuration())
             .build();
    }
 }

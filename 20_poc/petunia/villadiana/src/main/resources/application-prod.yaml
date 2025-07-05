@@ -10,12 +10,20 @@ spring:
         provider:
           keycloak:
             issuer-uri: http://keycloak/realms/petunia   # OIDC discovery
+            token-uri: http://keycloak/realms/petunia/protocol/openid-connect/token
         registration:
           keycloak:
             client-id: villadiana
             client-secret: 6w8HibfpYVEQIgMTKAFXFPMC8NgaOHBU
             authorization-grant-type: authorization_code
             scope: openid,profile,email
+            provider: keycloak
+          axillaris-client:
+            client-id: villadiana
+            client-secret: 6w8HibfpYVEQIgMTKAFXFPMC8NgaOHBU
+            authorization-grant-type: client_credentials
+            scope: petunias.read,petunias.write
+            provider: keycloak
   data:
     redis:
       host: valkey
@@ -28,3 +36,4 @@ app:
       - http://alpicola
     post-logout-redirect-uri: http://alpicola
     default-login-success-url: http://alpicola/petunias
+

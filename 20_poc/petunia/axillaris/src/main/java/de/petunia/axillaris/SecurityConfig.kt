@@ -18,7 +18,9 @@ open class SecurityConfig {
             it.anyRequest().hasAuthority("SCOPE_petunias.read")
         }
         http.oauth2ResourceServer {
-            it.jwt {}
+            it.jwt {
+
+            }
         }
         return http.build()
     }

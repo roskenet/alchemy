@@ -1,4 +1,10 @@
 package de.petunia.villadiana;
 
-public record PetuniaSpecies(String name, String imageUrl) {
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+public record PetuniaSpecies(
+        String name,
+        @JsonProperty("petal_length")
+        Integer petalLength,
+        String imageUrl) {
 }

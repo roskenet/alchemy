@@ -13,12 +13,12 @@ import org.springframework.security.web.SecurityFilterChain
 open class SecurityConfig {
     @Bean
     open fun securityFilterChain(http: HttpSecurity): SecurityFilterChain {
-        http.authorizeHttpRequests { requests ->
-            requests.requestMatchers("/actuator/**").permitAll()
-            requests.anyRequest().authenticated()
+        http.authorizeHttpRequests {
+            it.requestMatchers("/actuator/**").permitAll()
+            it.anyRequest().hasAuthority("SCOPE_email")
         }
-        http.oauth2ResourceServer { oauth2 ->
-            oauth2.jwt {}
+        http.oauth2ResourceServer {
+            it.jwt {}
         }
         return http.build()
     }

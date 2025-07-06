@@ -5,3 +5,25 @@ spring:
     default: prod
   jackson:
     property-naming-strategy: SNAKE_CASE
+
+management:
+  tracing:
+    enabled: true
+    sampling:
+      probability: 1.0  # Sample 100% of traces (adjust for production)
+  otlp:
+    tracing:
+      endpoint: http://localhost:4317
+
+# OpenTelemetry configuration
+otel:
+  service:
+    name: axillaris
+  exporter:
+    otlp:
+      endpoint: http://localhost:4317
+      protocol: grpc
+  resource:
+    attributes:
+      service.name: axillaris
+      service.version: 1.0.0

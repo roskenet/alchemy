@@ -27,7 +27,7 @@ class PetuniaControllerTest {
         mockMvc.perform(get("/api/petunias"))
             .andExpect(status().isOk)
             .andExpect(content().contentType(MediaType.APPLICATION_JSON))
-            .andExpect(jsonPath("$.species").value(expectedPetunia.species))
+            .andExpect(jsonPath("$.name").value(expectedPetunia.name))
             .andExpect(jsonPath("$.petal_length").value(expectedPetunia.petalLength))
     }
 
@@ -42,7 +42,7 @@ class PetuniaControllerTest {
             .content(petuniaJson))
             .andExpect(status().isOk)
             .andExpect(content().contentType(MediaType.APPLICATION_JSON))
-            .andExpect(jsonPath("$.species").value("Violacea"))
+            .andExpect(jsonPath("$.name").value("Violacea"))
             .andExpect(jsonPath("$.petal_length").value(6))
     }
 }

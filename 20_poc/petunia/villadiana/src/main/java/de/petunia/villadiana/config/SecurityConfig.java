@@ -1,6 +1,5 @@
-package de.petunia.villadiana;
+package de.petunia.villadiana.config;
 
-import de.petunia.villadiana.config.SecurityProperties;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

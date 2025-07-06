@@ -1,5 +1,6 @@
 package de.petunia.villadiana;
 
+import de.petunia.villadiana.axillaris.AxillarisGateway;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,19 +20,11 @@ import java.util.List;
 public class PetuniaController {
 
     @Autowired
-    private WebClient axillarisClient;
+    private AxillarisGateway axillarisGateway;
 
     @GetMapping("/petunias")
     public List<PetuniaSpecies> getPetuniaSpecies() {
-
-        List<PetuniaSpecies> resultList = axillarisClient
-                .get()
-                .uri("/api/petunias")
-                .retrieve()
-                .bodyToFlux(PetuniaSpecies.class)
-                .collectList().block();
-
-        return resultList;
+        return axillarisGateway.getAllPetunias();
     }
 
     @PostMapping("/petunias")

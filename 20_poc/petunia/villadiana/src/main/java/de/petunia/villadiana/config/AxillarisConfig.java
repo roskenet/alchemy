@@ -1,5 +1,7 @@
-package de.petunia.villadiana;
+package de.petunia.villadiana.config;
 
+import de.petunia.villadiana.axillaris.AxillarisGateway;
+import de.petunia.villadiana.axillaris.AxillarisWebClient;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -28,5 +30,10 @@ public class AxillarisConfig {
               .baseUrl(axillarisUrl)
               .apply(oauth2Filter.oauth2Configuration())
             .build();
+   }
+
+   @Bean
+   public AxillarisGateway axillarisGateway(WebClient axillarisClient) {
+      return new AxillarisWebClient(axillarisClient);
    }
 }

@@ -1,5 +1,5 @@
 APP_NAME=alpicola
-APP_VERSION=2.1.0
+APP_VERSION=2.2.0
 IMAGE_NAME=roskenet/$(APP_NAME):${APP_VERSION}
 CONTAINER_NAME=$(APP_NAME)
 PORT=3000
@@ -29,7 +29,7 @@ clean: stop
 
 deploy: build
 		kubectl config use-context minikube
-		kubectl apply -f deploy/deployment.yaml
+	        cat deploy/deployment.yaml | sed "s/\$$VERSION/$(APP_VERSION)/g" | kubectl apply -f -
 
 undeploy:
 		kubectl config use-context minikube

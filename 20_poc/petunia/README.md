@@ -22,5 +22,10 @@ The frontend a next.js based application.
 
 ## Petunia villadiana
 
-A backend and front controller that does session management for the alpicola frontend.
+A Spring Boot BFF that does session management for the alpicola frontend.
+
+## Petunia axillaris
+
+A Spring Boot REST service client_credentials flow secured.
+
 

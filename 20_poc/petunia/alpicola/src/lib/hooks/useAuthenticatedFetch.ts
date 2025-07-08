@@ -8,7 +8,7 @@ export function useAuthenticatedFetch<T>(url: string) {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch(url, {
+        fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}${url}`, {
             credentials: 'include',
         })
             .then((res) => {

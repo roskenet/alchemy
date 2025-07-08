@@ -4,7 +4,7 @@ metadata:
   name: petunia
 spec:
   rules:
-  - host: petunia.local
+  - host: petunia
     http:
       paths:
       - path: /api

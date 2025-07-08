@@ -14,7 +14,7 @@ export default function Header() {
     const [user, setUser] = useState<UserInfo | null>(null);
 
     useEffect(() => {
-        fetch('/me', {
+        fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/me`, {
             credentials: 'include',
         })
             .then((res) => {
@@ -36,7 +36,7 @@ export default function Header() {
                     </>
                 ) : (
                     <Link
-                        href="/oauth2/authorization/keycloak"
+                        href={`${process.env.NEXT_PUBLIC_API_BASE_URL}/oauth2/authorization/keycloak`}
                         className="flex items-center gap-1 text-sm text-blue-600 hover:underline"
                     >
                         <LogIn size={18} />

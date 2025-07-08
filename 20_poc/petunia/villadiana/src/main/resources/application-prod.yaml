@@ -35,6 +35,6 @@ app:
     axillaris-url: http://axillaris
   security:
     allowed-origin-patterns:
-      - http://alpicola
-    post-logout-redirect-uri: http://alpicola
-    default-login-success-url: http://alpicola/petunias
+      - http://petunia.local
+    post-logout-redirect-uri: http://petunia.local
+    default-login-success-url: http://petunia.local/petunias

@@ -3,7 +3,7 @@
 
 export default function LogoutButton() {
   const handleLogout = () => {
-    window.location.href = '/logout';
+    window.location.href = `${process.env.NEXT_PUBLIC_API_BASE_URL}/logout`;
   };
 
   return (

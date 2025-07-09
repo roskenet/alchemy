@@ -19,13 +19,17 @@ data:
 
     exporters:
       debug: {}
+      jaeger:
+        endpoint: jaeger-collector:14250
+        tls:
+          insecure: true
 
     service:
       pipelines:
         traces:
           receivers: [otlp]
           processors: [memory_limiter, batch]
-          exporters: [debug]
+          exporters: [jaeger]
         logs:
           receivers: [otlp]
           processors: [batch]
@@ -36,6 +40,7 @@ data:
           exporters: [debug]
 
 ---
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -52,7 +57,7 @@ spec:
     spec:
       containers:
         - name: otel-collector
-          image: otel/opentelemetry-collector:0.129.1
+          image: otel/opentelemetry-collector-contrib:0.101.0
           args: ["--config=/etc/otel/config.yaml"]
           ports:
             - containerPort: 4317 # OTLP gRPC

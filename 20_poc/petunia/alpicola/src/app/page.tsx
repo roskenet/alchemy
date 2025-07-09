@@ -17,6 +17,7 @@ export default function Home() {
         alignItems: 'center' 
       }}>
         <Space direction="vertical" align="center">
+          <img src="/img/chocolina.webp" width={300} />
           <Title level={1}>Hello World!</Title>
           <Paragraph>This is my webservice garden!</Paragraph>
           <Link href="/petunias">My Petunias</Link>

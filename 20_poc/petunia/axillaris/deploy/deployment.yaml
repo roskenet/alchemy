@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: axillaris
-        image: roskenet/axillaris:1.0.0
+        image: roskenet/axillaris:2.7.0
         ports:
         - name: www
           containerPort: 8080

@@ -8,4 +8,13 @@ spring:
           client-id: axillaris
           client-secret: cKsnVPkC2z4CClyevx5ttoZW9Bu9MGsb
           introspection-uri: http://keycloak/realms/chemicals/protocol/openid-connect/token/introspect
-
+management:
+  otlp:
+    metrics:
+      export:
+        url: "http://otel-collector:4318/v1/metrics"
+        step: 10s
+  endpoints:
+    web:
+      exposure:
+        include: health,info

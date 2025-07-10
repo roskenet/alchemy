@@ -7,12 +7,6 @@ data:
     global:
       scrape_interval: 15s
 
-    scrape_configs:
-      - job_name: 'villadiana'
-        metrics_path: /actuator/prometheus
-        static_configs:
-          - targets: ['villadiana:8080']
-
 ---
 
 apiVersion: apps/v1

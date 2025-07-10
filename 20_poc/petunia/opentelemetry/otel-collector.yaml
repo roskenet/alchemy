@@ -7,8 +7,9 @@ data:
     receivers:
       otlp:
         protocols:
-          grpc:
-          http:
+          grpc: {}
+          http: 
+            endpoint: 0.0.0.0:4318
 
     processors:
       batch: {}
@@ -40,7 +41,7 @@ data:
         metrics:
           receivers: [otlp]
           processors: [memory_limiter, batch]
-          exporters: [prometheusremotewrite]
+          exporters: [prometheusremotewrite, debug]
 
 ---
 
@@ -63,8 +64,10 @@ spec:
           image: otel/opentelemetry-collector-contrib:0.129.1
           args: ["--config=/etc/otel/config.yaml"]
           ports:
-            - containerPort: 4317 # OTLP gRPC
-            - containerPort: 4318 # OTLP HTTP
+            - name: otlp-grpc
+              containerPort: 4317 
+            - name: otlp-http
+              containerPort: 4318 
           volumeMounts:
             - name: config-volume
               mountPath: /etc/otel
@@ -74,6 +77,7 @@ spec:
             name: otel-collector-config
 
 ---
+
 apiVersion: v1
 kind: Service
 metadata:

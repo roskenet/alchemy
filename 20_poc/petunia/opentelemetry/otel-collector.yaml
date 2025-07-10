@@ -24,6 +24,8 @@ data:
         endpoint: jaeger:4317
         tls:
           insecure: true
+      prometheusremotewrite:
+        endpoint: http://prometheus:9090/api/v1/write
 
     service:
       pipelines:
@@ -38,7 +40,7 @@ data:
         metrics:
           receivers: [otlp]
           processors: [memory_limiter, batch]
-          exporters: [debug]
+          exporters: [prometheusremotewrite]
 
 ---
 

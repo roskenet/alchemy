@@ -10,6 +10,11 @@ management:
     web:
       exposure:
         include: health,info,prometheus
-  endpoint:
-    prometheus:
-      access: unrestricted
+  metrics:
+    export:
+      otlp:
+        enabled: true
+        url: http://otel-collector:4317
+#  endpoint:
+#    prometheus:
+#      access: unrestricted

@@ -5,3 +5,9 @@ spring:
     default: prod
   jackson:
     property-naming-strategy: SNAKE_CASE
+
+management:
+  otlp:
+    metrics:
+      export:
+        enabled: off

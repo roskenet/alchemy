@@ -15,6 +15,3 @@ management:
       otlp:
         enabled: true
         url: http://otel-collector:4317
-#  endpoint:
-#    prometheus:
-#      access: unrestricted

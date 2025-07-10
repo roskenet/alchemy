@@ -30,6 +30,17 @@ spring:
       port: 6379
       password: password
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus
+  metrics:
+    export:
+      otlp:
+        enabled: true
+        url: http://otel-collector:4317
+
 app:
   client:
     axillaris-url: http://axillaris

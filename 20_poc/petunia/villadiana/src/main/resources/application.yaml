@@ -5,13 +5,3 @@ spring:
     name: villadiana
   jackson:
     property-naming-strategy: SNAKE_CASE
-management:
-  endpoints:
-    web:
-      exposure:
-        include: health,info,prometheus
-  metrics:
-    export:
-      otlp:
-        enabled: true
-        url: http://otel-collector:4317

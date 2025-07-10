@@ -14,6 +14,9 @@ management:
       export:
         url: "http://otel-collector:4318/v1/metrics"
         step: 10s
+  metrics:
+    tags:
+      service.name: axillaris
   endpoints:
     web:
       exposure:

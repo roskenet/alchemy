@@ -2,6 +2,7 @@
 
 import { Typography, Layout, Space } from 'antd';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const { Title, Paragraph } = Typography;
 const { Content } = Layout;
@@ -17,7 +18,7 @@ export default function Home() {
         alignItems: 'center' 
       }}>
         <Space direction="vertical" align="center">
-          <img src="/img/chocolina.webp" width={300} />
+          <Image src="/img/chocolina.jpg" width={300} height={300} alt="Chocolina" />
           <Title level={1}>Hello World!</Title>
           <Paragraph>This is my webservice garden!</Paragraph>
           <Link href="/petunias">My Petunias</Link>

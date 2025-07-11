@@ -6,4 +6,4 @@ kubectl patch deployment ingress-nginx-controller --patch "$(cat ingress-nginx-c
 
 mkdir -p ~/Workspaces/minikube/mounts/postgres/data
 kubectl apply -f deployment.yaml
-kubectl apply -f service.yaml
+# kubectl apply -f service.yaml

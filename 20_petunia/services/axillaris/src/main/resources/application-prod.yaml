@@ -12,7 +12,7 @@ management:
   otlp:
     metrics:
       export:
-        url: "http://otel-collector:4318/v1/metrics"
+        url: http://otel-collector:4318
         step: 10s
   metrics:
     tags:

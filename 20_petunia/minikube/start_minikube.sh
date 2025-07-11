@@ -11,6 +11,6 @@ sudo ln -s minikube /usr/local/bin/kubectl
 ## Start a cluster:
 
 ```shell
-minikube start --driver=docker --cpus=2 --memory=4096 --addons=ingress --mount --mount-string="$HOME/Workspaces/minikube/mounts:/mnt"
+minikube start --profile=petunia --driver=docker --cpus=2 --memory=4096 --addons=ingress --mount --mount-string="$HOME/Workspaces/minikube/mounts:/mnt"
 ```
 

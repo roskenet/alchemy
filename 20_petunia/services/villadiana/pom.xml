@@ -12,7 +12,7 @@
 
     <groupId>de.petunia</groupId>
     <artifactId>villadiana</artifactId>
-    <version>3.4.0</version>
+    <version>3.4.1</version>
     <name>villadiana</name>
     <description>villadiana</description>
 
@@ -71,11 +71,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-webflux</artifactId>
         </dependency>
-        <!--        <dependency>-->
-        <!--            <groupId>io.projectreactor</groupId>-->
-        <!--            <artifactId>reactor-test</artifactId>-->
-        <!--            <scope>test</scope>-->
-        <!--        </dependency>-->
     </dependencies>
 
     <build>

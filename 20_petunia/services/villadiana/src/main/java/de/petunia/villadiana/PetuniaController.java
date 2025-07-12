@@ -29,8 +29,8 @@ public class PetuniaController {
 
     @GetMapping("/petunias")
     public List<PetuniaSpecies> getPetuniaSpecies() {
-        var userName = SecurityContextHolder.getContext().getAuthentication().getName();
-        notificationDemo.startSendNotification(userName);
+        var authentication= SecurityContextHolder.getContext().getAuthentication();
+        notificationDemo.startSendNotification(authentication);
         return axillarisGateway.getAllPetunias();
     }
 

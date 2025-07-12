@@ -9,19 +9,14 @@ import org.springframework.security.oauth2.core.oidc.user.DefaultOidcUser;
 import org.springframework.security.oauth2.core.oidc.user.OidcUser;
 import org.springframework.stereotype.Component;
 
-@Configuration
+//@Configuration
 public class OidcUserServiceConfig {
 
+    // By default keycloak returns the sub (subject) field as
+    // name. This is correct, but not really readable.
+    // The CustomOidcUserService uses the login name instead.
     @Bean
     public OidcUserService oidcUserService() {
         return new CustomOidcUserService();
     }
 }
-//
-//    @Override
-//    public OidcUser loadUser(OidcUserRequest userRequest) throws OAuth2AuthenticationException {
-//        OidcUser user = super.loadUser(userRequest);
-//        String preferredUsername = user.getAttribute("preferred_username");
-//        return new DefaultOidcUser(user.getAuthorities(), user.getIdToken(), "preferred_username");
-//    }
-//}

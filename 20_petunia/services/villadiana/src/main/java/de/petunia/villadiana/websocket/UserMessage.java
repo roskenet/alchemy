@@ -1,6 +1,9 @@
 package de.petunia.villadiana.websocket;
 
-public class UserMessage {
+
+import nakadi.Event;
+
+public class UserMessage implements Event{
 
     private String subject;
     private String message;
@@ -19,5 +22,13 @@ public class UserMessage {
 
     public void setMessage(String message) {
         this.message = message;
+    }
+
+    @Override
+    public String toString() {
+        return "UserMessage{" +
+                "subject='" + subject + '\'' +
+                ", message='" + message + '\'' +
+                '}';
     }
 }

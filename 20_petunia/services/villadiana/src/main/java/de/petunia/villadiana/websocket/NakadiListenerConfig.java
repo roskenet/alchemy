@@ -9,6 +9,7 @@ import nakadi.StreamProcessor;
 import org.apache.catalina.User;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.messaging.simp.SimpMessagingTemplate;
 
 @Configuration
 public class NakadiListenerConfig {
@@ -21,10 +22,10 @@ public class NakadiListenerConfig {
     }
 
     @Bean
-    public StreamProcessor nakdiStreamProcessor(NakadiClient client) {
+    public StreamProcessor nakdiStreamProcessor(NakadiClient client, SimpMessagingTemplate template) {
         StreamProcessor boundedProcessor = client.resources().streamBuilder()
                 .streamConfiguration(nakadiStream())
-                .streamObserverFactory(new LoggingStreamObserverProvider())
+                .streamObserverFactory(new UserMessageObserverProvider(template))
                 .build();
 
         boundedProcessor.start();

@@ -69,6 +69,8 @@ export default function PetuniasPage() {
             </ul>
             <div className="p-4">
                 <h1 className="text-xl font-bold">🎯 Live-Nachricht:</h1>
+                <p>You can set the next message via sending a petunia.message.user nakadi event:</p>
+                <p>{'{\"name\": \"keycloak-user-id\", \"message\": \"The message!\"}'} </p>
                 <p className="text-lg mt-2">{message}</p>
             </div>
         </div>

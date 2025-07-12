@@ -24,13 +24,13 @@ public class PetuniaController {
     @Autowired
     private AxillarisGateway axillarisGateway;
 
-    @Autowired
-    private NotificationDemo notificationDemo;
+//    @Autowired
+//    private NotificationDemo notificationDemo;
 
     @GetMapping("/petunias")
     public List<PetuniaSpecies> getPetuniaSpecies() {
         var authentication= SecurityContextHolder.getContext().getAuthentication();
-        notificationDemo.startSendNotification(authentication);
+//        notificationDemo.startSendNotification(authentication);
         return axillarisGateway.getAllPetunias();
     }
 

@@ -27,6 +27,9 @@ public class NotificationDemo {
         Runnable theRunnable = () -> {
             for (int i = 0; i < 10; i++) {
                 log.info("Sending notification " + i + " for " + authentication.getName());
+
+                messagingTemplate.convertAndSend("/topic/petunias", "Allgemeine Nachricht!");
+
                 messagingTemplate.convertAndSendToUser(
                         authentication.getName(),
                         "/queue/petunias", message);

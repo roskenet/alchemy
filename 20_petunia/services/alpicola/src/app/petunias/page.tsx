@@ -13,6 +13,8 @@ type Petunia = {
 
 export default function PetuniasPage() {
     const [message, setMessage] = useState("Noch nichts empfangen...");
+    const [poster, setPoster] = useState("Hello");
+
     const { data: petunias, error, loading } =
         useAuthenticatedFetch<Petunia[]>('/api/petunias');
 
@@ -24,9 +26,9 @@ export default function PetuniasPage() {
                 client.subscribe("/user/queue/petunias", (msg) => {
                     setMessage(msg.body);
                 });
-                // client.subscribe('/topic/petunias', (msg) => {
-                //     setMessage(msg.body);
-                // });
+                client.subscribe('/topic/petunias', (msg) => {
+                    setPoster(msg.body);
+                });
             },
             debug: (str) => console.log(str),
         });
@@ -53,7 +55,12 @@ export default function PetuniasPage() {
 
     return (
         <div>
+            {/*Ist das immer gleich? 09333279-0663-4195-8c90-9ea0cb1a33d7*/}
             <LogoutButton />
+            <p>----</p>
+            <h1>Eine Nachricht an alle:</h1>
+            <p>{poster}</p>
+            <p>-----</p>
             <h1>Petunien</h1>
             <ul>
                 {petunias.map((p, i) => (

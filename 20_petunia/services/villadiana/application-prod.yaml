@@ -1,0 +1,57 @@
+spring:
+  session:
+    store-type: redis
+    redis:
+      namespace: petunia:session
+    timeout: 30m
+  security:
+    oauth2:
+      client:
+        provider:
+          keycloak:
+            issuer-uri: http://keycloak/realms/petunia
+            token-uri: http://keycloak/realms/petunia/protocol/openid-connect/token
+        registration:
+          keycloak:
+            client-id: villadiana
+            client-secret: 6w8HibfpYVEQIgMTKAFXFPMC8NgaOHBU
+            authorization-grant-type: authorization_code
+            scope: openid,profile,email
+            provider: keycloak
+          axillaris-client:
+            client-id: villadiana
+            client-secret: 6w8HibfpYVEQIgMTKAFXFPMC8NgaOHBU
+            authorization-grant-type: client_credentials
+            scope: petunias.read,petunias.write
+            provider: keycloak
+  data:
+    redis:
+      host: valkey
+      port: 6379
+      password: password
+
+management:
+  otlp:
+    metrics:
+      export:
+        enabled: false
+        url: "http://otel-collector:4318/v1/metrics"
+        step: 10s
+  metrics:
+    tags:
+      service.name: villadiana
+
+  endpoints:
+    web:
+      exposure:
+        include: health
+
+app:
+  client:
+    axillaris-url: http://axillaris
+  security:
+    allowed-origin-patterns:
+      - http://petunia
+      - http://localhost:3000
+    post-logout-redirect-uri: http://localhost:3000
+    default-login-success-url: http://localhost:3000/petunias

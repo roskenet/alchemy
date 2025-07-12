@@ -21,9 +21,12 @@ export default function PetuniasPage() {
         const client = new Client({
             webSocketFactory: () => socket as WebSocket,
             onConnect: () => {
-                client.subscribe('/topic/petunias', (msg) => {
+                client.subscribe("/user/queue/petunias", (msg) => {
                     setMessage(msg.body);
                 });
+                // client.subscribe('/topic/petunias', (msg) => {
+                //     setMessage(msg.body);
+                // });
             },
             debug: (str) => console.log(str),
         });

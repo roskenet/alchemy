@@ -1,8 +1,10 @@
 package de.petunia.villadiana;
 
 import de.petunia.villadiana.axillaris.AxillarisGateway;
+import de.petunia.villadiana.websocket.NotificationDemo;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -22,8 +24,13 @@ public class PetuniaController {
     @Autowired
     private AxillarisGateway axillarisGateway;
 
+    @Autowired
+    private NotificationDemo notificationDemo;
+
     @GetMapping("/petunias")
     public List<PetuniaSpecies> getPetuniaSpecies() {
+        var userName = SecurityContextHolder.getContext().getAuthentication().getName();
+        notificationDemo.startSendNotification(userName);
         return axillarisGateway.getAllPetunias();
     }
 

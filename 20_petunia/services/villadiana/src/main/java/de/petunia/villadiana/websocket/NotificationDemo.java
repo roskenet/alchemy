@@ -25,8 +25,8 @@ public class NotificationDemo {
         var message = "Hello " + principal.getGivenName() + " " + principal.getFamilyName() + "!";
 
         Runnable theRunnable = () -> {
-            for (int i = 0; i < 1000000; i++) {
-
+            for (int i = 0; i < 10; i++) {
+                log.info("Sending notification " + i + " for " + authentication.getName());
                 messagingTemplate.convertAndSendToUser(
                         authentication.getName(),
                         "/queue/petunias", message);

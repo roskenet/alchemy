@@ -17,7 +17,7 @@ export default function PetuniasPage() {
         useAuthenticatedFetch<Petunia[]>('/api/petunias');
 
     useEffect(() => {
-        const socket = new SockJS('http://localhost:8080/ws');
+        const socket = new SockJS(`${process.env.NEXT_PUBLIC_API_BASE_URL}/ws`);
         const client = new Client({
             webSocketFactory: () => socket as WebSocket,
             onConnect: () => {

@@ -30,7 +30,9 @@ export default function Header() {
 
     return (
         <AntHeader style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 16px', background: '#fff', borderBottom: '1px solid #f0f0f0' }}>
-            <Title level={4} style={{ margin: 0, color: '#eb2f96' }}>Project Petunia</Title>
+            <Button type="link" href="/" style={{padding: 0}}>
+                <Title level={4} style={{margin: 0, color: '#eb2f96'}}>Project Petunia</Title>
+            </Button>
             <Space size="middle">
                 {user ? (
                     <>

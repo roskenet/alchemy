@@ -62,7 +62,15 @@ export default function PetuniasPage() {
             <Content>
                 <Space direction="vertical" size="large" style={{ width: '100%' }}>
                     {/*Ist das immer gleich? 09333279-0663-4195-8c90-9ea0cb1a33d7*/}
-                    <LogoutButton />
+                    <Text><p>Willkommen. Diese Seite ist nur für eingelogte User zu sehen.
+                        Außerdem kannst Du hier per Nakadi Nachriten per Websocket an diese Seite senden.</p>
+
+                        <p>Hier sieht man alle drei Möglichkeiten, die mir so einfallen, Daten im Frontend
+                        anzuzeigen.</p>
+                        <p>1. "Normaler" REST Webservice call.</p>
+                        <p>2. Websocket Nachricht für alle Clients.</p>
+                        <p>3. Websocket Nachricht nur an Dich, der User.</p>
+                    </Text>
 
                     <Divider />
 

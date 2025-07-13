@@ -54,9 +54,7 @@ public class UserMessageObserver implements StreamObserver<BusinessEventMapped<U
 
             MDC.put("cursor_context", context.toString());
             try {
-                if (batch.isEmpty()) {
-                    log.info("LoggingStreamObserver: keepalive");
-                } else {
+                if (!batch.isEmpty()) {
                     final List<BusinessEventMapped<UserMessage>> events = batch.events();
 
                     for (BusinessEventMapped event : events) {

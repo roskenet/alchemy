@@ -1,12 +1,8 @@
 package de.petunia.villadiana.websocket;
 
-import nakadi.Event;
-import nakadi.LoggingStreamObserverProvider;
 import nakadi.NakadiClient;
-import nakadi.SimpleStreamObserverFactory;
 import nakadi.StreamConfiguration;
 import nakadi.StreamProcessor;
-import org.apache.catalina.User;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.messaging.simp.SimpMessagingTemplate;

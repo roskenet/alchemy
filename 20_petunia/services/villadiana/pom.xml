@@ -12,7 +12,7 @@
 
     <groupId>de.petunia</groupId>
     <artifactId>villadiana</artifactId>
-    <version>3.8.0</version>
+    <version>3.9.0</version>
     <name>villadiana</name>
     <description>villadiana</description>
 
@@ -78,7 +78,7 @@
         <dependency>
             <groupId>org.zalando.nakadi</groupId>
             <artifactId>nakadi-java-client</artifactId>
-            <version>0.20.9</version>
+            <version>0.20.11</version>
         </dependency>
     </dependencies>
 

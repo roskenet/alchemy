@@ -1,7 +1,6 @@
 "use client";
 
-import { Typography, Layout, Space } from 'antd';
-import Link from 'next/link';
+import { Typography, Layout, Space, Button } from 'antd';
 import Image from 'next/image';
 
 const { Title, Paragraph } = Typography;
@@ -21,7 +20,7 @@ export default function Home() {
           <Image src="/img/chocolina.jpg" width={300} height={300} alt="Chocolina" />
           <Title level={1}>Hello World!</Title>
           <Paragraph>This is my webservice garden!</Paragraph>
-          <Link href="/petunias">My Petunias</Link>
+          <Button type="primary" href="/petunias">My Petunias</Button>
         </Space>
       </Content>
     </Layout>

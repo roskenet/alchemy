@@ -1,9 +1,12 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import Link from 'next/link';
 import { LogIn } from 'lucide-react';
 import LogoutButton from "@/components/LogoutButton";
+import { Layout, Typography, Space, Button } from 'antd';
+
+const { Header: AntHeader } = Layout;
+const { Title, Text } = Typography;
 
 type UserInfo = {
     name: string;
@@ -26,24 +29,24 @@ export default function Header() {
     }, []);
 
     return (
-        <header className="flex items-center justify-between px-4 py-2 shadow bg-white border-b">
-            <h1 className="text-xl font-bold text-pink-600">Project Petunia</h1>
-            <div className="flex items-center gap-4">
+        <AntHeader style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 16px', background: '#fff', borderBottom: '1px solid #f0f0f0' }}>
+            <Title level={4} style={{ margin: 0, color: '#eb2f96' }}>Project Petunia</Title>
+            <Space size="middle">
                 {user ? (
                     <>
-                        <span className="text-gray-700">👋 Hallo, {user.name}</span>
+                        <Text style={{ color: '#595959' }}>👋 Hallo, {user.name}</Text>
                         <LogoutButton />
                     </>
                 ) : (
-                    <Link
+                    <Button 
+                        type="link" 
                         href={`${process.env.NEXT_PUBLIC_API_BASE_URL}/oauth2/authorization/keycloak`}
-                        className="flex items-center gap-1 text-sm text-blue-600 hover:underline"
+                        icon={<LogIn size={18} />}
                     >
-                        <LogIn size={18} />
                         Login
-                    </Link>
+                    </Button>
                 )}
-            </div>
-        </header>
+            </Space>
+        </AntHeader>
     );
 }

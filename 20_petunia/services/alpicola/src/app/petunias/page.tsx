@@ -5,6 +5,10 @@ import LogoutButton from "@/components/LogoutButton";
 import {useEffect, useState} from "react";
 import {Client} from "@stomp/stompjs";
 import SockJS from 'sockjs-client';
+import { Layout, Typography, List, Spin, Alert, Divider, Card, Space } from 'antd';
+
+const { Content } = Layout;
+const { Title, Text, Paragraph } = Typography;
 
 type Petunia = {
     name: string;
@@ -41,38 +45,54 @@ export default function PetuniasPage() {
     }, []);
 
     if (loading) {
-        return <p>Lade Petunien …</p>;
+        return <Spin tip="Lade Petunien …" />;
     }
 
     if (error) {
-        return <p style={{ color: 'red' }}>Fehler: {error}</p>;
+        return <Alert type="error" message={`Fehler: ${error}`} />;
     }
 
     if (!petunias || petunias.length === 0) {
-        return <p>Keine Petunien gefunden.</p>;
+        return <Alert type="info" message="Keine Petunien gefunden." />;
     }
 
 
     return (
-        <div>
-            {/*Ist das immer gleich? 09333279-0663-4195-8c90-9ea0cb1a33d7*/}
-            <LogoutButton />
-            <p>----</p>
-            <h1>Eine Nachricht an alle:</h1>
-            <p>{poster}</p>
-            <p>-----</p>
-            <h1>Petunien</h1>
-            <ul>
-                {petunias.map((p, i) => (
-                    <li key={i}>{p.name}</li>
-                ))}
-            </ul>
-            <div className="p-4">
-                <h1 className="text-xl font-bold">🎯 Live-Nachricht:</h1>
-                <p>You can set the next message via sending a petunia.message.user nakadi event:</p>
-                <p>{'{\"name\": \"keycloak-user-id\", \"message\": \"The message!\"}'} </p>
-                <p className="text-lg mt-2">{message}</p>
-            </div>
-        </div>
+        <Layout style={{ minHeight: '100vh', background: 'var(--background)', padding: '24px' }}>
+            <Content>
+                <Space direction="vertical" size="large" style={{ width: '100%' }}>
+                    {/*Ist das immer gleich? 09333279-0663-4195-8c90-9ea0cb1a33d7*/}
+                    <LogoutButton />
+
+                    <Divider />
+
+                    <div>
+                        <Title level={2}>Eine Nachricht an alle:</Title>
+                        <Paragraph>{poster}</Paragraph>
+                    </div>
+
+                    <Divider />
+
+                    <div>
+                        <Title level={2}>Petunien</Title>
+                        <List
+                            bordered
+                            dataSource={petunias}
+                            renderItem={(p, i) => (
+                                <List.Item key={i}>
+                                    {p.name}
+                                </List.Item>
+                            )}
+                        />
+                    </div>
+
+                    <Card title="🎯 Live-Nachricht:" style={{ width: '100%' }}>
+                        <Paragraph>You can set the next message via sending a petunia.message.user nakadi event:</Paragraph>
+                        <Paragraph code>{'{\"name\": \"keycloak-user-id\", \"message\": \"The message!\"}'}</Paragraph>
+                        <Paragraph strong>{message}</Paragraph>
+                    </Card>
+                </Space>
+            </Content>
+        </Layout>
     );
 }

@@ -1,5 +1,6 @@
 // components/LogoutButton.tsx
 'use client';
+import { Button } from 'antd';
 
 export default function LogoutButton() {
   const handleLogout = () => {
@@ -7,8 +8,8 @@ export default function LogoutButton() {
   };
 
   return (
-    <button onClick={handleLogout}>
+    <Button onClick={handleLogout} type="primary">
       Logout
-    </button>
+    </Button>
   );
 }

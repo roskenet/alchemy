@@ -17,9 +17,15 @@ export default function Home() {
         alignItems: 'center' 
       }}>
         <Space direction="vertical" align="center">
-          <Image src="/img/chocolina.jpg" width={300} height={300} alt="Chocolina" />
+          <Image src="/img/chocolina.jpg" width={200} height={200} alt="Chocolina" />
           <Title level={1}>Hello World!</Title>
           <Paragraph>This is my webservice garden!</Paragraph>
+          <Title level={4}>It uses the following Technologies, Products, Languages, Tools:</Title>
+
+          <Paragraph>Ant Design, Docker, Gradle, Grafana, Jaeger, Java,
+            Kotlin, Kubernetes, Make, Maven, Microservices,
+            Nakadi, Next.js, PostgreSQL, Prometheus, Spring, SpringBoot, Valkey, Websockets</Paragraph>
+
           <Button type="primary" href="/petunias">My Petunias</Button>
         </Space>
       </Content>

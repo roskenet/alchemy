@@ -1,36 +1,22 @@
-# === STAGE 1 Dependencies installieren ===
-FROM node:20-alpine AS deps
-WORKDIR /app
-COPY package.json package-lock.json ./
-RUN npm ci --only=production && npm cache clean --force
-
-# === STAGE 2: App bauen ===
+# Build Stage – nur um static site zu exportieren
 FROM node:20-alpine AS builder
 WORKDIR /app
-# COPY --from=deps /app/node_modules ./node_modules
+
+# Nur das Nötigste kopieren
 COPY package.json package-lock.json ./
 RUN npm ci
-COPY . .
+
+COPY . ./
 RUN npm run build
 
-# --- STAGE 3: Install only production deps ---
-FROM node:20-alpine AS prod-deps
-WORKDIR /app
-COPY package.json package-lock.json ./
-RUN npm ci --omit=dev
+# NGINX Stage – statische Seite servieren
+FROM nginx:stable-alpine AS runner
 
-# === STAGE 4: Minimal runtime ===
-FROM node:20-alpine AS runner
-WORKDIR /app
+# Kopiere deine exportierte Site nach /usr/share/nginx/html
+COPY --from=builder /app/out /usr/share/nginx/html
 
-ENV NODE_ENV=production
+# Optional: eigene nginx.conf einspielen (siehe unten)
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-# Nur das Nötigste übernehmen
-COPY --from=builder /app/public ./public
-COPY --from=builder /app/.next ./.next
-COPY --from=builder /app/node_modules ./node_modules
-COPY --from=builder /app/package.json ./
-
-EXPOSE 3000
-
-CMD ["npx", "next", "start"]
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]

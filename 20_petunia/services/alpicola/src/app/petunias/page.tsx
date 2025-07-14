@@ -1,7 +1,6 @@
 'use client';
 
 import { useAuthenticatedFetch } from '@/lib/hooks/useAuthenticatedFetch';
-import LogoutButton from "@/components/LogoutButton";
 import {useEffect, useState} from "react";
 import {Client} from "@stomp/stompjs";
 import SockJS from 'sockjs-client';
@@ -67,7 +66,7 @@ export default function PetuniasPage() {
 
                         <p>Hier sieht man alle drei Möglichkeiten, die mir so einfallen, Daten im Frontend
                         anzuzeigen.</p>
-                        <p>1. "Normaler" REST Webservice call.</p>
+                        <p>1. Normaler REST Webservice call.</p>
                         <p>2. Websocket Nachricht für alle Clients.</p>
                         <p>3. Websocket Nachricht nur an Dich, der User.</p>
                     </Text>

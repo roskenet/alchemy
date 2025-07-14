@@ -1,7 +1,11 @@
 # .dockerignore
 node_modules
 .next
-Dockerfile
+dist
+.env
 *.log
+*.tsbuildinfo
 .git
-
+.gitignore
+Dockerfile
+.dockerignore

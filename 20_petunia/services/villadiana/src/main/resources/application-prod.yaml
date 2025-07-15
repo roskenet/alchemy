@@ -54,3 +54,6 @@ app:
       - https://petunia.roskenet.de
     post-logout-redirect-uri: https://petunia.roskenet.de
     default-login-success-url: https://petunia.roskenet.de/petunias
+
+nakadi:
+  url: http://nakadi

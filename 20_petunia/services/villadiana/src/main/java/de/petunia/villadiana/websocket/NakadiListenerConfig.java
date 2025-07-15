@@ -3,12 +3,17 @@ package de.petunia.villadiana.websocket;
 import nakadi.NakadiClient;
 import nakadi.StreamConfiguration;
 import nakadi.StreamProcessor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 
 @Configuration
 public class NakadiListenerConfig {
+
+    @Value("${nakadi.uri}")
+    private String nakadiUri;
 
     public StreamConfiguration nakadiStream() {
         StreamConfiguration sc = new StreamConfiguration()
@@ -32,7 +37,7 @@ public class NakadiListenerConfig {
     @Bean
     public NakadiClient nakadiClient() {
         NakadiClient client = NakadiClient.newBuilder()
-                .baseURI("http://nakadi.minikube")
+                .baseURI(nakadiUri)
                 .build();
         return client;
     }

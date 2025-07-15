@@ -30,6 +30,9 @@ spring:
       port: 6379
       password: password
 
+nakadi:
+  url: http://nakadi.minikube
+
 app:
   client:
     axillaris-url: http://axillaris

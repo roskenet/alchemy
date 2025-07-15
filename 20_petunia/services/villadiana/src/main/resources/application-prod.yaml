@@ -56,4 +56,4 @@ app:
     default-login-success-url: https://petunia.roskenet.de/petunias
 
 nakadi:
-  url: http://nakadi
+  uri: http://nakadi

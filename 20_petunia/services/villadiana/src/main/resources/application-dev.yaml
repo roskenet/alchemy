@@ -15,4 +15,4 @@ management:
         enabled: off
 
 nakadi:
-  url: http://nakadi.minikube
+  uri: http://nakadi.minikube

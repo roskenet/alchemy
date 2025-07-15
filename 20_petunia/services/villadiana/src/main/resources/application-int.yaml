@@ -31,7 +31,7 @@ spring:
       password: password
 
 nakadi:
-  url: http://nakadi.minikube
+  uri: http://nakadi.minikube
 
 app:
   client:

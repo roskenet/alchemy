@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: villadiana
-        image: roskenet/villadiana:3.25.0
+        image: roskenet/villadiana:3.27.0
         env:
           - name: KEYCLOAK_ISSUER_URI
             value: https://auth.roskenet.de/realms/petunia

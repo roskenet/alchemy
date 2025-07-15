@@ -32,3 +32,21 @@ Set-Cookie: SESSION=YzEzN2U1N2QtOTVkZC00ODdkLTg0MDYtOGUwZDI2MTMxNjg5; Path=/; Ht
 Location: http://keycloak/realms/petunia/protocol/openid-connect/auth?response_type=code&client_id=villadiana&scope=openid%20profile%20email&state=XFK8av_kRduIQxpEVNfRfrIKm_css37U5omh0tysyF0%3D&redirect_uri=http://petunia/login/oauth2/code/keycloak&nonce=wUYtxFmeOABDHQSQQI4XCAig8WG-NpA5Z7gvJm7ApZk
 
 
+
+
+
+minikube :
+
+2025-07-15T20:18:20.280Z  INFO 1 --- [villadiana] [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-07-15T20:18:20.280Z  INFO 1 --- [villadiana] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-07-15T20:18:20.281Z  INFO 1 --- [villadiana] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-07-15T20:18:20.303Z DEBUG 1 --- [villadiana] [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing HEAD /oauth2/authorization/keycloak
+2025-07-15T20:18:20.314Z DEBUG 1 --- [villadiana] [nio-8080-exec-1] o.s.s.web.DefaultRedirectStrategy        : Redirecting to http://keycloak/realms/petunia/protocol/openid-connect/auth?response_type=code&client_id=villadiana&scope=openid%20profile%20email&state=HP3ayZXiAM-JOJFTMNg2XujoSwPuKExPKqnv1siHWSE%3D&redirect_uri=http://petunia/login/oauth2/code/keycloak&nonce=MXvU9hyYAD9rbL8NA2umKoTt0xpc7zuLzSV5nvC-YFA
+
+2025-07-15T20:21:04.362Z DEBUG 1 --- [villadiana] [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing HEAD /
+2025-07-15T20:21:04.363Z DEBUG 1 --- [villadiana] [nio-8080-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15T20:21:04.364Z DEBUG 1 --- [villadiana] [nio-8080-exec-4] o.s.s.w.s.HttpSessionRequestCache        : Saved request https://petunia.roskenet.de/?continue to session
+2025-07-15T20:21:04.367Z DEBUG 1 --- [villadiana] [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing HEAD /error
+2025-07-15T20:21:04.368Z DEBUG 1 --- [villadiana] [nio-8080-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-07-15T20:21:04.368Z DEBUG 1 --- [villadiana] [nio-8080-exec-4] o.s.s.w.s.HttpSessionRequestCache        : Saved request https://petunia.roskenet.de/error?continue to session
+

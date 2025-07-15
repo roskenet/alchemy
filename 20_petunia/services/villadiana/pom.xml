@@ -12,12 +12,15 @@
 
     <groupId>de.petunia</groupId>
     <artifactId>villadiana</artifactId>
-    <version>3.25.0</version>
+    <version>3.26.0</version>
     <name>villadiana</name>
     <description>villadiana</description>
 
     <properties>
         <java.version>21</java.version>
+
+        <nakadi-java.version>0.20.11</nakadi-java.version>
+
         <docker.from>eclipse-temurin:21-jre-alpine</docker.from>
         <docker.maintainer>Felix Roske</docker.maintainer>
         <docker.repo>roskenet</docker.repo>
@@ -78,7 +81,7 @@
         <dependency>
             <groupId>org.zalando.nakadi</groupId>
             <artifactId>nakadi-java-client</artifactId>
-            <version>0.20.11</version>
+            <version>${nakadi-java.version}</version>
         </dependency>
     </dependencies>
 

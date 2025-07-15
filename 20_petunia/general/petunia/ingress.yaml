@@ -66,5 +66,5 @@ spec:
           service:
             name: alpicola
             port:
-              number: 3000
+              number: 80
 

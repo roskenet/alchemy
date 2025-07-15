@@ -13,6 +13,3 @@ management:
     metrics:
       export:
         enabled: off
-
-nakadi:
-  uri: http://nakadi.minikube

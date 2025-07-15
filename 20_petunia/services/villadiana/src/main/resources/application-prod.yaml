@@ -45,15 +45,3 @@ management:
     web:
       exposure:
         include: health
-
-app:
-  client:
-    axillaris-url: http://axillaris
-  security:
-    allowed-origin-patterns:
-      - https://petunia.roskenet.de
-    post-logout-redirect-uri: https://petunia.roskenet.de
-    default-login-success-url: https://petunia.roskenet.de/petunias
-
-nakadi:
-  uri: http://nakadi

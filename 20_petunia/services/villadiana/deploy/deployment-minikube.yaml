@@ -17,9 +17,9 @@ spec:
         image: roskenet/villadiana:3.12.0
         env:
           - name: KEYCLOAK_ISSUER_URI
-            value: http://keycloak/realms/petunia
+            value: http://auth.roskenet.de/realms/petunia
           - name: KEYCLOAK_TOKEN_URI
-            value: http://keycloak/realms/petunia/protocol/openid-connect/token
+            value: http://auth.roskenet.de/realms/petunia/protocol/openid-connect/token
         ports:
         - name: www
           containerPort: 8080

@@ -61,9 +61,9 @@ public class SecurityConfig {
                         .loginPage("/oauth2/authorization/keycloak")
                         .defaultSuccessUrl(securityProperties.getDefaultLoginSuccessUrl(), true))
                 .csrf(AbstractHttpConfigurer::disable)
-//                .csrf(csrf -> csrf
-//                        .ignoringRequestMatchers("/logout")
-//                        .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse()))
+                .csrf(csrf -> csrf
+                        .ignoringRequestMatchers("/logout")
+                        .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse()))
                 .sessionManagement(sm -> sm
                         .sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED))
                 .logout(logout -> logout

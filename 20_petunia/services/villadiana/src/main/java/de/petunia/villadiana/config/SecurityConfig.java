@@ -54,7 +54,7 @@ public class SecurityConfig {
         http
                 .cors(cors -> cors.configurationSource(corsConfigurationSource()))
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/actuator/**").permitAll()
+                        .requestMatchers("/actuator/**", "/oauth2/**", "/logout", "/login").permitAll()
                         .anyRequest().authenticated())
                 .oauth2Login(oauth -> oauth
                         .loginPage("/oauth2/authorization/keycloak")

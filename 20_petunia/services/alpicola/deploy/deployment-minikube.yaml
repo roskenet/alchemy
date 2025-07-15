@@ -17,7 +17,7 @@ spec:
         image: roskenet/alpicola:2.71.0
         env:
         - name: NEXT_PUBLIC_API_BASE_URL
-          value: "https://petunia.roskenet.de"
+          value: "http://petunia"
         ports:
         - name: www
           containerPort: 80

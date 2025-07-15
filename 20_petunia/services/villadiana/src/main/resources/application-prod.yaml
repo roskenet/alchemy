@@ -36,6 +36,7 @@ management:
       export:
         url: "http://otel-collector:4318/v1/metrics"
         step: 10s
+        enabled: false
   metrics:
     tags:
       service.name: villadiana
@@ -50,6 +51,6 @@ app:
     axillaris-url: http://axillaris
   security:
     allowed-origin-patterns:
-      - http://petunia
-    post-logout-redirect-uri: http://petunia
-    default-login-success-url: http://petunia/petunias
+      - https://petunia.roskenet.de
+    post-logout-redirect-uri: https://petunia.roskenet.de
+    default-login-success-url: https://petunia.roskenet.de/petunias

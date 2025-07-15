@@ -14,20 +14,20 @@ spec:
     spec:
       containers:
       - name: villadiana
-        image: roskenet/villadiana:3.19.0
+        image: roskenet/villadiana:3.22.0
         env:
           - name: KEYCLOAK_ISSUER_URI
-            value: http://auth.roskenet.de/realms/petunia
+            value: http://keycloak/realms/petunia
           - name: KEYCLOAK_TOKEN_URI
-            value: http://auth.roskenet.de/realms/petunia/protocol/openid-connect/token
+            value: http://keycloak/realms/petunia/protocol/openid-connect/token
           - name: NAKADI_URI
             value: http://nakadi
           - name: ALLOWED_ORIGINS
-            value: http://localhost:3000
+            value: http://petunia
           - name: POST_LOGOUT_REDIRECT
-            value: http://localhost:3000
+            value: http://petunia
           - name: POST_LOGIN_REDIRECT
-            value: http://localhost:3000/petunias
+            value: http://petunia/petunias
           - name: AXILLARIS_URI
             value: http://axillaris
         ports:

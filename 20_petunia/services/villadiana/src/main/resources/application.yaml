@@ -5,8 +5,8 @@ spring:
     name: villadiana
   jackson:
     property-naming-strategy: SNAKE_CASE
-server:
-  forward-headers-strategy: native
+#server:
+#  forward-headers-strategy: native
 
 nakadi:
   uri: ${NAKADI_URI:http://nakadi.minikube}

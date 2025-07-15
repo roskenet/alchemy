@@ -17,3 +17,5 @@ app:
   client:
     axillaris-url: http://mock.me
 
+nakadi:
+  uri: http://mock.me

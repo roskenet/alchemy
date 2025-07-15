@@ -30,6 +30,8 @@ spec:
             value: https://petunia.roskenet.de/petunias
           - name: AXILLARIS_URI
             value: http://axillaris
+          - name: KEYCLOAK_SECRET
+            value:
         ports:
         - name: www
           containerPort: 8080

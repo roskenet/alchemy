@@ -1,9 +1,10 @@
 'use client';
 
 import { useAuthenticatedFetch } from '@/lib/hooks/useAuthenticatedFetch';
-import {useEffect, useState} from "react";
-import {Client} from "@stomp/stompjs";
-import SockJS from 'sockjs-client';
+import {useState} from "react";
+// import {useEffect, useState} from "react";
+// import {Client} from "@stomp/stompjs";
+// import SockJS from 'sockjs-client';
 import { Layout, Typography, List, Spin, Alert, Divider, Card, Space } from 'antd';
 
 const { Content } = Layout;
@@ -15,33 +16,33 @@ type Petunia = {
 };
 
 export default function PetuniasPage() {
-    const [message, setMessage] = useState("Noch nichts empfangen...");
-    const [poster, setPoster] = useState("Hello");
+    // const [message, setMessage] = useState("Noch nichts empfangen...");
+    // const [poster, setPoster] = useState("Hello");
 
     const { data: petunias, error, loading } =
         useAuthenticatedFetch<Petunia[]>('/api/petunias');
 
-    useEffect(() => {
-        const socket = new SockJS(`${process.env.NEXT_PUBLIC_API_BASE_URL}/ws`);
-        const client = new Client({
-            webSocketFactory: () => socket as WebSocket,
-            onConnect: () => {
-                client.subscribe("/user/queue/petunias", (msg) => {
-                    setMessage(msg.body);
-                });
-                client.subscribe('/topic/petunias', (msg) => {
-                    setPoster(msg.body);
-                });
-            },
-            debug: (str) => console.log(str),
-        });
-
-        client.activate();
-
-        return () => {
-            client.deactivate();
-        };
-    }, []);
+    // useEffect(() => {
+    //     const socket = new SockJS(`${process.env.NEXT_PUBLIC_API_BASE_URL}/ws`);
+    //     const client = new Client({
+    //         webSocketFactory: () => socket as WebSocket,
+    //         onConnect: () => {
+    //             client.subscribe("/user/queue/petunias", (msg) => {
+    //                 setMessage(msg.body);
+    //             });
+    //             client.subscribe('/topic/petunias', (msg) => {
+    //                 setPoster(msg.body);
+    //             });
+    //         },
+    //         debug: (str) => console.log(str),
+    //     });
+    //
+    //     client.activate();
+    //
+    //     return () => {
+    //         client.deactivate();
+    //     };
+    // }, []);
 
     if (loading) {
         return <Spin tip="Lade Petunien …" />;
@@ -75,7 +76,7 @@ export default function PetuniasPage() {
 
                     <div>
                         <Title level={2}>Eine Nachricht an alle:</Title>
-                        <Paragraph>{poster}</Paragraph>
+                        {/*<Paragraph>{poster}</Paragraph>*/}
                     </div>
 
                     <Divider />
@@ -96,7 +97,7 @@ export default function PetuniasPage() {
                     <Card title="🎯 Live-Nachricht:" style={{ width: '100%' }}>
                         <Paragraph>You can set the next message via sending a petunia.message.user nakadi event:</Paragraph>
                         <Paragraph code>{'{\"name\": \"keycloak-user-id\", \"message\": \"The message!\"}'}</Paragraph>
-                        <Paragraph strong>{message}</Paragraph>
+                        {/*<Paragraph strong>{message}</Paragraph>*/}
                     </Card>
                 </Space>
             </Content>

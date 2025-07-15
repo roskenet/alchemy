@@ -5,3 +5,5 @@ spring:
     name: villadiana
   jackson:
     property-naming-strategy: SNAKE_CASE
+server:
+  forward-headers-strategy: native

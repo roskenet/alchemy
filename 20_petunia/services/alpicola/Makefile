@@ -1,8 +1,8 @@
 APP_NAME=alpicola
-APP_VERSION=2.75.0
+APP_VERSION=2.76.0
 IMAGE_NAME=roskenet/$(APP_NAME):${APP_VERSION}
 CONTAINER_NAME=$(APP_NAME)
-PORT=3000
+PORT=80
 
 .PHONY: build run stop dev logs deploy clean
 
@@ -12,7 +12,7 @@ build:
 run:
 	docker run -d --rm \
 		--name $(CONTAINER_NAME) \
-		-p $(PORT):3000 \
+		-p $(PORT):80 \
 		$(IMAGE_NAME)
 
 stop:

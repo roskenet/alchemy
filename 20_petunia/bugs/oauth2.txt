@@ -1,0 +1,34 @@
+~/W/a/20_petunia/general/petunia [ zalando][ main]!⏱ 46s 
+> curl -I https://petunia.roskenet.de/oauth2/authorization/keycloak     20:08 
+HTTP/2 401 
+date: Tue, 15 Jul 2025 18:09:14 GMT
+vary: Origin
+vary: Access-Control-Request-Method
+vary: Access-Control-Request-Headers
+x-content-type-options: nosniff
+x-xss-protection: 0
+cache-control: no-cache, no-store, max-age=0, must-revalidate
+pragma: no-cache
+expires: 0
+strict-transport-security: max-age=31536000; includeSubDomains
+x-frame-options: DENY
+
+
+~/W/a/20_petunia/general/petunia [ zalando][ main]!
+> curl -I http://petunia/oauth2/authorization/keycloak                  20:09 
+HTTP/1.1 302 
+Date: Tue, 15 Jul 2025 18:09:28 GMT
+Connection: keep-alive
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 0
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
+Expires: 0
+X-Frame-Options: DENY
+Set-Cookie: SESSION=YzEzN2U1N2QtOTVkZC00ODdkLTg0MDYtOGUwZDI2MTMxNjg5; Path=/; HttpOnly; SameSite=Lax
+Location: http://keycloak/realms/petunia/protocol/openid-connect/auth?response_type=code&client_id=villadiana&scope=openid%20profile%20email&state=XFK8av_kRduIQxpEVNfRfrIKm_css37U5omh0tysyF0%3D&redirect_uri=http://petunia/login/oauth2/code/keycloak&nonce=wUYtxFmeOABDHQSQQI4XCAig8WG-NpA5Z7gvJm7ApZk
+
+

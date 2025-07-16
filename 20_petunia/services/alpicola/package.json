@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
+    "build:minikube": "APP_ENV=minikube next build",
     "start": "next start",
     "lint": "next lint"
   },
@@ -24,6 +25,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@types/sockjs-client": "^1.5.4",
+    "dotenv": "^17.2.0",
     "eslint": "^9",
     "eslint-config-next": "15.3.4",
     "tailwindcss": "^4",

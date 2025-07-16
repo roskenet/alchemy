@@ -4,10 +4,13 @@ IMAGE_NAME=roskenet/$(APP_NAME):${APP_VERSION}
 CONTAINER_NAME=$(APP_NAME)
 PORT=80
 
-.PHONY: build run stop dev logs deploy clean
+.PHONY: build build-minikube run stop dev logs deploy clean
 
 build:
 	docker build -t $(IMAGE_NAME) .
+
+build-minikube:
+	docker build --build-arg BUILD_ENV=minikube -t $(IMAGE_NAME) .
 
 run:
 	docker run -d --rm \
@@ -27,9 +30,9 @@ logs:
 clean: stop
 	docker rmi $(IMAGE_NAME)
 
-deploy: build
-		kubectl config use-context minikube
-	        cat deploy/deployment.yaml | sed "s/\$$VERSION/$(APP_VERSION)/g" | kubectl apply -f -
+deploy: build-minikube
+	kubectl config use-context minikube
+	cat deploy/deployment.yaml | sed "s/\$$VERSION/$(APP_VERSION)/g" | kubectl apply -f -
 
 undeploy:
 		kubectl config use-context minikube

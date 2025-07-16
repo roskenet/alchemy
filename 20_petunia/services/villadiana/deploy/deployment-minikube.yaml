@@ -30,8 +30,6 @@ spec:
             value: http://petunia/petunias
           - name: AXILLARIS_URI
             value: http://axillaris
-          - name: LOGGING_LEVEL_ORG_SPRINGFRAMEWORK_SECURITY_WEB
-            value: DEBUG
 
         ports:
         - name: www

@@ -2,12 +2,20 @@
 FROM node:20-alpine AS builder
 WORKDIR /app
 
+# Build argument to determine what to build
+ARG BUILD_ENV=production
+
 # Nur das Nötigste kopieren
 COPY package.json package-lock.json ./
 RUN npm ci
 
 COPY . ./
-RUN npm run build
+# Run the appropriate build command based on the build environment
+RUN if [ "$BUILD_ENV" = "minikube" ]; then \
+        npm run build:minikube; \
+    else \
+        npm run build; \
+    fi
 
 # NGINX Stage – statische Seite servieren
 FROM nginx:stable-alpine AS runner

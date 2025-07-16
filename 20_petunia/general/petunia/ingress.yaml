@@ -11,9 +11,31 @@ spec:
   ingressClassName: nginx
   tls:
   - hosts:
+    - www.roskenet.de
     - petunia.roskenet.de
+    - auth.roskenet.de
     secretName: petunia-tls
   rules:
+  - host: auth.roskenet.de
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: keycloak
+            port: 
+              name: service
+  - host: www.roskenet.de
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: polonium
+            port:
+              number: 8080
   - host: petunia.roskenet.de
     http:
       paths:

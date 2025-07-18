@@ -9,7 +9,7 @@ spring:
       client:
         provider:
           keycloak:
-            issuer-uri: http://keycloak/realms/petunia   # OIDC discovery
+            issuer-uri: http://keycloak/realms/petunia
             token-uri: http://keycloak/realms/petunia/protocol/openid-connect/token
         registration:
           keycloak:

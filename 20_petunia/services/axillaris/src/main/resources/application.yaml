@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: axillaris
+  profiles:
+    default: prod
+  jackson:
+    property-naming-strategy: SNAKE_CASE
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: ${KEYCLOAK_ISSUER_URI:http://keycloak/realms/petunia}
+        opaquetoken:
+          client-id: axillaris
+          client-secret: ${KEYCLOAK_SECRET:cKsnVPkC2z4CClyevx5ttoZW9Bu9MGsb}
+          introspection-uri: ${KEYCLOAK_INTROSPECTION_URI:http://keycloak/realms/chemicals/protocol/openid-connect/token/introspect}
+
+management:
+  otlp:
+    metrics:
+      export:
+        enabled: off

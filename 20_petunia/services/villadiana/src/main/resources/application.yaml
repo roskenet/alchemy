@@ -1,0 +1,21 @@
+spring:
+  profiles:
+    default: prod
+  application:
+    name: villadiana
+  jackson:
+    property-naming-strategy: SNAKE_CASE
+server:
+  forward-headers-strategy: native
+
+nakadi:
+  uri: ${NAKADI_URI:http://nakadi.minikube}
+
+app:
+  client:
+    axillaris-url: ${AXILLARIS_URI:http://axillaris}
+  security:
+    allowed-origin-patterns:
+      - ${ALLOWED_ORIGINS:https://petunia.roskenet.de}
+    post-logout-redirect-uri: ${POST_LOGOUT_REDIRECT:https://petunia.roskenet.de}
+    default-login-success-url: ${POST_LOGIN_REDIRECT:https://petunia.roskenet.de/petunias}

@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: villadiana
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: villadiana
+  template:
+    metadata:
+      labels:
+        app: villadiana
+    spec:
+      containers:
+      - name: villadiana
+        image: roskenet/villadiana:3.28.0
+        env:
+          - name: KEYCLOAK_ISSUER_URI
+            value: https://auth.roskenet.de/realms/petunia
+          - name: KEYCLOAK_TOKEN_URI
+            value: https://auth.roskenet.de/realms/petunia/protocol/openid-connect/token
+          - name: NAKADI_URI
+            value: http://nakadi
+          - name: ALLOWED_ORIGINS
+            value: https://petunia.roskenet.de
+          - name: POST_LOGOUT_REDIRECT
+            value: https://petunia.roskenet.de
+          - name: POST_LOGIN_REDIRECT
+            value: https://petunia.roskenet.de/petunias
+          - name: AXILLARIS_URI
+            value: http://axillaris
+          - name: KEYCLOAK_SECRET
+            valueFrom:
+              secretKeyRef:
+                name: petunia-credentials
+                key: keycloak-villadiana-secret
+        ports:
+        - name: www
+          containerPort: 8080

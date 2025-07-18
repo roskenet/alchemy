@@ -1,0 +1,14 @@
+management:
+  otlp:
+    metrics:
+      export:
+        url: http://otel-collector:4318
+        step: 10s
+        enabled: false
+  metrics:
+    tags:
+      service.name: axillaris
+  endpoints:
+    web:
+      exposure:
+        include: health

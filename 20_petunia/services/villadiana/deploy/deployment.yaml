@@ -31,7 +31,10 @@ spec:
           - name: AXILLARIS_URI
             value: http://axillaris
           - name: KEYCLOAK_SECRET
-            value:
+            valueFrom:
+              secretKeyRef:
+                name: petunia-credentials
+                key: keycloak-villadiana-secret
         ports:
         - name: www
           containerPort: 8080

@@ -30,7 +30,6 @@ spec:
             value: http://petunia/petunias
           - name: AXILLARIS_URI
             value: http://axillaris
-
         ports:
         - name: www
           containerPort: 8080

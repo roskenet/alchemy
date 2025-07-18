@@ -19,7 +19,10 @@ spec:
         - name: KEYCLOAK_ISSUER_URI
           value: https://auth.roskenet.de/realms/petunia
         - name: KEYCLOAK_SECRET
-          value:
+          valueFrom:
+            secretKeyRef:
+              name: petunia-credentials
+              key: keycloak-axillaris-secret
         - name: KEYCLOAK_INTROSPECTION_URI
           value: https://auth.roskenet.de/realms/chemicals/protocol/openid-connect/token/introspect
         ports:

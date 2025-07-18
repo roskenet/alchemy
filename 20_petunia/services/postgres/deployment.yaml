@@ -48,8 +48,8 @@ spec:
             - name: POSTGRES_PASSWORD
               valueFrom: 
                 secretKeyRef:
-                  name: postgres-admin-credentials
-                  key: postgres-password
+                  name: petunia-credentials
+                  key: postgres-root-password
           volumeMounts:
             - mountPath: /etc/postgres-config
               name: postgres-config

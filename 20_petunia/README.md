@@ -12,9 +12,17 @@ https://www.felix-roske.de/
 
 # Passwords 
 
-The deployments for minikube use the following password rules:
+Encrypt the passwords with production@petunia:
 
-Things like keycloak and postgres that have special "admin" accounts should have <servicename> / password. For example postgres/password and keycloak/password.
+```bash
+echo "your-secure-password" | gpg --encrypt --armor --recipient production@petunia 
+```
+
+For a one-liner that doesn't leave the password in shell history:
+
+```bash
+gpg --encrypt --armor --recipient production@petunia <<< "your-secure-password"
+```
 
 ## Petunia alpicola
 
@@ -29,3 +37,25 @@ A Spring Boot BFF that does session management for the alpicola frontend.
 A Spring Boot REST service client_credentials flow secured.
 
 
+## Petnua species
+
+    Petunia alpicola
+    Petunia axillaris
+    Petunia bajeensis
+    Petunia bonjardinensis
+    Petunia exserta
+    Petunia guarapuavensis
+    Petunia inflata
+    Petunia integrifolia
+    Petunia interior
+    Petunia ledifolia
+    Petunia littoralis
+    Petunia mantiqueirensis
+    Petunia occidentalis
+    Petunia patagonica
+    Petunia reitzii
+    Petunia riograndensis
+    Petunia saxicola
+    Petunia scheideana
+    Petunia villadiana
+    Petunia × atkinsiana

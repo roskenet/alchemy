@@ -15,6 +15,8 @@ spec:
       initContainers:
       - name: postgres-init
         image: postgres:17.5
+        securityContext:
+          runAsUser: 999 
         command:
         - sh
         - -c
@@ -22,19 +24,15 @@ spec:
           mkdir -p /var/lib/postgresql/data
           chown -R 999:999 /var/lib/postgresql/data
           chmod 700 /var/lib/postgresql/data
-
-          # Check if PostgreSQL is already initialized
-          # if [ ! -f /var/lib/postgresql/data/PG_VERSION ]; then
-          #   echo "Initializing PostgreSQL database..."
-          #   su-exec 999:999 initdb -D /var/lib/postgresql/data
-          # else
-          #   echo "PostgreSQL already initialized"
-          # fi
+          if [ ! -f /var/lib/postgresql/data/PG_VERSION ]; then
+            echo "Initializing PostgreSQL database..."
+            initdb -D /var/lib/postgresql/data
+          else
+            echo "PostgreSQL already initialized"
+          fi
         volumeMounts:
-        - name: postgres-storage
+        - name: postgres-data
           mountPath: /var/lib/postgresql/data
-        securityContext:
-          runAsUser: 0  # Run as root only for the init container
       securityContext: 
         runAsUser: 999
         runAsGroup: 999
@@ -42,24 +40,24 @@ spec:
       containers:
         - name: postgres
           image: postgres:17.5
-          imagePullPolicy: "IfNotPresent"
-#          command: ["postgres", "-c", "config_file=/etc/postgres-config/postgresql.conf"]         
+          imagePullPolicy: IfNotPresent
+          command: ["postgres", "-c", "config_file=/etc/postgres-config/postgresql.conf"]         
           env:
             - name: POSTGRES_PASSWORD
               valueFrom: 
                 secretKeyRef:
-                  name: petunia-credentials
+                  name: petunia
                   key: postgres-root-password
           volumeMounts:
             - mountPath: /etc/postgres-config
               name: postgres-config
             - mountPath: /var/lib/postgresql/data
-              name: postgres-storage
+              name: postgres-data
       volumes:
-        - name: postgres-storage
+        - name: postgres-data
           persistentVolumeClaim:
-            claimName: postgres-pvc
+            claimName: postgres-data
         - name: postgres-config
           configMap:
-            name: postgres-config
+            name: postgres
 

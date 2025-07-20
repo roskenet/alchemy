@@ -24,12 +24,6 @@ spring:
             authorization-grant-type: client_credentials
             scope: petunias.read,petunias.write
             provider: keycloak
-  data:
-    redis:
-      host: valkey
-      port: 6379
-      password: ${REDIS_SECRET:password}
-
 management:
   otlp:
     metrics:

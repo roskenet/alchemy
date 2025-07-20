@@ -1,9 +1,7 @@
 spring:
-  session:
-    store-type: redis
-    redis:
-      namespace: petunia:session
-    timeout: 30m
+  autoconfigure:
+    exclude:
+      - org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration
   security:
     oauth2:
       client:
@@ -24,8 +22,5 @@ spring:
             authorization-grant-type: client_credentials
             scope: petunias.read,petunias.write
             provider: keycloak
-  data:
-    redis:
-      host: valkey
-      port: 6379
-      password: password
+
+NAKADI_URI: http://localhost:8181

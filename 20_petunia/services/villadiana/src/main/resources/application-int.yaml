@@ -23,4 +23,13 @@ spring:
             scope: petunias.read,petunias.write
             provider: keycloak
 
-NAKADI_URI: http://localhost:8181
+management:
+  otlp:
+    metrics:
+      export:
+        enabled: off
+
+NAKADI_URI: http://nakadi
+ALLOWED_ORIGINS: http://localhost:3000
+POST_LOGOUT_REDIRECT: https://localhost:3000
+POST_LOGIN_REDIRECT: https://localhost:3000/petunias

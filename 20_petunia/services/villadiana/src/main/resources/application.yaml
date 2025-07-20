@@ -1,13 +1,13 @@
 spring:
+  application:
+    name: villadiana
+  profiles:
+    default: prod
   session:
     store-type: redis
     redis:
       namespace: petunia:session
     timeout: 30m
-  profiles:
-    default: prod
-  application:
-    name: villadiana
   jackson:
     property-naming-strategy: SNAKE_CASE
 #server:

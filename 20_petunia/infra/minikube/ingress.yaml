@@ -4,6 +4,16 @@ metadata:
   name: petunia
 spec:
   rules:
+  - host: nakadi
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: nakadi
+            port: 
+              name: api
   - host: keycloak
     http:
       paths:

@@ -54,7 +54,7 @@ spec:
           - name: KEYCLOAK_SECRET
             valueFrom:
               secretKeyRef:
-                name: petunia-credentials
+                name: petunia
                 key: keycloak-villadiana-secret
         ports:
         - name: www

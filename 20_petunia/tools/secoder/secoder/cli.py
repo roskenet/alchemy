@@ -5,6 +5,14 @@ Command-line interface for the secoder tool.
 
 import argparse
 import sys
+import logging
+from secoder.secret_handler import SecretHandler
+
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+)
 
 
 def parse_args(args=None):
@@ -38,13 +46,33 @@ def main(args=None):
     """Main entry point for the application."""
     args = parse_args(args)
     
-    # Print Hello World and the three options
-    print(f"Hello World and the three options:")
-    print(f"  --secret-dir: {args.secret_dir}")
-    print(f"  --pgp-key: {args.pgp_key}")
-    print(f"  --key-password: {args.key_password}")
+    # Check if required arguments are provided
+    if not args.secret_dir:
+        logging.error("--secret-dir is required")
+        return 1
     
-    return 0
+    if not args.pgp_key:
+        logging.error("--pgp-key is required")
+        return 1
+    
+    if not args.key_password:
+        logging.error("--key-password is required")
+        return 1
+    
+    # Create a SecretHandler instance
+    handler = SecretHandler(
+        secret_dir=args.secret_dir,
+        pgp_key=args.pgp_key,
+        key_password=args.key_password
+    )
+    
+    # Process secrets
+    if handler.process_secrets():
+        logging.info("Successfully processed secrets")
+        return 0
+    else:
+        logging.error("Failed to process secrets")
+        return 1
 
 
 if __name__ == "__main__":

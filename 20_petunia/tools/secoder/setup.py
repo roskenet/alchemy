@@ -22,6 +22,8 @@ setup(
     author_email="info@jetbrains.com",
     url="https://github.com/jetbrains/secoder",
     packages=find_packages(),
+    install_requires=[
+    ],
     entry_points={
         'console_scripts': [
             'secoder=secoder.cli:main',

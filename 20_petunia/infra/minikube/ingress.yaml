@@ -1,0 +1,99 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: petunia
+spec:
+  rules:
+  - host: nakadi
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: nakadi
+            port: 
+              name: api
+  - host: grafana
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: grafana
+            port: 
+              number: 80
+  - host: keycloak
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: keycloak
+            port: 
+              name: service
+#  - host: www
+#    http:
+#      paths:
+#      - path: /
+#        pathType: Prefix
+#        backend:
+#          service:
+#            name: polonium
+#            port:
+#              number: 8080
+  - host: petunia
+    http:
+      paths:
+      - path: /ws
+        pathType: Prefix
+        backend:
+          service:
+            name: villadiana
+            port:
+              number: 8080
+      - path: /api
+        pathType: Prefix
+        backend:
+          service:
+            name: villadiana
+            port:
+              number: 8080
+      - path: /oauth2
+        pathType: Prefix
+        backend:
+          service:
+            name: villadiana
+            port:
+              number: 8080
+      - path: /login
+        pathType: Prefix
+        backend:
+          service:
+            name: villadiana
+            port:
+              number: 8080
+      - path: /logout
+        pathType: Prefix
+        backend:
+          service:
+            name: villadiana
+            port:
+              number: 8080
+      - path: /me
+        pathType: Prefix
+        backend:
+          service:
+            name: villadiana
+            port:
+              number: 8080
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: alpicola
+            port:
+              number: 80
+

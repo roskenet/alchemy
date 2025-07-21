@@ -17,14 +17,20 @@ spec:
         image: roskenet/axillaris:2.10.0
         env:
         - name: KEYCLOAK_ISSUER_URI
-          value: https://auth.roskenet.de/realms/petunia
+          valueFrom:
+            configMapKeyRef:
+              name: axillaris
+              key: KEYCLOAK_ISSUER_URI
+        - name: KEYCLOAK_INTROSPECTION_URI
+          valueFrom:
+            configMapKeyRef:
+              name: axillaris
+              key: KEYCLOAK_INTROSPECTION_URI
         - name: KEYCLOAK_SECRET
           valueFrom:
             secretKeyRef:
-              name: petunia-credentials
+              name: petunia
               key: keycloak-axillaris-secret
-        - name: KEYCLOAK_INTROSPECTION_URI
-          value: https://auth.roskenet.de/realms/chemicals/protocol/openid-connect/token/introspect
         ports:
         - name: www
           containerPort: 8080

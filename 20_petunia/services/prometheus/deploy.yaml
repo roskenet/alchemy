@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: prometheus
+  labels:
+    app: prometheus
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: prometheus
+  template:
+    metadata:
+      labels:
+        app: prometheus
+    spec:
+      initContainers:
+        - name: fix-permissions
+          image: busybox
+          command: ["sh", "-c", "chown -R 65534:65534 /prometheus"]
+          volumeMounts:
+            - name: prometheus-storage
+              mountPath: /prometheus
+      containers:
+      - name: prometheus
+        image: prom/prometheus:v3.5.0
+        imagePullPolicy: IfNotPresent
+        args:
+          - "--config.file=/etc/prometheus/prometheus.yml"
+        ports:
+          - containerPort: 9090
+        volumeMounts:
+          - name: prometheus-config-volume
+            mountPath: /etc/prometheus/
+          - name: prometheus-storage
+            mountPath: /prometheus
+      volumes:
+        - name: prometheus-config-volume
+          configMap:
+            name: prometheus
+        - name: prometheus-storage
+          persistentVolumeClaim:
+            claimName: prometheus
+

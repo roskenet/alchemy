@@ -23,8 +23,8 @@ export default function Home() {
           <Title level={4}>It uses the following Technologies, Products, Languages, Tools:</Title>
 
           <Paragraph>Ant Design, Docker, Gradle, Grafana, Jaeger, Java,
-            Kotlin, Kubernetes, Make, Maven, Microservices,
-            Nakadi, Next.js, PostgreSQL, Prometheus, Spring, SpringBoot, Valkey, Websockets</Paragraph>
+            Keycloak, Kotlin, Kubernetes, Make, Maven, Microservices,
+            Nakadi, Next.js, PostgreSQL, Prometheus, Spring, SpringBoot, OpenID Connect, Valkey, Websockets</Paragraph>
 
           <Button type="primary" href="/petunias">My Petunias</Button>
         </Space>

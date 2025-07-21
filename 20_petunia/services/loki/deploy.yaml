@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: loki
+spec:
+  selector:
+    matchLabels:
+      app: loki
+  serviceName: loki
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: loki
+    spec:
+      containers:
+        - name: loki
+          image: grafana/loki:2.9.0
+          imagePullPolicy: IfNotPresent
+          args:
+            - -config.file=/etc/loki/loki-config.yaml
+          ports:
+            - containerPort: 3100
+              name: http
+          volumeMounts:
+            - name: config
+              mountPath: /etc/loki
+            - name: storage
+              mountPath: /loki
+      volumes:
+        - name: config
+          configMap:
+            name: loki
+  volumeClaimTemplates:
+    - metadata:
+        name: storage
+      spec:
+        accessModes: ["ReadWriteOnce"]
+        resources:
+          requests:
+            storage: 2Gi
+        storageClassName: loki
+

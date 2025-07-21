@@ -1,0 +1,5 @@
+curl --request POST \
+  --url http://localhost:8080/event-types \
+  --header 'Content-Type: application/json' \
+  --header 'User-Agent: insomnia/11.1.0' \
+  --data '{"name":"petunia.message.user","owning_application":"petunia","category":"undefined","enrichment_strategies":[],"partition_strategy":"random","partition_key_fields":[],"cleanup_policy":"delete","ordering_key_fields":[],"ordering_instance_ids":[],"schema":{"type":"json_schema","schema":"{\n    \"properties\": {\n        \"subject\": {\n            \"type\": \"string\"\n        },\n        \"message\": {\n        \t\"type\": \"string\"\n        }\n    }\n}","version":"2.0.0","created_at":"2025-07-12T20:02:47.993Z"},"default_statistic":null,"options":{"retention_time":172800000},"authorization":null,"annotations":{},"labels":{},"compatibility_mode":"none","audience":"company-internal"}'

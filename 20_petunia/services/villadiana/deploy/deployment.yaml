@@ -17,23 +17,44 @@ spec:
         image: roskenet/villadiana:3.28.0
         env:
           - name: KEYCLOAK_ISSUER_URI
-            value: https://auth.roskenet.de/realms/petunia
+            valueFrom:
+              configMapKeyRef:
+                name: villadiana-config
+                key: KEYCLOAK_ISSUER_URI
           - name: KEYCLOAK_TOKEN_URI
-            value: https://auth.roskenet.de/realms/petunia/protocol/openid-connect/token
+            valueFrom:
+              configMapKeyRef:
+                name: villadiana-config
+                key: KEYCLOAK_TOKEN_URI
           - name: NAKADI_URI
-            value: http://nakadi
+            valueFrom:
+              configMapKeyRef:
+                name: villadiana-config
+                key: NAKADI_URI
           - name: ALLOWED_ORIGINS
-            value: https://petunia.roskenet.de
+            valueFrom:
+              configMapKeyRef:
+                name: villadiana-config
+                key: ALLOWED_ORIGINS
           - name: POST_LOGOUT_REDIRECT
-            value: https://petunia.roskenet.de
+            valueFrom:
+              configMapKeyRef:
+                name: villadiana-config
+                key: POST_LOGOUT_REDIRECT
           - name: POST_LOGIN_REDIRECT
-            value: https://petunia.roskenet.de/petunias
+            valueFrom:
+              configMapKeyRef:
+                name: villadiana-config
+                key: POST_LOGIN_REDIRECT
           - name: AXILLARIS_URI
-            value: http://axillaris
+            valueFrom:
+              configMapKeyRef:
+                name: villadiana-config
+                key: AXILLARIS_URI
           - name: KEYCLOAK_SECRET
             valueFrom:
               secretKeyRef:
-                name: petunia-credentials
+                name: petunia
                 key: keycloak-villadiana-secret
         ports:
         - name: www

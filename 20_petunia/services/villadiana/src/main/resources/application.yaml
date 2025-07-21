@@ -1,12 +1,17 @@
 spring:
-  profiles:
-    default: prod
   application:
     name: villadiana
+  profiles:
+    default: prod
+  session:
+    store-type: redis
+    redis:
+      namespace: petunia:session
+    timeout: 30m
   jackson:
     property-naming-strategy: SNAKE_CASE
-server:
-  forward-headers-strategy: native
+#server:
+#  forward-headers-strategy: native
 
 nakadi:
   uri: ${NAKADI_URI:http://nakadi.minikube}
@@ -19,3 +24,9 @@ app:
       - ${ALLOWED_ORIGINS:https://petunia.roskenet.de}
     post-logout-redirect-uri: ${POST_LOGOUT_REDIRECT:https://petunia.roskenet.de}
     default-login-success-url: ${POST_LOGIN_REDIRECT:https://petunia.roskenet.de/petunias}
+  data:
+    redis:
+      host: ${VALKEY_HOST:localhost}
+      port: ${VALKEY_PORT:6379}
+      password: ${VALKEY_PASSWORD:password}
+

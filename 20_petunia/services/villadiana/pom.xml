@@ -19,7 +19,7 @@
     <properties>
         <java.version>21</java.version>
 
-        <nakadi-java.version>0.20.11</nakadi-java.version>
+        <nakadi-java.version>0.20.12-SNAPSHOT</nakadi-java.version>
 
         <docker.from>eclipse-temurin:21-jre-alpine</docker.from>
         <docker.maintainer>Felix Roske</docker.maintainer>

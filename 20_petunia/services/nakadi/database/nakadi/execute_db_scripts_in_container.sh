@@ -1,2 +1,2 @@
-find /docker-entrypoint-initdb.d -type f -name "*.sql" | sort |
-while read -r filename; do psql -U "$POSTGRES_USER" -d "$POSTGRES_DB" -a -f "$filename"; done
+find . -type f -name "*.sql" | sort |
+while read -r filename; do psql -h localhost -U "nakadi" -d "nakadi" -a -f "$filename"; done

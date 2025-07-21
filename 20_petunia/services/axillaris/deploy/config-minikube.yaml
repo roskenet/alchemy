@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: axillaris
+data:
+  KEYCLOAK_ISSUER_URI: http://keycloak/realms/petunia
+  KEYCLOAK_INTROSPECTION_URI: http://keycloak/realms/chemicals/protocol/openid-connect/token/introspect

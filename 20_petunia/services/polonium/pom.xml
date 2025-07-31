@@ -10,7 +10,7 @@
     </parent>
     <groupId>de.felixroske</groupId>
     <artifactId>polonium</artifactId>
-    <version>1.0.0</version>
+    <version>3.1.0</version>
     <name>polonium</name>
     <description>polonium</description>
     <url/>
@@ -31,7 +31,7 @@
 
         <docker.from>eclipse-temurin:17-jre</docker.from>
         <docker.maintainer>felix@roskenet.de</docker.maintainer>
-        <docker.image>${project.artifactId}</docker.image>
+        <docker.image>roskenet/${project.artifactId}:${project.version}</docker.image>
     </properties>
     <dependencies>
         <dependency>

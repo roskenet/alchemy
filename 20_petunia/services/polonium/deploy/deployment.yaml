@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: polonium
-          image: roskenet/polonium:2.0.0
+          image: roskenet/polonium:3.1.0
           imagePullPolicy: IfNotPresent 
           ports:
             - containerPort: 8080

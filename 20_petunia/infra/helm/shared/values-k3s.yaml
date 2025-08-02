@@ -1,0 +1,10 @@
+#
+
+tls:
+  enabled: true
+
+keycloak:
+  url: auth.roskenet.de
+
+polonium:
+  url: www.roskenet.de

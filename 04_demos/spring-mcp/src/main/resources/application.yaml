@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: spring-mcp
+
+  ai:
+    openai:
+      api-key: ${OPENAI_API_KEY}
+      chat:
+        options:
+          model: gpt-4o-mini
+
+    mcp:
+      client:
+        stdio:
+          connections:
+            weather:
+              command: npx
+              args: -y,@h1deya/mcp-server-weather

@@ -3,28 +3,30 @@ package delegated_props
 import kotlin.reflect.KProperty
 
 class PropDelegate {
-    private var value: String = "Berlin"
+
+    private var value: String = "Manhattan"
 
     operator fun getValue(thisRef: Any?, property: KProperty<*>): String {
-        return value
+        val retVal = this.value
+        this.value = "Berlin"
+        return retVal
     }
 
-    operator fun setValue(thisRef: Any?, property: KProperty<*>, value: String) {
-        println("Setting value to: $value") // Extra side-effect if desired
-        this.value = value
-    }
+//    operator fun setValue(thisRef: Any?, property: KProperty<*>, value: String) {
+//        println("Setting value to: $value")
+//        this.value = value
+//    }
 
 }
 
 class MyClass {
    val myPropDelegate: PropDelegate = PropDelegate()
 //   var theProp: String by PropDelegate()
-    var theProp: String by myPropDelegate
+    val theProp: String by myPropDelegate
 }
 
 fun main() {
     val myClass = MyClass()
-    myClass.theProp = "New York"
-
-    println(myClass.theProp)
+    println("First we take ${myClass.theProp}")
+    println("Then we take ${myClass.theProp}")
 }

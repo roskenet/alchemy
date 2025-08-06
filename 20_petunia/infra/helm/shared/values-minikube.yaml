@@ -1,0 +1,10 @@
+#
+
+tls:
+  enabled: false
+
+keycloak:
+  url: keycloak
+
+polonium:
+  url: polonium

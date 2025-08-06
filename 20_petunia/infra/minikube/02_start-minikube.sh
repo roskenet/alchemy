@@ -2,9 +2,7 @@ mkir -p ./mnt
 
 minikube start \
     --driver=docker \
-    --addons=ingress \
+    --addons=ingress,metrics-server \
     --mount \
-    --mount-string="./mnt:/mnt" \
-    --cpus=2 \
-    --memory=8192
+    --mount-string="./mnt:/mnt" 
 

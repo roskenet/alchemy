@@ -1,0 +1,4 @@
+#TOKENINFO_URI: https://info.services.auth.zalando.com/oauth2/tokeninfo
+TOKENINFO_URI: https://sandbox-tokeninfo-bridge.stups.zalan.do/oauth2/tokeninfo
+AUTH_ROLES_PROVIDER: https://users.auth.zalando.com/api/employees/{uid}/groups
+

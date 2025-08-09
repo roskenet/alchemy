@@ -1,0 +1,10 @@
+spring:
+  profiles:
+    active: ${ENV:integration}
+
+tokeninfo:
+  introspector.uri: ${TOKENINFO_URI}
+  userroles.uri: ${AUTH_ROLES_PROVIDER}
+
+scope:
+  helloRead: offerable-quantity.read

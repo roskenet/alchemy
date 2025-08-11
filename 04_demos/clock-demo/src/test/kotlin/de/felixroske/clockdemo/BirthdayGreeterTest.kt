@@ -21,7 +21,8 @@ class BirthdayGreeterTest {
 
     @Test
     fun testBirthday_False() {
-        val clock = Clock.fixed(Instant.parse("2025-01-08T23:00:00.00Z"), ZoneId.of("Europe/Berlin"))
+//        val clock = Clock.fixed(Instant.parse("2025-01-08T23:00:00.00Z"), ZoneId.of("Europe/Berlin"))
+        val clock = Clock.fixed(Instant.parse("2025-01-09T00:00:00.00Z"), ZoneId.of("Pacific/Honolulu"))
         val greeter = BirthdayGreeter(clock)
 
         val result = greeter.greet("Elvis", LocalDate.of(1935, 1, 8))

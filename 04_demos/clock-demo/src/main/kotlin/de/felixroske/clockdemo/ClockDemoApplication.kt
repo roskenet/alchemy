@@ -28,9 +28,9 @@ class BirthdayGreeter(val clock: Clock) {
 
     fun greet(user: String, birthday: LocalDate): String {
         if (LocalDate.now(clock).month == birthday.month && LocalDate.now(clock).dayOfMonth == birthday.dayOfMonth)
-            return "Happy Birthday, Elvis!"
+            return "Happy Birthday, $user!"
         else
-            return "Hello, Elvis!"
+            return "Hello, $user!"
     }
 
 }

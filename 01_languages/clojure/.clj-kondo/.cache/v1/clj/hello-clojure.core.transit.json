@@ -1,0 +1,1 @@
+["^ ","~$foo",["^ ","~:row",3,"~:col",1,"~:fixed-arities",["~#set",[1]],"~:name","^0","~:ns","~$hello-clojure.core","~:top-ns","^7","~:type","~:fn"],"~$another-foo",["^ ","^1",8,"^2",1,"^3",["^4",[1]],"^5","^;","^6","^7","^8","^7","^9","^:"],"~:filename","/home/felix/Workspaces/alchemy/01_languages/clojure/src/hello_clojure/core.clj"]

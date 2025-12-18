@@ -42,8 +42,9 @@ class PaginationHelper<T>(val collection: List<T>, val itemsPerPage: Int) {
      */
     fun pageIndex(itemIndex: Int): Int =
         when {
+            itemIndex < 0 -> -1
             itemIndex >= itemCount -> -1
-            else -> itemCount / itemIndex
+            else -> itemIndex / itemsPerPage
         }
 }
 
@@ -59,5 +60,18 @@ class PaginationHelperTest {
     fun testPageCount() {
         val helper = PaginationHelper<Char>(listOf('a', 'b', 'c', 'd', 'e', 'f'), 4)
         assertEquals(2, helper.pageCount, "pageCount is returning incorrect value")
+    }
+
+    @Test
+    fun testPageItemCount() {
+        val helper = PaginationHelper<Char>(listOf('a', 'b', 'c', 'd', 'e', 'f'), 4)
+        assertEquals(2, helper.pageItemCount(1), "pageItemCount is returning incorrect value")
+    }
+
+    @Test
+    fun testPageIndex() {
+        val helper = PaginationHelper<Char>(listOf('a', 'b', 'c', 'd', 'e', 'f'), 4)
+        assertEquals(0, helper.pageIndex(3), "pageIndex is returning incorrect value")
+
     }
 }

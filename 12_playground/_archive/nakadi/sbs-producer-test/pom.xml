@@ -21,7 +21,7 @@
     <dependency>
       <groupId>org.zalando</groupId>
       <artifactId>nakadi-producer-spring-boot-starter</artifactId>
-      <version>30.0.0</version>
+      <version>30.0.0-RC1</version>
     </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>

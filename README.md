@@ -10,3 +10,5 @@ A microservice zoo with OpenID Connect deployable on minikube.
 
 Tags: keycloak, oidc, microservice, next.js, spring boot, session
 
+ToDo: Tidy me up!
+

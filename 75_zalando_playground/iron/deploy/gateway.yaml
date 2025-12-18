@@ -1,0 +1,22 @@
+apiVersion: zalando.org/v1
+kind: FabricGateway
+metadata:
+  name: "iron"
+  namespace: "froske"
+  labels:
+    application: "alchemy"
+    component: "iron"
+    version: "1"
+spec:
+  x-external-service-provider:
+    hosts:
+      - "iron.playground.zalan.do"
+    stackSetName: "iron"
+    stackVersion: "1"
+  x-fabric-admins:
+    - froske
+  paths:
+    /api/artists:
+      get:
+        x-fabric-employee-access:
+          type: allow_all

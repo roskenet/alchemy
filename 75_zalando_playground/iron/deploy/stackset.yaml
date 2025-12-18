@@ -1,0 +1,121 @@
+apiVersion: zalando.org/v1
+kind: StackSet
+metadata:
+  name: iron
+  namespace: froske
+  labels:
+    application: "alchemy"
+    component: "iron"
+    version: "1"
+spec:
+  externalIngress:
+    backendPort: 8080
+  stackLifecycle:
+    scaledownTTLSeconds: 600
+    limit: 1
+  stackTemplate:
+    spec:
+      version: "1"
+      replicas: 1
+      autoscaler:
+        minReplicas: 1
+        maxReplicas: 8
+        metrics:
+          - type: CPU
+            averageUtilization: 70
+      podTemplate:
+        metadata:
+          labels:
+            application: "iron"
+            version: "1"
+          annotations:
+            kubernetes-log-watcher/scalyr-sampling-rules: '[{"container": "iron", "sampling-rules":[{ "match_expression": "\\] DEBUG \\[", "sampling_rate": 0 }, { "match_expression": "\\] TRACE \\[", "sampling_rate": 0 }]}]'
+        spec:
+          containers:
+            - name: "iron"
+              image: "pierone.stups.zalan.do/cep-label/iron:0.0.1"
+              ports:
+                - containerPort: 8080
+                  name: http
+                - containerPort: 7979
+                  name: management
+              resources:
+                requests:
+                  cpu: 100
+                  memory: 1Gi
+                limits:
+                  memory: 1Gi
+#              volumeMounts:
+#                - name: "{{APP_NAME}}-{{VERSION}}-credentials"
+#                  mountPath: /meta/credentials
+#                  readOnly: true
+#              env:
+#                - name: JAVA_OPTS
+#                  value: {{{JAVA_OPTS}}}
+#                - name: OTEL_INSTRUMENTATION_OPENTELEMETRY_INSTRUMENTATION_ANNOTATIONS_ENABLED
+#                  value: "true"
+#                - name: OTEL_INSTRUMENTATION_OPENTELEMETRY_INSTRUMENTATION_TOMCAT_ENABLED
+#                  value: "false"
+#                - name: PROFILE
+#                  value: {{{PROFILE}}}
+#                - name: TOKENINFO_URL
+#                  value: {{{TOKENINFO_URL}}}
+#                - name: ROLEINFO_URL
+#                  value: {{{ROLEINFO_URL}}}
+#                - name: NAKADI_URL
+#                  value: {{{NAKADI_URL}}}
+#                - name: CONFIG_SERVICE_URL
+#                  value: {{{CONFIG_SERVICE_URL}}}
+#                - name: PCH_API_URL
+#                  value: {{{PCH_API_URL}}}
+#                - name: PCH_CLIENT_ID
+#                  valueFrom:
+#                    secretKeyRef:
+#                      name: "{{{APP_NAME}}}-pch-client-id-secret"
+#                      key: pch-client-id
+#                - name: PCH_CLIENT_SECRET
+#                  valueFrom:
+#                    secretKeyRef:
+#                      name: "{{{APP_NAME}}}-pch-client-secret-secret"
+#                      key: pch-client-secret
+#                - name: VERSION
+#                  value: "{{{VERSION}}}"
+#                - name: APP_NAME
+#                  value: "{{{APP_NAME}}}"
+#                - name: MAPS_API_KEY
+#                  valueFrom:
+#                    secretKeyRef:
+#                      name: "{{{APP_NAME}}}-secrets"
+#                      key: maps_api_key
+#                - name: GOOGLE_MAPS_API_SECRET
+#                  valueFrom:
+#                    secretKeyRef:
+#                      name: "{{{APP_NAME}}}-secrets"
+#                      key: GOOGLE_MAPS_API_SECRET
+#                - name: DB_URL
+#                  value: "{{{DB_URL}}}"
+#                - name: DB_USERNAME
+#                  valueFrom:
+#                    secretKeyRef:
+#                      name: "{{{DB_SECRET}}}"
+#                      key: username
+#                - name: DB_PASSWORD
+#                  valueFrom:
+#                    secretKeyRef:
+#                      name: "{{{DB_SECRET}}}"
+#                      key: password
+#                - name: MAX_POOL_SIZE
+#                  value: "{{{MAX_POOL_SIZE}}}"
+
+#              readinessProbe:
+#                httpGet:
+#                  path: /health
+#                  port: 7979
+#                initialDelaySeconds: 30
+#                timeoutSeconds: 5
+#                periodSeconds: 5
+
+#          volumes:
+#            - name: "{{APP_NAME}}-{{VERSION}}-credentials"
+#              secret:
+#                secretName: "{{APP_NAME}}-{{VERSION}}-credentials"

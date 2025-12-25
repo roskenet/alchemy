@@ -1,0 +1,14 @@
+replicaCount: 1
+
+image:
+  repository: valkey/valkey
+  tag: "8.1.2"
+  pullPolicy: IfNotPresent
+
+ports:
+  - name: http
+    type: ClusterIP
+    containerPort: 6379
+    servicePort: 6379
+
+resources: {}

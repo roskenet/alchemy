@@ -1,0 +1,5 @@
+sonar-scanner \
+  -Dsonar.projectKey=sample-orders \
+  -Dsonar.sources=. \
+  -Dsonar.host.url=http://sonar.192-168-49-2.nip.io \
+  -Dsonar.token=sqp_1af31f268e35cc9c89cdc22978c213d50f148d36

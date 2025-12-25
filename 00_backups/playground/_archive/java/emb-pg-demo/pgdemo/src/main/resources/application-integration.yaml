@@ -1,0 +1,3 @@
+DBURL: jdbc:postgresql://localhost/local_inbound_db
+DBUSER: postgres
+DBPASSWORD: postgres

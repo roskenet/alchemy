@@ -1,0 +1,5 @@
+config.vm.box = "ubuntu/trusty64"
+
+config.vm.provider "virtualbox" do |vb|
+vb.memory = "1024"
+end

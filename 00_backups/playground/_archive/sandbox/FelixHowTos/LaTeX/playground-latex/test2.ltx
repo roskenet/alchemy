@@ -1,0 +1,57 @@
+%\documentclass[a4paper,11pt]{article}
+%%%%%%%%%%%%% Klassen-Optionen
+\documentclass[%
+  paper=A4, % Stellt auf A4-Papier ein
+  pagesize, % Diese Option reicht die Papiergröße an
+            % alle Ausgabeformate weiter
+  DIV=calc, % Errechnet einen guten Satzspiegel
+  BCOR=1cm, % Weil bei mir immer 1cm in der Bindung
+            % der Klemmmappe verschwindet
+  headings=small,% Für etwas kleinere Überschriften
+  ngerman   % Neue Rechtschreibung, d.\,h. (Silbentrennung)
+]{scrbook}  % Eine Klasse für beidseitige Texte mit Kapiteln 
+            %
+\usepackage[utf8]{inputenc}
+\usepackage[LY1]{fontenc}
+\usepackage[fullfamily,opticals,mathlf,minionint]{MinionPro}
+\usepackage{textcomp}
+\usepackage{microtype}
+\renewcommand{\sfdefault}{MyriadPro-onum-pnum}
+\usepackage[german]{babel}
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{marginnote}
+%\newcommand{\lscmargin{1}}{\marginnote{\textsf{\fontseries{lsc}\selectfont #1}}}
+
+% end listing stuff
+%\marginparwidth5cm
+
+\begin{document}
+\chapter{Einleitung}
+
+% Das sieht gut aus:
+%\newcommand{\lscmargin}[1]{\marginnote{\textsf{\fontseries{lsc}\selectfont #1}}}
+\newcommand{\lscmargin}[1]{\marginnote{\textsf{\fontseries{c}\selectfont #1}}}
+
+%\textsf{\fontseries{lsc}\selectfont Willkommen! Dies ist ein Testtext!}
+Und nun kommt mal ein etwas längerer Text .{\em Ostzonensuppenuerfel} verursachen Krebs.
+Ich möchte auch mal sehen, was passiert, wenn ich einen Text {\em hervorhebe}.
+\begin{equation}
+f(x) = x^2 + 2x + 25
+\end{equation}
+
+f\"uhrt trivial zu:
+
+\begin{equation}
+\sum \limits_{i=1}^n i = \frac{n(n+1)}{2}
+\end{equation}
+
+%{ {  \textsc{Und dies ist nun}} ein Text in der Sans-Serif?}
+
+Liebes \lscmargin{Dies soll nun in der Randspalte stehen.} Lieschen. Lamport schloss 1960 am Massachusetts Institute of Technology mit dem Bachelor in Mathematik ab. 1962 bis 1965 arbeitete er in Teilzeit für die Mitre Corporation. 1963 erlangte er an der Brandeis University zunächst den MA-Abschluss (Master of Arts) und wurde 1972 bei Richard Palais in Mathematik promoviert (The Analytic Cauchy Problem with Singular Data)\footnote{Diese Fußnote ist eine absolute Notwendigkeit.}. Lamport war 1965 bis 1969 Professor für Mathematik am Marlboro College und arbeitete 1970 bis 1977 für Massachusetts Computer Associates. 1977 bis 1985 war er bei SRI International und 1985 bis 2001 bei der Digital Equipment Corporation/Compaq (als Senior Consulting Engineer). Seit 2001 arbeitet er für Microsoft Research.
+
+Und nun mal eine Zahl schn gesetzt: Es wurden 1247 Hühner verkauft.
+Auf wiederhören!
+
+Und dieser Absatz existiert auch nur, damit ich in der Marginalspalte einen anderen Schriftschnitt ausprobieren kann.
+\end{document}

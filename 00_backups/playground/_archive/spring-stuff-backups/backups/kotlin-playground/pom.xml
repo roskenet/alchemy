@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>de.felixroske</groupId>
+  <artifactId>party-performer</artifactId>
+  <version>1.0.0</version>
+
+  <packaging>pom</packaging>
+
+  <name>Aggregator POM</name>
+  <url>http://www.example.com</url>
+
+  <modules>
+      <module>party-performer-parent</module>
+      <module>performer-api</module>
+      <module>singer</module>
+      <module>singer-starter</module>
+      <module>juggler</module>
+      <module>juggler-starter</module>
+      <module>party-application-00-noioc</module>
+      <module>party-application-01-xmlconfig</module>
+      <module>party-application-02-annotconfig</module>
+      <module>party-application-03-bootconfig</module>
+      <module>config-example</module>
+  </modules>
+</project>

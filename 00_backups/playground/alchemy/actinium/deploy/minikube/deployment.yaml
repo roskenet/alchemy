@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: actinium
+  labels:
+    project: alchemy
+    app: actinium
+  annotations:
+    maintainer: "felix@roskenet.de"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: actinium
+  template:
+    metadata:
+      labels:
+        app: actinium
+    spec:
+      containers:
+        - name: actinium
+          image: actinium:latest
+          imagePullPolicy: IfNotPresent 
+          ports:
+            - containerPort: 8080
+              name: http 
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 1
+              memory: 1Gi

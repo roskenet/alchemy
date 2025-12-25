@@ -1,0 +1,42 @@
+openapi: 3.0.1
+info:
+  title: Oxygen
+  description: Demo service to show some things for microservices in Java.
+  version: 0.0.4
+servers:
+  - url: http://oxygen.192-168-49-2.nip.io
+    description: Oxygen service
+paths:
+  '/api/name/{name}':
+    get:
+      summary: Returns an uppercase representation of name.
+      description: Optional extended description in CommonMark or HTML.
+      parameters:
+        - $ref: '#/components/parameters/NamePathParam'
+      responses:
+        '200':
+          $ref: '#/components/responses/NameResponse'
+components:
+  parameters:
+    NamePathParam:
+      name: name
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    NameResponse:
+      description: The uppercase representation of a string.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/NameResponse'
+  schemas:
+    NameResponse:
+      type: object
+      properties:
+        value:
+          type: string
+          description: The uppercase representation of a string.
+      example:
+        value: ASDF123!

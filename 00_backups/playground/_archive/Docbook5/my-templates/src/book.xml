@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook V5.0//EN"
+               "http://www.oasis-open.org/docbook/xml/5.0/docbook.dtd">
+<book>
+    <info>
+        <title>The Book of Dookbook5</title>
+        <author><firstname>Anna</firstname><surname>Konda</surname></author>
+    </info>
+    <preface>
+        <title>Foreword</title>
+        <para>This is a foreword.</para>
+    </preface>
+
+    <chapter>
+        <title>The first Chapter</title>
+        <para>This is the first paragraph in the first chapter of my first book.</para>
+    </chapter>
+
+</book>

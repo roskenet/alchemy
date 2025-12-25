@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: camunda
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: camunda
+  template:
+    metadata:
+      labels:
+        app: camunda
+    spec:
+      containers:
+      - name: camunda
+        image: roskenet/camunda-01:0.0.1
+        ports:
+        - name: api
+          containerPort: 8080

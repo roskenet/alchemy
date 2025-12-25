@@ -1,0 +1,1 @@
+ALTER TABLE jsonvals ADD COLUMN status TEXT;

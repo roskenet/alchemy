@@ -1,0 +1,13 @@
+# Start the container:
+docker build -t roskenet/kafka:0.1.0 .
+docker run -d --name flx-kafka -p 9092:9092 roskenet/kafka:0.1.0 
+
+# Create a topic:
+./kafka-topics.sh --bootstrap-server localhost:9092 --create --topic test
+
+# Create a producer:
+./kafka-console-producer.sh --bootstrap-server localhost:9092 --topic test
+
+# Create a consumer:
+❯ ./kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic test --from-beginning
+

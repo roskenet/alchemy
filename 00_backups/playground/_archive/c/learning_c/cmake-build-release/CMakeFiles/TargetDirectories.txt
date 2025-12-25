@@ -1,0 +1,3 @@
+/home/felix/Workspaces/playground/c/learning_c/cmake-build-release/CMakeFiles/learning_c.dir
+/home/felix/Workspaces/playground/c/learning_c/cmake-build-release/CMakeFiles/edit_cache.dir
+/home/felix/Workspaces/playground/c/learning_c/cmake-build-release/CMakeFiles/rebuild_cache.dir

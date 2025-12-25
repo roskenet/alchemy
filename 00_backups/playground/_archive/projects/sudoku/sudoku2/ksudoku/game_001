@@ -1,0 +1,17 @@
+<!DOCTYPE ksudoku>
+<ksudoku>
+ <game msecs-elapsed="823386" had-help="0">
+  <puzzle>
+   <graph order="9" specific-type="Plain" type="sudoku"/>
+   <values>e_bg_h__c__f_______d_ecf___gb_hf_j____j___f____d_eg_cb___fbd_g_______c__d__c_ji_f</values>
+   <solution>ejbgihdfcchfdjbgeiidgecfbhjgbchfijdehejbdcfigfidjeghcbjcifbdeghbfhigecjddgechjibf</solution>
+  </puzzle>
+  <history>
+   <simple-event index="66" value="1"/>
+   <simple-event index="66" value="8"/>
+   <simple-event index="66" value="0"/>
+   <simple-event index="66" value="8"/>
+   <simple-event index="68" value="4"/>
+  </history>
+ </game>
+</ksudoku>

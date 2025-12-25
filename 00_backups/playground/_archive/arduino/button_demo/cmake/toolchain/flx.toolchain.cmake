@@ -1,0 +1,8 @@
+set(ARDUINO_VARIANT "tinyX61")
+set(ARDUINO_MCU "attiny461")
+set(ARDUINO_F_CPU "1000000")
+set(ARDUINO_PORT "/dev/ttyACM0")
+set(ARDUINO_AVRDUDE_SPEED "9600")
+set(ARDUINO_AVRDUDE_PROTOCOL "stk500v2")
+
+include(${CMAKE_CURRENT_LIST_DIR}/avr.toolchain.cmake)

@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: postgres
+  annotations:
+    kubernetes.io/ingressClassName: nginx
+    nginx.org/listen-ports-ssl: "5432"
+spec:
+  rules:
+    - host: postgres.192-168-49-2.nip.io
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: postgres
+                port:
+                  number: 5432

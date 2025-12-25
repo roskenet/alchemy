@@ -1,0 +1,14 @@
+java -jar wiremock-standalone-3.3.1.jar --record-mappings --enable-browser-proxying
+
+--enable-browser-proxying --trust-all-proxy-targets
+
+
+
+
+java -jar wiremock-standalone-3.3.1.jar --proxy-all --trust-all-proxy-targets --preserve-host-header --verbose
+
+# This should work to record - be aware of the / in the recording window
+# 
+java -jar wiremock-standalone-3.3.1.jar --record-mappings --proxy-all --preserve-host-header --verbose
+
+

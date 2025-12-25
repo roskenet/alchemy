@@ -1,0 +1,38 @@
+\documentclass[DIV=12,11pt,a4paper]{scrartcl}
+\usepackage[french]{babel}
+\usepackage[LY1]{fontenc}
+\usepackage[fullfamily,opticals,mathlf,minionint]{MinionPro}
+\usepackage{textcomp}
+
+\usepackage[    % Much better micro typography
+protrusion=true, % adjust to your eye needs 
+expansion=true,
+tracking=true,
+kerning=true,
+spacing=true,
+letterspace=50, % well spaced smallcaps
+shrink=40,      % may be 20 or less is good   
+factor=1000]    % may be less that 1000 
+{microtype} 
+
+\renewcommand{\sfdefault}{MyriadPro-onum-pnum}
+%\usepackage{amsmath}
+%\usepackage{amsfonts}
+%\usepackage{amssymb}
+\usepackage[ a4paper, marginparsep=10mm, marginparwidth=60mm, left=20mm, right=80mm ]{geometry}
+%\newcommand{\sfmarginpar}[1]{{\marginpar{\usefont{LY1}{MyriadPro-onum-pnum}{c}{n}\selectfont}#1}} 
+\newcommand{\mysffont}{\usefont{LY1}{MyriadPro-onum-pnum}{c}{n}\selectfont}
+
+\newcommand{\vocab}[2]{\marginpar{\small \mysffont \textbf{#1} #2}}
+
+\begin{document}
+\title{Emploi: l'Europe face à la pénurie \vocab{la pénurie:}{Mangel.} de profils qualifiés}
+% \author{}
+\date{}
+
+\maketitle
+
+Le taux de chômage est tombé à 6,4\% dans l'Union européenne en décembre 2021.
+
+
+\end{document}

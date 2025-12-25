@@ -1,0 +1,384 @@
+openapi: "3.0.1"
+info:
+  version: 1.4.0
+  x-api-id: 391b2817-56b6-4fd3-b494-daddf89d3dea
+  title: Backstage Bulk Operations
+  description: |
+    Backstage Bulk Operations is a helper service to make bulk changes asynchronous.
+
+    The service is mainly interacting with our main storage media service (Garfield) to upload B-Set media and to deactivate them.
+  x-audience: component-internal
+  contact:
+    name: Team CAT
+    email: team-cat@zalando.de
+    url: https://catman.docs.zalando.net
+
+servers:
+  - url: https://cat-bulk-ops-api.content-creation.zalan.do
+    description: Production Environment
+  - url: https://cat-bulk-ops-api.content-creation-test.zalan.do
+    description: Staging Environment
+
+paths:
+  '/job':
+    get:
+      summary: Retrieves a paginated collection of Jobs
+      description: Retrieves a paginated collection of Jobs
+      tags:
+        - Jobs
+      parameters:
+        - $ref: "#/components/parameters/PagingLimitQuery"
+        - $ref: "#/components/parameters/PagingNumberQuery"
+      responses:
+        '200':
+          $ref: '#/components/responses/JobsPageResponse'
+        default:
+          $ref: '#/components/responses/ProblemResponse'
+      security:
+        - oauth2:
+            - cat-bulk-ops-api.job.read
+    post:
+      summary: Create a job
+      description: Creates a new job
+      tags:
+        - Jobs
+      requestBody:
+        $ref: '#/components/requestBodies/CreateJobRequestBody'
+      responses:
+        '201':
+          $ref: '#/components/responses/JobResponse'
+        '400':
+          description: 'Data is invalid'
+        default:
+          $ref: '#/components/responses/ProblemResponse'
+      security:
+        - oauth2:
+            - cat-bulk-ops-api.job.write
+  '/job/{id}':
+    get:
+      summary: Retrieves a specific job
+      description: Retrieves a job by its identifier
+      tags:
+        - Jobs
+      parameters:
+        - $ref: "#/components/parameters/JobIDPath"
+      responses:
+        '200':
+          $ref: '#/components/responses/JobResponse'
+        default:
+          $ref: '#/components/responses/ProblemResponse'
+      security:
+        - oauth2:
+            - cat-bulk-ops-api.job.read
+  '/job/{id}/media-zip':
+    get:
+      summary: Downloads a zip file containing media for a given job
+      description: Downloads a zip file containing media for a given job
+      tags:
+        - Jobs
+        - Media
+      parameters:
+        - $ref: "#/components/parameters/JobIDPath"
+      responses:
+        '200':
+          description: The ZIP binary file
+          headers:
+            Content-Disposition:
+              schema:
+                type: string
+                description: This header is always set to `attachment; filename="date_jobid_download.zip"`
+                example: attachment; filename="date_jobid_download.zip"
+          content:
+            application/zip:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/ProblemResponse'
+      security:
+        - oauth2:
+            - cat-bulk-ops-api.job.read
+  '/job/{id}/item':
+    get:
+      summary: Retrieves a paginated collection of Job Items
+      description: Retrieves a paginated collection of Job Items
+      tags:
+        - Jobs
+      parameters:
+        - $ref: "#/components/parameters/JobIDPath"
+        - $ref: '#/components/parameters/FailedOnly'
+        - $ref: "#/components/parameters/PagingLimitQuery"
+        - $ref: "#/components/parameters/PagingNumberQuery"
+      responses:
+        '200':
+          $ref: '#/components/responses/JobItemsPageResponse'
+        default:
+          $ref: '#/components/responses/ProblemResponse'
+      security:
+        - oauth2:
+            - cat-bulk-ops-api.job.read
+  '/job/{id}/file':
+    put:
+      summary: Upload a file binary
+      description: Upload a file binary to a Job resource and create the JobItems
+      tags:
+        - Jobs
+      parameters:
+        - $ref: '#/components/parameters/JobIDPath'
+      requestBody:
+        $ref: '#/components/requestBodies/ZIPBinaryMultipartRequestBody'
+      responses:
+        '200':
+          $ref: '#/components/responses/JobResponse'
+        '400':
+          description: 'Data is invalid'
+        default:
+          $ref: '#/components/responses/ProblemResponse'
+      security:
+        - oauth2:
+            - cat-bulk-ops-api.job.write
+
+components:
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        clientCredentials:
+          tokenUrl: 'https://identity.zalando.com/oauth2/token'
+          scopes:
+            cat-bulk-ops-api.job.read: Read access to API resources
+            cat-bulk-ops-api.job.write: Write access to API resources
+
+  parameters:
+    JobIDPath:
+      name: id
+      description: The Job identifier
+      in: path
+      required: true
+      schema:
+        type: integer
+        format: int64
+      example: 1
+    FailedOnly:
+      required: false
+      description: Flag to fetch only FAILED job items, fetches all job items if false
+      name: failedOnly
+      in: query
+      schema:
+        type: boolean
+        default: false
+      example: true
+    PagingLimitQuery:
+      description: The maximum number of elements returned in a Page.
+      name: limit
+      in: query
+      required: false
+      schema:
+        type: integer
+        format: int32
+        minimum: 1
+        maximum: 1000
+        default: 100
+    PagingNumberQuery:
+      description: The number of the page that should be returned
+      name: page
+      in: query
+      required: false
+      schema:
+        type: integer
+        format: int32
+        default: 0
+
+  requestBodies:
+    CreateJobRequestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/CreateJob'
+    ZIPBinaryMultipartRequestBody:
+      content:
+        multipart/form-data:
+          schema:
+            $ref: '#/components/schemas/ZIPBinaryMultipart'
+      required: true
+
+  responses:
+    JobsPageResponse:
+      description: Page of Jobs
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/JobsPage"
+    JobItemsPageResponse:
+      description: Page of Jobs Items
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/JobItemsPage"
+    JobResponse:
+      description: Job resource
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Job"
+    ProblemResponse:
+      description: |
+        This service relies on HTTP errors. The content-type is set as application/json but no body is sent.
+
+
+  schemas:
+    Page:
+      type: object
+      properties:
+        total_elements:
+          type: integer
+          format: int64
+          description: Total number of elements returned from the resource query.
+        total_pages:
+          type: integer
+          format: int64
+          description: Total number of pages of results from the resource query.
+        size:
+          type: integer
+          format: int64
+          description: Number of elements per page
+          default: 50
+        current_page:
+          type: integer
+          format: int64
+          description: Number of the current page (0-based)
+      example:
+        total_elements: 32
+        total_pages: 1
+        size: 50
+        current_page: 0
+    JobsPage:
+      type: object
+      required:
+        - items
+        - page
+      properties:
+        items:
+          type: array
+          items:
+            $ref: "#/components/schemas/Job"
+        page:
+          $ref: "#/components/schemas/Page"
+    JobItemsPage:
+      type: object
+      required:
+        - items
+        - job
+        - page
+      properties:
+        items:
+          type: array
+          items:
+            $ref: "#/components/schemas/JobItem"
+        job:
+          $ref: "#/components/schemas/Job"
+        page:
+          $ref: "#/components/schemas/Page"
+    Job:
+      description: Job resource representation
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+          example: 1
+        job_type:
+          $ref: '#/components/schemas/JobType'
+        user:
+          type: string
+          example: fake.user
+        start_time:
+          type: string
+          format: date-time
+        success_count:
+          type: integer
+          format: int64
+          example: 3
+        failed_count:
+          type: integer
+          format: int64
+          example: 1
+        total_count:
+          type: integer
+          format: int64
+          example: 4
+        file_name:
+          type: string
+          example: exampleFile.zip
+        source:
+          type: string
+          example: pixels
+
+    JobType:
+      type: string
+      x-extensible-enum:
+        - DELETE_B_SET
+        - UPLOAD_MEDIA
+      example: UPLOAD_MEDIA
+    JobItem:
+      description: Job Item resource representation
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+          example: 1
+        payload:
+          type: string
+          example: BJ721C09Z-K11
+        status:
+          type: string
+          x-extensible-enum:
+            - PENDING
+            - IN_PROGRESS
+            - SUCCESS
+            - FAILED
+          example: FAILED
+        image_count:
+          type: integer
+          format: int32
+          example: 1
+        files:
+          type: array
+          items:
+            type: string
+            example: BJ721C09Z-K11_premium_3_BSET.jpg
+        job_failure_details:
+          type: string
+          x-extensible-enum:
+              - INVALID_NAMING_CONVENTION
+              - NO_SKU_PROVIDED
+          example: NO_SKU_PROVIDED
+
+    CreateJob:
+      type: object
+      properties:
+        user:
+          description: User email requesting the operation
+          type: string
+          example: fake.user
+        job_type:
+          $ref: '#/components/schemas/JobType'
+        skip_retouch_qa:
+          description: if true it should skip the RETOUCH_QA state and go directly to MEDIA_DONE state
+          type: boolean
+          default: false
+          example: true
+        payload:
+          description: In case of delete, this should be a list of Config SKUs
+          type: array
+          items:
+            type: string
+            example: BJ721C09Z-K11
+    ZIPBinaryMultipart:
+      type: object
+      properties:
+        file:
+          description: Compacted ZIP binary file. Maximum acceptable size is 10Gb
+          type: string
+          format: binary

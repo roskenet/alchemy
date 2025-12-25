@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: camunda
+  labels:
+    app: camunda
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: camunda
+  template:
+    metadata:
+      labels:
+        app: camunda
+    spec:
+      containers:
+        - name: camunda
+          image: camunda:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8080
+              name: http 
+#          readinessProbe:
+#            httpGet:
+#              path: /actuator/health
+#              port: 8080
+#            initialDelaySeconds: 5
+#            periodSeconds: 3
+#            failureThreshold: 60
+#          livenessProbe:
+#            httpGet:
+#              path: /actuator/health
+#              port: 8080
+#            initialDelaySeconds: 10
+#            periodSeconds: 10
+#            failureThreshold: 6
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 1
+              memory: 1Gi

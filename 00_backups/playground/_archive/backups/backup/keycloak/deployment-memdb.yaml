@@ -1,0 +1,24 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: keycloak-memdb
+  namespace: keycloak
+spec:
+  replicas: 1
+  template: # create pods using pod definition in this template
+    metadata:
+      labels:
+        app: keycloak-memdb
+    spec:
+      containers:
+      - name: keycloak-memdb
+        image: jboss/keycloak
+        env:
+        - name: KEYCLOAK_USER
+          value: admin
+        - name: KEYCLOAK_PASSWORD
+          value: admin
+        ports:
+        - name: service
+          containerPort: 8080
+          protocol: TCP

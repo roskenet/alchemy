@@ -1,0 +1,8 @@
+spring:
+  application:
+  name: webservice-demo
+  jackson:
+    mapper:
+      accept_case_insensitive_enums: true
+    deserialization:
+      read_unknown_enum_values_as_null: true

@@ -1,0 +1,6 @@
+#!/usr/bin/env python
+
+from my_package.printer import print_something
+
+if __name__ == '__main__':
+    print_something()

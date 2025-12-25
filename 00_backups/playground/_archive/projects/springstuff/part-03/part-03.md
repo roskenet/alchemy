@@ -1,0 +1,2 @@
+# Beans by configuration class
+

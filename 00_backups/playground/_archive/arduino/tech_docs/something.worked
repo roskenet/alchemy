@@ -1,0 +1,6 @@
+Sloeber-ide: build 
+
+avrdude:
+
+/bin/avrdude -pattiny461 -cstk500v2 -P/dev/ttyACM0 -b9600 -Uflash:w:/home/felix/Workspaces/playground/arduino/my_sketch_in_c/Release/my_sketch_in_c.hex:i
+

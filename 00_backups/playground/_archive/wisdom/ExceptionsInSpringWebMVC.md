@@ -1,0 +1,10 @@
+# Exceptions in Control Flow
+
+Using exceptions for control flow is generally discouraged in Java because it can lead to poor performance and code that's harder to understand and maintain. However, the code you've provided is a typical use case of exceptions in the context of web applications, particularly when handling error conditions and returning appropriate responses to the client.
+In this context, the ArticleNotInboundedException is used to indicate a specific error condition that occurred during the processing of a request. When this exception is thrown, the @ExceptionHandler method handleArticleNotInbounded() is invoked, which returns a ResponseError object with a specific error message.
+Here are some reasons why using exceptions in this context is acceptable:
+1. Separation of Concerns: Exceptions allow you to separate the error-handling logic from the main business logic. For example, the service layer can throw an ArticleNotInboundedException without worrying about how to convert it into an HTTP response.
+2. Maintainability: Using exceptions for error handling in a web application can make the code more maintainable because it localizes the error response logic to a single place, the exception handler, rather than scattering if-else checks throughout the code.
+3. Clarity: This approach can make the code clearer. When someone reads the service or controller code, they can focus on the main logic without being distracted by error-handling code.
+However, the general principle of avoiding exceptions for control flow is still important in other contexts, such as within algorithms or tight loops, where frequent exceptions can degrade performance and readability.
+To sum up, in the context of a Spring MVC application, using custom exceptions (like ArticleNotInboundedException) to handle specific error conditions and mapping them to HTTP responses is a well-accepted practice. This does not violate the rule against using exceptions for control flow within the core logic of an application.

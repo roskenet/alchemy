@@ -1,0 +1,579 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.27/Modules/CMakeDetermineSystem.cmake:206 (message)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      The target system is: Generic -  - avr
+      The host system is: Linux - 6.5.0-26-generic - x86_64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.27/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake-3.27/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake-3.27/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler: /home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/avr-gcc 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+      
+      The C compiler identification is GNU, found in:
+        /home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/3.27.4/CompilerIdC/a.out
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.27/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake-3.27/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake-3.27/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: /home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/avr-g++ 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+      
+      The CXX compiler identification is GNU, found in:
+        /home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/3.27.4/CompilerIdCXX/a.out
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.27/Modules/CMakeDetermineCompilerId.cmake:1104 (message)"
+      - "/usr/share/cmake-3.27/Modules/CMakeDetermineASMCompiler.cmake:127 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Checking whether the ASM compiler is GNU using "--version" matched "(GNU assembler)|(GCC)|(Free Software Foundation)":
+      avr-gcc (AVR_8_bit_GNU_Toolchain_3.7.0_1796) 7.3.0
+      Copyright (C) 2017 Free Software Foundation, Inc.
+      This is free software; see the source for copying conditions.  There is NO
+      warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.27/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "/usr/share/cmake-3.27/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "/home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/CMakeScratch/TryCompile-CjNxPf"
+      binary: "/home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/CMakeScratch/TryCompile-CjNxPf"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/CMakeScratch/TryCompile-CjNxPf'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_f9596/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_f9596.dir/build.make CMakeFiles/cmTC_f9596.dir/build
+        gmake[1]: Entering directory '/home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/CMakeScratch/TryCompile-CjNxPf'
+        Building C object CMakeFiles/cmTC_f9596.dir/CMakeCCompilerABI.c.obj
+        /home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/avr-gcc   -v -o CMakeFiles/cmTC_f9596.dir/CMakeCCompilerABI.c.obj -c /usr/share/cmake-3.27/Modules/CMakeCCompilerABI.c
+        Using built-in specs.
+        Reading specs from /home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0/device-specs/specs-avr2
+        COLLECT_GCC=/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/avr-gcc
+        Target: avr
+        Configured with: /home/toolsbuild/workspace/avr8-gnu-toolchain/src/gcc/configure LDFLAGS=-L/home/toolsbuild/workspace/avr8-gnu-toolchain/avr8-gnu-toolchain-linux_x86_64-hostlibs/lib CPPFLAGS= --target=avr --host=x86_64-pc-linux-gnu --build=x86_64-pc-linux-gnu --prefix=/home/toolsbuild/workspace/avr8-gnu-toolchain/avr8-gnu-toolchain-linux_x86_64 --libdir=/home/toolsbuild/workspace/avr8-gnu-toolchain/avr8-gnu-toolchain-linux_x86_64/lib --enable-languages=c,c++ --with-dwarf2 --enable-doc --disable-shared --disable-libada --disable-libssp --disable-nls --with-avrlibc=yes --with-mpfr=/home/toolsbuild/workspace/avr8-gnu-toolchain/avr8-gnu-toolchain-linux_x86_64-hostlibs --with-gmp=/home/toolsbuild/workspace/avr8-gnu-toolchain/avr8-gnu-toolchain-linux_x86_64-hostlibs --with-mpc=/home/toolsbuild/workspace/avr8-gnu-toolchain/avr8-gnu-toolchain-linux_x86_64-hostlibs --with-pkgversion=AVR_8_bit_GNU_Toolchain_3.7.0_1796 --with-bugurl=http://www.microchip.com
+        Thread model: single
+        gcc version 7.3.0 (AVR_8_bit_GNU_Toolchain_3.7.0_1796) 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_f9596.dir/CMakeCCompilerABI.c.obj' '-c' '-specs=device-specs/specs-avr2'
+         /home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../libexec/gcc/avr/7.3.0/cc1 -quiet -v -iprefix /home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0/ /usr/share/cmake-3.27/Modules/CMakeCCompilerABI.c -mn-flash=1 -mskip-bug -quiet -dumpbase CMakeCCompilerABI.c -auxbase-strip CMakeFiles/cmTC_f9596.dir/CMakeCCompilerABI.c.obj -version -o /tmp/ccg4D9jI.s
+        GNU C11 (AVR_8_bit_GNU_Toolchain_3.7.0_1796) version 7.3.0 (avr)
+        	compiled by GNU C version 4.7.4, GMP version 5.0.2, MPFR version 3.0.0, MPC version 0.9, isl version none
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring nonexistent directory "/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/sys-include"
+        ignoring duplicate directory "/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/../../lib/gcc/avr/7.3.0/include"
+        ignoring duplicate directory "/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/../../lib/gcc/avr/7.3.0/include-fixed"
+        ignoring nonexistent directory "/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/../../lib/gcc/avr/7.3.0/../../../../avr/sys-include"
+        ignoring duplicate directory "/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/../../lib/gcc/avr/7.3.0/../../../../avr/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0/include
+         /home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0/include-fixed
+         /home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/include
+        End of search list.
+        GNU C11 (AVR_8_bit_GNU_Toolchain_3.7.0_1796) version 7.3.0 (avr)
+        	compiled by GNU C version 4.7.4, GMP version 5.0.2, MPFR version 3.0.0, MPC version 0.9, isl version none
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        Compiler executable checksum: 5bf9163ab3113d97eee513e05f04e26d
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_f9596.dir/CMakeCCompilerABI.c.obj' '-c' '-specs=device-specs/specs-avr2'
+         /home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/bin/as -mmcu=avr2 -o CMakeFiles/cmTC_f9596.dir/CMakeCCompilerABI.c.obj /tmp/ccg4D9jI.s
+        COMPILER_PATH=/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../libexec/gcc/avr/7.3.0/:/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../libexec/gcc/:/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/bin/
+        LIBRARY_PATH=/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0/:/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/:/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_f9596.dir/CMakeCCompilerABI.c.obj' '-c' '-specs=device-specs/specs-avr2'
+        Linking C executable cmTC_f9596
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f9596.dir/link.txt --verbose=1
+        /home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/avr-gcc  -v CMakeFiles/cmTC_f9596.dir/CMakeCCompilerABI.c.obj -o cmTC_f9596 
+        Using built-in specs.
+        Reading specs from /home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0/device-specs/specs-avr2
+        COLLECT_GCC=/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/avr-gcc
+        COLLECT_LTO_WRAPPER=/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../libexec/gcc/avr/7.3.0/lto-wrapper
+        Target: avr
+        Configured with: /home/toolsbuild/workspace/avr8-gnu-toolchain/src/gcc/configure LDFLAGS=-L/home/toolsbuild/workspace/avr8-gnu-toolchain/avr8-gnu-toolchain-linux_x86_64-hostlibs/lib CPPFLAGS= --target=avr --host=x86_64-pc-linux-gnu --build=x86_64-pc-linux-gnu --prefix=/home/toolsbuild/workspace/avr8-gnu-toolchain/avr8-gnu-toolchain-linux_x86_64 --libdir=/home/toolsbuild/workspace/avr8-gnu-toolchain/avr8-gnu-toolchain-linux_x86_64/lib --enable-languages=c,c++ --with-dwarf2 --enable-doc --disable-shared --disable-libada --disable-libssp --disable-nls --with-avrlibc=yes --with-mpfr=/home/toolsbuild/workspace/avr8-gnu-toolchain/avr8-gnu-toolchain-linux_x86_64-hostlibs --with-gmp=/home/toolsbuild/workspace/avr8-gnu-toolchain/avr8-gnu-toolchain-linux_x86_64-hostlibs --with-mpc=/home/toolsbuild/workspace/avr8-gnu-toolchain/avr8-gnu-toolchain-linux_x86_64-hostlibs --with-pkgversion=AVR_8_bit_GNU_Toolchain_3.7.0_1796 --with-bugurl=http://www.microchip.com
+        Thread model: single
+        gcc version 7.3.0 (AVR_8_bit_GNU_Toolchain_3.7.0_1796) 
+        COMPILER_PATH=/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../libexec/gcc/avr/7.3.0/:/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../libexec/gcc/:/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/bin/
+        LIBRARY_PATH=/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0/:/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/:/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_f9596' '-specs=device-specs/specs-avr2'
+         /home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../libexec/gcc/avr/7.3.0/collect2 -plugin /home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../libexec/gcc/avr/7.3.0/liblto_plugin.so -plugin-opt=/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../libexec/gcc/avr/7.3.0/lto-wrapper -plugin-opt=-fresolution=/tmp/cctDEZQi.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lm -plugin-opt=-pass-through=-lc --pmem-wrap-around=8k -o cmTC_f9596 -L/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0 -L/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc -L/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib CMakeFiles/cmTC_f9596.dir/CMakeCCompilerABI.c.obj --start-group -lgcc -lm -lc --end-group
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_f9596' '-specs=device-specs/specs-avr2'
+        gmake[1]: Leaving directory '/home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/CMakeScratch/TryCompile-CjNxPf'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.27/Modules/CMakeDetermineCompilerABI.cmake:127 (message)"
+      - "/usr/share/cmake-3.27/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed C implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0/include]
+          add: [/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0/include-fixed]
+          add: [/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/include]
+        end of search list found
+        collapse include dir [/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0/include] ==> [/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/lib/gcc/avr/7.3.0/include]
+        collapse include dir [/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0/include-fixed] ==> [/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/lib/gcc/avr/7.3.0/include-fixed]
+        collapse include dir [/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/include] ==> [/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/avr/include]
+        implicit include dirs: [/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/lib/gcc/avr/7.3.0/include;/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/lib/gcc/avr/7.3.0/include-fixed;/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/avr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.27/Modules/CMakeDetermineCompilerABI.cmake:152 (message)"
+      - "/usr/share/cmake-3.27/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(avr-ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        ignore line: [Change Dir: '/home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/CMakeScratch/TryCompile-CjNxPf']
+        ignore line: []
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_f9596/fast]
+        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_f9596.dir/build.make CMakeFiles/cmTC_f9596.dir/build]
+        ignore line: [gmake[1]: Entering directory '/home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/CMakeScratch/TryCompile-CjNxPf']
+        ignore line: [Building C object CMakeFiles/cmTC_f9596.dir/CMakeCCompilerABI.c.obj]
+        ignore line: [/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/avr-gcc   -v -o CMakeFiles/cmTC_f9596.dir/CMakeCCompilerABI.c.obj -c /usr/share/cmake-3.27/Modules/CMakeCCompilerABI.c]
+        ignore line: [Using built-in specs.]
+        ignore line: [Reading specs from /home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0/device-specs/specs-avr2]
+        ignore line: [COLLECT_GCC=/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/avr-gcc]
+        ignore line: [Target: avr]
+        ignore line: [Configured with: /home/toolsbuild/workspace/avr8-gnu-toolchain/src/gcc/configure LDFLAGS=-L/home/toolsbuild/workspace/avr8-gnu-toolchain/avr8-gnu-toolchain-linux_x86_64-hostlibs/lib CPPFLAGS= --target=avr --host=x86_64-pc-linux-gnu --build=x86_64-pc-linux-gnu --prefix=/home/toolsbuild/workspace/avr8-gnu-toolchain/avr8-gnu-toolchain-linux_x86_64 --libdir=/home/toolsbuild/workspace/avr8-gnu-toolchain/avr8-gnu-toolchain-linux_x86_64/lib --enable-languages=c c++ --with-dwarf2 --enable-doc --disable-shared --disable-libada --disable-libssp --disable-nls --with-avrlibc=yes --with-mpfr=/home/toolsbuild/workspace/avr8-gnu-toolchain/avr8-gnu-toolchain-linux_x86_64-hostlibs --with-gmp=/home/toolsbuild/workspace/avr8-gnu-toolchain/avr8-gnu-toolchain-linux_x86_64-hostlibs --with-mpc=/home/toolsbuild/workspace/avr8-gnu-toolchain/avr8-gnu-toolchain-linux_x86_64-hostlibs --with-pkgversion=AVR_8_bit_GNU_Toolchain_3.7.0_1796 --with-bugurl=http://www.microchip.com]
+        ignore line: [Thread model: single]
+        ignore line: [gcc version 7.3.0 (AVR_8_bit_GNU_Toolchain_3.7.0_1796) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_f9596.dir/CMakeCCompilerABI.c.obj' '-c' '-specs=device-specs/specs-avr2']
+        ignore line: [ /home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../libexec/gcc/avr/7.3.0/cc1 -quiet -v -iprefix /home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0/ /usr/share/cmake-3.27/Modules/CMakeCCompilerABI.c -mn-flash=1 -mskip-bug -quiet -dumpbase CMakeCCompilerABI.c -auxbase-strip CMakeFiles/cmTC_f9596.dir/CMakeCCompilerABI.c.obj -version -o /tmp/ccg4D9jI.s]
+        ignore line: [GNU C11 (AVR_8_bit_GNU_Toolchain_3.7.0_1796) version 7.3.0 (avr)]
+        ignore line: [	compiled by GNU C version 4.7.4  GMP version 5.0.2  MPFR version 3.0.0  MPC version 0.9  isl version none]
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring nonexistent directory "/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/sys-include"]
+        ignore line: [ignoring duplicate directory "/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/../../lib/gcc/avr/7.3.0/include"]
+        ignore line: [ignoring duplicate directory "/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/../../lib/gcc/avr/7.3.0/include-fixed"]
+        ignore line: [ignoring nonexistent directory "/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/../../lib/gcc/avr/7.3.0/../../../../avr/sys-include"]
+        ignore line: [ignoring duplicate directory "/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/../../lib/gcc/avr/7.3.0/../../../../avr/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0/include]
+        ignore line: [ /home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0/include-fixed]
+        ignore line: [ /home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/include]
+        ignore line: [End of search list.]
+        ignore line: [GNU C11 (AVR_8_bit_GNU_Toolchain_3.7.0_1796) version 7.3.0 (avr)]
+        ignore line: [	compiled by GNU C version 4.7.4  GMP version 5.0.2  MPFR version 3.0.0  MPC version 0.9  isl version none]
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [Compiler executable checksum: 5bf9163ab3113d97eee513e05f04e26d]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_f9596.dir/CMakeCCompilerABI.c.obj' '-c' '-specs=device-specs/specs-avr2']
+        ignore line: [ /home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/bin/as -mmcu=avr2 -o CMakeFiles/cmTC_f9596.dir/CMakeCCompilerABI.c.obj /tmp/ccg4D9jI.s]
+        ignore line: [COMPILER_PATH=/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../libexec/gcc/avr/7.3.0/:/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../libexec/gcc/:/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/bin/]
+        ignore line: [LIBRARY_PATH=/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0/:/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/:/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_f9596.dir/CMakeCCompilerABI.c.obj' '-c' '-specs=device-specs/specs-avr2']
+        ignore line: [Linking C executable cmTC_f9596]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f9596.dir/link.txt --verbose=1]
+        ignore line: [/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/avr-gcc  -v CMakeFiles/cmTC_f9596.dir/CMakeCCompilerABI.c.obj -o cmTC_f9596 ]
+        ignore line: [Using built-in specs.]
+        ignore line: [Reading specs from /home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0/device-specs/specs-avr2]
+        ignore line: [COLLECT_GCC=/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/avr-gcc]
+        ignore line: [COLLECT_LTO_WRAPPER=/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../libexec/gcc/avr/7.3.0/lto-wrapper]
+        ignore line: [Target: avr]
+        ignore line: [Configured with: /home/toolsbuild/workspace/avr8-gnu-toolchain/src/gcc/configure LDFLAGS=-L/home/toolsbuild/workspace/avr8-gnu-toolchain/avr8-gnu-toolchain-linux_x86_64-hostlibs/lib CPPFLAGS= --target=avr --host=x86_64-pc-linux-gnu --build=x86_64-pc-linux-gnu --prefix=/home/toolsbuild/workspace/avr8-gnu-toolchain/avr8-gnu-toolchain-linux_x86_64 --libdir=/home/toolsbuild/workspace/avr8-gnu-toolchain/avr8-gnu-toolchain-linux_x86_64/lib --enable-languages=c c++ --with-dwarf2 --enable-doc --disable-shared --disable-libada --disable-libssp --disable-nls --with-avrlibc=yes --with-mpfr=/home/toolsbuild/workspace/avr8-gnu-toolchain/avr8-gnu-toolchain-linux_x86_64-hostlibs --with-gmp=/home/toolsbuild/workspace/avr8-gnu-toolchain/avr8-gnu-toolchain-linux_x86_64-hostlibs --with-mpc=/home/toolsbuild/workspace/avr8-gnu-toolchain/avr8-gnu-toolchain-linux_x86_64-hostlibs --with-pkgversion=AVR_8_bit_GNU_Toolchain_3.7.0_1796 --with-bugurl=http://www.microchip.com]
+        ignore line: [Thread model: single]
+        ignore line: [gcc version 7.3.0 (AVR_8_bit_GNU_Toolchain_3.7.0_1796) ]
+        ignore line: [COMPILER_PATH=/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../libexec/gcc/avr/7.3.0/:/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../libexec/gcc/:/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/bin/]
+        ignore line: [LIBRARY_PATH=/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0/:/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/:/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_f9596' '-specs=device-specs/specs-avr2']
+        link line: [ /home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../libexec/gcc/avr/7.3.0/collect2 -plugin /home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../libexec/gcc/avr/7.3.0/liblto_plugin.so -plugin-opt=/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../libexec/gcc/avr/7.3.0/lto-wrapper -plugin-opt=-fresolution=/tmp/cctDEZQi.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lm -plugin-opt=-pass-through=-lc --pmem-wrap-around=8k -o cmTC_f9596 -L/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0 -L/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc -L/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib CMakeFiles/cmTC_f9596.dir/CMakeCCompilerABI.c.obj --start-group -lgcc -lm -lc --end-group]
+          arg [/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../libexec/gcc/avr/7.3.0/collect2] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../libexec/gcc/avr/7.3.0/liblto_plugin.so] ==> ignore
+          arg [-plugin-opt=/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../libexec/gcc/avr/7.3.0/lto-wrapper] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/cctDEZQi.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lm] ==> ignore
+          arg [-plugin-opt=-pass-through=-lc] ==> ignore
+          arg [--pmem-wrap-around=8k] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_f9596] ==> ignore
+          arg [-L/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0] ==> dir [/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0]
+          arg [-L/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc] ==> dir [/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc]
+          arg [-L/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib] ==> dir [/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib]
+          arg [CMakeFiles/cmTC_f9596.dir/CMakeCCompilerABI.c.obj] ==> ignore
+          arg [--start-group] ==> ignore
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lm] ==> lib [m]
+          arg [-lc] ==> lib [c]
+          arg [--end-group] ==> ignore
+        collapse library dir [/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0] ==> [/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/lib/gcc/avr/7.3.0]
+        collapse library dir [/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc] ==> [/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/lib/gcc]
+        collapse library dir [/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib] ==> [/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/avr/lib]
+        implicit libs: [gcc;m;c]
+        implicit objs: []
+        implicit dirs: [/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/lib/gcc/avr/7.3.0;/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/lib/gcc;/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/avr/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.27/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "/usr/share/cmake-3.27/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "/home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/CMakeScratch/TryCompile-YGlwqb"
+      binary: "/home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/CMakeScratch/TryCompile-YGlwqb"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/CMakeScratch/TryCompile-YGlwqb'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_cbc7e/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_cbc7e.dir/build.make CMakeFiles/cmTC_cbc7e.dir/build
+        gmake[1]: Entering directory '/home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/CMakeScratch/TryCompile-YGlwqb'
+        Building CXX object CMakeFiles/cmTC_cbc7e.dir/CMakeCXXCompilerABI.cpp.obj
+        /home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/avr-g++   -v -o CMakeFiles/cmTC_cbc7e.dir/CMakeCXXCompilerABI.cpp.obj -c /usr/share/cmake-3.27/Modules/CMakeCXXCompilerABI.cpp
+        Using built-in specs.
+        Reading specs from /home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0/device-specs/specs-avr2
+        COLLECT_GCC=/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/avr-g++
+        Target: avr
+        Configured with: /home/toolsbuild/workspace/avr8-gnu-toolchain/src/gcc/configure LDFLAGS=-L/home/toolsbuild/workspace/avr8-gnu-toolchain/avr8-gnu-toolchain-linux_x86_64-hostlibs/lib CPPFLAGS= --target=avr --host=x86_64-pc-linux-gnu --build=x86_64-pc-linux-gnu --prefix=/home/toolsbuild/workspace/avr8-gnu-toolchain/avr8-gnu-toolchain-linux_x86_64 --libdir=/home/toolsbuild/workspace/avr8-gnu-toolchain/avr8-gnu-toolchain-linux_x86_64/lib --enable-languages=c,c++ --with-dwarf2 --enable-doc --disable-shared --disable-libada --disable-libssp --disable-nls --with-avrlibc=yes --with-mpfr=/home/toolsbuild/workspace/avr8-gnu-toolchain/avr8-gnu-toolchain-linux_x86_64-hostlibs --with-gmp=/home/toolsbuild/workspace/avr8-gnu-toolchain/avr8-gnu-toolchain-linux_x86_64-hostlibs --with-mpc=/home/toolsbuild/workspace/avr8-gnu-toolchain/avr8-gnu-toolchain-linux_x86_64-hostlibs --with-pkgversion=AVR_8_bit_GNU_Toolchain_3.7.0_1796 --with-bugurl=http://www.microchip.com
+        Thread model: single
+        gcc version 7.3.0 (AVR_8_bit_GNU_Toolchain_3.7.0_1796) 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_cbc7e.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-specs=device-specs/specs-avr2'
+         /home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../libexec/gcc/avr/7.3.0/cc1plus -quiet -v -iprefix /home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0/ /usr/share/cmake-3.27/Modules/CMakeCXXCompilerABI.cpp -mn-flash=1 -mskip-bug -quiet -dumpbase CMakeCXXCompilerABI.cpp -auxbase-strip CMakeFiles/cmTC_cbc7e.dir/CMakeCXXCompilerABI.cpp.obj -version -mn-flash=1 -mskip-bug -fno-rtti -fno-enforce-eh-specs -fno-exceptions -o /tmp/cceLwZMp.s
+        GNU C++14 (AVR_8_bit_GNU_Toolchain_3.7.0_1796) version 7.3.0 (avr)
+        	compiled by GNU C version 4.7.4, GMP version 5.0.2, MPFR version 3.0.0, MPC version 0.9, isl version none
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring nonexistent directory "/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/include/c++/7.3.0"
+        ignoring nonexistent directory "/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/include/c++/7.3.0/avr"
+        ignoring nonexistent directory "/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/include/c++/7.3.0/backward"
+        ignoring nonexistent directory "/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/sys-include"
+        ignoring nonexistent directory "/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/../../lib/gcc/avr/7.3.0/../../../../avr/include/c++/7.3.0"
+        ignoring nonexistent directory "/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/../../lib/gcc/avr/7.3.0/../../../../avr/include/c++/7.3.0/avr"
+        ignoring nonexistent directory "/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/../../lib/gcc/avr/7.3.0/../../../../avr/include/c++/7.3.0/backward"
+        ignoring duplicate directory "/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/../../lib/gcc/avr/7.3.0/include"
+        ignoring duplicate directory "/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/../../lib/gcc/avr/7.3.0/include-fixed"
+        ignoring nonexistent directory "/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/../../lib/gcc/avr/7.3.0/../../../../avr/sys-include"
+        ignoring duplicate directory "/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/../../lib/gcc/avr/7.3.0/../../../../avr/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0/include
+         /home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0/include-fixed
+         /home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/include
+        End of search list.
+        GNU C++14 (AVR_8_bit_GNU_Toolchain_3.7.0_1796) version 7.3.0 (avr)
+        	compiled by GNU C version 4.7.4, GMP version 5.0.2, MPFR version 3.0.0, MPC version 0.9, isl version none
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        Compiler executable checksum: c23708a25630e603af5068901521e72a
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_cbc7e.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-specs=device-specs/specs-avr2'
+         /home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/bin/as -mmcu=avr2 -o CMakeFiles/cmTC_cbc7e.dir/CMakeCXXCompilerABI.cpp.obj /tmp/cceLwZMp.s
+        COMPILER_PATH=/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../libexec/gcc/avr/7.3.0/:/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../libexec/gcc/:/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/bin/
+        LIBRARY_PATH=/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0/:/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/:/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_cbc7e.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-specs=device-specs/specs-avr2'
+        Linking CXX executable cmTC_cbc7e
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cbc7e.dir/link.txt --verbose=1
+        /home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/avr-g++  -v CMakeFiles/cmTC_cbc7e.dir/CMakeCXXCompilerABI.cpp.obj -o cmTC_cbc7e 
+        Using built-in specs.
+        Reading specs from /home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0/device-specs/specs-avr2
+        COLLECT_GCC=/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/avr-g++
+        COLLECT_LTO_WRAPPER=/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../libexec/gcc/avr/7.3.0/lto-wrapper
+        Target: avr
+        Configured with: /home/toolsbuild/workspace/avr8-gnu-toolchain/src/gcc/configure LDFLAGS=-L/home/toolsbuild/workspace/avr8-gnu-toolchain/avr8-gnu-toolchain-linux_x86_64-hostlibs/lib CPPFLAGS= --target=avr --host=x86_64-pc-linux-gnu --build=x86_64-pc-linux-gnu --prefix=/home/toolsbuild/workspace/avr8-gnu-toolchain/avr8-gnu-toolchain-linux_x86_64 --libdir=/home/toolsbuild/workspace/avr8-gnu-toolchain/avr8-gnu-toolchain-linux_x86_64/lib --enable-languages=c,c++ --with-dwarf2 --enable-doc --disable-shared --disable-libada --disable-libssp --disable-nls --with-avrlibc=yes --with-mpfr=/home/toolsbuild/workspace/avr8-gnu-toolchain/avr8-gnu-toolchain-linux_x86_64-hostlibs --with-gmp=/home/toolsbuild/workspace/avr8-gnu-toolchain/avr8-gnu-toolchain-linux_x86_64-hostlibs --with-mpc=/home/toolsbuild/workspace/avr8-gnu-toolchain/avr8-gnu-toolchain-linux_x86_64-hostlibs --with-pkgversion=AVR_8_bit_GNU_Toolchain_3.7.0_1796 --with-bugurl=http://www.microchip.com
+        Thread model: single
+        gcc version 7.3.0 (AVR_8_bit_GNU_Toolchain_3.7.0_1796) 
+        COMPILER_PATH=/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../libexec/gcc/avr/7.3.0/:/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../libexec/gcc/:/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/bin/
+        LIBRARY_PATH=/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0/:/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/:/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_cbc7e' '-specs=device-specs/specs-avr2'
+         /home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../libexec/gcc/avr/7.3.0/collect2 -plugin /home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../libexec/gcc/avr/7.3.0/liblto_plugin.so -plugin-opt=/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../libexec/gcc/avr/7.3.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccaMFl5a.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lm -plugin-opt=-pass-through=-lc --pmem-wrap-around=8k -o cmTC_cbc7e -L/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0 -L/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc -L/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib CMakeFiles/cmTC_cbc7e.dir/CMakeCXXCompilerABI.cpp.obj -lgcc -lm --start-group -lgcc -lm -lc --end-group
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_cbc7e' '-specs=device-specs/specs-avr2'
+        gmake[1]: Leaving directory '/home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/CMakeScratch/TryCompile-YGlwqb'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.27/Modules/CMakeDetermineCompilerABI.cmake:127 (message)"
+      - "/usr/share/cmake-3.27/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed CXX implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0/include]
+          add: [/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0/include-fixed]
+          add: [/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/include]
+        end of search list found
+        collapse include dir [/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0/include] ==> [/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/lib/gcc/avr/7.3.0/include]
+        collapse include dir [/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0/include-fixed] ==> [/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/lib/gcc/avr/7.3.0/include-fixed]
+        collapse include dir [/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/include] ==> [/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/avr/include]
+        implicit include dirs: [/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/lib/gcc/avr/7.3.0/include;/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/lib/gcc/avr/7.3.0/include-fixed;/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/avr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.27/Modules/CMakeDetermineCompilerABI.cmake:152 (message)"
+      - "/usr/share/cmake-3.27/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed CXX implicit link information:
+        link line regex: [^( *|.*[/\\])(avr-ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        ignore line: [Change Dir: '/home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/CMakeScratch/TryCompile-YGlwqb']
+        ignore line: []
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_cbc7e/fast]
+        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_cbc7e.dir/build.make CMakeFiles/cmTC_cbc7e.dir/build]
+        ignore line: [gmake[1]: Entering directory '/home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/CMakeScratch/TryCompile-YGlwqb']
+        ignore line: [Building CXX object CMakeFiles/cmTC_cbc7e.dir/CMakeCXXCompilerABI.cpp.obj]
+        ignore line: [/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/avr-g++   -v -o CMakeFiles/cmTC_cbc7e.dir/CMakeCXXCompilerABI.cpp.obj -c /usr/share/cmake-3.27/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Using built-in specs.]
+        ignore line: [Reading specs from /home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0/device-specs/specs-avr2]
+        ignore line: [COLLECT_GCC=/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/avr-g++]
+        ignore line: [Target: avr]
+        ignore line: [Configured with: /home/toolsbuild/workspace/avr8-gnu-toolchain/src/gcc/configure LDFLAGS=-L/home/toolsbuild/workspace/avr8-gnu-toolchain/avr8-gnu-toolchain-linux_x86_64-hostlibs/lib CPPFLAGS= --target=avr --host=x86_64-pc-linux-gnu --build=x86_64-pc-linux-gnu --prefix=/home/toolsbuild/workspace/avr8-gnu-toolchain/avr8-gnu-toolchain-linux_x86_64 --libdir=/home/toolsbuild/workspace/avr8-gnu-toolchain/avr8-gnu-toolchain-linux_x86_64/lib --enable-languages=c c++ --with-dwarf2 --enable-doc --disable-shared --disable-libada --disable-libssp --disable-nls --with-avrlibc=yes --with-mpfr=/home/toolsbuild/workspace/avr8-gnu-toolchain/avr8-gnu-toolchain-linux_x86_64-hostlibs --with-gmp=/home/toolsbuild/workspace/avr8-gnu-toolchain/avr8-gnu-toolchain-linux_x86_64-hostlibs --with-mpc=/home/toolsbuild/workspace/avr8-gnu-toolchain/avr8-gnu-toolchain-linux_x86_64-hostlibs --with-pkgversion=AVR_8_bit_GNU_Toolchain_3.7.0_1796 --with-bugurl=http://www.microchip.com]
+        ignore line: [Thread model: single]
+        ignore line: [gcc version 7.3.0 (AVR_8_bit_GNU_Toolchain_3.7.0_1796) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_cbc7e.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-specs=device-specs/specs-avr2']
+        ignore line: [ /home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../libexec/gcc/avr/7.3.0/cc1plus -quiet -v -iprefix /home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0/ /usr/share/cmake-3.27/Modules/CMakeCXXCompilerABI.cpp -mn-flash=1 -mskip-bug -quiet -dumpbase CMakeCXXCompilerABI.cpp -auxbase-strip CMakeFiles/cmTC_cbc7e.dir/CMakeCXXCompilerABI.cpp.obj -version -mn-flash=1 -mskip-bug -fno-rtti -fno-enforce-eh-specs -fno-exceptions -o /tmp/cceLwZMp.s]
+        ignore line: [GNU C++14 (AVR_8_bit_GNU_Toolchain_3.7.0_1796) version 7.3.0 (avr)]
+        ignore line: [	compiled by GNU C version 4.7.4  GMP version 5.0.2  MPFR version 3.0.0  MPC version 0.9  isl version none]
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring nonexistent directory "/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/include/c++/7.3.0"]
+        ignore line: [ignoring nonexistent directory "/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/include/c++/7.3.0/avr"]
+        ignore line: [ignoring nonexistent directory "/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/include/c++/7.3.0/backward"]
+        ignore line: [ignoring nonexistent directory "/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/sys-include"]
+        ignore line: [ignoring nonexistent directory "/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/../../lib/gcc/avr/7.3.0/../../../../avr/include/c++/7.3.0"]
+        ignore line: [ignoring nonexistent directory "/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/../../lib/gcc/avr/7.3.0/../../../../avr/include/c++/7.3.0/avr"]
+        ignore line: [ignoring nonexistent directory "/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/../../lib/gcc/avr/7.3.0/../../../../avr/include/c++/7.3.0/backward"]
+        ignore line: [ignoring duplicate directory "/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/../../lib/gcc/avr/7.3.0/include"]
+        ignore line: [ignoring duplicate directory "/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/../../lib/gcc/avr/7.3.0/include-fixed"]
+        ignore line: [ignoring nonexistent directory "/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/../../lib/gcc/avr/7.3.0/../../../../avr/sys-include"]
+        ignore line: [ignoring duplicate directory "/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/../../lib/gcc/avr/7.3.0/../../../../avr/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0/include]
+        ignore line: [ /home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0/include-fixed]
+        ignore line: [ /home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/include]
+        ignore line: [End of search list.]
+        ignore line: [GNU C++14 (AVR_8_bit_GNU_Toolchain_3.7.0_1796) version 7.3.0 (avr)]
+        ignore line: [	compiled by GNU C version 4.7.4  GMP version 5.0.2  MPFR version 3.0.0  MPC version 0.9  isl version none]
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [Compiler executable checksum: c23708a25630e603af5068901521e72a]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_cbc7e.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-specs=device-specs/specs-avr2']
+        ignore line: [ /home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/bin/as -mmcu=avr2 -o CMakeFiles/cmTC_cbc7e.dir/CMakeCXXCompilerABI.cpp.obj /tmp/cceLwZMp.s]
+        ignore line: [COMPILER_PATH=/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../libexec/gcc/avr/7.3.0/:/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../libexec/gcc/:/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/bin/]
+        ignore line: [LIBRARY_PATH=/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0/:/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/:/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_cbc7e.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-specs=device-specs/specs-avr2']
+        ignore line: [Linking CXX executable cmTC_cbc7e]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cbc7e.dir/link.txt --verbose=1]
+        ignore line: [/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/avr-g++  -v CMakeFiles/cmTC_cbc7e.dir/CMakeCXXCompilerABI.cpp.obj -o cmTC_cbc7e ]
+        ignore line: [Using built-in specs.]
+        ignore line: [Reading specs from /home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0/device-specs/specs-avr2]
+        ignore line: [COLLECT_GCC=/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/avr-g++]
+        ignore line: [COLLECT_LTO_WRAPPER=/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../libexec/gcc/avr/7.3.0/lto-wrapper]
+        ignore line: [Target: avr]
+        ignore line: [Configured with: /home/toolsbuild/workspace/avr8-gnu-toolchain/src/gcc/configure LDFLAGS=-L/home/toolsbuild/workspace/avr8-gnu-toolchain/avr8-gnu-toolchain-linux_x86_64-hostlibs/lib CPPFLAGS= --target=avr --host=x86_64-pc-linux-gnu --build=x86_64-pc-linux-gnu --prefix=/home/toolsbuild/workspace/avr8-gnu-toolchain/avr8-gnu-toolchain-linux_x86_64 --libdir=/home/toolsbuild/workspace/avr8-gnu-toolchain/avr8-gnu-toolchain-linux_x86_64/lib --enable-languages=c c++ --with-dwarf2 --enable-doc --disable-shared --disable-libada --disable-libssp --disable-nls --with-avrlibc=yes --with-mpfr=/home/toolsbuild/workspace/avr8-gnu-toolchain/avr8-gnu-toolchain-linux_x86_64-hostlibs --with-gmp=/home/toolsbuild/workspace/avr8-gnu-toolchain/avr8-gnu-toolchain-linux_x86_64-hostlibs --with-mpc=/home/toolsbuild/workspace/avr8-gnu-toolchain/avr8-gnu-toolchain-linux_x86_64-hostlibs --with-pkgversion=AVR_8_bit_GNU_Toolchain_3.7.0_1796 --with-bugurl=http://www.microchip.com]
+        ignore line: [Thread model: single]
+        ignore line: [gcc version 7.3.0 (AVR_8_bit_GNU_Toolchain_3.7.0_1796) ]
+        ignore line: [COMPILER_PATH=/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../libexec/gcc/avr/7.3.0/:/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../libexec/gcc/:/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/bin/]
+        ignore line: [LIBRARY_PATH=/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0/:/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/:/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_cbc7e' '-specs=device-specs/specs-avr2']
+        link line: [ /home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../libexec/gcc/avr/7.3.0/collect2 -plugin /home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../libexec/gcc/avr/7.3.0/liblto_plugin.so -plugin-opt=/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../libexec/gcc/avr/7.3.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccaMFl5a.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lm -plugin-opt=-pass-through=-lc --pmem-wrap-around=8k -o cmTC_cbc7e -L/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0 -L/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc -L/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib CMakeFiles/cmTC_cbc7e.dir/CMakeCXXCompilerABI.cpp.obj -lgcc -lm --start-group -lgcc -lm -lc --end-group]
+          arg [/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../libexec/gcc/avr/7.3.0/collect2] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../libexec/gcc/avr/7.3.0/liblto_plugin.so] ==> ignore
+          arg [-plugin-opt=/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../libexec/gcc/avr/7.3.0/lto-wrapper] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccaMFl5a.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lm] ==> ignore
+          arg [-plugin-opt=-pass-through=-lc] ==> ignore
+          arg [--pmem-wrap-around=8k] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_cbc7e] ==> ignore
+          arg [-L/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0] ==> dir [/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0]
+          arg [-L/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc] ==> dir [/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc]
+          arg [-L/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib] ==> dir [/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib]
+          arg [CMakeFiles/cmTC_cbc7e.dir/CMakeCXXCompilerABI.cpp.obj] ==> ignore
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lm] ==> lib [m]
+          arg [--start-group] ==> ignore
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lm] ==> lib [m]
+          arg [-lc] ==> lib [c]
+          arg [--end-group] ==> ignore
+        collapse library dir [/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0] ==> [/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/lib/gcc/avr/7.3.0]
+        collapse library dir [/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc] ==> [/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/lib/gcc]
+        collapse library dir [/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib] ==> [/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/avr/lib]
+        implicit libs: [gcc;m;gcc;m;c]
+        implicit objs: []
+        implicit dirs: [/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/lib/gcc/avr/7.3.0;/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/lib/gcc;/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/avr/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.27/Modules/CheckIPOSupported.cmake:138 (try_compile)"
+      - "/usr/share/cmake-3.27/Modules/CheckIPOSupported.cmake:266 (_ipo_run_language_check)"
+      - "cmake/lto.cmake:4 (check_ipo_supported)"
+      - "CMakeLists.txt:4 (include)"
+    directories:
+      source: "/home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/_CMakeLTOTest-CXX/src"
+      binary: "/home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/_CMakeLTOTest-CXX/bin"
+    buildResult:
+      variable: "_IPO_LANGUAGE_CHECK_RESULT"
+      cached: true
+      stdout: |
+        Change Dir: '/home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/_CMakeLTOTest-CXX/bin'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile
+        /usr/bin/cmake -S/home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/_CMakeLTOTest-CXX/src -B/home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/_CMakeLTOTest-CXX/bin --check-build-system CMakeFiles/Makefile.cmake 0
+        /usr/bin/cmake -E cmake_progress_start /home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/_CMakeLTOTest-CXX/bin/CMakeFiles /home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/_CMakeLTOTest-CXX/bin//CMakeFiles/progress.marks
+        /usr/bin/gmake  -f CMakeFiles/Makefile2 all
+        gmake[1]: Entering directory '/home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/_CMakeLTOTest-CXX/bin'
+        /usr/bin/gmake  -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/depend
+        gmake[2]: Entering directory '/home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/_CMakeLTOTest-CXX/bin'
+        cd /home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/_CMakeLTOTest-CXX/bin && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/_CMakeLTOTest-CXX/src /home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/_CMakeLTOTest-CXX/src /home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/_CMakeLTOTest-CXX/bin /home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/_CMakeLTOTest-CXX/bin /home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/_CMakeLTOTest-CXX/bin/CMakeFiles/foo.dir/DependInfo.cmake
+        Dependee "/home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/_CMakeLTOTest-CXX/bin/CMakeFiles/foo.dir/DependInfo.cmake" is newer than depender "/home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/_CMakeLTOTest-CXX/bin/CMakeFiles/foo.dir/depend.internal".
+        Dependee "/home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/_CMakeLTOTest-CXX/bin/CMakeFiles/CMakeDirectoryInformation.cmake" is newer than depender "/home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/_CMakeLTOTest-CXX/bin/CMakeFiles/foo.dir/depend.internal".
+        Scanning dependencies of target foo
+        gmake[2]: Leaving directory '/home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/_CMakeLTOTest-CXX/bin'
+        /usr/bin/gmake  -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/build
+        gmake[2]: Entering directory '/home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/_CMakeLTOTest-CXX/bin'
+        [ 25%] Building CXX object CMakeFiles/foo.dir/foo.cpp.obj
+        /home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/avr-g++   -flto -fno-fat-lto-objects -o CMakeFiles/foo.dir/foo.cpp.obj -c /home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/_CMakeLTOTest-CXX/src/foo.cpp
+        [ 50%] Linking CXX static library libfoo.a
+        /usr/bin/cmake -P CMakeFiles/foo.dir/cmake_clean_target.cmake
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/foo.dir/link.txt --verbose=1
+        "/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/avr-gcc-ar" cr libfoo.a CMakeFiles/foo.dir/foo.cpp.obj
+        "/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/avr-gcc-ranlib" libfoo.a
+        gmake[2]: Leaving directory '/home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/_CMakeLTOTest-CXX/bin'
+        [ 50%] Built target foo
+        /usr/bin/gmake  -f CMakeFiles/boo.dir/build.make CMakeFiles/boo.dir/depend
+        gmake[2]: Entering directory '/home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/_CMakeLTOTest-CXX/bin'
+        cd /home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/_CMakeLTOTest-CXX/bin && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/_CMakeLTOTest-CXX/src /home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/_CMakeLTOTest-CXX/src /home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/_CMakeLTOTest-CXX/bin /home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/_CMakeLTOTest-CXX/bin /home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/_CMakeLTOTest-CXX/bin/CMakeFiles/boo.dir/DependInfo.cmake
+        Dependee "/home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/_CMakeLTOTest-CXX/bin/CMakeFiles/boo.dir/DependInfo.cmake" is newer than depender "/home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/_CMakeLTOTest-CXX/bin/CMakeFiles/boo.dir/depend.internal".
+        Dependee "/home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/_CMakeLTOTest-CXX/bin/CMakeFiles/CMakeDirectoryInformation.cmake" is newer than depender "/home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/_CMakeLTOTest-CXX/bin/CMakeFiles/boo.dir/depend.internal".
+        Scanning dependencies of target boo
+        gmake[2]: Leaving directory '/home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/_CMakeLTOTest-CXX/bin'
+        /usr/bin/gmake  -f CMakeFiles/boo.dir/build.make CMakeFiles/boo.dir/build
+        gmake[2]: Entering directory '/home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/_CMakeLTOTest-CXX/bin'
+        [ 75%] Building CXX object CMakeFiles/boo.dir/main.cpp.obj
+        /home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/avr-g++   -flto -fno-fat-lto-objects -o CMakeFiles/boo.dir/main.cpp.obj -c /home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/_CMakeLTOTest-CXX/src/main.cpp
+        [100%] Linking CXX executable boo
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/boo.dir/link.txt --verbose=1
+        /home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/avr-g++ -flto -fno-fat-lto-objects CMakeFiles/boo.dir/main.cpp.obj -o boo  libfoo.a 
+        gmake[2]: Leaving directory '/home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/_CMakeLTOTest-CXX/bin'
+        [100%] Built target boo
+        gmake[1]: Leaving directory '/home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/_CMakeLTOTest-CXX/bin'
+        /usr/bin/cmake -E cmake_progress_start /home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/_CMakeLTOTest-CXX/bin/CMakeFiles 0
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.27/Modules/CheckIPOSupported.cmake:138 (try_compile)"
+      - "/usr/share/cmake-3.27/Modules/CheckIPOSupported.cmake:266 (_ipo_run_language_check)"
+      - "cmake/lto.cmake:4 (check_ipo_supported)"
+      - "CMakeLists.txt:4 (include)"
+    directories:
+      source: "/home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/_CMakeLTOTest-C/src"
+      binary: "/home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/_CMakeLTOTest-C/bin"
+    buildResult:
+      variable: "_IPO_LANGUAGE_CHECK_RESULT"
+      cached: true
+      stdout: |
+        Change Dir: '/home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/_CMakeLTOTest-C/bin'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile
+        /usr/bin/cmake -S/home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/_CMakeLTOTest-C/src -B/home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/_CMakeLTOTest-C/bin --check-build-system CMakeFiles/Makefile.cmake 0
+        /usr/bin/cmake -E cmake_progress_start /home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/_CMakeLTOTest-C/bin/CMakeFiles /home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/_CMakeLTOTest-C/bin//CMakeFiles/progress.marks
+        /usr/bin/gmake  -f CMakeFiles/Makefile2 all
+        gmake[1]: Entering directory '/home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/_CMakeLTOTest-C/bin'
+        /usr/bin/gmake  -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/depend
+        gmake[2]: Entering directory '/home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/_CMakeLTOTest-C/bin'
+        cd /home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/_CMakeLTOTest-C/bin && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/_CMakeLTOTest-C/src /home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/_CMakeLTOTest-C/src /home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/_CMakeLTOTest-C/bin /home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/_CMakeLTOTest-C/bin /home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/_CMakeLTOTest-C/bin/CMakeFiles/foo.dir/DependInfo.cmake
+        Dependee "/home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/_CMakeLTOTest-C/bin/CMakeFiles/foo.dir/DependInfo.cmake" is newer than depender "/home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/_CMakeLTOTest-C/bin/CMakeFiles/foo.dir/depend.internal".
+        Dependee "/home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/_CMakeLTOTest-C/bin/CMakeFiles/CMakeDirectoryInformation.cmake" is newer than depender "/home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/_CMakeLTOTest-C/bin/CMakeFiles/foo.dir/depend.internal".
+        Scanning dependencies of target foo
+        gmake[2]: Leaving directory '/home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/_CMakeLTOTest-C/bin'
+        /usr/bin/gmake  -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/build
+        gmake[2]: Entering directory '/home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/_CMakeLTOTest-C/bin'
+        [ 25%] Building C object CMakeFiles/foo.dir/foo.c.obj
+        /home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/avr-gcc   -flto -fno-fat-lto-objects -o CMakeFiles/foo.dir/foo.c.obj -c /home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/_CMakeLTOTest-C/src/foo.c
+        [ 50%] Linking C static library libfoo.a
+        /usr/bin/cmake -P CMakeFiles/foo.dir/cmake_clean_target.cmake
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/foo.dir/link.txt --verbose=1
+        "/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/avr-gcc-ar" cr libfoo.a CMakeFiles/foo.dir/foo.c.obj
+        "/home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/avr-gcc-ranlib" libfoo.a
+        gmake[2]: Leaving directory '/home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/_CMakeLTOTest-C/bin'
+        [ 50%] Built target foo
+        /usr/bin/gmake  -f CMakeFiles/boo.dir/build.make CMakeFiles/boo.dir/depend
+        gmake[2]: Entering directory '/home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/_CMakeLTOTest-C/bin'
+        cd /home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/_CMakeLTOTest-C/bin && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/_CMakeLTOTest-C/src /home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/_CMakeLTOTest-C/src /home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/_CMakeLTOTest-C/bin /home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/_CMakeLTOTest-C/bin /home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/_CMakeLTOTest-C/bin/CMakeFiles/boo.dir/DependInfo.cmake
+        Dependee "/home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/_CMakeLTOTest-C/bin/CMakeFiles/boo.dir/DependInfo.cmake" is newer than depender "/home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/_CMakeLTOTest-C/bin/CMakeFiles/boo.dir/depend.internal".
+        Dependee "/home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/_CMakeLTOTest-C/bin/CMakeFiles/CMakeDirectoryInformation.cmake" is newer than depender "/home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/_CMakeLTOTest-C/bin/CMakeFiles/boo.dir/depend.internal".
+        Scanning dependencies of target boo
+        gmake[2]: Leaving directory '/home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/_CMakeLTOTest-C/bin'
+        /usr/bin/gmake  -f CMakeFiles/boo.dir/build.make CMakeFiles/boo.dir/build
+        gmake[2]: Entering directory '/home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/_CMakeLTOTest-C/bin'
+        [ 75%] Building C object CMakeFiles/boo.dir/main.c.obj
+        /home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/avr-gcc   -flto -fno-fat-lto-objects -o CMakeFiles/boo.dir/main.c.obj -c /home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/_CMakeLTOTest-C/src/main.c
+        [100%] Linking C executable boo
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/boo.dir/link.txt --verbose=1
+        /home/felix/Packages/avr8-gnu-toolchain-linux_x86_64/bin/avr-gcc -flto -fno-fat-lto-objects CMakeFiles/boo.dir/main.c.obj -o boo  libfoo.a 
+        gmake[2]: Leaving directory '/home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/_CMakeLTOTest-C/bin'
+        [100%] Built target boo
+        gmake[1]: Leaving directory '/home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/_CMakeLTOTest-C/bin'
+        /usr/bin/cmake -E cmake_progress_start /home/felix/Workspaces/playground/arduino/blink_cmake/release/CMakeFiles/_CMakeLTOTest-C/bin/CMakeFiles 0
+        
+      exitCode: 0
+...

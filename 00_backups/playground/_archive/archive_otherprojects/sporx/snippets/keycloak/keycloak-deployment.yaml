@@ -1,0 +1,37 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: keycloak
+  namespace: keycloak
+spec:
+  replicas: 1
+  template: # create pods using pod definition in this template
+    metadata:
+      labels:
+        app: keycloak
+        context: keycloak
+    spec:
+      containers:
+      - name: keycloak
+        image: jboss/keycloak
+        env:
+        - name: KEYCLOAK_USER
+          value: admin
+        - name: KEYCLOAK_PASSWORD
+          value: admin
+        - name: DB_VENDOR
+          value: postgres
+        - name: DB_ADDR
+          value: database.keycloak
+        - name: DB_PORT
+          value: "5432"
+        - name: DB_USER
+          value: keycloak
+        - name: DB_PASSWORD
+          value: keycloak
+        - name: DB_DATABASE
+          value: keycloak
+        ports:
+        - name: service
+          containerPort: 8080
+          protocol: TCP

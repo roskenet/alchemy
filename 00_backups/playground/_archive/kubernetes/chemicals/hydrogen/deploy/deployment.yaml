@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hydrogen
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hydrogen
+  template:
+    metadata:
+      labels:
+        app: hydrogen
+    spec:
+      containers:
+      - name: hydrogen
+        image: roskenet/hydrogen:0.0.6
+        ports:
+        - name: www
+          containerPort: 8080

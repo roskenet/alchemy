@@ -1,0 +1,5 @@
+/home/felix/Workspaces/playground/arduino/button_demo/cmake-build-minsizerel/CMakeFiles/ArduinoCore.dir
+/home/felix/Workspaces/playground/arduino/button_demo/cmake-build-minsizerel/CMakeFiles/project.dir
+/home/felix/Workspaces/playground/arduino/button_demo/cmake-build-minsizerel/CMakeFiles/upload-project.dir
+/home/felix/Workspaces/playground/arduino/button_demo/cmake-build-minsizerel/CMakeFiles/edit_cache.dir
+/home/felix/Workspaces/playground/arduino/button_demo/cmake-build-minsizerel/CMakeFiles/rebuild_cache.dir

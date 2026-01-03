@@ -1,0 +1,1 @@
+/bin/cc CMakeFiles/myexec.dir/main.c.o CMakeFiles/myexec.dir/mykillerfunc.c.o -o myexec 

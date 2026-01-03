@@ -1,0 +1,9 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "/api/name/NOT_ALLOWED"
+  },
+  "response": {
+    "status": 405
+  }
+}

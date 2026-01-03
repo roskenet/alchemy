@@ -1,0 +1,13 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: postgres
+  namespace: database
+spec:
+  rules:
+  - host: postgres.playground
+    http:
+      paths:
+        - backend:
+            serviceName: postgres
+            servicePort: 5432

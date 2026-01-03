@@ -1,4 +1,6 @@
 # My first program
+# This is example is from 
+# "Learn to Program with Assembly"
 
 .globl _start
 .section .text

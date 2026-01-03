@@ -1,0 +1,10 @@
+# This is how naive book metadata could look like.
+# Is it really needed or can we insert all this 
+# metadata in the book itself?
+
+Title: Death Comes as the End
+Author: Agatha Christie
+Language: English
+
+Type: Book
+Genre: Novel

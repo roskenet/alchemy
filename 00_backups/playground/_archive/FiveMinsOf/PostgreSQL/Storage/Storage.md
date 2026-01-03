@@ -1,0 +1,5 @@
+# Storage and VACUUM
+
+```sql
+BEGIN ISOLATION LEVEL REPEATABLE READ;
+```

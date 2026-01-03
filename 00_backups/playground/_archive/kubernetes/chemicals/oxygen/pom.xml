@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.2.0</version>
+        <relativePath /> <!-- lookup parent from repository -->
+    </parent>
+
+    <groupId>de.roskenet.elements</groupId>
+    <artifactId>oxygen</artifactId>
+    <version>0.4.0</version>
+    <name>oxygen</name>
+    <description>Demo project for Spring Boot</description>
+
+    <properties>
+        <java.version>17</java.version>
+        <docker.from>eclipse-temurin:17-jre-alpine</docker.from>
+        <docker.maintainer>Felix Roske</docker.maintainer>
+        <docker.repo>roskenet</docker.repo>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.jayway.jsonpath</groupId>
+            <artifactId>json-path</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>io.fabric8</groupId>
+<!--                <groupId>org.jolokia</groupId>-->
+                <artifactId>docker-maven-plugin</artifactId>
+                <version>0.43.4</version>
+                <configuration>
+                    <images>
+                        <image>
+                            <name>${docker.repo}/${project.name}:${project.version}</name>
+                            <build>
+                                <from>${docker.from}</from>
+                                <labels>
+                                    <maintainer>${docker.maintainer}</maintainer>
+                                </labels>
+                                <assemblies>
+                                    <assembly>
+                                        <name>work</name>
+                                        <descriptorRef>artifact</descriptorRef>
+<!--                                        <targetDir>/work</targetDir>-->
+                                    </assembly>
+                                    <assembly>
+                                        <name>zalando-api</name>
+<!--                                        <name>specification</name>-->
+                                        <targetDir>/zalando-api</targetDir>
+                                        <mode>dir</mode>
+<!--                                        <inline xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2 http://maven.apache.org/xsd/assembly-1.1.2.xsd">-->
+                                        <inline>
+                                            <files>
+                                                <file>
+                                                    <source>${project.basedir}/httpcalls/Insomnia_Client.json</source>
+<!--                                                    <outputDirectory>.</outputDirectory>-->
+                                                    <destName>api.yaml</destName>
+                                                </file>
+                                            </files>
+                                        </inline>
+<!--                                        </inline>-->
+                                    </assembly>
+<!--                                    <assembly>-->
+<!--                                        <files>-->
+<!--                                            <file>httpcalls/Insomnia_Client.json</file>-->
+<!--                                        </files>-->
+<!--                                    </assembly>-->
+                                </assemblies>
+                                <cmd>java -jar $JAVA_OPTS /work/${project.build.finalName}.jar</cmd>
+                            </build>
+<!--                            <copy>-->
+<!--                               <entries>-->
+<!--                                  <entry>-->
+<!--                                     <containerPath>something</containerPath>-->
+<!--                                     <hostDirectory>/maven</hostDirectory>-->
+<!--                                  </entry>-->
+<!--                               </entries>-->
+<!--                            </copy>-->
+                        </image>
+<!--                        <copy>-->
+<!--                            <entries>-->
+<!--                                <entry>-->
+<!--                                    <containerPath></containerPath>-->
+<!--                                    <hostDirectory></hostDirectory>-->
+<!--                                </entry>-->
+<!--                            </entries>-->
+<!--                        </copy>-->
+                    </images>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

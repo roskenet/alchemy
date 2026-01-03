@@ -1,0 +1,39 @@
+<h2>Create Stock Form</h2>
+
+<div class="form-group">
+    <form (ngSubmit)="createStock(stockForm)" #stockForm="ngForm">
+    <div>
+      The following element changes from green to red
+      when it is invalid
+    </div>
+    <div class="stock-name">
+<!--
+        <input type="text"
+             placeholder="Stock Name"
+             name="stockName"
+             required
+             [ngModel]="stock.name"
+             (ngModelChange)="stock.name=$event">
+-->
+      <input type="text"
+             placeholder="Stock Name"
+             required
+             name="stockName"
+             #stockName="ngModel"                                   
+             [(ngModel)]="stock.name">
+      <input type="text"
+             #myTextField
+             placeholder="Irgendwas"
+             name="something"
+             required
+             [(ngModel)]="something">
+    <div *ngIf="stockName.errors && stockName.errors.required">     
+        Stock Name is Mandatory
+    </div>
+</div>
+    <button type="submit">Create</button>
+  </form>
+  <button (click)="stock.name='test'">Reset stock name</button>
+  <h2>{{stock.name}}</h2>
+  <h3>{{something}}</h3>
+</div>

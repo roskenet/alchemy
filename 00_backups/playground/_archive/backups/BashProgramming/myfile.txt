@@ -1,0 +1,6 @@
+Hello, this is a cool textfile.
+
+It even has some newlines.
+
+Cheers,
+Me

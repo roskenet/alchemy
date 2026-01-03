@@ -1,0 +1,13 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: hydrogen-ingress
+  namespace: hydrogen
+spec:
+  rules:
+  - host: hydrogen.minikube 
+    http:
+      paths:
+      - backend:
+          serviceName: hydrogen-service
+          servicePort: 80

@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: camunda-bpe
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: camunda-bpe
+  template:
+    metadata:
+      labels:
+        app: camunda-bpe
+    spec:
+      containers:
+      - name: camunda-bpe
+        image: roskenet/camunda-bpe:0.0.2
+        ports:
+        - name: api
+          containerPort: 8080

@@ -1,0 +1,6 @@
+# This project has only tests
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost/jpademo
+    username: postgres
+    password: postgres

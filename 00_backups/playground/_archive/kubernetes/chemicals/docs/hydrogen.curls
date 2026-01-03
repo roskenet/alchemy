@@ -1,0 +1,6 @@
+# Doesn't work yet:
+
+❯ curl -X POST -H 'Content-Type: application/x-www-form-urlencoded' -d '
+client_id=hydrogen&username=felix&password=roske&grant_type=password
+' http://keycloak.192-168-49-2.nip.io/realms/chemicals/protocol/openid-connect/token
+{"error":"unsupported_grant_type","error_description":"Unsupported grant_type"}

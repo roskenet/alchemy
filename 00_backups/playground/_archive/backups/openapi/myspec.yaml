@@ -1,0 +1,25 @@
+openapi: 3.0.1
+info:
+  title: Music API
+  description: This is a sample API
+  version: 1.0.0
+servers:
+  - url: 'https://api.example.com'
+paths:
+  /artists:
+    get:
+      summary: Returns a list of artists.
+      description: Optional extended description in Markdown.
+      responses:
+        '200':
+          description: OK
+    post:
+      summary: Adds an artist.
+      responses:
+        200:
+          description: A description what happened.
+  /title:
+    head:
+      responses:
+        200:
+          description: Returns something.

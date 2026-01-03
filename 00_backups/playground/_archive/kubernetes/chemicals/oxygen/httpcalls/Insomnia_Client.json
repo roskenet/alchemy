@@ -1,0 +1,109 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2023-04-29T10:55:15.451Z",
+  "__export_source": "insomnia.desktop.app:v2022.1.1",
+  "resources": [
+    {
+      "_id": "req_db3c3d80b0814efc92c88edf9c1ef845",
+      "parentId": "wrk_95b58270a420458182893ae7654455c4",
+      "modified": 1682765649593,
+      "created": 1646859981836,
+      "url": "{{ _.schema }}://oxygen.{{ _.cluster }}/api/name/:name",
+      "name": "oxygen-name",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [
+        {
+          "id": "pair_ccca6502246946d1b34a2cbc23e83549",
+          "name": "name",
+          "value": "FelixDerSchräckliche",
+          "description": ""
+        }
+      ],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1646859981836,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "wrk_95b58270a420458182893ae7654455c4",
+      "parentId": null,
+      "modified": 1646858448451,
+      "created": 1646858448451,
+      "name": "New Document",
+      "description": "",
+      "scope": "design",
+      "_type": "workspace"
+    },
+    {
+      "_id": "env_9b2593a7d5a2648d81f091b2bc75a762526f0e51",
+      "parentId": "wrk_95b58270a420458182893ae7654455c4",
+      "modified": 1646858970332,
+      "created": 1646858448468,
+      "name": "Base Environment",
+      "data": {},
+      "dataPropertyOrder": {},
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1646858448468,
+      "_type": "environment"
+    },
+    {
+      "_id": "jar_9b2593a7d5a2648d81f091b2bc75a762526f0e51",
+      "parentId": "wrk_95b58270a420458182893ae7654455c4",
+      "modified": 1646858448472,
+      "created": 1646858448472,
+      "name": "Default Jar",
+      "cookies": [],
+      "_type": "cookie_jar"
+    },
+    {
+      "_id": "spc_400ad1df88f74303985a3381d933a45d",
+      "parentId": "wrk_95b58270a420458182893ae7654455c4",
+      "modified": 1682764944073,
+      "created": 1646858448464,
+      "fileName": "chemicals",
+      "contents": "",
+      "contentType": "yaml",
+      "_type": "api_spec"
+    },
+    {
+      "_id": "uts_2c6d3de0ce5b460184967f4c69ffb438",
+      "parentId": "wrk_95b58270a420458182893ae7654455c4",
+      "modified": 1646858448478,
+      "created": 1646858448478,
+      "name": "Example Test Suite",
+      "_type": "unit_test_suite"
+    },
+    {
+      "_id": "env_94c3ad02106749f9ae2b4a3f24ed8f54",
+      "parentId": "env_9b2593a7d5a2648d81f091b2bc75a762526f0e51",
+      "modified": 1682765428215,
+      "created": 1646858919449,
+      "name": "minikube",
+      "data": {
+        "schema": "http",
+        "cluster": "192-168-49-2.nip.io"
+      },
+      "dataPropertyOrder": {
+        "&": [
+          "schema",
+          "cluster"
+        ]
+      },
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1646858919449,
+      "_type": "environment"
+    }
+  ]
+}

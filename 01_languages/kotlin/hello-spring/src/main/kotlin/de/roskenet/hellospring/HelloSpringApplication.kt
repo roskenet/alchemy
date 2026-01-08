@@ -6,7 +6,7 @@ import org.springframework.boot.runApplication
 
 @SpringBootApplication
 class HelloSpringApplication: CommandLineRunner {
-    override fun run(vararg args: String?) {
+    override fun run(vararg args: String) {
         println("Hello World!")
     }
 }

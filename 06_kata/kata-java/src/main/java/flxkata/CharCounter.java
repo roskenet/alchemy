@@ -27,6 +27,3 @@ public class CharCounter {
         assertThat(map.get('s')).isEqualTo(4);
     }
 }
-
-
-

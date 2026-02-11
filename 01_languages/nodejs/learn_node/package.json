@@ -1,14 +1,11 @@
 {
-  "name": "node",
+  "name": "learn_node",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
-  "description": "",
-  "dependencies": {
-    "connect": "^3.7.0"
-  }
+  "author": "felix@zalando.de",
+  "license": "ISC"
 }

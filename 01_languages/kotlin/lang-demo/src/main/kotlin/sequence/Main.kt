@@ -1,19 +1,30 @@
 package sequence
 
-val mySequence = sequence {
-    println("Generating 1")
-    yield(1)
-    println("Generating 2")
-    yield(2)
-    println("Generating 3")
-    yield(3)
+import java.math.BigInteger
+
+val fibonacci = sequence {
+    var first = 0.toBigInteger()
+    var second = 1.toBigInteger()
+    while (true) {
+        yield(first)
+        val temp = first
+        first += second
+        second = temp
+    }
 }
 
+val factorial: Sequence<BigInteger> = sequence {
+    var current = 1.toBigInteger()
+    var counter = 1.toBigInteger()
+    yield(current) // 0! = 1
+    while (true) {
+        current = current * counter++
+        yield(current)
+    }
+}
 
 fun main() {
     println("Hello, Kotlin!")
-    println("The sequence returns: ${mySequence.first()}")
 
-    mySequence.forEach { println(it) }
-
+    factorial.take(5).forEach { println(it) }
 }

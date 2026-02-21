@@ -1,5 +1,6 @@
 package codewars.arraydiff;
 
+import org.assertj.core.internal.IntArrays;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;

@@ -1,0 +1,6 @@
+# Graph Theory
+
+vertices = {1,2,3,4}
+
+edges = {{1,2}, {1,3}, ... }
+

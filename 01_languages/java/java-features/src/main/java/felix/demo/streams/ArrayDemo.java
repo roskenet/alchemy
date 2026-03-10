@@ -19,6 +19,8 @@ public class ArrayDemo {
 //        var min = list.stream().map(String::length).max(Comparator.naturalOrder());
 
         System.out.println(cities.get('B').stream().collect(Collectors.joining(", ")));
+        IO.println(cities);
+
     }
 
 }

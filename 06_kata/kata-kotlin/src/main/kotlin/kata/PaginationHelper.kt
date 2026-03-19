@@ -1,3 +1,5 @@
+package kata
+
 import kotlin.test.Test
 import kotlin.test.assertEquals
 

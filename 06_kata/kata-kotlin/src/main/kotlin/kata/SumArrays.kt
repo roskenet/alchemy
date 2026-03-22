@@ -1,4 +1,4 @@
-package solution
+package solution.kata
 
 import kotlin.test.assertEquals
 import kotlin.test.Test

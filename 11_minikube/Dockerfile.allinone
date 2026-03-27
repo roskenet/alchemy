@@ -1,0 +1,59 @@
+FROM container-registry.zalando.net/library/eclipse-temurin-17-jdk:latest
+
+# Install Postgres, Zookeeper, and other dependencies
+RUN apt-get update && apt-get install -y \
+    lsb-release \
+    curl \
+    gnupg \
+    netcat-openbsd \
+    && curl -fsSL https://www.postgresql.org/media/keys/ACCC4CF8.asc | gpg --dearmor -o /etc/apt/trusted.gpg.d/postgresql.gpg \
+    && echo "deb http://apt.postgresql.org/pub/repos/apt/ $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list \
+    && apt-get update && apt-get install -y \
+    postgresql-17 \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install Zookeeper manually
+ENV ZOOKEEPER_VERSION=3.8.4
+RUN curl -fsSL https://archive.apache.org/dist/zookeeper/zookeeper-${ZOOKEEPER_VERSION}/apache-zookeeper-${ZOOKEEPER_VERSION}-bin.tar.gz | tar -xz -C /opt \
+    && mv /opt/apache-zookeeper-${ZOOKEEPER_VERSION}-bin /opt/zookeeper
+
+ENV PATH="/opt/zookeeper/bin:${PATH}"
+
+# Install Kafka manually
+ENV KAFKA_VERSION=3.9.0
+ENV SCALA_VERSION=2.13
+RUN curl -fsSL https://archive.apache.org/dist/kafka/${KAFKA_VERSION}/kafka_${SCALA_VERSION}-${KAFKA_VERSION}.tgz | tar -xz -C /opt \
+    && mv /opt/kafka_${SCALA_VERSION}-${KAFKA_VERSION} /opt/kafka
+
+ENV PATH="/opt/kafka/bin:${PATH}"
+
+# Set up Postgres
+ENV PATH="/usr/lib/postgresql/17/bin:${PATH}"
+RUN mkdir -p /var/run/postgresql && chown postgres:postgres /var/run/postgresql
+
+# Expose ports: Nakadi (8080), Postgres (5432), Zookeeper (2181), Kafka (9092, 29092, 9093)
+EXPOSE 8080 5432 2181 9092 29092 9093
+
+WORKDIR /
+
+# Copy Nakadi artifacts
+COPY app/build/libs/jolokia-jvm-agent.jar ./
+COPY app/build/libs/app.jar nakadi.jar
+COPY plugins/authz/build/libs/nakadi-plugin-authz.jar plugins/
+COPY app/api/nakadi-event-bus-api.yaml api/nakadi-event-bus-api.yaml
+COPY app/api/nakadi-event-bus-api.yaml /zalando-apis/nakadi-event-bus-api.yaml
+
+# Copy database initialization scripts
+COPY database/nakadi /docker-entrypoint-initdb.d/
+
+# Copy entrypoint script
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
+# Data directory for persistence
+VOLUME /data
+ENV NAKADI_DATA_DIR=/data
+
+# Run as root to be able to start services and manage directories
+# In a production environment, we'd use a more restrictive user, but for testing this is easier.
+ENTRYPOINT ["/entrypoint.sh"]

@@ -10,7 +10,7 @@
     </parent>
     <groupId>de.roskenet</groupId>
     <artifactId>copper</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
     <name>copper</name>
     <description>copper</description>
     <properties>

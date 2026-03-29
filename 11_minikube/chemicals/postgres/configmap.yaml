@@ -4,19 +4,6 @@ metadata:
   name: postgres
 data:
   postgresql.conf: |
-    # Custom PostgreSQL config
     listen_addresses = '*'
-    max_connections = 100
-    shared_buffers = 128MB
-    max_wal_size = 512MB 
-    min_wal_size = 64MB
-    log_timezone = 'Etc/UTC'
-    datestyle = 'iso, mdy'
-    timezone = 'Etc/UTC'
     random_page_cost = 1.0
-
-  pg_hba.conf: |
-    local   all             all                                     scram-sha-256
-    host    all             all             0.0.0.0/0               scram-sha-256
-    host    all             all             ::/0                    scram-sha-256
 

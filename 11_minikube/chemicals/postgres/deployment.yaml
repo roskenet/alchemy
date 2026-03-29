@@ -12,49 +12,22 @@ spec:
       labels:
         app: postgres
     spec:
-      initContainers:
-      - name: postgres-init
-        image: postgres:17.5
-        securityContext:
-          runAsUser: 999 
-        command:
-        - sh
-        - -c
-        - |
-          mkdir -p /var/lib/postgresql/data
-          chown -R 999:999 /var/lib/postgresql/data
-          chmod 700 /var/lib/postgresql/data
-          if [ ! -f /var/lib/postgresql/data/PG_VERSION ]; then
-            echo "Initializing PostgreSQL database..."
-            initdb -D /var/lib/postgresql/data
-          else
-            echo "PostgreSQL already initialized"
-          fi
-        volumeMounts:
-        - name: postgres-data
-          mountPath: /var/lib/postgresql/data
-      securityContext: 
-        runAsUser: 999
-        runAsGroup: 999
-        fsGroup: 999
+      #      securityContext: 
+      #        runAsUser: 999
+      #        runAsGroup: 999
+      #        fsGroup: 999
       containers:
         - name: postgres
-          image: postgres:17.5
+          image: postgres:18
           imagePullPolicy: IfNotPresent
-          command: ["postgres", "-c", "config_file=/etc/postgres-config/postgresql.conf"]         
           env:
             - name: POSTGRES_PASSWORD
               value: postgres
           volumeMounts:
-            - mountPath: /etc/postgres-config
-              name: postgres-config
-            - mountPath: /var/lib/postgresql/data
+            - mountPath: /var/lib/postgresql
               name: postgres-data
       volumes:
         - name: postgres-data
           persistentVolumeClaim:
             claimName: postgres-data
-        - name: postgres-config
-          configMap:
-            name: postgres
 

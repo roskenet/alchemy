@@ -29,9 +29,8 @@
     <properties>
         <java.version>17</java.version>
 
-        <docker.from>eclipse-temurin:17-jre</docker.from>
-        <docker.maintainer>felix@roskenet.de</docker.maintainer>
-        <docker.image>roskenet/${project.artifactId}:${project.version}</docker.image>
+        <jib.to.image>roskenet/${project.artifactId}:${project.version}</jib.to.image>
+        <jib.from.image>eclipse-temurin:17-jre</jib.from.image>
     </properties>
     <dependencies>
         <dependency>
@@ -57,28 +56,19 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
             <plugin>
-                <groupId>io.fabric8</groupId>
-                <artifactId>docker-maven-plugin</artifactId>
-                <version>0.43.4</version>
+                <groupId>com.google.cloud.tools</groupId>
+                <artifactId>jib-maven-plugin</artifactId>
+                <version>3.4.4</version>
                 <configuration>
-                    <images>
-                        <image>
-                            <name>${docker.image}</name>
-                            <build>
-                                <from>${docker.from}</from>
-                                <labels>
-                                    <maintainer>${docker.maintainer}</maintainer>
-                                </labels>
-                                <assemblies>
-                                    <assembly>
-                                        <name>app</name>
-                                        <descriptorRef>artifact</descriptorRef>
-                                    </assembly>
-                                </assemblies>
-                                <cmd>java -jar $JAVA_OPTS /app/${project.build.finalName}.jar</cmd>
-                            </build>
-                        </image>
-                    </images>
+                    <from>
+                        <image>${jib.from.image}</image>
+                    </from>
+                    <to>
+                        <image>${jib.to.image}</image>
+                    </to>
+                    <container>
+                        <mainClass>de.felixroske.polonium.PoloniumApplication</mainClass>
+                    </container>
                 </configuration>
             </plugin>
         </plugins>

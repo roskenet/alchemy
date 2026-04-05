@@ -54,10 +54,11 @@ object DirReduction {
         var result = arrayOf<String>()
         var index = 0
 
-        while (index < arr.size) {
+//        while (index < arr.size) {
+//            index++
+//        }
 
-        }
-
+        print("Hello, World!")
 
         return emptyArray()
     }

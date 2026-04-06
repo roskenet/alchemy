@@ -28,8 +28,16 @@ import kotlin.test.assertEquals
 //Happy coding!
 
 fun gps(s:Int, x:DoubleArray):Int {
-    // your code
-    return 0
+    if (x.size < 3) return 0
+
+    var avrg = 0
+    for (i in 1 .. x.lastIndex) {
+       var delta = x[i] - x[i - 1]
+       var deltaavrg = (3600 * delta) / s
+        if (deltaavrg > avrg) avrg = deltaavrg.toInt()
+    }
+
+    return avrg
 }
 
 class GpsSpeedTest {

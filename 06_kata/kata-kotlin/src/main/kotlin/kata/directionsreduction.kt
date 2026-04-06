@@ -49,30 +49,56 @@ import kotlin.test.assertEquals
 //if you want to translate, please ask before translating.
 
 object DirReduction {
+
+    fun String.isOppositeDir(dir: String): Boolean {
+        if (dir.equals("NORTH")) {
+            return this.equals("SOUTH")
+        }
+        if (dir.equals("SOUTH")) {
+            return this.equals("NORTH")
+        }
+        if (dir.equals("EAST")) {
+            return this.equals("WEST")
+        }
+        if (dir.equals("WEST")) {
+            return this.equals("EAST")
+        }
+        return false;
+    }
+
     fun dirReduc(arr: Array<String>): Array<String> {
 
         var result = arrayOf<String>()
-        var index = 0
 
-//        while (index < arr.size) {
-//            index++
-//        }
+        var currCandidate = ""
 
-        print("Hello, World!")
-
-        return emptyArray()
+        for (i in arr.indices) {
+            if (i > 0) {
+                currCandidate = arr[i]
+                if (result.size > 0 && currCandidate.isOppositeDir(result.last())) {
+                    result = result.copyOfRange(0, result.size - 1)
+                } else {
+                    result = result + currCandidate
+                }
+            } else {
+                result = result + arr[0]
+            }
+        }
+        return result
     }
 }
 
-class  DirReductionTest {
+class DirReductionTest {
 
     private fun testing(arr: Array<String>, expect: Array<String>) {
         val actual: Array<String> = DirReduction.dirReduc(arr)
         assertEquals(expect.contentDeepToString(), actual.contentDeepToString())
     }
+
     @Test
     fun basicTests() {
-        var a = arrayOf("NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST")
+        var a = arrayOf<String>()
+        a = arrayOf("NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST")
         testing(a, arrayOf("WEST"))
         a = arrayOf("NORTH", "WEST", "SOUTH", "EAST")
         testing(a, arrayOf("NORTH", "WEST", "SOUTH", "EAST"))

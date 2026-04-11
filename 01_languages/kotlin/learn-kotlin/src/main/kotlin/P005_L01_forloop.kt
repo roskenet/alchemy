@@ -1,6 +1,6 @@
 package de.roskenet
 
-enum class Continent(string: String) {
+enum class Continent(val continentName: String) {
     AFRICA("Africa"),
     EUROPE("Europe"),
     NORTH_AMERICA("North America"),
@@ -11,7 +11,7 @@ enum class Continent(string: String) {
 
 data class City(val name: String, val continent: Continent, val isCapital: Boolean) {
     override fun toString(): String {
-        return "$name is ${if(isCapital) "a capital" else "a city"} in $continent"
+        return "$name is ${if(isCapital) "a capital" else "a city"} in ${continent.continentName}"
     }
 }
 
@@ -29,8 +29,11 @@ fun main() {
     )
 
     for ((name, continent) in cities) {
-       println("$name is in $continent")
+       println("$name, $continent")
+
     }
+
+
 
 //    for (c in cities.indices) {
 //        println(cities[c])

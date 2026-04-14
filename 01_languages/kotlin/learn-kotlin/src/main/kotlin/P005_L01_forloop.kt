@@ -33,8 +33,6 @@ fun main() {
 
     }
 
-
-
 //    for (c in cities.indices) {
 //        println(cities[c])
 //    }

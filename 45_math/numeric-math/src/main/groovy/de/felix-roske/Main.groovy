@@ -9,4 +9,8 @@ static void main(String[] args) {
 
     strings.sort { -it?.size() }
     println(strings)
+
+    print "Hello World"
+
+
 }

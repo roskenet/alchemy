@@ -5,13 +5,11 @@ fun main() {
     val capitals = mapOf(
         "Germany" to "Berlin",
         "France" to "Paris",
-        "Italy" to "Rome"
+        "Italy" to "Rome",
     )
 
-    val unknownCapital = capitals["Iceland"]?.let {
-       it.uppercase()
-    }
-
-    println(unknownCapital)
+    val capital = capitals["Iceland"]?.uppercase() ?: "unknown"
+    
+    println(capital)
 
 }

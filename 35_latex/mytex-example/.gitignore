@@ -1,0 +1,6 @@
+.junie/
+fonts/
+*.aux
+*.log
+*.pdf
+*.out

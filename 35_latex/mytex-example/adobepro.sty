@@ -1,0 +1,274 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{adobepro}[2026/05/16 Adobe Pro Typography]
+
+% --------------------------------------------------
+% Engine Check
+% --------------------------------------------------
+
+\RequirePackage{fontspec}
+\RequirePackage{unicode-math}
+\RequirePackage{titlesec}
+\RequirePackage{titling}
+
+% --------------------------------------------------
+% Microtype
+% --------------------------------------------------
+
+\RequirePackage{iftex}
+\ifPDFTeX
+  \RequirePackage[
+    protrusion=true,
+    expansion=true,
+    tracking=true,
+    spacing=true,
+    kerning=true
+  ]{microtype}
+\else
+  \RequirePackage[
+    protrusion=true,
+    expansion=true,
+    tracking=true
+  ]{microtype}
+\fi
+
+\UseMicrotypeSet[protrusion]{basicmath}
+% --------------------------------------------------
+% Paths
+% --------------------------------------------------
+
+\newcommand{\MinionPath}{fonts/MinionPro/}
+\newcommand{\MyriadPath}{fonts/MyriadPro/}
+
+% --------------------------------------------------
+% Main Text Font
+% --------------------------------------------------
+
+\setmainfont[
+  Path=\MinionPath,
+  Extension=.otf,
+  UprightFont=MinionPro-Regular,
+  ItalicFont=MinionPro-It,
+  BoldFont=MinionPro-Semibold,
+  BoldItalicFont=MinionPro-SemiboldIt,
+  Ligatures={TeX, Common},
+  Numbers={OldStyle, Proportional},
+  SmallCapsFeatures={Letters=SmallCaps, LetterSpace=5}
+]{Minion Pro}
+
+% --------------------------------------------------
+% Sans Font
+% --------------------------------------------------
+
+\setsansfont[
+  Path=\MyriadPath,
+  Extension=.otf,
+  UprightFont=MyriadPro-Regular,
+  ItalicFont=MyriadPro-It,
+  BoldFont=MyriadPro-Semibold,
+  BoldItalicFont=MyriadPro-SemiboldIt
+]{Myriad Pro}
+
+% --------------------------------------------------
+% Math
+% --------------------------------------------------
+
+\setmathfont{STIX Two Math}
+\UseMicrotypeSet[protrusion]{basicmath}
+
+% --------------------------------------------------
+% Optical Size Families
+% --------------------------------------------------
+
+\newfontfamily\minioncaption[
+  Path=\MinionPath,
+  Extension=.otf,
+  UprightFont=MinionPro-Capt,
+  ItalicFont=MinionPro-ItCapt,
+  BoldFont=MinionPro-SemiboldCapt,
+  BoldItalicFont=MinionPro-SemiboldItCapt
+]{Minion Caption}
+
+\newfontfamily\minionsubhead[
+  Path=\MinionPath,
+  Extension=.otf,
+  UprightFont=MinionPro-Subh,
+  ItalicFont=MinionPro-ItSubh,
+  BoldFont=MinionPro-SemiboldSubh,
+  BoldItalicFont=MinionPro-SemiboldItSubh
+]{Minion Subhead}
+
+\newfontfamily\miniondisplay[
+  Path=\MinionPath,
+  Extension=.otf,
+  UprightFont=MinionPro-Disp,
+  ItalicFont=MinionPro-ItDisp,
+  BoldFont=MinionPro-SemiboldDisp,
+  BoldItalicFont=MinionPro-SemiboldItDisp
+]{Minion Display}
+
+\newfontfamily\minioncondensed[
+  Path=\MinionPath,
+  Extension=.otf,
+  UprightFont=MinionPro-Cn,
+  ItalicFont=MinionPro-CnIt,
+  BoldFont=MinionPro-BoldCn,
+  BoldItalicFont=MinionPro-BoldCnIt
+]{Minion Pro Condensed}
+
+\newfontfamily\myriadcondensed[
+  Path=\MyriadPath,
+  Extension=.otf,
+  UprightFont=MyriadPro-Cond,
+  ItalicFont=MyriadPro-CondIt,
+  BoldFont=MyriadPro-BoldCond,
+  BoldItalicFont=MyriadPro-BoldCondIt
+]{Myriad Pro Condensed}
+
+\newfontfamily\myriadsemicondensed[
+  Path=\MyriadPath,
+  Extension=.otf,
+  UprightFont=MyriadPro-SemiCn,
+  ItalicFont=MyriadPro-SemiCnIt,
+  BoldFont=MyriadPro-BoldSemiCn,
+  BoldItalicFont=MyriadPro-BoldSemiCnIt
+]{Myriad Pro Semi Condensed}
+
+\newfontfamily\myriadsemiextended[
+  Path=\MyriadPath,
+  Extension=.otf,
+  UprightFont=MyriadPro-SemiExt,
+  ItalicFont=MyriadPro-SemiExtIt,
+  BoldFont=MyriadPro-BoldSemiExt,
+  BoldItalicFont=MyriadPro-BoldSemiExtIt
+]{Myriad Pro Semi Extended}
+
+\newfontfamily\headingfont[
+  Path=\MyriadPath,
+  Extension=.otf,
+  UprightFont=MyriadPro-Semibold,
+  ItalicFont=MyriadPro-SemiboldIt
+]{Myriad Heading}
+
+\newfontfamily\titlefont[
+  Path=\MyriadPath,
+  Extension=.otf,
+  UprightFont=MyriadPro-SemiExt,
+  ItalicFont=MyriadPro-SemiExtIt,
+  BoldFont=MyriadPro-BoldSemiExt,
+  BoldItalicFont=MyriadPro-BoldSemiExtIt
+]{Myriad Pro Semi Extended}
+
+\newcommand{\spacedfont}[1]{%
+  \addfontfeatures{LetterSpace=#1}
+}
+
+% --------------------------------------------------
+% Heading Fonts
+% --------------------------------------------------
+
+\newcommand{\sectionfont}{%
+  \headingfont
+  \spacedfont{3}
+  \fontsize{15pt}{17pt}\selectfont
+}
+
+\newcommand{\subsectionfont}{%
+  \headingfont
+  \spacedfont{2}
+  \fontsize{13pt}{15pt}\selectfont
+}
+
+\newcommand{\subsubsectionfont}{%
+  \sffamily
+  \bfseries
+  \spacedfont{2}
+  \fontsize{12pt}{14pt}\selectfont
+}
+
+\newcommand{\displaytitlefont}{%
+  \titlefont
+  \spacedfont{1}
+  \fontsize{24pt}{28pt}\selectfont
+}
+
+% --------------------------------------------------
+% Semantic Typography
+% --------------------------------------------------
+
+\newcommand{\captionfont}{%
+  \minioncaption
+  \fontsize{8pt}{10pt}\selectfont
+}
+
+\newcommand{\subheadfont}{%
+  \minionsubhead
+  \fontsize{16pt}{18pt}\selectfont
+}
+
+\newcommand{\displayfont}{%
+  \sffamily
+  \bfseries
+  \fontsize{28pt}{32pt}\selectfont
+}
+
+% --------------------------------------------------
+% Section Styling
+% --------------------------------------------------
+\titleformat{\section}
+  {\sectionfont}
+  {\thesection}
+  {1em}
+  {}
+
+\titleformat{\subsection}
+  {\subsectionfont}
+  {\thesubsection}
+  {1em}
+  {}
+
+\titleformat{\subsubsection}
+  {\subsubsectionfont}
+  {\thesubsubsection}
+  {1em}
+  {}
+
+% --------------------------------------------------
+% Title Styling
+% --------------------------------------------------
+
+\pretitle{
+  \begin{center}
+  \displaytitlefont
+}
+
+\posttitle{
+  \par
+  \end{center}
+}
+
+% --------------------------------------------------
+% Footnote Styling
+% --------------------------------------------------
+
+\renewcommand{\footnotesize}{%
+  \minioncaption
+  \fontsize{8pt}{10pt}\selectfont
+}
+
+% --------------------------------------------------
+% Margin Note Styling
+% --------------------------------------------------
+
+\newcommand{\marginparfont}{%
+  \myriadcondensed
+  \fontsize{8pt}{10pt}\selectfont
+}
+
+\let\oldmarginpar\marginpar
+\RenewDocumentCommand{\marginpar}{o m}{%
+  \IfNoValueTF{#1}{%
+    \oldmarginpar{\marginparfont #2}%
+  }{%
+    \oldmarginpar[\marginparfont #1]{\marginparfont #2}%
+  }%
+}

@@ -9,7 +9,7 @@ fun main() {
     )
 
     val capital = capitals["Iceland"]?.uppercase() ?: "unknown"
-    
+
     println(capital)
 
 }

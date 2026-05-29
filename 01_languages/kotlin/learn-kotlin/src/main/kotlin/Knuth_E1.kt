@@ -4,21 +4,23 @@ package de.roskenet
 
 fun main() {
     // Euklid's ggT:
-    println("Der ggT von 20 und 13 ist: ${ggT(20u, 13u)}")
+    val m = 20u
+    val n = 5u
+
+    println("Der ggT von $m und $n ist: ${ggT(m, n)}")
 }
 
 fun ggT(m: UInt, n: UInt): UInt {
     var currM = m
     var currN = n
 
-    do {
+    while (true) {
         val rem = currM % currN
         if (rem == 0u) {
             return currN
         }
         currM = currN
         currN = rem
-    } while (currM != 0u)
-
-    return currN
+    }
 }
+

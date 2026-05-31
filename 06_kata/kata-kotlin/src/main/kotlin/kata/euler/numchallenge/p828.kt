@@ -16,9 +16,14 @@ fun main() {
 
 fun challengeFactory(line: String): Challenge {
     val colonSplit = line.split(':')
-    val target = colonSplit[0].toUInt()
+    val target = colonSplit[0].trim().toUInt()
     val numbers = colonSplit[1].split(',').map(String::toUInt)
     return Challenge(target, numbers)
+}
+
+fun destructure(numbers: List<UInt>): List<String> {
+
+    return emptyList()
 }
 
 // I'll try it using brute force:

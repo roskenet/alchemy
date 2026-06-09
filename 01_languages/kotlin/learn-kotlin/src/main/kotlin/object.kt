@@ -1,6 +1,8 @@
 package de.roskenet
 
-interface MyInterface
+interface MyInterface {
+    fun doSomething() = println("Doing something")
+}
 
 object MyObject: MyInterface
 
@@ -12,5 +14,5 @@ fun main() {
 }
 
 fun doSomething(parameter: MyInterface) {
-
+    parameter.doSomething()
 }

@@ -12,5 +12,6 @@ public class ThreadController {
         var workerThing = new WorkerThing(threadConfig.name());
         Thread thread = new Thread(workerThing);
         thread.start();
+//        workerThing.run();
     }
 }

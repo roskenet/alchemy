@@ -4,9 +4,7 @@ import org.assertj.core.api.Assertions.assertThat
 import kotlin.test.Test
 
 fun doSomething(byte: Byte): String {
-
     return "Magic"
-
 }
 
 class AssertKTest {

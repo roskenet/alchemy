@@ -4,7 +4,9 @@ import kotlin.test.Test
 import kotlin.test.assertEquals
 
 fun twiceAsOld(dadYearsOld: Int, sonYearsOld: Int): Int {
-    return 0
+    // 36 - 2 * 7 = 22
+    // 55 - 2 * 30 = -5
+    return Math.abs(dadYearsOld - 2 * sonYearsOld)
 }
 
 class TestExample {

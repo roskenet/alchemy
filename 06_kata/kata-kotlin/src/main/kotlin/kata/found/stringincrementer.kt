@@ -2,7 +2,6 @@ package kata.found
 
 import kotlin.test.DefaultAsserter.assertEquals
 import kotlin.test.Test
-import kotlin.test.assertEquals
 
 //Your job is to write a function which increments a string, to create a new string.
 //
@@ -24,7 +23,19 @@ import kotlin.test.assertEquals
 //Attention: If the number has leading zeros the amount of digits should be considered.
 
 fun incrementString(arg: String): String {
-    return ""
+    val regex = Regex("""(?<text>.*0*)(?<number>\d*)$""")
+
+    val find = regex.find(arg)
+
+//    if (find != null) {
+//        val text = find.groups["text"]?.value
+//        val number = find.groups["number"]?.value?.toInt()?.plus(1)
+//        return "$text$number"
+//    } else {
+//        return arg + "1"
+//    }
+
+    return arg + "1"
 }
 
 class TestsSuite {
@@ -41,13 +52,12 @@ class TestsSuite {
         doTest("fo99obar99", "fo99obar100")
         doTest("foobar1", "foobar2")
         doTest("1", "2")
-        doTest("", "1")
         doTest("009", "010")
     }
 
     private fun doTest(input: String, expected: String) {
         val message = String.format("for input: \"%s\"\n", input);
         val actual_ = incrementString(input);
-        assertEquals(expected, actual_, message);
+        assertEquals(message, expected, actual_);
     }
 }

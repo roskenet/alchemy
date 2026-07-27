@@ -25,6 +25,7 @@ ToDo: Tidy me up!
 
 and / or:
 
+```
 alchemy/
 │
 ├── 10-foundations/
@@ -41,3 +42,4 @@ alchemy/
 │
 ├── 95-archives/
 └── 99-notes/
+```

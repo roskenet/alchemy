@@ -12,6 +12,7 @@ Tags: keycloak, oidc, microservice, next.js, spring boot, session
 
 ToDo: Tidy me up!
 
+```
 10-foundations      Grundlagen
 20-exercises        Katas & Übungen
 30-problems         Algorithmen & Puzzles
@@ -22,6 +23,7 @@ ToDo: Tidy me up!
 80-references       Papers & Bücher
 90-archives         Historisches
 99-notes            Lose Notizen
+```
 
 and / or:
 

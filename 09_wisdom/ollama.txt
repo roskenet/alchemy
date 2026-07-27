@@ -1,0 +1,10 @@
+# Running ollama
+
+```
+ollama run llma3
+```
+
+export ANTHROPIC_AUTH_TOKEN=ollama
+export ANTHROPIC_BASE_URL=http://localhost:11434
+claude --model rafw007/gemma4-e4b-claude-coder
+

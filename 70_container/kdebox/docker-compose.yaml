@@ -10,6 +10,6 @@ services:
     ports:
       - "5901:5901"
     volumes:
-      - /home/froske/Workspaces/kdebox:/home/developer
+      - ~/Workspaces/kdebox:/home/developer
     container_name: kdebox
 

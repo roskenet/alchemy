@@ -25,6 +25,7 @@ import {
 } from '@tabler/icons-react';
 import { useState } from 'react';
 import { ColorSchemeToggle } from '@/components/ColorSchemeToggle';
+import { MyCoolComponent } from "@/components/MyCoolComponent";
 
 const features = [
   {
@@ -54,6 +55,11 @@ export default function HomePage() {
   return (
     <Container size="lg" py="xl">
       <Stack gap="xl">
+
+        <Stack>
+          <MyCoolComponent name={inputValue}/>
+        </Stack>
+
         {/* Header / Hero */}
         <Stack align="center" gap="md" ta="center" mt="xl">
           <Badge size="lg" variant="gradient" gradient={{ from: 'blue', to: 'cyan' }}>

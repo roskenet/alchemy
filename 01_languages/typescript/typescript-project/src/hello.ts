@@ -46,6 +46,7 @@ function main(): void {
         age: 30
     };
 
+    person.name = "Bob";
     console.log(`Person: ${person.name}, Age: ${person.age}`);
 }
 

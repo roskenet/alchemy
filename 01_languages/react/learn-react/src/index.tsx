@@ -6,7 +6,12 @@ const root = createRoot(
 );
 
 function App() {
-  return <h1>My React and TypeScript App!</h1>;
+  return (
+      <>
+        <h1>My React App!</h1>
+        <p>This is a test!</p>
+      </>
+  )
 }
 
 root.render(
